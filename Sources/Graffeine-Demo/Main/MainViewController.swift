@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,6 +32,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         switch (indexPath.section, indexPath.row) {
         case (0, 0): return "VerticalDescendingBarsCell"
         case (1, 0): return "RedGreenLinesCell"
+        case (2, 0): return "HorizontalGroupedBarsCell"
         default: return "VerticalDescendingBarsCell"
         }
     }

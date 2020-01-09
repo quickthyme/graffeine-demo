@@ -71,6 +71,32 @@
                                             <outlet property="graffeineView" destination="3IK-E1-eFs" id="ahA-4i-9MG"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HorizontalGroupedBarsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HorizontalGroupedBarsCell" id="o6X-o7-YRm" userLabel="HorizontalGroupedBarsCell" customClass="HorizontalGroupedBarsCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="575.5" width="414" height="260"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o6X-o7-YRm" id="qdd-jS-peV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SES-6Z-bnE" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="HorizontalGroupedBarsConfig"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="SES-6Z-bnE" secondAttribute="bottom" id="1Tl-Mz-FDZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="SES-6Z-bnE" secondAttribute="trailing" id="FZS-Nk-q1P"/>
+                                                <constraint firstItem="SES-6Z-bnE" firstAttribute="top" secondItem="qdd-jS-peV" secondAttribute="top" id="il4-Sk-xmZ"/>
+                                                <constraint firstItem="SES-6Z-bnE" firstAttribute="leading" secondItem="qdd-jS-peV" secondAttribute="leading" id="pvH-vg-r5g"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="graffeineView" destination="SES-6Z-bnE" id="CP5-E3-4zP"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="OqM-cJ-NB1"/>
