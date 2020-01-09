@@ -20,20 +20,20 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
             GraffeineVerticalGutter(id: ID.rightGutter, width: 16, region: .rightGutter),
 
             GraffeineHorizontalGutter(id: ID.bottomGutter, height: 26, region: .bottomGutter)
-                .additionalConfig ({
+                .apply ({
                     $0.colors = [.purple]
                     $0.labelAlignmentMode = .center
                 }),
 
             GraffeineVerticalGutter(id: ID.leftGutter, width: 50, region: .leftGutter)
-                .additionalConfig ({
+                .apply ({
                     $0.rowMargin = unitMargin
                     $0.colors = [.darkGray]
                     $0.data = GraffeineLayer.Data(labels: ["high", "", "", "", "", "medium", "", "", "", "", "low"])
                 }),
 
             GraffeineGridLineLayer(id: ID.grid)
-                .additionalConfig ({
+                .apply ({
                     $0.colors = [.lightGray]
                     $0.dashPattern = [1, 3]
                     $0.thickness = 0.5
@@ -41,7 +41,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                 }),
 
             GraffeineBarLayer(id: ID.descendingBars)
-                .additionalConfig ({
+                .apply ({
                     $0.barMargin = unitMargin
                     $0.colors = [.purple]
                 })

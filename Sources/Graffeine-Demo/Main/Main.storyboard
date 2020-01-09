@@ -45,6 +45,32 @@
                                             <outlet property="graffeineView" destination="U0I-tl-j8V" id="nof-cg-H0j"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RedGreenLinesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RedGreenLinesCell" id="TPb-MT-D03" userLabel="RedGreenLinesCell" customClass="RedGreenLinesCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="315.5" width="414" height="260"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TPb-MT-D03" id="5YH-14-Q9c">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IK-E1-eFs" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="RedGreenLinesConfig"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3IK-E1-eFs" firstAttribute="top" secondItem="5YH-14-Q9c" secondAttribute="top" id="ACm-3H-vPs"/>
+                                                <constraint firstItem="3IK-E1-eFs" firstAttribute="leading" secondItem="5YH-14-Q9c" secondAttribute="leading" id="DVb-pS-h8r"/>
+                                                <constraint firstAttribute="bottom" secondItem="3IK-E1-eFs" secondAttribute="bottom" id="QJI-1b-S1n"/>
+                                                <constraint firstAttribute="trailing" secondItem="3IK-E1-eFs" secondAttribute="trailing" id="pJK-xG-QsP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="graffeineView" destination="3IK-E1-eFs" id="ahA-4i-9MG"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="OqM-cJ-NB1"/>
