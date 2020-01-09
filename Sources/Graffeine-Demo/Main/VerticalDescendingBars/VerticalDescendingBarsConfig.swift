@@ -22,6 +22,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
             GraffeineHorizontalGutter(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .additionalConfig ({
                     $0.colors = [.purple]
+                    $0.labelAlignmentMode = .center
                 }),
 
             GraffeineVerticalGutter(id: ID.leftGutter, width: 50, region: .leftGutter)
