@@ -15,22 +15,47 @@ class RedGreenLinesConfig: GraffeineViewConfig {
 
         graffeineView.layers = [
 
-            GraffeineHorizontalGutter(id: ID.topGutter, height: 16, region: .topGutter),
+            GraffeineHorizontalGutter(id: ID.topGutter, height: 28, region: .topGutter)
+                .apply ({
+                    $0.colors = [.white]
+                    $0.labelHorizontalAlignmentMode = .center
+                    $0.labelVerticalAlignmentMode = .bottom
+                    $0.labelVPadding = 4.0
+                    $0.fontSize = 16.0
+                    $0.data = GraffeineLayer.Data(labels: ["PROJECTIONS"])
+                }),
 
-            GraffeineVerticalGutter(id: ID.rightGutter, width: 16, region: .rightGutter),
+            GraffeineVerticalGutter(id: ID.rightGutter, width: 64, region: .rightGutter)
+                .apply ({
+                    $0.rowMargin = unitMargin
+                    $0.labelHorizontalAlignmentMode = .left
+                    $0.labelVerticalAlignmentMode = .top
+                    $0.labelHPadding = 4.0
+                    $0.labelVPadding = -8.0
+                    $0.colors = [.red, .orange, .yellow, .green, .lightGray]
+                    $0.fontSize = 11
+                    $0.data = GraffeineLayer.Data(labels: ["50,000", "37,500", "25,000", "12,500"])
+                }),
 
             GraffeineHorizontalGutter(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
                     $0.colors = [.lightGray]
-                    $0.labelAlignmentMode = .centerLeftRight
-                    $0.data = GraffeineLayer.Data(labels: ["past", "present", "future"])
+                    $0.labelHorizontalAlignmentMode = .centerLeftRight
+                    $0.labelVerticalAlignmentMode = .top
+                    $0.labelVPadding = 4.0
+                    $0.data = GraffeineLayer.Data(labels: ["PAST", "PRESENT", "FUTURE"])
                 }),
 
-            GraffeineVerticalGutter(id: ID.leftGutter, width: 56, region: .leftGutter)
+            GraffeineVerticalGutter(id: ID.leftGutter, width: 64, region: .leftGutter)
                 .apply ({
                     $0.rowMargin = unitMargin
+                    $0.labelHorizontalAlignmentMode = .right
+                    $0.labelVerticalAlignmentMode = .top
+                    $0.labelHPadding = 4.0
+                    $0.labelVPadding = -8.0
                     $0.colors = [.red, .orange, .yellow, .green, .lightGray]
-                    $0.data = GraffeineLayer.Data(labels: ["50,000", "37,500", "25,000", "12,500", "0"])
+                    $0.fontSize = 11
+                    $0.data = GraffeineLayer.Data(labels: ["50,000", "37,500", "25,000", "12,500"])
                 }),
 
             GraffeineGridLineLayer(id: ID.hGrid)
@@ -39,7 +64,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.colors = [UIColor(white: 1.0, alpha: 0.5)]
                     $0.dashPattern = [1, 3]
                     $0.thickness = 0.5
-                    $0.data = GraffeineLayer.Data(valueMax: 3, values: [0, 1, 2, 3])
+                    $0.data = GraffeineLayer.Data(valueMax: 6, values: [0, 1, 2, 3, 4, 5, 6])
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)

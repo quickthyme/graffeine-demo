@@ -17,17 +17,21 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
 
             GraffeineHorizontalGutter(id: ID.topGutter, height: 16, region: .topGutter),
 
-            GraffeineVerticalGutter(id: ID.rightGutter, width: 16, region: .rightGutter),
+            GraffeineVerticalGutter(id: ID.rightGutter, width: 32, region: .rightGutter),
 
             GraffeineHorizontalGutter(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
                     $0.colors = [.white]
-                    $0.labelAlignmentMode = .right
+                    $0.labelHorizontalAlignmentMode = .right
+                    $0.labelVerticalAlignmentMode = .top
+                    $0.labelHPadding = -6.0
+                    $0.labelVPadding = 2.0
                 }),
 
-            GraffeineVerticalGutter(id: ID.leftGutter, width: 50, region: .leftGutter)
+            GraffeineVerticalGutter(id: ID.leftGutter, width: 32, region: .leftGutter)
                 .apply ({
                     $0.rowMargin = unitMargin
+                    $0.labelVerticalAlignmentMode = .center
                     $0.colors = [.white]
                 }),
 
@@ -43,7 +47,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                 .apply ({
                     $0.flipXY = true
                     $0.barMargin = unitMargin
-                    $0.colors = [.white]
+                    $0.colors = [UIColor(white: 1.0, alpha: 0.7)]
                     $0.barSubdivision = GraffeineBarLayer.Bar.Subdivision(index: 0, width: .percentage(0.5))
                 }),
 
@@ -51,7 +55,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                 .apply ({
                     $0.flipXY = true
                     $0.barMargin = unitMargin
-                    $0.colors = [.lightGray]
+                    $0.colors = [UIColor(white: 0.7, alpha: 0.7)]
                     $0.barSubdivision = GraffeineBarLayer.Bar.Subdivision(index: 1, width: .percentage(0.5))
                 })
         ]

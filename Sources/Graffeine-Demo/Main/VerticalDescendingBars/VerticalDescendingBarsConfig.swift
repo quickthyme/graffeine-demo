@@ -22,14 +22,17 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
             GraffeineHorizontalGutter(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
                     $0.colors = [.purple]
-                    $0.labelAlignmentMode = .center
+                    $0.labelHorizontalAlignmentMode = .center
+                    $0.labelVerticalAlignmentMode = .top
                 }),
 
             GraffeineVerticalGutter(id: ID.leftGutter, width: 50, region: .leftGutter)
                 .apply ({
                     $0.rowMargin = unitMargin
                     $0.colors = [.darkGray]
-                    $0.data = GraffeineLayer.Data(labels: ["high", "", "", "", "", "medium", "", "", "", "", "low"])
+                    $0.labelHorizontalAlignmentMode = .right
+                    $0.labelVerticalAlignmentMode = .centerTopBottom
+                    $0.data = GraffeineLayer.Data(labels: ["high", "medium", "low"])
                 }),
 
             GraffeineGridLineLayer(id: ID.grid)

@@ -28,6 +28,15 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0: return "Vertical Descending Bars"
+        case 1: return "Red Green Lines"
+        case 2: return "Horizontal Grouped Bars"
+        default: return ""
+        }
+    }
+
     func getCellId(for indexPath: IndexPath) -> String {
         switch (indexPath.section, indexPath.row) {
         case (0, 0): return "VerticalDescendingBarsCell"
