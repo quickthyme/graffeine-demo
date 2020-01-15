@@ -88,6 +88,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.colors = [.red]
                     $0.unitMargin = unitMargin
                     $0.dashPattern = [4, 3]
+                    $0.dashPhase = 4
                     $0.thickness = 8.0
                     $0.lineJoin = .round
                 }),
@@ -105,6 +106,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                 $0.colors = [.green]
                 $0.unitMargin = unitMargin
                 $0.dashPattern = [4, 3]
+                $0.dashPhase = 4
                 $0.thickness = 8.0
                 $0.lineJoin = .round
             })

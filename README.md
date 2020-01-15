@@ -25,3 +25,7 @@ Here are a few lo-res examples:
   
   <br />
 
+![sample_5](docs/sample_5.png)
+ 
+ <br />
+

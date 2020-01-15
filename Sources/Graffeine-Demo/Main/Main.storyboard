@@ -12,11 +12,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="MainViewController" customClass="MainViewController" customModule="Graffeine_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="260" estimatedRowHeight="260" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TxQ-C5-Auw">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1458"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VerticalDescendingBarsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerticalDescendingBarsCell" id="fwf-I0-ubm" userLabel="VerticalDescendingBarsCell" customClass="VerticalDescendingBarsCell" customModule="Graffeine_Demo" customModuleProvider="target">
@@ -97,7 +97,7 @@
                                             <outlet property="graffeineView" destination="SES-6Z-bnE" id="CP5-E3-4zP"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ScatterplotCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScatterplotCell" id="pRy-97-Yul" userLabel="ScatterplotCell" customClass="ScatterplotCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ScatterplotCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LinePointsCell" id="pRy-97-Yul" userLabel="LinePointsCell" customClass="LinePointsCell" customModule="Graffeine_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="835.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pRy-97-Yul" id="7SP-kx-fja">
@@ -106,9 +106,9 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3G2-FV-NgS" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
-                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ScatterplotConfig"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="LinePointsConfig"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -120,7 +120,33 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="graffeineView" destination="3G2-FV-NgS" id="hFH-lW-BEL"/>
+                                            <outlet property="graffeineView" destination="3G2-FV-NgS" id="QP8-4B-C9k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ScatterplotCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScatterplotCell" id="e79-Ek-4uP" userLabel="ScatterplotCell" customClass="ScatterplotCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1095.5" width="414" height="260"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e79-Ek-4uP" id="v8N-MQ-eiX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnG-GK-gF6" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ScatterplotConfig"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="mnG-GK-gF6" secondAttribute="bottom" id="P7K-1P-v5A"/>
+                                                <constraint firstItem="mnG-GK-gF6" firstAttribute="top" secondItem="v8N-MQ-eiX" secondAttribute="top" id="bhh-Nd-Ycn"/>
+                                                <constraint firstItem="mnG-GK-gF6" firstAttribute="leading" secondItem="v8N-MQ-eiX" secondAttribute="leading" id="dh1-lh-xWi"/>
+                                                <constraint firstAttribute="trailing" secondItem="mnG-GK-gF6" secondAttribute="trailing" id="xvl-XZ-0Cx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="graffeineView" destination="mnG-GK-gF6" id="icF-GJ-UXa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -139,6 +165,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="1536"/>
                     <connections>
                         <outlet property="table" destination="TxQ-C5-Auw" id="nPA-gD-Dte"/>
                     </connections>

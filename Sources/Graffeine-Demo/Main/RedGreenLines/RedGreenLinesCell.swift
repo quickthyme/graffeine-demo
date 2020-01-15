@@ -17,11 +17,11 @@ class RedGreenLinesCell: UITableViewCell, DataAppliable {
         }
 
         graffeineView.layer(id: LayerID.greenLine)?.apply {
-            $0.data = GraffeineLayer.Data(valueMax: 50, values: [13, 28, 33, 44, 9, 18, nil])
+            $0.data = GraffeineLayer.Data(valueMax: 50, values: [13, 28, 33, 44, 8, 16, nil])
         }
 
         graffeineView.layer(id: LayerID.greenLineProj)?.apply {
-            $0.data = GraffeineLayer.Data(valueMax: 50, values: [nil, nil, nil, nil, nil, 18, 27])
+            $0.data = GraffeineLayer.Data(valueMax: 50, values: [nil, nil, nil, nil, nil, 16, 24])
         }
     }
 }

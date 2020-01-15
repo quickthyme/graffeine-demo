@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,7 +33,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         case 0: return "Vertical Descending Bars"
         case 1: return "Red Green Lines"
         case 2: return "Horizontal Grouped Bars"
-        case 3: return "Scatter Plot"
+        case 3: return "Line Points"
+        case 4: return "Scatter Plot"
         default: return ""
         }
     }
@@ -43,7 +44,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         case (0, 0): return "VerticalDescendingBarsCell"
         case (1, 0): return "RedGreenLinesCell"
         case (2, 0): return "HorizontalGroupedBarsCell"
-        case (3, 0): return "ScatterplotCell"
+        case (3, 0): return "LinePointsCell"
+        case (4, 0): return "ScatterplotCell"
         default: return "VerticalDescendingBarsCell"
         }
     }
