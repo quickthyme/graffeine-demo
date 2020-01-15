@@ -21,3 +21,7 @@ Here are a few lo-res examples:
  
  <br />
 
+ ![sample_4](docs/sample_4.png)
+  
+  <br />
+

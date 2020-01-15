@@ -97,6 +97,32 @@
                                             <outlet property="graffeineView" destination="SES-6Z-bnE" id="CP5-E3-4zP"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ScatterplotCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScatterplotCell" id="pRy-97-Yul" userLabel="ScatterplotCell" customClass="ScatterplotCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="835.5" width="414" height="260"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pRy-97-Yul" id="7SP-kx-fja">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3G2-FV-NgS" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ScatterplotConfig"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3G2-FV-NgS" firstAttribute="leading" secondItem="7SP-kx-fja" secondAttribute="leading" id="Sq3-nN-1s5"/>
+                                                <constraint firstItem="3G2-FV-NgS" firstAttribute="top" secondItem="7SP-kx-fja" secondAttribute="top" id="UCT-dy-ZaI"/>
+                                                <constraint firstAttribute="bottom" secondItem="3G2-FV-NgS" secondAttribute="bottom" id="WMX-hu-6G5"/>
+                                                <constraint firstAttribute="trailing" secondItem="3G2-FV-NgS" secondAttribute="trailing" id="eue-mW-BW8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="graffeineView" destination="3G2-FV-NgS" id="hFH-lW-BEL"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="OqM-cJ-NB1"/>

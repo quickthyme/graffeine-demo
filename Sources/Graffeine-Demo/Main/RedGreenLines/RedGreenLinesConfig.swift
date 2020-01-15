@@ -5,7 +5,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
 
     enum ID: Hashable {
         case topGutter, rightGutter, bottomGutter, leftGutter
-        case hGrid, vGrid, redLine, greenLine
+        case hGrid, vGrid, redLine, redLineProj, greenLine, greenLineProj
     }
 
     required init(_ graffeineView: GraffeineView) {
@@ -83,6 +83,15 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.lineJoin = .round
                 }),
 
+            GraffeineLineLayer(id: ID.redLineProj)
+                .apply ({
+                    $0.colors = [.red]
+                    $0.unitMargin = unitMargin
+                    $0.dashPattern = [4, 3]
+                    $0.thickness = 8.0
+                    $0.lineJoin = .round
+                }),
+
             GraffeineLineLayer(id: ID.greenLine)
                 .apply ({
                     $0.colors = [.green]
@@ -90,6 +99,15 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.thickness = 8.0
                     $0.lineJoin = .round
                 }),
+
+        GraffeineLineLayer(id: ID.greenLineProj)
+            .apply ({
+                $0.colors = [.green]
+                $0.unitMargin = unitMargin
+                $0.dashPattern = [4, 3]
+                $0.thickness = 8.0
+                $0.lineJoin = .round
+            })
         ]
     }
 }

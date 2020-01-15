@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */; };
+		DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */; };
 		DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F21C523C6DD46009629DD /* AppDelegate.swift */; };
 		DC7F21CA23C6DD46009629DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F21C923C6DD46009629DD /* MainViewController.swift */; };
 		DC7F21CF23C6DD49009629DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7F21CE23C6DD49009629DD /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotConfig.swift; sourceTree = "<group>"; };
+		DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotCell.swift; sourceTree = "<group>"; };
 		DC7F21AE23C6AF59009629DD /* GraffeineLibrarySymbolProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraffeineLibrarySymbolProtection.swift; sourceTree = "<group>"; };
 		DC7F21C323C6DD46009629DD /* Graffeine-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graffeine-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7F21C523C6DD46009629DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC2FA26723CE8F9F00E88807 /* Scatterplot */ = {
+			isa = PBXGroup;
+			children = (
+				DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */,
+				DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */,
+			);
+			path = Scatterplot;
+			sourceTree = "<group>";
+		};
 		DC612E1B23B43B8000C08AB5 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,7 @@
 				DC7F21C923C6DD46009629DD /* MainViewController.swift */,
 				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
 				DC7F220D23C7BF70009629DD /* RedGreenLines */,
+				DC2FA26723CE8F9F00E88807 /* Scatterplot */,
 				DC7F21EC23C6E56A009629DD /* VerticalDescendingBars */,
 			);
 			path = Main;
@@ -344,9 +358,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7F21CA23C6DD46009629DD /* MainViewController.swift in Sources */,
+				DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */,
 				DC7F221223C7C126009629DD /* RedGreenLinesConfig.swift in Sources */,
 				DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */,
 				DC7F221923C7E891009629DD /* HorizontalGroupedBarsConfig.swift in Sources */,
+				DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */,
 				DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */,
 				DC7F221123C7BFA4009629DD /* RedGreenLinesCell.swift in Sources */,
 				DC7F21D723C6DD8C009629DD /* GraffeineLibrarySymbolProtection.swift in Sources */,
