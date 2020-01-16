@@ -12,6 +12,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
         super.init(graffeineView)
 
         let unitMargin: CGFloat = 6.0
+        let barLayerInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
 
         graffeineView.layers = [
 
@@ -21,6 +22,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
 
             GraffeineHorizontalGutter(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
+                    $0.insets = barLayerInsets
                     $0.colors = [.purple]
                     $0.labelHorizontalAlignmentMode = .center
                     $0.labelVerticalAlignmentMode = .top
@@ -28,6 +30,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
 
             GraffeineVerticalGutter(id: ID.leftGutter, width: 50, region: .leftGutter)
                 .apply ({
+                    $0.insets = UIEdgeInsets(top: -6, left: 0, bottom: -6, right: 0)
                     $0.rowMargin = unitMargin
                     $0.colors = [.darkGray]
                     $0.labelHorizontalAlignmentMode = .right
@@ -37,14 +40,15 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
 
             GraffeineGridLineLayer(id: ID.grid)
                 .apply ({
-                    $0.colors = [.lightGray]
-                    $0.dashPattern = [1, 3]
+                    $0.colors = [.darkGray]
+                    $0.dashPattern = [1, 4]
                     $0.thickness = 0.5
-                    $0.data = GraffeineLayer.Data(valueMax: 10, values: [2.5, 5, 7.5, 10])
+                    $0.data = GraffeineLayer.Data(valueMax: 10, values: [0, 2.5, 5, 7.5, 10])
                 }),
 
             GraffeineBarLayer(id: ID.descendingBars)
                 .apply ({
+                    $0.insets = barLayerInsets
                     $0.barMargin = unitMargin
                     $0.colors = [.purple]
                 })
