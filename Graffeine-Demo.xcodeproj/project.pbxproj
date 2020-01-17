@@ -28,6 +28,8 @@
 		DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F221723C7E639009629DD /* HorizontalGroupedBarsCell.swift */; };
 		DC7F222823C860C4009629DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DC7F222523C860C4009629DD /* README.md */; };
 		DC7F222923C860C4009629DD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DC7F222723C860C4009629DD /* LICENSE */; };
+		DCE4C9DF23D037AE00C47EFD /* PieSlicesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */; };
+		DCE4C9E023D037B200C47EFD /* PieSlicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		DC7F221823C7E639009629DD /* HorizontalGroupedBarsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalGroupedBarsConfig.swift; sourceTree = "<group>"; };
 		DC7F222523C860C4009629DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC7F222723C860C4009629DD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesConfig.swift; sourceTree = "<group>"; };
+		DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 				DC7F21C923C6DD46009629DD /* MainViewController.swift */,
 				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
 				DC2FA27923CEB53600E88807 /* LinePoints */,
+				DCE4C9DB23D0371E00C47EFD /* PieSlices */,
 				DC7F220D23C7BF70009629DD /* RedGreenLines */,
 				DC2FA26723CE8F9F00E88807 /* Scatterplot */,
 				DC7F21EC23C6E56A009629DD /* VerticalDescendingBars */,
@@ -234,6 +239,15 @@
 				DC7F221823C7E639009629DD /* HorizontalGroupedBarsConfig.swift */,
 			);
 			path = HorizontalGroupedBars;
+			sourceTree = "<group>";
+		};
+		DCE4C9DB23D0371E00C47EFD /* PieSlices */ = {
+			isa = PBXGroup;
+			children = (
+				DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */,
+				DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */,
+			);
+			path = PieSlices;
 			sourceTree = "<group>";
 		};
 		DCF3C78223C699B900F5F92F /* Frameworks */ = {
@@ -375,6 +389,7 @@
 				DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */,
 				DC2FA27E23CEB5A700E88807 /* LinePointsCell.swift in Sources */,
 				DC7F221223C7C126009629DD /* RedGreenLinesConfig.swift in Sources */,
+				DCE4C9DF23D037AE00C47EFD /* PieSlicesConfig.swift in Sources */,
 				DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */,
 				DC7F221923C7E891009629DD /* HorizontalGroupedBarsConfig.swift in Sources */,
 				DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */,
@@ -385,6 +400,7 @@
 				DC7F21EF23C6EBCE009629DD /* VerticalDescendingBarsConfig.swift in Sources */,
 				DC7F21DC23C6E014009629DD /* VerticalDescendingBarsCell.swift in Sources */,
 				DC7F21EE23C6E6EB009629DD /* DataAppliable.swift in Sources */,
+				DCE4C9E023D037B200C47EFD /* PieSlicesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

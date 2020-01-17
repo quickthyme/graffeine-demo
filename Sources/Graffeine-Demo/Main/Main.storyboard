@@ -12,11 +12,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="MainViewController" customClass="MainViewController" customModule="Graffeine_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1796"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="260" estimatedRowHeight="260" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TxQ-C5-Auw">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1458"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1718"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VerticalDescendingBarsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerticalDescendingBarsCell" id="fwf-I0-ubm" userLabel="VerticalDescendingBarsCell" customClass="VerticalDescendingBarsCell" customModule="Graffeine_Demo" customModuleProvider="target">
@@ -149,6 +149,32 @@
                                             <outlet property="graffeineView" destination="mnG-GK-gF6" id="icF-GJ-UXa"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PieSlicesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PieSlicesCell" id="0f9-1c-bN9" userLabel="PieSlicesCell" customClass="PieSlicesCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1355.5" width="414" height="260"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0f9-1c-bN9" id="BJl-3o-dOY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLz-UT-5yS" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                                    <color key="backgroundColor" red="0.00071009344594121827" green="0.25007876074314717" blue="0.0011017746356947391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="PieSlicesConfig"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="pLz-UT-5yS" secondAttribute="trailing" id="6zA-WG-yzS"/>
+                                                <constraint firstAttribute="bottom" secondItem="pLz-UT-5yS" secondAttribute="bottom" id="8fy-Fh-aed"/>
+                                                <constraint firstItem="pLz-UT-5yS" firstAttribute="top" secondItem="BJl-3o-dOY" secondAttribute="top" id="9sp-kK-bsd"/>
+                                                <constraint firstItem="pLz-UT-5yS" firstAttribute="leading" secondItem="BJl-3o-dOY" secondAttribute="leading" id="Qhh-la-GSq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="graffeineView" destination="pLz-UT-5yS" id="1fd-pc-QUl"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="OqM-cJ-NB1"/>
@@ -166,7 +192,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="1536"/>
+                    <size key="freeformSize" width="414" height="1796"/>
                     <connections>
                         <outlet property="table" destination="TxQ-C5-Auw" id="nPA-gD-Dte"/>
                     </connections>
