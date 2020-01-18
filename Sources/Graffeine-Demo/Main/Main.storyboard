@@ -169,7 +169,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLz-UT-5yS" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
-                                                    <color key="backgroundColor" red="0.00071009344594121827" green="0.25007876074314717" blue="0.0011017746356947391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.00039243121180611729" green="0.13820534703756338" blue="0.00060889275614962044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="PieSlicesConfig"/>
                                                     </userDefinedRuntimeAttributes>

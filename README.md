@@ -5,7 +5,7 @@
 ![license](https://img.shields.io/github/license/quickthyme/graffeine-demo.svg?color=black)
 
 
-iOS app demonstrating how to quickly put together bar and line graphs using *[graffeine](https://github.com/quickthyme/graffeine)*.
+iOS app demonstrating how to quickly put together charts and graphs using *[graffeine](https://github.com/quickthyme/graffeine)*.
 
 Here are a few lo-res examples:
 
