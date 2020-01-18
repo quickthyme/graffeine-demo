@@ -42,6 +42,8 @@ class LinePointsConfig: GraffeineViewConfig {
                     $0.colors = [.black]
                     $0.unitMargin = unitMargin
                     $0.plotDiameter = 16.0
+                    $0.animationDurationPercentDelay = 0.98 // delay until 98% of duration has expired
+                    // this is so we can coordinate animation of plots until after lines have moved
                 })
         ]
     }
