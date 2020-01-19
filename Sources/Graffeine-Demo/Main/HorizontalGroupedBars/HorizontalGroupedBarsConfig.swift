@@ -46,17 +46,17 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
             GraffeineBarLayer(id: ID.bars1)
                 .apply ({
                     $0.flipXY = true
-                    $0.barMargin = unitMargin
+                    $0.unitMargin = unitMargin
                     $0.colors = [UIColor(white: 1.0, alpha: 0.7)]
-                    $0.barSubdivision = GraffeineBarLayer.Bar.Subdivision(index: 0, width: .percentage(0.5))
+                    $0.unitSubdivision = GraffeineLayer.UnitSubdivision(index: 0, width: .percentage(0.5))
                 }),
 
             GraffeineBarLayer(id: ID.bars2)
                 .apply ({
                     $0.flipXY = true
-                    $0.barMargin = unitMargin
+                    $0.unitMargin = unitMargin
                     $0.colors = [UIColor(white: 0.7, alpha: 0.7)]
-                    $0.barSubdivision = GraffeineBarLayer.Bar.Subdivision(index: 1, width: .percentage(0.5))
+                    $0.unitSubdivision = GraffeineLayer.UnitSubdivision(index: 1, width: .percentage(0.5))
                 })
         ]
     }

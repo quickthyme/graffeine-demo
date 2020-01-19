@@ -14,20 +14,17 @@ class LinePointsCell: UITableViewCell, DataAppliable {
         dataSetIndex = (dataSetIndex + 1) % dataSets.count
 
         // Use `setData(_:animated:)` instead of assignment whenever animation is desired
-        graffeineView.layer(id: LayerID.line)!.setData(lineAndPointData,
-                                                       animated: true,
-                                                       duration: 2.0,
-                                                       timing: .easeInEaseOut)
+        graffeineView.layer(id: LayerID.line)!.setData(lineAndPointData, animator:
+            GraffeineDataAnimators.Line.Morph(duration: 2.0,
+                                              timing: .easeInEaseOut))
 
-        graffeineView.layer(id: LayerID.points)!.setData(lineAndPointData,
-                                                         animated: true,
-                                                         duration: 2.0,
-                                                         timing: .easeInEaseOut)
+        graffeineView.layer(id: LayerID.points)!
+            .setData(lineAndPointData, animator:
+                GraffeineDataAnimators.Plot.FadeIn(duration: 2.0,
+                                                   timing: .easeInEaseOut,
+                                                   delayRatio: 0.99))
 
-        graffeineView.layer(id: LayerID.bottomGutter)?.setData(labelData,
-                                                               animated: true,
-                                                               duration: 2.0,
-                                                               timing: .easeInEaseOut)
+        graffeineView.layer(id: LayerID.bottomGutter)?.setData(labelData, animator: nil)
     }
 
     let dataSets: [[Double]] = [

@@ -49,7 +49,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
             GraffeineBarLayer(id: ID.descendingBars)
                 .apply ({
                     $0.insets = barLayerInsets
-                    $0.barMargin = unitMargin
+                    $0.unitMargin = unitMargin
                     $0.colors = [.purple]
                 })
         ]

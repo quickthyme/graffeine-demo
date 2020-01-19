@@ -17,8 +17,8 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
         let newData = GraffeineLayer.Data(valueMax: 100,
                                           values: dataSets[dataSetIndex])
 
-        // Use `setData(_:animated:)` instead of assignment whenever animation is desired
-        pieLayer.setData(newData, animated: true, duration: 1.0, timing: .easeInEaseOut)
+        // Use `setData(_:animator:)` instead of assignment whenever animation is desired
+        pieLayer.setData(newData, animator: getRandomPieAnimator())
     }
 
     let dataSets: [[Double]] = [
@@ -28,6 +28,13 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
     ]
 
     var dataSetIndex: Int = 0
+
+    func getRandomPieAnimator() -> GraffeinePieDataAnimating {
+        switch (Int.random(in: 0...3)) {
+        case 3:  return GraffeineDataAnimators.Pie.Spin(duration: 1.2, timing: .easeInEaseOut)
+        default: return GraffeineDataAnimators.Pie.Automatic(duration: 1.2, timing: .easeInEaseOut)
+        }
+    }
 
     func applyData() {
         graffeineView.layer(id: LayerID.pie)?

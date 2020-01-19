@@ -33,12 +33,23 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="VerticalDescendingBarsConfig"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-ZK-XvS">
+                                                    <rect key="frame" x="20.5" y="13" width="373" height="234"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <connections>
+                                                        <action selector="buttonAction:" destination="fwf-I0-ubm" eventType="touchUpInside" id="hne-0Q-Xnd"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="U0I-tl-j8V" firstAttribute="top" secondItem="EQl-g9-hyh" secondAttribute="top" id="0zl-mA-Bet"/>
+                                                <constraint firstItem="Y0T-ZK-XvS" firstAttribute="centerY" secondItem="U0I-tl-j8V" secondAttribute="centerY" id="77j-yE-6U1"/>
+                                                <constraint firstItem="Y0T-ZK-XvS" firstAttribute="centerX" secondItem="U0I-tl-j8V" secondAttribute="centerX" id="7SS-mY-MMo"/>
                                                 <constraint firstAttribute="trailing" secondItem="U0I-tl-j8V" secondAttribute="trailing" id="E3d-Ht-vzW"/>
                                                 <constraint firstItem="U0I-tl-j8V" firstAttribute="leading" secondItem="EQl-g9-hyh" secondAttribute="leading" id="QXi-my-bjx"/>
+                                                <constraint firstItem="Y0T-ZK-XvS" firstAttribute="height" secondItem="U0I-tl-j8V" secondAttribute="height" multiplier="0.9" id="c4U-ll-Eif"/>
                                                 <constraint firstAttribute="bottom" secondItem="U0I-tl-j8V" secondAttribute="bottom" id="lXY-iP-6qf"/>
+                                                <constraint firstItem="Y0T-ZK-XvS" firstAttribute="width" secondItem="U0I-tl-j8V" secondAttribute="width" multiplier="0.9" id="xbV-V9-CBN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

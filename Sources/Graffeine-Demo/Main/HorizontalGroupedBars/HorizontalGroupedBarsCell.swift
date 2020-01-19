@@ -13,20 +13,16 @@ class HorizontalGroupedBarsCell: UITableViewCell, DataAppliable {
         let vLabels: [String]   = ["A", "B", "C", "D", "E", "F", "G", "H"]
         let hLabels: [String]   = ["2", "4", "6", "8", "10", "12", "14", "16", "18", "20"]
 
-        graffeineView.layer(id: LayerID.bars1)?.apply {
-            $0.data = GraffeineLayer.Data(valueMax: 20, values: values1)
-        }
+        graffeineView.layer(id: LayerID.bars1)?
+            .data = GraffeineLayer.Data(valueMax: 20, values: values1)
 
-        graffeineView.layer(id: LayerID.bars2)?.apply {
-            $0.data = GraffeineLayer.Data(valueMax: 20, values: values2)
-        }
+        graffeineView.layer(id: LayerID.bars2)?
+            .data = GraffeineLayer.Data(valueMax: 20, values: values2)
 
-        graffeineView.layer(id: LayerID.leftGutter)?.apply {
-            $0.data = GraffeineLayer.Data(labels: vLabels)
-        }
+        graffeineView.layer(id: LayerID.leftGutter)?
+            .data = GraffeineLayer.Data(labels: vLabels)
 
-        graffeineView.layer(id: LayerID.bottomGutter)?.apply {
-            $0.data = GraffeineLayer.Data(labels: hLabels)
-        }
+        graffeineView.layer(id: LayerID.bottomGutter)?
+            .data = GraffeineLayer.Data(labels: hLabels)
     }
 }
