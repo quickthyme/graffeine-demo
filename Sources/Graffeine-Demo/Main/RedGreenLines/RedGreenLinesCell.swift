@@ -15,29 +15,34 @@ class RedGreenLinesCell: UITableViewCell, DataAppliable {
         applyData(animated: false)
     }
 
-    func applyData(animated: Bool) {
-        let lineAnimator = (animated)
+    func lineAnimator(_ animated: Bool) -> GraffeineLineDataAnimating? {
+        return (animated)
             ? GraffeineDataAnimators.Line.Trace(delay: 0, duration: 1.8, timing: .easeIn)
             : nil
+    }
 
-        let projectionLineAnimator = (animated)
+    func projectionLineAnimator(_ animated: Bool) -> GraffeineLineDataAnimating? {
+        return (animated)
             ? GraffeineDataAnimators.Line.Trace(delay: 1.8, duration: 0.2, timing: .linear)
             : nil
+    }
+
+    func applyData(animated: Bool) {
 
         graffeineView.layer(id: LayerID.redLine)?
             .setData(GraffeineData(valueMax: 50, values: [4, 11, 28, 22, 29, 31, nil]),
-                 animator: lineAnimator)
+                 animator: lineAnimator(animated))
 
         graffeineView.layer(id: LayerID.redLineProj)?
             .setData(GraffeineData(valueMax: 50, values: [nil, nil, nil, nil, nil, 31, 33]),
-                     animator: projectionLineAnimator)
+                     animator: projectionLineAnimator(animated))
 
         graffeineView.layer(id: LayerID.greenLine)?
             .setData(GraffeineData(valueMax: 50, values: [13, 28, 33, 44, 8, 16, nil]),
-                 animator: lineAnimator)
+                 animator: lineAnimator(animated))
 
         graffeineView.layer(id: LayerID.greenLineProj)?
             .setData(GraffeineData(valueMax: 50, values: [nil, nil, nil, nil, nil, 16, 24]),
-                     animator: projectionLineAnimator)
+                     animator: projectionLineAnimator(animated))
     }
 }
