@@ -70,12 +70,23 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="RedGreenLinesConfig"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7o8-Dz-pqL">
+                                                    <rect key="frame" x="20.5" y="13" width="373" height="234"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <connections>
+                                                        <action selector="buttonAction:" destination="TPb-MT-D03" eventType="touchUpInside" id="o2Y-eM-VcD"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="3IK-E1-eFs" firstAttribute="top" secondItem="5YH-14-Q9c" secondAttribute="top" id="ACm-3H-vPs"/>
                                                 <constraint firstItem="3IK-E1-eFs" firstAttribute="leading" secondItem="5YH-14-Q9c" secondAttribute="leading" id="DVb-pS-h8r"/>
                                                 <constraint firstAttribute="bottom" secondItem="3IK-E1-eFs" secondAttribute="bottom" id="QJI-1b-S1n"/>
+                                                <constraint firstItem="7o8-Dz-pqL" firstAttribute="width" secondItem="3IK-E1-eFs" secondAttribute="width" multiplier="0.9" id="XdE-op-6YW"/>
+                                                <constraint firstItem="7o8-Dz-pqL" firstAttribute="centerX" secondItem="3IK-E1-eFs" secondAttribute="centerX" id="fdE-fu-SFT"/>
+                                                <constraint firstItem="7o8-Dz-pqL" firstAttribute="height" secondItem="3IK-E1-eFs" secondAttribute="height" multiplier="0.9" id="nY3-Rq-x0c"/>
                                                 <constraint firstAttribute="trailing" secondItem="3IK-E1-eFs" secondAttribute="trailing" id="pJK-xG-QsP"/>
+                                                <constraint firstItem="7o8-Dz-pqL" firstAttribute="centerY" secondItem="3IK-E1-eFs" secondAttribute="centerY" id="q4B-gM-iQV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
