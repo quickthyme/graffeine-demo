@@ -35,14 +35,14 @@ class LinePointsCell: UITableViewCell, DataAppliable {
 
     var dataSetIndex: Int = 0
 
-    var lineAndPointData: GraffeineLayer.Data {
+    var lineAndPointData: GraffeineData {
         let values = dataSets[dataSetIndex]
-        return GraffeineLayer.Data(valueMax: values.max()!, values: values + [nil])
+        return GraffeineData(valueMax: values.max()!, values: values + [nil])
     }
 
-    var labelData: GraffeineLayer.Data {
+    var labelData: GraffeineData {
         let values = dataSets[dataSetIndex]
-        return GraffeineLayer.Data(labels: values.map { String(Int($0)) })
+        return GraffeineData(labels: values.map { String(Int($0)) })
     }
 
     func applyData() {

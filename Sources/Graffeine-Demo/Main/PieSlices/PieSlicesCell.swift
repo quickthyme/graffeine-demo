@@ -14,7 +14,7 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
         dataSetIndex = (dataSetIndex + 1) % dataSets.count
 
         let pieLayer = graffeineView.layer(id: LayerID.pie)!
-        let newData = GraffeineLayer.Data(valueMax: 100,
+        let newData = GraffeineData(valueMax: 100,
                                           values: dataSets[dataSetIndex])
 
         // Use `setData(_:animator:)` instead of assignment whenever animation is desired
@@ -38,6 +38,6 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     func applyData() {
         graffeineView.layer(id: LayerID.pie)?
-            .data = GraffeineLayer.Data(valueMax: 100, values: dataSets[dataSetIndex])
+            .data = GraffeineData(valueMax: 100, values: dataSets[dataSetIndex])
     }
 }

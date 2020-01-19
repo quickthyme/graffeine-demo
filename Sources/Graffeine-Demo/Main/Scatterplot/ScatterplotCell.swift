@@ -12,16 +12,16 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
         graffeineView.layer(id: LayerID.hGrid)?.apply {
             let max = values.count - 1
             let marks = Array(0...max).map { Double($0) }
-            $0.data = GraffeineLayer.Data(valueMax: Double(max), values: marks)
+            $0.data = GraffeineData(valueMax: Double(max), values: marks)
         }
 
         graffeineView.layer(id: LayerID.vGrid)?.apply {
             let marks = Array(stride(from: 0.0, through: 50.0, by: 5.0))
-            $0.data = GraffeineLayer.Data(valueMax: 50, values: marks)
+            $0.data = GraffeineData(valueMax: 50, values: marks)
         }
 
         graffeineView.layer(id: LayerID.vectorPlots)?.apply {
-            $0.data = GraffeineLayer.Data(valueMax: 50, values: values)
+            $0.data = GraffeineData(valueMax: 50, values: values)
         }
     }
 }

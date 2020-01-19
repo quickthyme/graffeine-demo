@@ -35,7 +35,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.colors = [.darkGray]
                     $0.labelHorizontalAlignmentMode = .right
                     $0.labelVerticalAlignmentMode = .centerTopBottom
-                    $0.data = GraffeineLayer.Data(labels: ["high", "medium", "low"])
+                    $0.data = GraffeineData(labels: ["high", "medium", "low"])
                 }),
 
             GraffeineGridLineLayer(id: ID.grid)
@@ -43,7 +43,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.colors = [.darkGray]
                     $0.dashPattern = [1, 4]
                     $0.thickness = 0.5
-                    $0.data = GraffeineLayer.Data(valueMax: 10, values: [0, 2.5, 5, 7.5, 10])
+                    $0.data = GraffeineData(valueMax: 10, values: [0, 2.5, 5, 7.5, 10])
                 }),
 
             GraffeineBarLayer(id: ID.descendingBars)

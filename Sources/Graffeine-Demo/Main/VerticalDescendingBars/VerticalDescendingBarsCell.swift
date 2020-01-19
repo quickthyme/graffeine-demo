@@ -19,11 +19,11 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
         let labels: [String] = values.map { ($0 == nil) ? "?" : "\(Int($0!))" }
 
         graffeineView.layer(id: LayerID.descendingBars)?.apply {
-            $0.data = GraffeineLayer.Data(valueMax: 10, values: values)
+            $0.data = GraffeineData(valueMax: 10, values: values)
         }
 
         graffeineView.layer(id: LayerID.bottomGutter)?.apply {
-            $0.data = GraffeineLayer.Data(labels: labels)
+            $0.data = GraffeineData(labels: labels)
         }
     }
 
@@ -39,12 +39,12 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
 
         // Use `setData(_:animated:)` instead of assignment whenever animation is desired
         graffeineView.layer(id: LayerID.descendingBars)!
-            .setData(GraffeineLayer.Data(valueMax: 10, values: values),
+            .setData(GraffeineData(valueMax: 10, values: values),
                      animator: GraffeineDataAnimators.Bar.Grow(duration: 2.0,
                                                                timing: .easeInEaseOut))
 
         graffeineView.layer(id: LayerID.bottomGutter)?
-            .setData(GraffeineLayer.Data(labels: labels),
+            .setData(GraffeineData(labels: labels),
                      animator: nil)
     }
 }
