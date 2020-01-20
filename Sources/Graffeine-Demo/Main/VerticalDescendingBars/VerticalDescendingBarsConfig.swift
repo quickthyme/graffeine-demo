@@ -51,6 +51,11 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.insets = barLayerInsets
                     $0.unitMargin = unitMargin
                     $0.colors = [.purple]
+                    $0.roundedEnds = .hi(6)
+                    $0.barShadowColor = .black
+                    $0.barShadowOpacity = 0.7
+                    $0.barShadowRadius = 2.0
+                    $0.barShadowOffset = CGSize(width: 0, height: 2)
                 })
         ]
     }

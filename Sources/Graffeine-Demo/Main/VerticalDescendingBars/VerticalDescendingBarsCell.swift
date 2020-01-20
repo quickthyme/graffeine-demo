@@ -17,7 +17,7 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
 
     func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
         return (animated)
-            ? GraffeineDataAnimators.Bar.Grow(duration: 2.0, timing: .easeInEaseOut)
+            ? GraffeineDataAnimators.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
             : nil
     }
 
