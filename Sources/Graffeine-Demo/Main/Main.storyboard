@@ -33,23 +33,12 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="VerticalDescendingBarsConfig"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-ZK-XvS">
-                                                    <rect key="frame" x="20.5" y="13" width="373" height="234"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <connections>
-                                                        <action selector="buttonAction:" destination="fwf-I0-ubm" eventType="touchUpInside" id="hne-0Q-Xnd"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="U0I-tl-j8V" firstAttribute="top" secondItem="EQl-g9-hyh" secondAttribute="top" id="0zl-mA-Bet"/>
-                                                <constraint firstItem="Y0T-ZK-XvS" firstAttribute="centerY" secondItem="U0I-tl-j8V" secondAttribute="centerY" id="77j-yE-6U1"/>
-                                                <constraint firstItem="Y0T-ZK-XvS" firstAttribute="centerX" secondItem="U0I-tl-j8V" secondAttribute="centerX" id="7SS-mY-MMo"/>
                                                 <constraint firstAttribute="trailing" secondItem="U0I-tl-j8V" secondAttribute="trailing" id="E3d-Ht-vzW"/>
                                                 <constraint firstItem="U0I-tl-j8V" firstAttribute="leading" secondItem="EQl-g9-hyh" secondAttribute="leading" id="QXi-my-bjx"/>
-                                                <constraint firstItem="Y0T-ZK-XvS" firstAttribute="height" secondItem="U0I-tl-j8V" secondAttribute="height" multiplier="0.9" id="c4U-ll-Eif"/>
                                                 <constraint firstAttribute="bottom" secondItem="U0I-tl-j8V" secondAttribute="bottom" id="lXY-iP-6qf"/>
-                                                <constraint firstItem="Y0T-ZK-XvS" firstAttribute="width" secondItem="U0I-tl-j8V" secondAttribute="width" multiplier="0.9" id="xbV-V9-CBN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -70,23 +59,12 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="RedGreenLinesConfig"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7o8-Dz-pqL">
-                                                    <rect key="frame" x="20.5" y="13" width="373" height="234"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <connections>
-                                                        <action selector="buttonAction:" destination="TPb-MT-D03" eventType="touchUpInside" id="o2Y-eM-VcD"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="3IK-E1-eFs" firstAttribute="top" secondItem="5YH-14-Q9c" secondAttribute="top" id="ACm-3H-vPs"/>
                                                 <constraint firstItem="3IK-E1-eFs" firstAttribute="leading" secondItem="5YH-14-Q9c" secondAttribute="leading" id="DVb-pS-h8r"/>
                                                 <constraint firstAttribute="bottom" secondItem="3IK-E1-eFs" secondAttribute="bottom" id="QJI-1b-S1n"/>
-                                                <constraint firstItem="7o8-Dz-pqL" firstAttribute="width" secondItem="3IK-E1-eFs" secondAttribute="width" multiplier="0.9" id="XdE-op-6YW"/>
-                                                <constraint firstItem="7o8-Dz-pqL" firstAttribute="centerX" secondItem="3IK-E1-eFs" secondAttribute="centerX" id="fdE-fu-SFT"/>
-                                                <constraint firstItem="7o8-Dz-pqL" firstAttribute="height" secondItem="3IK-E1-eFs" secondAttribute="height" multiplier="0.9" id="nY3-Rq-x0c"/>
                                                 <constraint firstAttribute="trailing" secondItem="3IK-E1-eFs" secondAttribute="trailing" id="pJK-xG-QsP"/>
-                                                <constraint firstItem="7o8-Dz-pqL" firstAttribute="centerY" secondItem="3IK-E1-eFs" secondAttribute="centerY" id="q4B-gM-iQV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -133,23 +111,12 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="LinePointsConfig"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BK-uk-FcJ">
-                                                    <rect key="frame" x="20.5" y="13" width="373" height="234"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <connections>
-                                                        <action selector="buttonAction:" destination="pRy-97-Yul" eventType="touchUpInside" id="tnM-ep-FDy"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8BK-uk-FcJ" firstAttribute="width" secondItem="3G2-FV-NgS" secondAttribute="width" multiplier="0.9" id="Mp7-sc-FNP"/>
-                                                <constraint firstItem="8BK-uk-FcJ" firstAttribute="centerY" secondItem="3G2-FV-NgS" secondAttribute="centerY" id="Rco-yw-1aV"/>
                                                 <constraint firstItem="3G2-FV-NgS" firstAttribute="leading" secondItem="7SP-kx-fja" secondAttribute="leading" id="Sq3-nN-1s5"/>
-                                                <constraint firstItem="8BK-uk-FcJ" firstAttribute="height" secondItem="3G2-FV-NgS" secondAttribute="height" multiplier="0.9" id="Sq7-qQ-OtP"/>
                                                 <constraint firstItem="3G2-FV-NgS" firstAttribute="top" secondItem="7SP-kx-fja" secondAttribute="top" id="UCT-dy-ZaI"/>
                                                 <constraint firstAttribute="bottom" secondItem="3G2-FV-NgS" secondAttribute="bottom" id="WMX-hu-6G5"/>
                                                 <constraint firstAttribute="trailing" secondItem="3G2-FV-NgS" secondAttribute="trailing" id="eue-mW-BW8"/>
-                                                <constraint firstItem="8BK-uk-FcJ" firstAttribute="centerX" secondItem="3G2-FV-NgS" secondAttribute="centerX" id="jk6-2j-fPh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -196,23 +163,12 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="PieSlicesConfig"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR6-sA-4MS">
-                                                    <rect key="frame" x="20.5" y="13" width="373" height="234"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <connections>
-                                                        <action selector="buttonAction:" destination="0f9-1c-bN9" eventType="touchUpInside" id="vD0-J6-rYM"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="pLz-UT-5yS" secondAttribute="trailing" id="6zA-WG-yzS"/>
                                                 <constraint firstAttribute="bottom" secondItem="pLz-UT-5yS" secondAttribute="bottom" id="8fy-Fh-aed"/>
                                                 <constraint firstItem="pLz-UT-5yS" firstAttribute="top" secondItem="BJl-3o-dOY" secondAttribute="top" id="9sp-kK-bsd"/>
-                                                <constraint firstItem="vR6-sA-4MS" firstAttribute="width" secondItem="pLz-UT-5yS" secondAttribute="width" multiplier="0.9" id="PK5-J8-1mm"/>
-                                                <constraint firstItem="vR6-sA-4MS" firstAttribute="height" secondItem="pLz-UT-5yS" secondAttribute="height" multiplier="0.9" id="Q4v-e2-UeT"/>
                                                 <constraint firstItem="pLz-UT-5yS" firstAttribute="leading" secondItem="BJl-3o-dOY" secondAttribute="leading" id="Qhh-la-GSq"/>
-                                                <constraint firstItem="vR6-sA-4MS" firstAttribute="centerY" secondItem="pLz-UT-5yS" secondAttribute="centerY" id="U29-wu-OcI"/>
-                                                <constraint firstItem="vR6-sA-4MS" firstAttribute="centerX" secondItem="pLz-UT-5yS" secondAttribute="centerX" id="acW-Db-eps"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

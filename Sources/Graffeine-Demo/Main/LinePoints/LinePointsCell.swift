@@ -7,24 +7,12 @@ class LinePointsCell: UITableViewCell, DataAppliable {
     
     @IBOutlet weak var graffeineView: GraffeineView!
 
-    // Press the button to animate data changes
-    @IBAction func buttonAction(_ sender: AnyObject?) {
-
-        // Each button press cycles which data set is being displayed
-        dataSetIndex = (dataSetIndex + 1) % dataSets.count
-
-        // Use `setData(_:animated:)` instead of assignment whenever animation is desired
-        graffeineView.layer(id: LayerID.line)!.setData(lineAndPointData, animator:
-            GraffeineDataAnimators.Line.Morph(duration: 2.0,
-                                              timing: .easeInEaseOut))
-
-        graffeineView.layer(id: LayerID.points)!
-            .setData(lineAndPointData, animator:
-                GraffeineDataAnimators.Plot.FadeIn(duration: 2.0,
-                                                   timing: .easeInEaseOut,
-                                                   delayRatio: 0.99))
-
-        graffeineView.layer(id: LayerID.bottomGutter)?.setData(labelData, animator: nil)
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        graffeineView.onSelect = {
+            self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+            self.applyDataAnimated()
+        }
     }
 
     let dataSets: [[Double]] = [
@@ -49,5 +37,19 @@ class LinePointsCell: UITableViewCell, DataAppliable {
         graffeineView.layer(id: LayerID.line)?.data = lineAndPointData
         graffeineView.layer(id: LayerID.points)?.data = lineAndPointData
         graffeineView.layer(id: LayerID.bottomGutter)?.data = labelData
+    }
+
+    func applyDataAnimated() {
+        graffeineView.layer(id: LayerID.line)!.setData(lineAndPointData, animator:
+            GraffeineDataAnimators.Line.Morph(duration: 2.0,
+                                              timing: .easeInEaseOut))
+
+        graffeineView.layer(id: LayerID.points)!
+            .setData(lineAndPointData, animator:
+                GraffeineDataAnimators.Plot.FadeIn(duration: 2.0,
+                                                   timing: .easeInEaseOut,
+                                                   delayRatio: 0.99))
+
+        graffeineView.layer(id: LayerID.bottomGutter)?.setData(labelData, animator: nil)
     }
 }

@@ -7,12 +7,12 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
-    // Press the button to animate data changes
-    @IBAction func buttonAction(_ sender: AnyObject?) {
-
-        // Each button press cycles which data set is being displayed
-        dataSetIndex = (dataSetIndex + 1) % dataSets.count
-        applyDataAnimated()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        graffeineView.onSelect = {
+            self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+            self.applyDataAnimated()
+        }
     }
 
     let dataSets: [[Double]] = [

@@ -8,7 +8,7 @@ class PieSlicesConfig: GraffeineViewConfig {
         case pie, pieLabels
     }
 
-    let colors: [UIColor] = [.red, .purple, .blue, .orange, .yellow, .systemIndigo]
+    let colors: [UIColor] = [.red, .purple, .blue, .orange, .systemPink, .systemIndigo]
 
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
@@ -37,7 +37,7 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.clockwise = true
                     $0.rotation = 270
                     $0.diameter = .percentage(0.65)
-                    $0.colors = [.white]
+                    $0.colors = [UIColor(white: 0.99, alpha: 0.88)]
                     $0.shouldUseDataValueMax = true
                     $0.fontSize = 12
                 })

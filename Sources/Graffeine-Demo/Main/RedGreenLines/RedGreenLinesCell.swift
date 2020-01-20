@@ -7,8 +7,11 @@ class RedGreenLinesCell: UITableViewCell, DataAppliable {
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
-    @IBAction func buttonAction(_ sender: AnyObject?) {
-        applyData(animated: true)
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        graffeineView.onSelect = {
+            self.applyData(animated: true)
+        }
     }
 
     func applyData() {

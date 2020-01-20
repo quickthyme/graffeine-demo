@@ -7,6 +7,20 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        graffeineView.onSelect = {
+            self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+            self.applyData(animated: true)
+        }
+    }
+
+    func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
+        return (animated)
+            ? GraffeineDataAnimators.Bar.Grow(duration: 2.0, timing: .easeInEaseOut)
+            : nil
+    }
+
     let dataSets: [[Double?]] = [
         [10, 9, 8, nil, 6, 5, 4, 3, 2,  1],
         [ 1, 2, 3,   4, 5, 6, 7, 8, 9, 10]
@@ -15,33 +29,16 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
     var dataSetIndex: Int = 0
 
     func applyData() {
-        let values: [Double?] = dataSets[dataSetIndex]
-        let labels: [String] = values.map { ($0 == nil) ? "?" : "\(Int($0!))" }
-
-        graffeineView.layer(id: LayerID.descendingBars)?.apply {
-            $0.data = GraffeineData(valueMax: 10, values: values)
-        }
-
-        graffeineView.layer(id: LayerID.bottomGutter)?.apply {
-            $0.data = GraffeineData(labels: labels)
-        }
+        applyData(animated: false)
     }
 
-
-    // Press the button to animate data changes
-    @IBAction func buttonAction(_ sender: AnyObject?) {
-
-        // Each button press cycles which data set is being displayed
-        dataSetIndex = (dataSetIndex + 1) % dataSets.count
-
+    func applyData(animated: Bool) {
         let values: [Double?] = dataSets[dataSetIndex]
         let labels: [String] = values.map { ($0 == nil) ? "?" : "\(Int($0!))" }
 
-        // Use `setData(_:animated:)` instead of assignment whenever animation is desired
         graffeineView.layer(id: LayerID.descendingBars)!
             .setData(GraffeineData(valueMax: 10, values: values),
-                     animator: GraffeineDataAnimators.Bar.Grow(duration: 2.0,
-                                                               timing: .easeInEaseOut))
+                     animator: barAnimator(animated))
 
         graffeineView.layer(id: LayerID.bottomGutter)?
             .setData(GraffeineData(labels: labels),
