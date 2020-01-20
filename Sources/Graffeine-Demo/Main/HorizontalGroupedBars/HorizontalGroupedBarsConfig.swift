@@ -15,11 +15,11 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
 
         graffeineView.layers = [
 
-            GraffeineHorizontalGutter(id: ID.topGutter, height: 16, region: .topGutter),
+            GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 16, region: .topGutter),
 
-            GraffeineVerticalGutter(id: ID.rightGutter, width: 32, region: .rightGutter),
+            GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 32, region: .rightGutter),
 
-            GraffeineHorizontalGutter(id: ID.bottomGutter, height: 26, region: .bottomGutter)
+            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
                     $0.colors = [.white]
                     $0.labelHorizontalAlignmentMode = .right
@@ -28,7 +28,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.labelVPadding = 2.0
                 }),
 
-            GraffeineVerticalGutter(id: ID.leftGutter, width: 32, region: .leftGutter)
+            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 32, region: .leftGutter)
                 .apply ({
                     $0.rowMargin = unitMargin
                     $0.labelVerticalAlignmentMode = .center

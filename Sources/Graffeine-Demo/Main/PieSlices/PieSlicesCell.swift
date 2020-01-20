@@ -12,13 +12,7 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
         // Each button press cycles which data set is being displayed
         dataSetIndex = (dataSetIndex + 1) % dataSets.count
-
-        let pieLayer = graffeineView.layer(id: LayerID.pie)!
-        let newData = GraffeineData(valueMax: 100,
-                                          values: dataSets[dataSetIndex])
-
-        // Use `setData(_:animator:)` instead of assignment whenever animation is desired
-        pieLayer.setData(newData, animator: getRandomPieAnimator())
+        applyDataAnimated()
     }
 
     let dataSets: [[Double]] = [
@@ -29,6 +23,12 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     var dataSetIndex: Int = 0
 
+    func getData() -> GraffeineData {
+        let dataSet = dataSets[dataSetIndex]
+        let labels: [String?] = dataSet.map { String(Int($0)) }
+        return GraffeineData(valueMax: 100, values: dataSets[dataSetIndex], labels: labels)
+    }
+
     func getRandomPieAnimator() -> GraffeinePieDataAnimating {
         switch (Int.random(in: 0...3)) {
         case 3:  return GraffeineDataAnimators.Pie.Spin(duration: 1.2, timing: .easeInEaseOut)
@@ -37,7 +37,18 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
     }
 
     func applyData() {
-        graffeineView.layer(id: LayerID.pie)?
-            .data = GraffeineData(valueMax: 100, values: dataSets[dataSetIndex])
+        let newData = getData()
+        graffeineView.layer(id: LayerID.pie)?.data = newData
+        graffeineView.layer(id: LayerID.pieLabels)?.data = newData
+    }
+
+    func applyDataAnimated() {
+        let newData = getData()
+        graffeineView.layer(id: LayerID.pie)?.setData(newData, animator: getRandomPieAnimator())
+        graffeineView.layer(id: LayerID.pieLabels)?
+            .setData(newData, animator:
+                GraffeineDataAnimators.RadialLabel.FadeIn(duration: 1.2,
+                                                          timing: .easeInEaseOut,
+                                                          delayRatio: 0.94))
     }
 }

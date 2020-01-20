@@ -15,9 +15,9 @@ class LinePointsConfig: GraffeineViewConfig {
 
         graffeineView.layers = [
 
-            GraffeineHorizontalGutter(id: ID.topGutter, height: 16, region: .topGutter),
+            GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 16, region: .topGutter),
 
-            GraffeineHorizontalGutter(id: ID.bottomGutter, height: 26, region: .bottomGutter)
+            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
                     $0.colors = [.black]
                     $0.labelHorizontalAlignmentMode = .left
@@ -27,7 +27,7 @@ class LinePointsConfig: GraffeineViewConfig {
                     $0.fontSize = 16.0
                 }),
 
-            GraffeineVerticalGutter(id: ID.leftGutter, width: 28, region: .leftGutter),
+            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 28, region: .leftGutter),
 
             GraffeineLineLayer(id: ID.line)
                 .apply ({

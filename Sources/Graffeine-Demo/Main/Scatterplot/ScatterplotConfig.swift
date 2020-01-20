@@ -15,13 +15,13 @@ class ScatterplotConfig: GraffeineViewConfig {
 
         graffeineView.layers = [
 
-            GraffeineHorizontalGutter(id: ID.topGutter, height: 28, region: .topGutter),
+            GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 28, region: .topGutter),
 
-            GraffeineVerticalGutter(id: ID.rightGutter, width: 64, region: .rightGutter),
+            GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 64, region: .rightGutter),
 
-            GraffeineHorizontalGutter(id: ID.bottomGutter, height: 26, region: .bottomGutter),
+            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter),
 
-            GraffeineVerticalGutter(id: ID.leftGutter, width: 64, region: .leftGutter),
+            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 64, region: .leftGutter),
 
             GraffeineGridLineLayer(id: ID.hGrid)
                 .apply ({
