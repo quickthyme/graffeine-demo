@@ -43,6 +43,10 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.plotDiameter = 12.0
                     $0.plotBorderThickness = 3.0
                     $0.plotBorderColors = [.white]
+                    $0.unitShadow.color = .black
+                    $0.unitShadow.opacity = 0.8
+                    $0.unitShadow.radius = 2.0
+                    $0.unitShadow.offset = CGSize(width: 0, height: 0)
                 })
         ]
     }

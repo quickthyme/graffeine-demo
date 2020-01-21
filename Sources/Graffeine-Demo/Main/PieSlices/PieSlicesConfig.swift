@@ -30,6 +30,10 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.borderColors = [.black]
                     $0.borderThickness = 2
                     $0.shouldUseDataValueMax = true
+                    $0.shadowColor = UIColor.black.cgColor
+                    $0.shadowOpacity = 0.7
+                    $0.shadowRadius = 4.0
+                    $0.shadowOffset = CGSize(width: 0, height: 2)
                 }),
 
             GraffeineRadialLabelLayer(id: ID.pieLabels)
@@ -40,6 +44,10 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.colors = [UIColor(white: 0.99, alpha: 0.88)]
                     $0.shouldUseDataValueMax = true
                     $0.fontSize = 12
+                    $0.unitShadow.color = .black
+                    $0.unitShadow.opacity = 0.8
+                    $0.unitShadow.radius = 2.0
+                    $0.unitShadow.offset = CGSize(width: 0, height: 0)
                 })
         ]
     }
