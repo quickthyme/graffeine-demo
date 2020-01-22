@@ -14,8 +14,8 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     func setupSelection() {
         graffeineView.onSelect = { selection in
-            self.selectedIndex = selection?.index
-            if selection?.index != nil {
+            self.selectedIndex = selection?.data.selectedIndex
+            if self.selectedIndex != nil {
                 self.applySelectionAnimated()
             } else {
                 self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
