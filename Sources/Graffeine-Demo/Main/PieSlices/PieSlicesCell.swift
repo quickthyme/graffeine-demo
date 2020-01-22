@@ -73,11 +73,15 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     func applySelectionAnimated() {
         let newData = getData()
-        graffeineView.layer(id: LayerID.pieLabels)?.setData(newData, animator: nil)
-
         graffeineView.layer(id: LayerID.pie)?.setData(
             newData,
-            animator: GraffeineDataAnimators.Pie.Automatic(duration: 1.2, timing: .easeInEaseOut))
+            animator: GraffeineDataAnimators.Pie.Morph(duration: 0.22,
+                                                       timing: .linear))
 
+        graffeineView.layer(id: LayerID.pieLabels)?.setData(
+            newData,
+            animator: GraffeineDataAnimators.RadialLabel.Move(duration: 0.22,
+                                                              timing: .linear,
+                                                              delayRatio: 0))
     }
 }
