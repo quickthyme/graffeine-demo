@@ -9,7 +9,7 @@ class LinePointsCell: UITableViewCell, DataAppliable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.onSelect = {
+        graffeineView.onSelect = { _ in
             self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
             self.applyDataAnimated()
         }

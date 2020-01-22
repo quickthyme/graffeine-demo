@@ -9,7 +9,7 @@ class RedGreenLinesCell: UITableViewCell, DataAppliable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.onSelect = {
+        graffeineView.onSelect = { _ in
             self.applyData(animated: true)
         }
     }

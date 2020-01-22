@@ -24,9 +24,10 @@ class PieSlicesConfig: GraffeineViewConfig {
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 270
-                    $0.diameter = .percentage(0.9)
-                    $0.holeDiameter = .percentage(0.4)
-                    $0.selection.radial.diameter = .percentage(0.98)
+                    $0.diameter = .percentage(0.90)
+                    $0.holeDiameter = .percentage(0.40)
+                    $0.selection.isEnabled = true
+                    $0.selection.radial.diameter = .percentage(1.00)
                     $0.colors = colors
                     $0.borderColors = [.black]
                     $0.borderThickness = 2

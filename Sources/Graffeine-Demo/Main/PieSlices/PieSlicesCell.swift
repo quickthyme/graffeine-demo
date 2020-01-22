@@ -9,9 +9,18 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.onSelect = {
-            self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
-            self.applyDataAnimated()
+        setupSelection()
+    }
+
+    func setupSelection() {
+        graffeineView.onSelect = { selection in
+            self.selectedIndex = selection?.index
+            if selection?.index != nil {
+                self.applySelectionAnimated()
+            } else {
+                self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+                self.applyDataAnimated()
+            }
         }
     }
 
@@ -23,10 +32,15 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     var dataSetIndex: Int = 0
 
+    var selectedIndex: Int? = nil
+
     func getData() -> GraffeineData {
         let dataSet = dataSets[dataSetIndex]
         let labels: [String?] = dataSet.map { String(Int($0)) }
-        return GraffeineData(valueMax: 100, values: dataSets[dataSetIndex], labels: labels)
+        return GraffeineData(valueMax: 100,
+                             values: dataSets[dataSetIndex],
+                             labels: labels,
+                             selectedIndex: selectedIndex)
     }
 
     func getRandomPieAnimator() -> GraffeinePieDataAnimating {
@@ -34,6 +48,12 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
         case 3:  return GraffeineDataAnimators.Pie.Spin(duration: 1.2, timing: .easeInEaseOut)
         default: return GraffeineDataAnimators.Pie.Automatic(duration: 1.2, timing: .easeInEaseOut)
         }
+    }
+
+    func getLabelAnimator() -> GraffeineRadialLabelDataAnimating {
+        return GraffeineDataAnimators.RadialLabel.FadeIn(duration: 1.2,
+                                                         timing: .easeInEaseOut,
+                                                         delayRatio: 0.94)
     }
 
     func applyData() {
@@ -44,11 +64,20 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     func applyDataAnimated() {
         let newData = getData()
-        graffeineView.layer(id: LayerID.pie)?.setData(newData, animator: getRandomPieAnimator())
+        graffeineView.layer(id: LayerID.pie)?
+            .setData(newData, animator: getRandomPieAnimator())
+
         graffeineView.layer(id: LayerID.pieLabels)?
-            .setData(newData, animator:
-                GraffeineDataAnimators.RadialLabel.FadeIn(duration: 1.2,
-                                                          timing: .easeInEaseOut,
-                                                          delayRatio: 0.94))
+            .setData(newData, animator: getLabelAnimator())
+    }
+
+    func applySelectionAnimated() {
+        let newData = getData()
+        graffeineView.layer(id: LayerID.pieLabels)?.setData(newData, animator: nil)
+
+        graffeineView.layer(id: LayerID.pie)?.setData(
+            newData,
+            animator: GraffeineDataAnimators.Pie.Automatic(duration: 1.2, timing: .easeInEaseOut))
+
     }
 }

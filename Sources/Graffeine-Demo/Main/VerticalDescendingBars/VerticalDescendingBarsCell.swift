@@ -9,9 +9,18 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.onSelect = {
-            self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
-            self.applyData(animated: true)
+        setupSelection()
+    }
+
+    func setupSelection() {
+        graffeineView.onSelect = { selection in
+            self.selectedIndex = selection?.index
+            if selection?.index != nil {
+                self.applyData(animated: true)
+            } else {
+                self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+                self.applyData(animated: true)
+            }
         }
     }
 
@@ -28,6 +37,8 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
 
     var dataSetIndex: Int = 0
 
+    var selectedIndex: Int? = nil
+
     func applyData() {
         applyData(animated: false)
     }
@@ -37,7 +48,7 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
         let labels: [String] = values.map { ($0 == nil) ? "?" : "\(Int($0!))" }
 
         graffeineView.layer(id: LayerID.descendingBars)!
-            .setData(GraffeineData(valueMax: 10, values: values),
+            .setData(GraffeineData(valueMax: 10, values: values, selectedIndex: selectedIndex),
                      animator: barAnimator(animated))
 
         graffeineView.layer(id: LayerID.bottomGutter)?
