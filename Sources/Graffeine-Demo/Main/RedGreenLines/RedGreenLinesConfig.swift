@@ -27,7 +27,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
 
             GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 64, region: .rightGutter)
                 .apply ({
-                    $0.rowMargin = unitMargin
+                    $0.unitMargin = unitMargin
                     $0.labelHorizontalAlignmentMode = .left
                     $0.labelVerticalAlignmentMode = .top
                     $0.labelHPadding = 4.0
@@ -48,7 +48,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 64, region: .leftGutter)
                 .apply ({
-                    $0.rowMargin = unitMargin
+                    $0.unitMargin = unitMargin
                     $0.labelHorizontalAlignmentMode = .right
                     $0.labelVerticalAlignmentMode = .top
                     $0.labelHPadding = 4.0

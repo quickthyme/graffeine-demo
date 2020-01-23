@@ -30,7 +30,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 32, region: .leftGutter)
                 .apply ({
-                    $0.rowMargin = unitMargin
+                    $0.unitMargin = unitMargin
                     $0.labelVerticalAlignmentMode = .center
                     $0.unitText.colors = [.white]
                 }),

@@ -37,7 +37,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 50, region: .leftGutter)
                 .apply ({
                     $0.insets = UIEdgeInsets(top: -6, left: 0, bottom: -6, right: 0)
-                    $0.rowMargin = unitMargin
+                    $0.unitMargin = unitMargin
                     $0.unitText.colors = [.darkGray]
                     $0.unitText.fontSize = 12
                     $0.labelHorizontalAlignmentMode = .right
