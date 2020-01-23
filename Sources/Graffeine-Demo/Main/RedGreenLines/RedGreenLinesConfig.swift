@@ -21,7 +21,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.labelHorizontalAlignmentMode = .center
                     $0.labelVerticalAlignmentMode = .bottom
                     $0.labelVPadding = 4.0
-                    $0.fontSize = 16.0
+                    $0.unitText.fontSize = 16.0
                     $0.data = GraffeineData(labels: ["PROJECTIONS"])
                 }),
 
@@ -33,7 +33,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.labelHPadding = 4.0
                     $0.labelVPadding = -8.0
                     $0.unitText.colors = [.red, .orange, .yellow, .green, .lightGray]
-                    $0.fontSize = 11
+                    $0.unitText.fontSize = 11
                     $0.data = GraffeineData(labels: ["50,000", "37,500", "25,000", "12,500"])
                 }),
 
@@ -54,7 +54,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.labelHPadding = 4.0
                     $0.labelVPadding = -8.0
                     $0.unitText.colors = [.red, .orange, .yellow, .green, .lightGray]
-                    $0.fontSize = 11
+                    $0.unitText.fontSize = 11
                     $0.data = GraffeineData(labels: ["50,000", "37,500", "25,000", "12,500"])
                 }),
 

@@ -45,7 +45,7 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.diameter = .percentage(0.63)
                     $0.selection.radial.diameter = .percentage(0.71)
                     $0.unitText.colors = [UIColor(white: 0.99, alpha: 0.88)]
-                    $0.fontSize = 12
+                    $0.unitText.fontSize = 12
                     $0.unitShadow.color = .black
                     $0.unitShadow.opacity = 0.9
                     $0.unitShadow.radius = 1.6

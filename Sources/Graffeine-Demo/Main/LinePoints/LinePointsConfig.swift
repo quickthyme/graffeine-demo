@@ -24,7 +24,7 @@ class LinePointsConfig: GraffeineViewConfig {
                     $0.labelVerticalAlignmentMode = .top
                     $0.labelVPadding = 4.0
                     $0.labelHPadding = -5
-                    $0.fontSize = 16.0
+                    $0.unitText.fontSize = 16.0
                 }),
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 28, region: .leftGutter),
