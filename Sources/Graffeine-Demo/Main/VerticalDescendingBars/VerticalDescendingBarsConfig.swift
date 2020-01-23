@@ -26,6 +26,10 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.unitText.colors = [.purple]
                     $0.labelHorizontalAlignmentMode = .center
                     $0.labelVerticalAlignmentMode = .top
+                    $0.selection.text.color = .black
+                    $0.selection.shadow.color = .black
+                    $0.selection.shadow.radius = 0.33
+                    $0.selection.shadow.opacity = 1.0
                 }),
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 50, region: .leftGutter)
@@ -51,13 +55,14 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.insets = barLayerInsets
                     $0.unitMargin = unitMargin
                     $0.unitFill.colors = [.purple]
-                    $0.selection.isEnabled = true
-                    $0.selection.fill.color = UIColor(white: 0.08, alpha: 0.8)
                     $0.roundedEnds = .hi(6)
                     $0.unitShadow.color = .black
-                    $0.unitShadow.opacity = 0.7
-                    $0.unitShadow.radius = 2.0
+                    $0.unitShadow.opacity = 0.8
+                    $0.unitShadow.radius = 1.8
                     $0.unitShadow.offset = CGSize(width: 0, height: 2)
+
+                    $0.selection.isEnabled = true
+                    $0.selection.fill.color = UIColor(white: 0.08, alpha: 0.8)
                 })
         ]
     }

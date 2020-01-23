@@ -132,7 +132,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnG-GK-gF6" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
-                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ScatterplotConfig"/>
                                                     </userDefinedRuntimeAttributes>

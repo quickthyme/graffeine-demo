@@ -45,14 +45,15 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
 
     func applyData(animated: Bool) {
         let values: [Double?] = dataSets[dataSetIndex]
-        let labels: [String] = values.map { ($0 == nil) ? "?" : "\(Int($0!))" }
+        let data = GraffeineData(valueMax: 10,
+                                 values: values,
+                                 labels: values.map { ($0 == nil) ? "?" : "\(Int($0!))" },
+                                 selectedIndex: selectedIndex)
 
         graffeineView.layer(id: LayerID.descendingBars)!
-            .setData(GraffeineData(valueMax: 10, values: values, selectedIndex: selectedIndex),
-                     animator: barAnimator(animated))
+            .setData(data, animator: barAnimator(animated))
 
         graffeineView.layer(id: LayerID.bottomGutter)?
-            .setData(GraffeineData(labels: labels),
-                     animator: nil)
+            .setData(data, animator: nil)
     }
 }

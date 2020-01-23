@@ -26,30 +26,26 @@ class ScatterplotConfig: GraffeineViewConfig {
             GraffeineGridLineLayer(id: ID.hGrid)
                 .apply ({
                     $0.flipXY = true
-                    $0.unitLine.colors = [UIColor(white: 0.0, alpha: 0.5)]
+                    $0.unitLine.colors = [.white]
                     $0.unitLine.thickness = 1.0
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
                 .apply ({
-                    $0.unitLine.colors = [UIColor(white: 0.0, alpha: 0.5)]
+                    $0.unitLine.colors = [.white]
                     $0.unitLine.thickness = 1.0
                 }),
 
             GraffeinePlotLayer(id: ID.vectorPlots)
                 .apply ({
-                    $0.diameter = .explicit(12.0)
+                    $0.diameter = .explicit(8.0)
                     $0.unitFill.colors = [.black]
                     $0.unitLine.colors = [.white]
-                    $0.unitLine.thickness = 3.0
+                    $0.unitLine.thickness = 2.0
                     $0.unitMargin = unitMargin
-                    $0.unitShadow.color = .black
-                    $0.unitShadow.opacity = 0.8
-                    $0.unitShadow.radius = 2.0
-                    $0.unitShadow.offset = CGSize(width: 0, height: 0)
 
-                    $0.selection.radial.diameter = .explicit(24.0)
                     $0.selection.isEnabled = true
+                    $0.selection.radial.diameter = .explicit(16.0)
                 })
         ]
     }
