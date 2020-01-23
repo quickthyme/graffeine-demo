@@ -24,8 +24,10 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                 .apply ({
                     $0.insets = barLayerInsets
                     $0.unitText.colors = [.purple]
+                    $0.unitText.fontSize = 11
                     $0.labelHorizontalAlignmentMode = .center
                     $0.labelVerticalAlignmentMode = .top
+                    $0.labelVPadding = 3.0
                     $0.selection.text.color = .black
                     $0.selection.shadow.color = .black
                     $0.selection.shadow.radius = 0.33
@@ -37,6 +39,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.insets = UIEdgeInsets(top: -6, left: 0, bottom: -6, right: 0)
                     $0.rowMargin = unitMargin
                     $0.unitText.colors = [.darkGray]
+                    $0.unitText.fontSize = 12
                     $0.labelHorizontalAlignmentMode = .right
                     $0.labelVerticalAlignmentMode = .centerTopBottom
                     $0.data = GraffeineData(labels: ["high", "medium", "low"])
