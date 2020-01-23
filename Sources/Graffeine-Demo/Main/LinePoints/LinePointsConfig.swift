@@ -19,7 +19,7 @@ class LinePointsConfig: GraffeineViewConfig {
 
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
-                    $0.colors = [.black]
+                    $0.unitText.colors = [.black]
                     $0.labelHorizontalAlignmentMode = .left
                     $0.labelVerticalAlignmentMode = .top
                     $0.labelVPadding = 4.0
@@ -31,15 +31,15 @@ class LinePointsConfig: GraffeineViewConfig {
 
             GraffeineLineLayer(id: ID.line)
                 .apply ({
-                    $0.colors = [.black]
+                    $0.unitLine.colors = [.black]
                     $0.unitMargin = unitMargin
-                    $0.thickness = 8.0
-                    $0.lineJoin = .round
+                    $0.unitLine.thickness = 8.0
+                    $0.unitLine.join = .round
                 }),
 
             GraffeinePlotLayer(id: ID.points)
                 .apply ({
-                    $0.colors = [.black]
+                    $0.unitFill.colors = [.black]
                     $0.unitMargin = unitMargin
                     $0.plotDiameter = 16.0
                 })
