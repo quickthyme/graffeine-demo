@@ -7,9 +7,12 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
     
     @IBOutlet weak var graffeineView: GraffeineView!
 
+    var selectedIndex: Int? = nil
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.onSelect = { _ in
+        graffeineView.onSelect = { selection in
+            self.selectedIndex = selection?.data.selectedIndex
             self.applyData(animated: true)
         }
     }
@@ -20,6 +23,7 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
 
     func applyData(animated: Bool) {
         let values: [Double?] = [0, 10, 30, 15, 20, 40, 5, 30, 25, 45, 10, 25, 50]
+
         graffeineView.layer(id: LayerID.hGrid)?.apply {
             let max = values.count - 1
             let marks = Array(0...max).map { Double($0) }
@@ -32,7 +36,7 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
         }
 
         graffeineView.layer(id: LayerID.vectorPlots)?.apply {
-            $0.data = GraffeineData(valueMax: 50, values: values)
+            $0.data = GraffeineData(valueMax: 50, values: values, selectedIndex: selectedIndex)
         }
     }
 }

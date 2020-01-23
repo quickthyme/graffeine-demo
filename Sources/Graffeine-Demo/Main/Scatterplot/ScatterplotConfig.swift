@@ -38,7 +38,7 @@ class ScatterplotConfig: GraffeineViewConfig {
 
             GraffeinePlotLayer(id: ID.vectorPlots)
                 .apply ({
-                    $0.plotDiameter = 12.0
+                    $0.diameter = .explicit(12.0)
                     $0.unitFill.colors = [.black]
                     $0.unitLine.colors = [.white]
                     $0.unitLine.thickness = 3.0
@@ -47,6 +47,9 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitShadow.opacity = 0.8
                     $0.unitShadow.radius = 2.0
                     $0.unitShadow.offset = CGSize(width: 0, height: 0)
+
+                    $0.selection.radial.diameter = .explicit(24.0)
+                    $0.selection.isEnabled = true
                 })
         ]
     }

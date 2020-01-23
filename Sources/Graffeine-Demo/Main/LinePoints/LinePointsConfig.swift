@@ -41,7 +41,7 @@ class LinePointsConfig: GraffeineViewConfig {
                 .apply ({
                     $0.unitFill.colors = [.black]
                     $0.unitMargin = unitMargin
-                    $0.plotDiameter = 16.0
+                    $0.diameter = .explicit(16.0)
                 })
         ]
     }
