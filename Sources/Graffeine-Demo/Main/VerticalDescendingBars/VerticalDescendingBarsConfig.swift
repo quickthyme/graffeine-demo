@@ -60,9 +60,9 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.unitFill.colors = [.purple]
                     $0.roundedEnds = .hi(6)
                     $0.unitShadow.color = .black
-                    $0.unitShadow.opacity = 0.8
-                    $0.unitShadow.radius = 1.8
-                    $0.unitShadow.offset = CGSize(width: 0, height: 2)
+                    $0.unitShadow.opacity = 0.4
+                    $0.unitShadow.radius = 1.0
+                    $0.unitShadow.offset = CGSize(width: 0, height: -0.5)
 
                     $0.selection.isEnabled = true
                     $0.selection.fill.color = UIColor(white: 0.08, alpha: 0.8)
