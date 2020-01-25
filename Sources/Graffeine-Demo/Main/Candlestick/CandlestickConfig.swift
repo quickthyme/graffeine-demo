@@ -45,7 +45,8 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitMargin = unitMargin
                     $0.insets = candleInsets
                     $0.unitFill.colors = [.white]
-                    $0.unitSubdivision = GraffeineLayer.UnitSubdivision(index: 12, width: .percentage(0.04))
+                    $0.unitSubdivision.offset = .percentage(0.5)
+                    $0.unitSubdivision.width = .explicit(1.0)
                 }),
 
             GraffeineBarLayer(id: ID.candle)

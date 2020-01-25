@@ -48,7 +48,8 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.flipXY = true
                     $0.unitMargin = unitMargin
                     $0.unitFill.colors = [UIColor(white: 1.0, alpha: 0.7)]
-                    $0.unitSubdivision = GraffeineLayer.UnitSubdivision(index: 0, width: .percentage(0.5))
+                    $0.unitSubdivision.offset = .percentage(0.0)
+                    $0.unitSubdivision.width = .percentage(0.5)
                 }),
 
             GraffeineBarLayer(id: ID.bars2)
@@ -56,7 +57,8 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.flipXY = true
                     $0.unitMargin = unitMargin
                     $0.unitFill.colors = [UIColor(white: 0.7, alpha: 0.7)]
-                    $0.unitSubdivision = GraffeineLayer.UnitSubdivision(index: 1, width: .percentage(0.5))
+                    $0.unitSubdivision.offset = .percentage(0.5)
+                    $0.unitSubdivision.width = .percentage(0.5)
                 })
         ]
     }

@@ -28,6 +28,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.flipXY = true
                     $0.unitLine.colors = [UIColor(white: 0.98, alpha: 0.8)]
                     $0.unitLine.thickness = 2.0
+                    $0.data = GraffeineData(valueMax: Double(2), values: [0, 1, 2])
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
@@ -35,42 +36,46 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.white]
                     $0.unitLine.colors = [UIColor(white: 0.98, alpha: 0.8)]
                     $0.unitLine.thickness = 2.0
+                    $0.data = GraffeineData(valueMax: Double(2), values: [0, 1, 2])
                 }),
 
             GraffeinePlotLayer(id: ID.vectorPlots1)
                 .apply ({
                     $0.diameter = .explicit(32.0)
-                    $0.unitFill.colors = [UIColor.init(red: 0.16, green: 0.19, blue: 0.55, alpha: 0.5)]
-                    $0.unitLine.colors = [.white]
-                    $0.unitLine.thickness = 2.0
-                    $0.unitMargin = unitMargin
-
-                    $0.selection.isEnabled = true
-                    $0.selection.radial.diameter = .explicit(48.0)
-                }),
-
-            GraffeinePlotLayer(id: ID.vectorPlots2)
-                .apply ({
-                    $0.diameter = .explicit(24.0)
                     $0.unitFill.colors = [UIColor.init(red: 0.33, green: 0.08, blue: 0.12, alpha: 0.5)]
                     $0.unitLine.colors = [.white]
                     $0.unitLine.thickness = 2.0
                     $0.unitMargin = unitMargin
 
                     $0.selection.isEnabled = true
+                    $0.selection.radial.diameter = .explicit(48.0)
+                    $0.selection.line.thickness = 3
+                }),
+
+            GraffeinePlotLayer(id: ID.vectorPlots2)
+                .apply ({
+                    $0.diameter = .explicit(24.0)
+                    $0.unitFill.colors = [UIColor(red: 0.16, green: 0.19, blue: 0.55, alpha: 0.5)]
+                    $0.unitLine.colors = [.white]
+                    $0.unitLine.thickness = 2.0
+                    $0.unitMargin = unitMargin
+
+                    $0.selection.isEnabled = true
                     $0.selection.radial.diameter = .explicit(32.0)
+                    $0.selection.line.thickness = 3
                 }),
 
             GraffeinePlotLayer(id: ID.vectorPlots3)
                 .apply ({
                     $0.diameter = .explicit(16.0)
-                    $0.unitFill.colors = [UIColor.init(red: 0.04, green: 0.44, blue: 0.26, alpha: 0.5)]
+                    $0.unitFill.colors = [UIColor(red: 0.04, green: 0.44, blue: 0.26, alpha: 0.5)]
                     $0.unitLine.colors = [.white]
                     $0.unitLine.thickness = 2.0
                     $0.unitMargin = unitMargin
 
                     $0.selection.isEnabled = true
                     $0.selection.radial.diameter = .explicit(24.0)
+                    $0.selection.line.thickness = 3
                 })
         ]
     }

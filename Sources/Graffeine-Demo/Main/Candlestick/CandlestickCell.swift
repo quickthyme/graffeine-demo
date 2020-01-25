@@ -26,7 +26,7 @@ class CandlestickCell: UITableViewCell, DataAppliable {
     }
 
     var dataSet: [TradingDay] {
-        return TradingDay.generateRandom(numberOfDays: 15, lowest:  32, highest:  64)
+        return TradingDay.generateRandom(numberOfDays: 15, lowest: 10, highest: 90)
     }
 
     func applyData() {
@@ -46,15 +46,15 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         let range = maxVal - lowestVal
         let vLabels = [
             "\(nf.string(from: NSNumber(value: maxVal))!)",
-            "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.9)))!)",
+            " ",
             "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.8)))!)",
-            "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.7)))!)",
+            " ",
             "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.6)))!)",
-            "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.5)))!)",
+            " ",
             "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.4)))!)",
-            "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.3)))!)",
+            " ",
             "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.2)))!)",
-            "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.1)))!)",
+            " ",
             "\(nf.string(from: NSNumber(value: lowestVal))!)"
         ]
 
@@ -67,11 +67,6 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         let wickData = GraffeineData(valueMax: maxVal - lowestVal,
                                      valuesHi: lanes.peakHi.map { $0 - lowestVal },
                                      valuesLo: lanes.peakLo.map { $0 - lowestVal })
-
-        (graffeineView.layer(id: LayerID.wick) as? GraffeineBarLayer)?
-            .unitSubdivision = (wickData.values.count > 20)
-                ? GraffeineLayer.UnitSubdivision(index:  6, width: .percentage(0.08))
-                : GraffeineLayer.UnitSubdivision(index: 10, width: .percentage(0.05))
 
         graffeineView.layer(id: LayerID.wick)?
             .setData( wickData, animator: barAnimator(animated) )
