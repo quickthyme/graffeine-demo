@@ -12,7 +12,7 @@ class CandlestickConfig: GraffeineViewConfig {
         super.init(graffeineView)
 
         let unitMargin: CGFloat = 6.0
-        let vLabelInsets = UIEdgeInsets.init(top: -6, left:  0, bottom: -6, right:  0)
+        let vLabelInsets = UIEdgeInsets.init(top: -12, left:  0, bottom: -10, right:  0)
         let candleInsets = UIEdgeInsets.init(top:  0, left: 24, bottom:  0, right: 24)
 
         graffeineView.layers = [
@@ -23,10 +23,10 @@ class CandlestickConfig: GraffeineViewConfig {
 
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 24, region: .bottomGutter),
 
-            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 96, region: .leftGutter)
+            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 64, region: .leftGutter)
                 .apply ({
                     $0.insets = vLabelInsets
-                    $0.labelVerticalAlignmentMode = .centerTopBottom
+                    $0.labelVerticalAlignmentMode = .center
                     $0.unitText.colors = [.systemTeal]
                     $0.unitText.fontSize = 12
                     $0.labelHPadding = 8
@@ -45,7 +45,7 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitMargin = unitMargin
                     $0.insets = candleInsets
                     $0.unitFill.colors = [.white]
-                    $0.unitSubdivision = GraffeineLayer.UnitSubdivision(index: 24, width: .percentage(0.02))
+                    $0.unitSubdivision = GraffeineLayer.UnitSubdivision(index: 12, width: .percentage(0.04))
                 }),
 
             GraffeineBarLayer(id: ID.candle)
@@ -53,6 +53,14 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitMargin = unitMargin
                     $0.insets = candleInsets
                     $0.unitFill.colors = [.red]
+                    $0.roundedEnds = .both(2)
+
+                    $0.selection.isEnabled = true
+                    $0.selection.line.color = UIColor(white: 0.9, alpha: 0.5)
+                    $0.selection.line.thickness = 3
+                    $0.selection.shadow.color = .white
+                    $0.selection.shadow.radius = 4
+                    $0.selection.shadow.opacity = 0.7
                 })
         ]
     }

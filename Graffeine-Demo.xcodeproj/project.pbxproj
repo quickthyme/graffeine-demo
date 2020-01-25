@@ -30,6 +30,7 @@
 		DC7F222923C860C4009629DD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DC7F222723C860C4009629DD /* LICENSE */; };
 		DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773EF23DBD624005246BA /* CandlestickCell.swift */; };
 		DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773F023DBD624005246BA /* CandlestickConfig.swift */; };
+		DC8773F823DC24AD005246BA /* CandlestickCell+TradingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */; };
 		DCE4C9DF23D037AE00C47EFD /* PieSlicesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */; };
 		DCE4C9E023D037B200C47EFD /* PieSlicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		DC7F222723C860C4009629DD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DC8773EF23DBD624005246BA /* CandlestickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickCell.swift; sourceTree = "<group>"; };
 		DC8773F023DBD624005246BA /* CandlestickConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickConfig.swift; sourceTree = "<group>"; };
+		DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CandlestickCell+TradingDay.swift"; sourceTree = "<group>"; };
 		DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				DC8773EF23DBD624005246BA /* CandlestickCell.swift */,
+				DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */,
 				DC8773F023DBD624005246BA /* CandlestickConfig.swift */,
 			);
 			path = Candlestick;
@@ -405,6 +408,7 @@
 				DC7F221223C7C126009629DD /* RedGreenLinesConfig.swift in Sources */,
 				DCE4C9DF23D037AE00C47EFD /* PieSlicesConfig.swift in Sources */,
 				DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */,
+				DC8773F823DC24AD005246BA /* CandlestickCell+TradingDay.swift in Sources */,
 				DC7F221923C7E891009629DD /* HorizontalGroupedBarsConfig.swift in Sources */,
 				DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */,
 				DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */,
