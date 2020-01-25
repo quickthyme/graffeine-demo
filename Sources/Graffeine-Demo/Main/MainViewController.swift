@@ -33,7 +33,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         case 0: return "Vertical Descending Bars"
         case 1: return "Red Green Lines"
         case 2: return "Horizontal Grouped Bars"
-        case 3: return "Line Points"
+        case 3: return "Line Points and Smoothing"
         case 4: return "Scatter Plot"
         case 5: return "Pie Slices"
         default: return ""

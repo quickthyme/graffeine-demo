@@ -35,6 +35,7 @@ class LinePointsConfig: GraffeineViewConfig {
                     $0.unitMargin = unitMargin
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
+                    $0.smoothing = .catmullRom(12)
                 }),
 
             GraffeinePlotLayer(id: ID.points)
