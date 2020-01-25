@@ -33,3 +33,6 @@ Here are a few lo-res examples:
  
  <br />
 
+![sample_7](docs/sample_7.png)
+ 
+ <br />

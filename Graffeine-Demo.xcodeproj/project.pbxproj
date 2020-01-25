@@ -28,6 +28,8 @@
 		DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F221723C7E639009629DD /* HorizontalGroupedBarsCell.swift */; };
 		DC7F222823C860C4009629DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DC7F222523C860C4009629DD /* README.md */; };
 		DC7F222923C860C4009629DD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DC7F222723C860C4009629DD /* LICENSE */; };
+		DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773EF23DBD624005246BA /* CandlestickCell.swift */; };
+		DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773F023DBD624005246BA /* CandlestickConfig.swift */; };
 		DCE4C9DF23D037AE00C47EFD /* PieSlicesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */; };
 		DCE4C9E023D037B200C47EFD /* PieSlicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,8 @@
 		DC7F221823C7E639009629DD /* HorizontalGroupedBarsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalGroupedBarsConfig.swift; sourceTree = "<group>"; };
 		DC7F222523C860C4009629DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC7F222723C860C4009629DD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DC8773EF23DBD624005246BA /* CandlestickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickCell.swift; sourceTree = "<group>"; };
+		DC8773F023DBD624005246BA /* CandlestickConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +182,7 @@
 				DC7F21D923C6DE86009629DD /* Main.storyboard */,
 				DC7F21ED23C6E6EB009629DD /* DataAppliable.swift */,
 				DC7F21C923C6DD46009629DD /* MainViewController.swift */,
+				DC8773ED23DBD609005246BA /* Candlestick */,
 				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
 				DC2FA27923CEB53600E88807 /* LinePoints */,
 				DCE4C9DB23D0371E00C47EFD /* PieSlices */,
@@ -239,6 +244,15 @@
 				DC7F221823C7E639009629DD /* HorizontalGroupedBarsConfig.swift */,
 			);
 			path = HorizontalGroupedBars;
+			sourceTree = "<group>";
+		};
+		DC8773ED23DBD609005246BA /* Candlestick */ = {
+			isa = PBXGroup;
+			children = (
+				DC8773EF23DBD624005246BA /* CandlestickCell.swift */,
+				DC8773F023DBD624005246BA /* CandlestickConfig.swift */,
+			);
+			path = Candlestick;
 			sourceTree = "<group>";
 		};
 		DCE4C9DB23D0371E00C47EFD /* PieSlices */ = {
@@ -392,6 +406,8 @@
 				DCE4C9DF23D037AE00C47EFD /* PieSlicesConfig.swift in Sources */,
 				DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */,
 				DC7F221923C7E891009629DD /* HorizontalGroupedBarsConfig.swift in Sources */,
+				DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */,
+				DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */,
 				DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */,
 				DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */,
 				DC7F221123C7BFA4009629DD /* RedGreenLinesCell.swift in Sources */,
