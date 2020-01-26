@@ -45,7 +45,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitFill.colors = [UIColor.init(red: 0.33, green: 0.08, blue: 0.12, alpha: 0.5)]
                     $0.unitLine.colors = [.white]
                     $0.unitLine.thickness = 2.0
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
 
                     $0.selection.isEnabled = true
                     $0.selection.radial.diameter = .explicit(48.0)
@@ -58,7 +58,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitFill.colors = [UIColor(red: 0.16, green: 0.19, blue: 0.55, alpha: 0.5)]
                     $0.unitLine.colors = [.white]
                     $0.unitLine.thickness = 2.0
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
 
                     $0.selection.isEnabled = true
                     $0.selection.radial.diameter = .explicit(32.0)
@@ -71,7 +71,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitFill.colors = [UIColor(red: 0.04, green: 0.44, blue: 0.26, alpha: 0.5)]
                     $0.unitLine.colors = [.white]
                     $0.unitLine.thickness = 2.0
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
 
                     $0.selection.isEnabled = true
                     $0.selection.radial.diameter = .explicit(24.0)

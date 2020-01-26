@@ -27,7 +27,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
 
             GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 64, region: .rightGutter)
                 .apply ({
-                    $0.unitMargin = unitMargin
+                    $0.rowMargin = unitMargin
                     $0.labelHorizontalAlignmentMode = .left
                     $0.labelVerticalAlignmentMode = .top
                     $0.labelHPadding = 4.0
@@ -48,7 +48,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 64, region: .leftGutter)
                 .apply ({
-                    $0.unitMargin = unitMargin
+                    $0.rowMargin = unitMargin
                     $0.labelHorizontalAlignmentMode = .right
                     $0.labelVerticalAlignmentMode = .top
                     $0.labelHPadding = 4.0
@@ -78,7 +78,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
             GraffeineLineLayer(id: ID.redLine)
                 .apply ({
                     $0.unitLine.colors = [.red]
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
                 }),
@@ -86,7 +86,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
             GraffeineLineLayer(id: ID.redLineProj)
                 .apply ({
                     $0.unitLine.colors = [.red]
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
                     $0.unitLine.dashPattern = [4, 3]
                     $0.unitLine.dashPhase = 4
                     $0.unitLine.thickness = 8.0
@@ -96,7 +96,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
             GraffeineLineLayer(id: ID.greenLine)
                 .apply ({
                     $0.unitLine.colors = [.green]
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
                 }),
@@ -104,7 +104,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
             GraffeineLineLayer(id: ID.greenLineProj)
                 .apply ({
                     $0.unitLine.colors = [.green]
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
                     $0.unitLine.dashPattern = [4, 3]
                     $0.unitLine.dashPhase = 4
                     $0.unitLine.thickness = 8.0

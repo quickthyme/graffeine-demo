@@ -23,6 +23,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
                     $0.insets = barLayerInsets
+                    $0.unitColumn.margin = unitMargin
                     $0.unitText.colors = [.purple]
                     $0.unitText.fontSize = 11
                     $0.labelHorizontalAlignmentMode = .center
@@ -37,7 +38,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 50, region: .leftGutter)
                 .apply ({
                     $0.insets = UIEdgeInsets(top: -6, left: 0, bottom: -6, right: 0)
-                    $0.unitMargin = unitMargin
+                    $0.rowMargin = unitMargin
                     $0.unitText.colors = [.darkGray]
                     $0.unitText.fontSize = 12
                     $0.labelHorizontalAlignmentMode = .right
@@ -56,7 +57,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
             GraffeineBarLayer(id: ID.descendingBars)
                 .apply ({
                     $0.insets = barLayerInsets
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
                     $0.unitFill.colors = [.purple]
                     $0.roundedEnds = .hi(6)
                     $0.unitShadow.color = .black

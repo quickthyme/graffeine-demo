@@ -9,8 +9,11 @@ class LinePointsCell: UITableViewCell, DataAppliable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.onSelect = { _ in
-            self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+        graffeineView.onSelect = { selection in
+            self.selectedIndex = selection?.data.selectedIndex
+            if self.selectedIndex == nil {
+                self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+            }
             self.applyDataAnimated()
         }
     }
@@ -23,20 +26,20 @@ class LinePointsCell: UITableViewCell, DataAppliable {
 
     var dataSetIndex: Int = 0
 
+    var selectedIndex: Int? = nil
+
     var lineAndPointData: GraffeineData {
         let values = dataSets[dataSetIndex]
-        return GraffeineData(valueMax: values.max()!, values: values + [nil])
-    }
-
-    var labelData: GraffeineData {
-        let values = dataSets[dataSetIndex]
-        return GraffeineData(labels: values.map { String(Int($0)) })
+        return GraffeineData(valueMax: values.max()!,
+                             values: values + [nil],
+                             labels: values.map { String(Int($0)) },
+                             selectedIndex: selectedIndex)
     }
 
     func applyData() {
         graffeineView.layer(id: LayerID.line)?.data = lineAndPointData
-        graffeineView.layer(id: LayerID.points)?.data = lineAndPointData
-        graffeineView.layer(id: LayerID.bottomGutter)?.data = labelData
+        graffeineView.layer(id: LayerID.point)?.data = lineAndPointData
+        graffeineView.layer(id: LayerID.pointLabel)?.data = lineAndPointData
     }
 
     func applyDataAnimated() {
@@ -44,12 +47,22 @@ class LinePointsCell: UITableViewCell, DataAppliable {
             GraffeineDataAnimators.Line.Morph(duration: 2.0,
                                               timing: .easeInEaseOut))
 
-        graffeineView.layer(id: LayerID.points)!
-            .setData(lineAndPointData, animator:
-                GraffeineDataAnimators.Plot.FadeIn(duration: 2.0,
-                                                   timing: .easeInEaseOut,
-                                                   delayRatio: 0.99))
+        let pointAnimator = (selectedIndex == nil)
+                ? GraffeineDataAnimators.Plot.FadeIn(duration: 2.0,
+                                                     timing: .easeInEaseOut,
+                                                     delayRatio: 0.99)
+                : nil
 
-        graffeineView.layer(id: LayerID.bottomGutter)?.setData(labelData, animator: nil)
+        let labelAnimator = (selectedIndex == nil)
+                ? GraffeineDataAnimators.PlotLabel.FadeIn(duration: 2.0,
+                                                          timing: .easeInEaseOut,
+                                                          delayRatio: 0.99)
+                : nil
+
+        graffeineView.layer(id: LayerID.point)!
+            .setData(lineAndPointData, animator: pointAnimator)
+
+        graffeineView.layer(id: LayerID.pointLabel)!
+            .setData(lineAndPointData, animator: labelAnimator)
     }
 }

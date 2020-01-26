@@ -42,16 +42,16 @@ class CandlestickConfig: GraffeineViewConfig {
 
             GraffeineBarLayer(id: ID.wick)
                 .apply ({
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
                     $0.insets = candleInsets
                     $0.unitFill.colors = [.white]
-                    $0.unitSubdivision.offset = .percentage(0.5)
-                    $0.unitSubdivision.width = .explicit(1.0)
+                    $0.unitColumn.subdivision.offset = .percentage(0.5)
+                    $0.unitColumn.subdivision.width = .explicit(1.0)
                 }),
 
             GraffeineBarLayer(id: ID.candle)
                 .apply ({
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
                     $0.insets = candleInsets
                     $0.unitFill.colors = [.red]
                     $0.roundedEnds = .both(2)

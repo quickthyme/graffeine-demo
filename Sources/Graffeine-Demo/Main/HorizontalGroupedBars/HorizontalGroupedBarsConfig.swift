@@ -22,6 +22,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
                     $0.unitText.colors = [.white]
+                    $0.unitColumn.margin = 4
                     $0.labelHorizontalAlignmentMode = .right
                     $0.labelVerticalAlignmentMode = .top
                     $0.labelHPadding = -6.0
@@ -30,7 +31,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 32, region: .leftGutter)
                 .apply ({
-                    $0.unitMargin = unitMargin
+                    $0.rowMargin = unitMargin
                     $0.labelVerticalAlignmentMode = .center
                     $0.unitText.colors = [.white]
                 }),
@@ -46,19 +47,19 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
             GraffeineBarLayer(id: ID.bars1)
                 .apply ({
                     $0.flipXY = true
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
                     $0.unitFill.colors = [UIColor(white: 1.0, alpha: 0.7)]
-                    $0.unitSubdivision.offset = .percentage(0.0)
-                    $0.unitSubdivision.width = .percentage(0.5)
+                    $0.unitColumn.subdivision.offset = .percentage(0.0)
+                    $0.unitColumn.subdivision.width = .percentage(0.5)
                 }),
 
             GraffeineBarLayer(id: ID.bars2)
                 .apply ({
                     $0.flipXY = true
-                    $0.unitMargin = unitMargin
+                    $0.unitColumn.margin = unitMargin
                     $0.unitFill.colors = [UIColor(white: 0.7, alpha: 0.7)]
-                    $0.unitSubdivision.offset = .percentage(0.5)
-                    $0.unitSubdivision.width = .percentage(0.5)
+                    $0.unitColumn.subdivision.offset = .percentage(0.5)
+                    $0.unitColumn.subdivision.width = .percentage(0.5)
                 })
         ]
     }
