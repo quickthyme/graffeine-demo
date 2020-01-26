@@ -26,10 +26,10 @@ class CandlestickConfig: GraffeineViewConfig {
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 64, region: .leftGutter)
                 .apply ({
                     $0.insets = vLabelInsets
-                    $0.labelVerticalAlignmentMode = .center
+                    $0.labelAlignment.vertical = .center
                     $0.unitText.colors = [.systemTeal]
                     $0.unitText.fontSize = 12
-                    $0.labelHPadding = 8
+                    $0.labelPadding.horizontal = 8
                 }),
 
             GraffeineGridLineLayer(id: ID.grid)

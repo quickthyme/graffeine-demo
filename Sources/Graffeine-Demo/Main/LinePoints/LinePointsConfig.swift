@@ -20,10 +20,10 @@ class LinePointsConfig: GraffeineViewConfig {
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply({
                     $0.unitText.colors = [.black]
-                    $0.labelHorizontalAlignmentMode = .left
-                    $0.labelVerticalAlignmentMode = .top
-                    $0.labelVPadding = 4.0
-                    $0.labelHPadding = -5
+                    $0.labelAlignment.horizontal = .left
+                    $0.labelAlignment.vertical = .top
+                    $0.labelPadding.vertical = 4.0
+                    $0.labelPadding.horizontal = -5
                     $0.unitText.fontSize = 16.0
                 }),
 
@@ -44,7 +44,7 @@ class LinePointsConfig: GraffeineViewConfig {
                     $0.unitFill.colors = [.white]
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 4.0
-                    $0.diameter = .explicit(20.0)
+                    $0.diameter = .explicit(22.0)
 
                     $0.selection.isEnabled = true
                     $0.selection.radial.diameter = .explicit(24.0)
@@ -56,13 +56,9 @@ class LinePointsConfig: GraffeineViewConfig {
                 .apply({
                     $0.unitColumn.margin = unitMargin
                     $0.unitText.colors = [.systemRed, .blue, .purple]
-                    $0.unitText.fontSize = 10
-                    $0.unitShadow.color = .black
-                    $0.unitShadow.opacity = 0.5
-                    $0.unitShadow.radius = 0.5
+                    $0.unitText.fontSize = 11
 
                     $0.selection.text.color = .white
-                    $0.selection.shadow.color = .white
                 })
         ]
     }

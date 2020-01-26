@@ -50,10 +50,10 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
         }
     }
 
-    func getLabelAnimator() -> GraffeineRadialLabelDataAnimating {
-        return GraffeineDataAnimators.RadialLabel.FadeIn(duration: 1.2,
-                                                         timing: .easeInEaseOut,
-                                                         delayRatio: 0.94)
+    func getLabelAnimator() -> GraffeinePieLabelDataAnimating {
+        return GraffeineDataAnimators.PieLabel.FadeIn(duration: 1.2,
+                                                      timing: .easeInEaseOut,
+                                                      delayRatio: 0.94)
     }
 
     func applyData() {
@@ -80,8 +80,8 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
         graffeineView.layer(id: LayerID.pieLabels)?.setData(
             newData,
-            animator: GraffeineDataAnimators.RadialLabel.Move(duration: 0.22,
-                                                              timing: .linear,
-                                                              delayRatio: 0))
+            animator: GraffeineDataAnimators.PieLabel.Move(duration: 0.22,
+                                                           timing: .linear,
+                                                           delayRatio: 0))
     }
 }

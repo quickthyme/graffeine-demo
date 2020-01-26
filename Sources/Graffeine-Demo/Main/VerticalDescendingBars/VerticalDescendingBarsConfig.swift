@@ -5,7 +5,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
 
     enum ID: Hashable {
         case topGutter, rightGutter, bottomGutter, leftGutter
-        case grid, descendingBars
+        case grid, bar, barLabel
     }
 
     required init(_ graffeineView: GraffeineView) {
@@ -26,9 +26,9 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitText.colors = [.purple]
                     $0.unitText.fontSize = 11
-                    $0.labelHorizontalAlignmentMode = .center
-                    $0.labelVerticalAlignmentMode = .top
-                    $0.labelVPadding = 3.0
+                    $0.labelAlignment.horizontal = .center
+                    $0.labelAlignment.vertical = .top
+                    $0.labelPadding.vertical = 3.0
                     $0.selection.text.color = .black
                     $0.selection.shadow.color = .black
                     $0.selection.shadow.radius = 0.33
@@ -41,8 +41,8 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.rowMargin = unitMargin
                     $0.unitText.colors = [.darkGray]
                     $0.unitText.fontSize = 12
-                    $0.labelHorizontalAlignmentMode = .right
-                    $0.labelVerticalAlignmentMode = .centerTopBottom
+                    $0.labelAlignment.horizontal = .right
+                    $0.labelAlignment.vertical = .centerTopBottom
                     $0.data = GraffeineData(labels: ["high", "medium", "low"])
                 }),
 
@@ -54,7 +54,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.data = GraffeineData(valueMax: 10, values: [0, 2.5, 5, 7.5, 10])
                 }),
 
-            GraffeineBarLayer(id: ID.descendingBars)
+            GraffeineBarLayer(id: ID.bar)
                 .apply ({
                     $0.insets = barLayerInsets
                     $0.unitColumn.margin = unitMargin
@@ -67,6 +67,18 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
 
                     $0.selection.isEnabled = true
                     $0.selection.fill.color = UIColor(white: 0.08, alpha: 0.8)
+                }),
+
+            GraffeineBarLabelLayer(id: ID.barLabel)
+                .apply ({
+                    $0.insets = barLayerInsets
+                    $0.unitColumn.margin = unitMargin
+                    $0.unitText.colors = [.white]
+                    $0.labelAlignment.horizontal = .center
+                    $0.labelAlignment.vertical = .top
+                    $0.labelPadding.vertical = 4
+                    $0.masksToBounds = true
+                    $0.selection.text.color = .systemOrange
                 })
         ]
     }

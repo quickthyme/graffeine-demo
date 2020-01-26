@@ -30,6 +30,12 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
             : nil
     }
 
+    func barLabelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
+        return (animated)
+            ? GraffeineDataAnimators.Label.Slide(duration: 0.88, timing: .easeInEaseOut)
+            : nil
+    }
+
     let dataSets: [[Double?]] = [
         [10, 9, 8, nil, 6, 5, 4, 3, 2,  1],
         [ 1, 2, 3,   4, 5, 6, 7, 8, 9, 10]
@@ -50,8 +56,11 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
                                  labels: values.map { ($0 == nil) ? "?" : "\(Int($0!))" },
                                  selectedIndex: selectedIndex)
 
-        graffeineView.layer(id: LayerID.descendingBars)!
+        graffeineView.layer(id: LayerID.bar)!
             .setData(data, animator: barAnimator(animated))
+
+        graffeineView.layer(id: LayerID.barLabel)!
+            .setData(data, animator: barLabelAnimator(animated))
 
         graffeineView.layer(id: LayerID.bottomGutter)?
             .setData(data, animator: nil)

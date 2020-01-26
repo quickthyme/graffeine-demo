@@ -40,7 +40,7 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.selection.isEnabled = true
                 }),
 
-            GraffeineRadialLabelLayer(id: ID.pieLabels)
+            GraffeinePieLabelLayer(id: ID.pieLabels)
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 270

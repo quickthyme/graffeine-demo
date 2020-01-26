@@ -18,9 +18,9 @@ class RedGreenLinesConfig: GraffeineViewConfig {
             GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 28, region: .topGutter)
                 .apply ({
                     $0.unitText.colors = [.white]
-                    $0.labelHorizontalAlignmentMode = .center
-                    $0.labelVerticalAlignmentMode = .bottom
-                    $0.labelVPadding = 4.0
+                    $0.labelAlignment.horizontal = .center
+                    $0.labelAlignment.vertical = .bottom
+                    $0.labelPadding.vertical = 4.0
                     $0.unitText.fontSize = 16.0
                     $0.data = GraffeineData(labels: ["PROJECTIONS"])
                 }),
@@ -28,10 +28,10 @@ class RedGreenLinesConfig: GraffeineViewConfig {
             GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 64, region: .rightGutter)
                 .apply ({
                     $0.rowMargin = unitMargin
-                    $0.labelHorizontalAlignmentMode = .left
-                    $0.labelVerticalAlignmentMode = .top
-                    $0.labelHPadding = 4.0
-                    $0.labelVPadding = -8.0
+                    $0.labelAlignment.horizontal = .left
+                    $0.labelAlignment.vertical = .top
+                    $0.labelPadding.horizontal = 4.0
+                    $0.labelPadding.vertical = -8.0
                     $0.unitText.colors = [.red, .orange, .yellow, .green, .lightGray]
                     $0.unitText.fontSize = 11
                     $0.data = GraffeineData(labels: ["50,000", "37,500", "25,000", "12,500"])
@@ -40,19 +40,19 @@ class RedGreenLinesConfig: GraffeineViewConfig {
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter)
                 .apply ({
                     $0.unitText.colors = [.lightGray]
-                    $0.labelHorizontalAlignmentMode = .centerLeftRight
-                    $0.labelVerticalAlignmentMode = .top
-                    $0.labelVPadding = 4.0
+                    $0.labelAlignment.horizontal = .centerLeftRight
+                    $0.labelAlignment.vertical = .top
+                    $0.labelPadding.vertical = 4.0
                     $0.data = GraffeineData(labels: ["PAST", "PRESENT", "FUTURE"])
                 }),
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 64, region: .leftGutter)
                 .apply ({
                     $0.rowMargin = unitMargin
-                    $0.labelHorizontalAlignmentMode = .right
-                    $0.labelVerticalAlignmentMode = .top
-                    $0.labelHPadding = 4.0
-                    $0.labelVPadding = -8.0
+                    $0.labelAlignment.horizontal = .right
+                    $0.labelAlignment.vertical = .top
+                    $0.labelPadding.horizontal = 4.0
+                    $0.labelPadding.vertical = -8.0
                     $0.unitText.colors = [.red, .orange, .yellow, .green, .lightGray]
                     $0.unitText.fontSize = 11
                     $0.data = GraffeineData(labels: ["50,000", "37,500", "25,000", "12,500"])
