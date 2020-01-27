@@ -48,17 +48,16 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitFill.colors = [UIColor(white: 0.9, alpha: 0.9)]
                     $0.unitColumn.subdivision.offset = .percentage(0.5)
                     $0.unitColumn.subdivision.width = .explicit(1.0)
-                    $0.selection.fill.opacity = 0.3
+                    $0.selection.fill.color = UIColor(white: 0.3, alpha: 1.0)
                 }),
 
             GraffeineBarLayer(id: ID.candle)
                 .apply ({
                     $0.unitColumn.margin = unitMargin
                     $0.insets = candleInsets
-                    $0.unitFill.colors = [.red]
                     $0.roundedEnds = .both(2)
                     $0.selection.isEnabled = true
-                    $0.selection.fill.opacity = 0.3
+                    $0.selection.fill.color = UIColor(white: 0.3, alpha: 1.0)
                 }),
 
             GraffeineBarLabelLayer(id: ID.candleLabel)
@@ -66,7 +65,7 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.insets = candleInsets
                     $0.unitText.colors = [.clear]
-                    $0.unitText.fontSize = 9.0
+                    $0.unitText.fontSize = 8.0
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
                     $0.selection.text.color = .white
