@@ -45,10 +45,12 @@ class CandlestickConfig: GraffeineViewConfig {
                 .apply ({
                     $0.unitColumn.margin = unitMargin
                     $0.insets = candleInsets
-                    $0.unitFill.colors = [UIColor(white: 0.9, alpha: 0.9)]
+                    $0.unitFill.colors = [.clear]
+                    $0.unitLine.colors = [.white]
+                    $0.unitLine.thickness = 1.0
                     $0.unitColumn.subdivision.offset = .percentage(0.5)
                     $0.unitColumn.subdivision.width = .explicit(1.0)
-                    $0.selection.fill.color = UIColor(white: 0.3, alpha: 1.0)
+                    $0.selection.line.dashPattern = [2, 2]
                 }),
 
             GraffeineBarLayer(id: ID.candle)
@@ -57,7 +59,9 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.insets = candleInsets
                     $0.roundedEnds = .both(2)
                     $0.selection.isEnabled = true
-                    $0.selection.fill.color = UIColor(white: 0.3, alpha: 1.0)
+                    $0.selection.line.color = .white
+                    $0.selection.line.thickness = 2
+                    $0.selection.line.dashPattern = [2, 2]
                 }),
 
             GraffeineBarLabelLayer(id: ID.candleLabel)
@@ -65,10 +69,13 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.insets = candleInsets
                     $0.unitText.colors = [.clear]
-                    $0.unitText.fontSize = 8.0
-                    $0.labelAlignment.horizontal = .center
-                    $0.labelAlignment.vertical = .center
+                    $0.unitText.fontSize = 12.0
+                    $0.labelAlignment.horizontal = .left
+                    $0.labelAlignment.vertical = .top
+                    $0.labelPadding.vertical = -16
+                    $0.labelPadding.horizontal = -32
                     $0.selection.text.color = .white
+                    $0.selection.fill.color = UIColor(white: 0.06, alpha: 0.77)
                 })
         ]
     }

@@ -45,7 +45,8 @@ extension CandlestickCell {
                 let hi = (didCloseHi) ? $1.close : $1.open
                 let lo = (didCloseHi) ? $1.open : $1.close
                 let color: UIColor = (didCloseHi) ? .green : .red
-                let label = "\($1.open)\n\($1.close)"
+                let label = " open: \t\($1.open)\n close: \t\($1.close)\n"
+                    + " hi: \t\t\($1.peakHi)\n lo: \t\t\($1.peakLo)\n "
                 return TradingDayLanes(hi: $0.hi + [hi],
                                        lo: $0.lo + [lo],
                                        peakHi: $0.peakHi + [$1.peakHi],
