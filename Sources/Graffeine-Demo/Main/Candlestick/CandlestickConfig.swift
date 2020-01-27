@@ -5,7 +5,7 @@ class CandlestickConfig: GraffeineViewConfig {
 
     enum ID: Hashable {
         case topGutter, rightGutter, bottomGutter, leftGutter
-        case grid, candle, wick
+        case grid, candle, wick, candleLabel
     }
 
     required init(_ graffeineView: GraffeineView) {
@@ -26,6 +26,7 @@ class CandlestickConfig: GraffeineViewConfig {
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 64, region: .leftGutter)
                 .apply ({
                     $0.insets = vLabelInsets
+                    $0.labelAlignment.horizontal = .right
                     $0.labelAlignment.vertical = .center
                     $0.unitText.colors = [.systemTeal]
                     $0.unitText.fontSize = 12
@@ -44,9 +45,10 @@ class CandlestickConfig: GraffeineViewConfig {
                 .apply ({
                     $0.unitColumn.margin = unitMargin
                     $0.insets = candleInsets
-                    $0.unitFill.colors = [.white]
+                    $0.unitFill.colors = [UIColor(white: 0.9, alpha: 0.9)]
                     $0.unitColumn.subdivision.offset = .percentage(0.5)
                     $0.unitColumn.subdivision.width = .explicit(1.0)
+                    $0.selection.fill.opacity = 0.3
                 }),
 
             GraffeineBarLayer(id: ID.candle)
@@ -55,13 +57,19 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.insets = candleInsets
                     $0.unitFill.colors = [.red]
                     $0.roundedEnds = .both(2)
-
                     $0.selection.isEnabled = true
-                    $0.selection.line.color = UIColor(white: 0.9, alpha: 0.5)
-                    $0.selection.line.thickness = 3
-                    $0.selection.shadow.color = .white
-                    $0.selection.shadow.radius = 4
-                    $0.selection.shadow.opacity = 0.7
+                    $0.selection.fill.opacity = 0.3
+                }),
+
+            GraffeineBarLabelLayer(id: ID.candleLabel)
+                .apply ({
+                    $0.unitColumn.margin = unitMargin
+                    $0.insets = candleInsets
+                    $0.unitText.colors = [.clear]
+                    $0.unitText.fontSize = 9.0
+                    $0.labelAlignment.horizontal = .center
+                    $0.labelAlignment.vertical = .center
+                    $0.selection.text.color = .white
                 })
         ]
     }

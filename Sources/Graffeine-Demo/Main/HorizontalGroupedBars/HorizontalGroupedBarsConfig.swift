@@ -33,6 +33,8 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                 .apply ({
                     $0.rowMargin = unitMargin
                     $0.labelAlignment.vertical = .center
+                    $0.labelAlignment.horizontal = .right
+                    $0.labelPadding.horizontal = 4.0
                     $0.unitText.colors = [.white]
                 }),
 

@@ -19,6 +19,12 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         }
     }
 
+    func labelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
+        return (animated)
+            ? GraffeineDataAnimators.Label.Slide(duration: 0.8, timing: .easeOut)
+            : nil
+    }
+
     func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
         return (animated)
             ? GraffeineDataAnimators.Bar.Grow(duration: 0.8, timing: .easeOut)
@@ -44,7 +50,8 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         let maxVal = ceil(lanes.peakHi.max()!)
         let lowestVal = floor(lanes.peakLo.min()!)
         let range = maxVal - lowestVal
-        let vLabels = [
+
+        let gutterLabelData = GraffeineData(labels: [
             "\(nf.string(from: NSNumber(value: maxVal))!)",
             " ",
             "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.8)))!)",
@@ -56,26 +63,32 @@ class CandlestickCell: UITableViewCell, DataAppliable {
             "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.2)))!)",
             " ",
             "\(nf.string(from: NSNumber(value: lowestVal))!)"
-        ]
+        ])
 
         let candleData = GraffeineData(valueMax: maxVal - lowestVal,
                                        valuesHi: lanes.hi.map { $0 - lowestVal },
                                        valuesLo: lanes.lo.map { $0 - lowestVal },
-                                       labels: vLabels,
+                                       labels: lanes.labels,
                                        selectedIndex: selectedIndex)
+
 
         let wickData = GraffeineData(valueMax: maxVal - lowestVal,
                                      valuesHi: lanes.peakHi.map { $0 - lowestVal },
-                                     valuesLo: lanes.peakLo.map { $0 - lowestVal })
+                                     valuesLo: lanes.peakLo.map { $0 - lowestVal },
+                                     selectedIndex: selectedIndex)
+
+        graffeineView.layer(id: LayerID.leftGutter)?.data = gutterLabelData
 
         graffeineView.layer(id: LayerID.wick)?
             .setData( wickData, animator: barAnimator(animated) )
 
-        graffeineView.layer(id: LayerID.candle)?.unitFill.colors = lanes.colors
+        graffeineView.layer(id: LayerID.candle)?
+            .unitFill.colors = lanes.colors
 
         graffeineView.layer(id: LayerID.candle)?
             .setData( candleData, animator: barAnimator(animated) )
 
-        graffeineView.layer(id: LayerID.leftGutter)?.data = candleData
+        graffeineView.layer(id: LayerID.candleLabel)?
+            .setData( candleData, animator: labelAnimator(animated) )
     }
 }

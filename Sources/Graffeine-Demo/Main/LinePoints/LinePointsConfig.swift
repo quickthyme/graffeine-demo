@@ -17,15 +17,7 @@ class LinePointsConfig: GraffeineViewConfig {
 
             GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 16, region: .topGutter),
 
-            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter)
-                .apply({
-                    $0.unitText.colors = [.black]
-                    $0.labelAlignment.horizontal = .left
-                    $0.labelAlignment.vertical = .top
-                    $0.labelPadding.vertical = 4.0
-                    $0.labelPadding.horizontal = -5
-                    $0.unitText.fontSize = 16.0
-                }),
+            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter),
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 28, region: .leftGutter),
 

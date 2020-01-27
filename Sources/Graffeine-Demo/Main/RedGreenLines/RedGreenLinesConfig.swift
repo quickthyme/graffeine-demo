@@ -30,7 +30,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.rowMargin = unitMargin
                     $0.labelAlignment.horizontal = .left
                     $0.labelAlignment.vertical = .top
-                    $0.labelPadding.horizontal = 4.0
+                    $0.labelPadding.horizontal = 6.0
                     $0.labelPadding.vertical = -8.0
                     $0.unitText.colors = [.red, .orange, .yellow, .green, .lightGray]
                     $0.unitText.fontSize = 11
@@ -51,7 +51,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.rowMargin = unitMargin
                     $0.labelAlignment.horizontal = .right
                     $0.labelAlignment.vertical = .top
-                    $0.labelPadding.horizontal = 4.0
+                    $0.labelPadding.horizontal = 6.0
                     $0.labelPadding.vertical = -8.0
                     $0.unitText.colors = [.red, .orange, .yellow, .green, .lightGray]
                     $0.unitText.fontSize = 11

@@ -37,18 +37,21 @@ extension CandlestickCell {
         let peakHi: [Double]
         let peakLo: [Double]
         let colors: [UIColor]
+        let labels: [String]
 
         static func `import`(_ input: [TradingDay]) -> TradingDayLanes {
-            return input.reduce(TradingDayLanes(hi: [], lo: [], peakHi: [], peakLo: [], colors: [])) {
+            return input.reduce(TradingDayLanes(hi: [], lo: [], peakHi: [], peakLo: [], colors: [], labels: [])) {
                 let didCloseHi = ($1.close > $1.open)
                 let hi = (didCloseHi) ? $1.close : $1.open
                 let lo = (didCloseHi) ? $1.open : $1.close
                 let color: UIColor = (didCloseHi) ? .green : .red
+                let label = "\($1.open)\n\($1.close)"
                 return TradingDayLanes(hi: $0.hi + [hi],
                                        lo: $0.lo + [lo],
                                        peakHi: $0.peakHi + [$1.peakHi],
                                        peakLo: $0.peakLo + [$1.peakLo],
-                                       colors: $0.colors + [color])
+                                       colors: $0.colors + [color],
+                                       labels: $0.labels + [label])
             }
         }
     }

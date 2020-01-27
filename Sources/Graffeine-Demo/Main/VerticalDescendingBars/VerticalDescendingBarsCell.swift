@@ -56,13 +56,13 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
                                  labels: values.map { ($0 == nil) ? "?" : "\(Int($0!))" },
                                  selectedIndex: selectedIndex)
 
+        graffeineView.layer(id: LayerID.bottomGutter)?
+            .setData(data, animator: nil)
+
         graffeineView.layer(id: LayerID.bar)!
             .setData(data, animator: barAnimator(animated))
 
         graffeineView.layer(id: LayerID.barLabel)!
             .setData(data, animator: barLabelAnimator(animated))
-
-        graffeineView.layer(id: LayerID.bottomGutter)?
-            .setData(data, animator: nil)
     }
 }
