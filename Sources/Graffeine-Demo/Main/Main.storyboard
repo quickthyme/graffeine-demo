@@ -201,6 +201,89 @@
                                             <outlet property="graffeineView" destination="x9g-Rm-Cjh" id="4vr-N6-ss2"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProgressIndicatorsCell" id="JTe-CA-Cub" customClass="ProgressIndicatorsCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1875.5" width="414" height="260"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JTe-CA-Cub" id="y4E-dS-510">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5H-DP-972">
+                                                    <rect key="frame" x="16" y="107" width="118" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="Tq5-t5-lMk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Arbitrary load...">
+                                                        <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="wait1:" destination="JTe-CA-Cub" eventType="touchUpInside" id="s6r-lM-4po"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CTh-zk-4Fa">
+                                                    <rect key="frame" x="16" y="163" width="146" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Wait for progress...">
+                                                        <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="wait2:" destination="JTe-CA-Cub" eventType="touchUpInside" id="Nev-79-gqr"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vc5-hE-Xqb" userLabel="Progress Rad" customClass="GraffeineView" customModule="Graffeine">
+                                                    <rect key="frame" x="166" y="107" width="32" height="32"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="UkN-aK-Zxc"/>
+                                                        <constraint firstAttribute="width" constant="32" id="s3c-cD-XAo"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ProgressIndicatorsConfigRad"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWn-jb-Rhr">
+                                                    <rect key="frame" x="16" y="24" width="382" height="61"/>
+                                                    <string key="text">Please select from one of the waiting options below. Your time is valuable, and a service representative will be with you shortly.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv8-XH-2bt" userLabel="Progress Rad" customClass="GraffeineView" customModule="Graffeine">
+                                                    <rect key="frame" x="16" y="212" width="382" height="24"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="xAs-tO-bGy"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ProgressIndicatorsConfigBar"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cv8-XH-2bt" firstAttribute="top" secondItem="CTh-zk-4Fa" secondAttribute="bottom" constant="16" id="2WX-iT-tJg"/>
+                                                <constraint firstItem="CTh-zk-4Fa" firstAttribute="top" secondItem="f5H-DP-972" secondAttribute="bottom" constant="24" id="4aE-5u-589"/>
+                                                <constraint firstAttribute="trailing" secondItem="pWn-jb-Rhr" secondAttribute="trailing" constant="16" id="7tH-qS-FYg"/>
+                                                <constraint firstItem="f5H-DP-972" firstAttribute="leading" secondItem="y4E-dS-510" secondAttribute="leading" constant="16" id="8Q6-Qp-exi"/>
+                                                <constraint firstAttribute="trailing" secondItem="cv8-XH-2bt" secondAttribute="trailing" constant="16" id="9lY-7D-8Rs"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vc5-hE-Xqb" secondAttribute="trailing" constant="16" id="GMR-cG-MsB"/>
+                                                <constraint firstItem="cv8-XH-2bt" firstAttribute="leading" secondItem="y4E-dS-510" secondAttribute="leading" constant="16" id="JXx-u6-ZW8"/>
+                                                <constraint firstItem="f5H-DP-972" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pWn-jb-Rhr" secondAttribute="bottom" constant="16" id="K5x-XU-zrs"/>
+                                                <constraint firstAttribute="trailing" secondItem="cv8-XH-2bt" secondAttribute="trailing" constant="16" id="M05-sY-Kdq"/>
+                                                <constraint firstItem="Vc5-hE-Xqb" firstAttribute="centerY" secondItem="f5H-DP-972" secondAttribute="centerY" id="N4j-xN-gqI"/>
+                                                <constraint firstItem="pWn-jb-Rhr" firstAttribute="leading" secondItem="y4E-dS-510" secondAttribute="leading" constant="16" id="WOQ-hk-1uZ"/>
+                                                <constraint firstItem="pWn-jb-Rhr" firstAttribute="top" secondItem="y4E-dS-510" secondAttribute="top" constant="24" id="WT1-0F-KfJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="cv8-XH-2bt" secondAttribute="bottom" constant="24" id="b9y-AH-hvf"/>
+                                                <constraint firstItem="cv8-XH-2bt" firstAttribute="leading" secondItem="y4E-dS-510" secondAttribute="leading" constant="16" id="dK0-Ku-oSw"/>
+                                                <constraint firstItem="CTh-zk-4Fa" firstAttribute="leading" secondItem="y4E-dS-510" secondAttribute="leading" constant="16" id="noV-3m-gAU"/>
+                                                <constraint firstItem="Vc5-hE-Xqb" firstAttribute="leading" secondItem="f5H-DP-972" secondAttribute="trailing" constant="32" id="zZr-ng-g6A"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="progBar" destination="cv8-XH-2bt" id="z02-3j-MbM"/>
+                                            <outlet property="progRad" destination="Vc5-hE-Xqb" id="8c2-h4-YcH"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="OqM-cJ-NB1"/>

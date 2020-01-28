@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1B828123DFABED005E379E /* ProgressIndicatorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */; };
+		DC1B828223DFABF1005E379E /* ProgressIndicatorsConfigBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */; };
+		DC1B828323DFABF1005E379E /* ProgressIndicatorsConfigRad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */; };
 		DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */; };
 		DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */; };
 		DC2FA27D23CEB5A200E88807 /* LinePointsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA27C23CEB55200E88807 /* LinePointsConfig.swift */; };
@@ -67,6 +70,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsCell.swift; sourceTree = "<group>"; };
+		DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsConfigBar.swift; sourceTree = "<group>"; };
+		DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsConfigRad.swift; sourceTree = "<group>"; };
 		DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotConfig.swift; sourceTree = "<group>"; };
 		DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotCell.swift; sourceTree = "<group>"; };
 		DC2FA27B23CEB55200E88807 /* LinePointsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePointsCell.swift; sourceTree = "<group>"; };
@@ -118,6 +124,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC1B827C23DFAA52005E379E /* ProgressIndicators */ = {
+			isa = PBXGroup;
+			children = (
+				DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */,
+				DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */,
+				DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */,
+			);
+			path = ProgressIndicators;
+			sourceTree = "<group>";
+		};
 		DC2FA26723CE8F9F00E88807 /* Scatterplot */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +204,7 @@
 				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
 				DC2FA27923CEB53600E88807 /* LinePoints */,
 				DCE4C9DB23D0371E00C47EFD /* PieSlices */,
+				DC1B827C23DFAA52005E379E /* ProgressIndicators */,
 				DC7F220D23C7BF70009629DD /* RedGreenLines */,
 				DC2FA26723CE8F9F00E88807 /* Scatterplot */,
 				DC7F21EC23C6E56A009629DD /* VerticalDescendingBars */,
@@ -403,9 +420,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7F21CA23C6DD46009629DD /* MainViewController.swift in Sources */,
+				DC1B828323DFABF1005E379E /* ProgressIndicatorsConfigRad.swift in Sources */,
 				DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */,
 				DC2FA27E23CEB5A700E88807 /* LinePointsCell.swift in Sources */,
 				DC7F221223C7C126009629DD /* RedGreenLinesConfig.swift in Sources */,
+				DC1B828223DFABF1005E379E /* ProgressIndicatorsConfigBar.swift in Sources */,
 				DCE4C9DF23D037AE00C47EFD /* PieSlicesConfig.swift in Sources */,
 				DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */,
 				DC8773F823DC24AD005246BA /* CandlestickCell+TradingDay.swift in Sources */,
@@ -414,6 +433,7 @@
 				DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */,
 				DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */,
 				DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */,
+				DC1B828123DFABED005E379E /* ProgressIndicatorsCell.swift in Sources */,
 				DC7F221123C7BFA4009629DD /* RedGreenLinesCell.swift in Sources */,
 				DC2FA27D23CEB5A200E88807 /* LinePointsConfig.swift in Sources */,
 				DC7F21D723C6DD8C009629DD /* GraffeineLibrarySymbolProtection.swift in Sources */,
