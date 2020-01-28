@@ -22,12 +22,12 @@ class CandlestickConfig: GraffeineViewConfig {
         super.init(graffeineView)
 
         let unitMargin: CGFloat = 6.0
-        let candleInsets = UIEdgeInsets.init(top:  0, left: 24, bottom:  0, right: 24)
+        let candleInsets = UIEdgeInsets.init(top:  0, left: 16, bottom:  0, right: 16)
 
         graffeineView.layers = [
 
             GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 24, region: .topGutter),
-            GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 24, region: .rightGutter),
+            GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 16, region: .rightGutter),
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 24, region: .bottomGutter),
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 8, region: .leftGutter),
 
@@ -45,9 +45,9 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.insets = candleInsets
                     $0.unitFill.colors = [.clear]
                     $0.unitLine.colors = [.white]
-                    $0.unitLine.thickness = 1.0
-                    $0.unitColumn.subdivision.offset = .percentage(0.5)
-                    $0.unitColumn.subdivision.width = .explicit(1.0)
+                    $0.unitLine.thickness = 0.25
+                    $0.unitColumn.subdivision.offset = .percentage(0.49)
+                    $0.unitColumn.subdivision.width = .explicit(0.5)
                     $0.selection.line.color = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
                 }),
 

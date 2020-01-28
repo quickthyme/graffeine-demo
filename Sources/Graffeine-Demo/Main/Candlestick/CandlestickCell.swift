@@ -8,17 +8,43 @@ class CandlestickCell: UITableViewCell, DataAppliable {
 
     @IBOutlet weak var leftGutterView: GraffeineView!
     @IBOutlet weak var graffeineView: GraffeineView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
 
     var selectedIndex: Int? = nil
     var lanes: TradingDayLanes?
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupScrollZoom()
+        self.widthConstraint.constant = self.bounds.size.width * 3
         graffeineView.onSelect = { selection in
             self.selectedIndex = selection?.data.selectedIndex
             self.lanes = (self.selectedIndex == nil) ? nil : self.lanes
             self.applyData(animated: true)
         }
+    }
+
+    @IBAction func pinchHandler(_ recognizer: UIPinchGestureRecognizer?) {
+        guard let recognizer = recognizer, let recognizerView = recognizer.view else { return }
+        switch recognizer.state{
+        case .began, .changed:
+            if let content = recognizerView.subviews.first as? GraffeineView {
+                widthConstraint.constant *= recognizer.scale
+                content.layoutSublayers(of: content.layer)
+            }
+        default: break
+        }
+        recognizer.scale = 1.0
+    }
+
+    func setupScrollZoom() {
+        let recognizer = UIPinchGestureRecognizer(target: self, action: #selector(pinchHandler(_:)))
+        for r in scrollView.gestureRecognizers ?? [] { if (r is UIPinchGestureRecognizer) { r.isEnabled = false } }
+        scrollView.addGestureRecognizer(recognizer)
+        scrollView.minimumZoomScale = 6.0
+        scrollView.maximumZoomScale = 6.0
+        scrollView.zoomScale = 1.0
     }
 
     func labelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
@@ -34,7 +60,7 @@ class CandlestickCell: UITableViewCell, DataAppliable {
     }
 
     var dataSet: [TradingDay] {
-        return TradingDay.generateRandom(numberOfDays: 90, lowest: 10, highest: 90)
+        return TradingDay.generateRandom(numberOfDays: 45, lowest: 10, highest: 90)
     }
 
     func applyData() {

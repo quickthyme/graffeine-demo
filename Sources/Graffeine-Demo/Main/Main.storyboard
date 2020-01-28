@@ -192,14 +192,14 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="CandlestickGutterConfig"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-Nj-ufd">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-Nj-ufd">
                                                     <rect key="frame" x="64" y="0.0" width="350" height="260"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9g-Rm-Cjh" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
-                                                            <rect key="frame" x="0.0" y="0.0" width="2548" height="260"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="260"/>
                                                             <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="2548" id="7cG-0S-Gnh"/>
+                                                                <constraint firstAttribute="width" priority="950" constant="350" id="8tb-pa-lCD"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="CandlestickConfig"/>
@@ -219,6 +219,7 @@
                                                 </scrollView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="x9g-Rm-Cjh" firstAttribute="width" relation="greaterThanOrEqual" secondItem="e2e-gh-nwq" secondAttribute="width" constant="-64" id="B7x-eD-EWS"/>
                                                 <constraint firstAttribute="bottom" secondItem="4j5-Nj-ufd" secondAttribute="bottom" id="GGI-c2-3BP"/>
                                                 <constraint firstItem="4j5-Nj-ufd" firstAttribute="leading" secondItem="YzW-xh-yEX" secondAttribute="trailing" id="Lhi-Ge-KiD"/>
                                                 <constraint firstAttribute="bottom" secondItem="YzW-xh-yEX" secondAttribute="bottom" id="VmV-UQ-iJS"/>
@@ -231,6 +232,8 @@
                                         <connections>
                                             <outlet property="graffeineView" destination="x9g-Rm-Cjh" id="4vr-N6-ss2"/>
                                             <outlet property="leftGutterView" destination="YzW-xh-yEX" id="3uw-fG-Mtf"/>
+                                            <outlet property="scrollView" destination="4j5-Nj-ufd" id="9Xl-sh-Npd"/>
+                                            <outlet property="widthConstraint" destination="8tb-pa-lCD" id="dLg-aF-ecc"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProgressIndicatorsCell" id="JTe-CA-Cub" customClass="ProgressIndicatorsCell" customModule="Graffeine_Demo" customModuleProvider="target">
