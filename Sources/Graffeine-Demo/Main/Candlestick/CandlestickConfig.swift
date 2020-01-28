@@ -8,30 +8,28 @@ class CandlestickConfig: GraffeineViewConfig {
         case grid, candle, wick, candleLabel
     }
 
+    func marchingAntsAnimation(dashPhase: Int, clockwise: Bool) -> CAAnimation {
+        let toValue = (clockwise) ? 0 - dashPhase : dashPhase
+        let animation = CABasicAnimation(keyPath: "lineDashPhase")
+        animation.fromValue = NSNumber(value: 0)
+        animation.toValue = NSNumber(value: toValue)
+        animation.duration = 1
+        animation.repeatCount = .infinity
+        return animation
+    }
+
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
 
         let unitMargin: CGFloat = 6.0
-        let vLabelInsets = UIEdgeInsets.init(top: -12, left:  0, bottom: -10, right:  0)
         let candleInsets = UIEdgeInsets.init(top:  0, left: 24, bottom:  0, right: 24)
 
         graffeineView.layers = [
 
             GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 24, region: .topGutter),
-
             GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 24, region: .rightGutter),
-
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 24, region: .bottomGutter),
-
-            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 64, region: .leftGutter)
-                .apply ({
-                    $0.insets = vLabelInsets
-                    $0.labelAlignment.horizontal = .right
-                    $0.labelAlignment.vertical = .center
-                    $0.unitText.colors = [.systemTeal]
-                    $0.unitText.fontSize = 12
-                    $0.labelPadding.horizontal = 8
-                }),
+            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 8, region: .leftGutter),
 
             GraffeineGridLineLayer(id: ID.grid)
                 .apply ({
@@ -50,18 +48,20 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitLine.thickness = 1.0
                     $0.unitColumn.subdivision.offset = .percentage(0.5)
                     $0.unitColumn.subdivision.width = .explicit(1.0)
-                    $0.selection.line.dashPattern = [2, 2]
+                    $0.selection.line.color = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
                 }),
 
             GraffeineBarLayer(id: ID.candle)
                 .apply ({
                     $0.unitColumn.margin = unitMargin
                     $0.insets = candleInsets
-                    $0.roundedEnds = .both(2)
+                    $0.roundedEnds = .both(3)
                     $0.selection.isEnabled = true
+                    $0.selection.fill.color = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
                     $0.selection.line.color = .white
                     $0.selection.line.thickness = 2
                     $0.selection.line.dashPattern = [2, 2]
+                    $0.selection.animation = marchingAntsAnimation(dashPhase: 4, clockwise: true)
                 }),
 
             GraffeineBarLabelLayer(id: ID.candleLabel)
@@ -75,7 +75,7 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.labelPadding.vertical = -16
                     $0.labelPadding.horizontal = -32
                     $0.selection.text.color = .white
-                    $0.selection.fill.color = UIColor(white: 0.06, alpha: 0.77)
+                    $0.selection.fill.color = UIColor(white: 0.06, alpha: 0.72)
                 })
         ]
     }

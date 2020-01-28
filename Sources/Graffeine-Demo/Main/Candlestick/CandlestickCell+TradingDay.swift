@@ -40,13 +40,20 @@ extension CandlestickCell {
         let labels: [String]
 
         static func `import`(_ input: [TradingDay]) -> TradingDayLanes {
+            let nf = NumberFormatter()
+            nf.numberStyle = .currency
+
+            func formatted(_ val: Double) -> String {
+                return nf.string(from: NSNumber(value: val)) ?? ""
+            }
+
             return input.reduce(TradingDayLanes(hi: [], lo: [], peakHi: [], peakLo: [], colors: [], labels: [])) {
                 let didCloseHi = ($1.close > $1.open)
                 let hi = (didCloseHi) ? $1.close : $1.open
                 let lo = (didCloseHi) ? $1.open : $1.close
                 let color: UIColor = (didCloseHi) ? .green : .red
-                let label = " open: \t\($1.open)\n close: \t\($1.close)\n"
-                    + " hi: \t\t\($1.peakHi)\n lo: \t\t\($1.peakLo)\n "
+                let label = " open:\t\(formatted($1.open))\n close:\t\(formatted($1.close))\n"
+                    + " hi:\t\t\(formatted($1.peakHi))\n lo:\t\t\(formatted($1.peakLo))\n"
                 return TradingDayLanes(hi: $0.hi + [hi],
                                        lo: $0.lo + [lo],
                                        peakHi: $0.peakHi + [$1.peakHi],

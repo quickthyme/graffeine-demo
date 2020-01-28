@@ -10,6 +10,7 @@
 		DC1B828123DFABED005E379E /* ProgressIndicatorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */; };
 		DC1B828223DFABF1005E379E /* ProgressIndicatorsConfigBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */; };
 		DC1B828323DFABF1005E379E /* ProgressIndicatorsConfigRad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */; };
+		DC1B828A23E01AD9005E379E /* CandlestickGutterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B828823E01AD9005E379E /* CandlestickGutterConfig.swift */; };
 		DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */; };
 		DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */; };
 		DC2FA27D23CEB5A200E88807 /* LinePointsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA27C23CEB55200E88807 /* LinePointsConfig.swift */; };
@@ -73,6 +74,7 @@
 		DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsCell.swift; sourceTree = "<group>"; };
 		DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsConfigBar.swift; sourceTree = "<group>"; };
 		DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsConfigRad.swift; sourceTree = "<group>"; };
+		DC1B828823E01AD9005E379E /* CandlestickGutterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickGutterConfig.swift; sourceTree = "<group>"; };
 		DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotConfig.swift; sourceTree = "<group>"; };
 		DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotCell.swift; sourceTree = "<group>"; };
 		DC2FA27B23CEB55200E88807 /* LinePointsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePointsCell.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			children = (
 				DC8773EF23DBD624005246BA /* CandlestickCell.swift */,
 				DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */,
+				DC1B828823E01AD9005E379E /* CandlestickGutterConfig.swift */,
 				DC8773F023DBD624005246BA /* CandlestickConfig.swift */,
 			);
 			path = Candlestick;
@@ -440,6 +443,7 @@
 				DC7F21EF23C6EBCE009629DD /* VerticalDescendingBarsConfig.swift in Sources */,
 				DC7F21DC23C6E014009629DD /* VerticalDescendingBarsCell.swift in Sources */,
 				DC7F21EE23C6E6EB009629DD /* DataAppliable.swift in Sources */,
+				DC1B828A23E01AD9005E379E /* CandlestickGutterConfig.swift in Sources */,
 				DCE4C9E023D037B200C47EFD /* PieSlicesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

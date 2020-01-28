@@ -4,7 +4,9 @@ import Graffeine
 class CandlestickCell: UITableViewCell, DataAppliable {
 
     typealias LayerID = CandlestickConfig.ID
+    typealias GutterLayerID = CandlestickGutterConfig.ID
 
+    @IBOutlet weak var leftGutterView: GraffeineView!
     @IBOutlet weak var graffeineView: GraffeineView!
 
     var selectedIndex: Int? = nil
@@ -32,7 +34,7 @@ class CandlestickCell: UITableViewCell, DataAppliable {
     }
 
     var dataSet: [TradingDay] {
-        return TradingDay.generateRandom(numberOfDays: 15, lowest: 10, highest: 90)
+        return TradingDay.generateRandom(numberOfDays: 90, lowest: 10, highest: 90)
     }
 
     func applyData() {
@@ -77,7 +79,7 @@ class CandlestickCell: UITableViewCell, DataAppliable {
                                      valuesLo: lanes.peakLo.map { $0 - lowestVal },
                                      selectedIndex: selectedIndex)
 
-        graffeineView.layer(id: LayerID.leftGutter)?.data = gutterLabelData
+        leftGutterView.layer(id: GutterLayerID.mainGutter)?.data = gutterLabelData
 
         graffeineView.layer(id: LayerID.wick)?
             .setData( wickData, animator: barAnimator(animated) )
