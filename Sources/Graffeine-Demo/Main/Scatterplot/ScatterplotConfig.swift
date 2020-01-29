@@ -48,7 +48,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
 
                     $0.selection.isEnabled = true
-                    $0.selection.radial.diameter = .explicit(48.0)
+                    $0.selection.radial.outerDiameter = .explicit(48.0)
                     $0.selection.line.thickness = 3
                 }),
 
@@ -61,7 +61,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
 
                     $0.selection.isEnabled = true
-                    $0.selection.radial.diameter = .explicit(32.0)
+                    $0.selection.radial.outerDiameter = .explicit(32.0)
                     $0.selection.line.thickness = 3
                 }),
 
@@ -74,7 +74,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
 
                     $0.selection.isEnabled = true
-                    $0.selection.radial.diameter = .explicit(24.0)
+                    $0.selection.radial.outerDiameter = .explicit(24.0)
                     $0.selection.line.thickness = 3
                 })
         ]

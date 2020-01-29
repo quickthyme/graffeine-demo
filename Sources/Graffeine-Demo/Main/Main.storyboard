@@ -217,20 +217,33 @@
                                                     <viewLayoutGuide key="contentLayoutGuide" id="cHT-oI-Y91"/>
                                                     <viewLayoutGuide key="frameLayoutGuide" id="iM4-Gk-urB"/>
                                                 </scrollView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Il-lm-hSV">
+                                                    <rect key="frame" x="72" y="236" width="326" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="Q4X-ed-x8l"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.68947080155380713" green="0.4507535440930534" blue="0.16295275320171901" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="x9g-Rm-Cjh" firstAttribute="width" relation="greaterThanOrEqual" secondItem="e2e-gh-nwq" secondAttribute="width" constant="-64" id="B7x-eD-EWS"/>
                                                 <constraint firstAttribute="bottom" secondItem="4j5-Nj-ufd" secondAttribute="bottom" id="GGI-c2-3BP"/>
                                                 <constraint firstItem="4j5-Nj-ufd" firstAttribute="leading" secondItem="YzW-xh-yEX" secondAttribute="trailing" id="Lhi-Ge-KiD"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Il-lm-hSV" secondAttribute="trailing" constant="16" id="Tkr-EO-e4j"/>
                                                 <constraint firstAttribute="bottom" secondItem="YzW-xh-yEX" secondAttribute="bottom" id="VmV-UQ-iJS"/>
                                                 <constraint firstItem="YzW-xh-yEX" firstAttribute="leading" secondItem="e2e-gh-nwq" secondAttribute="leading" id="h5z-jT-njh"/>
                                                 <constraint firstItem="YzW-xh-yEX" firstAttribute="top" secondItem="e2e-gh-nwq" secondAttribute="top" id="hci-Dc-2Ws"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Il-lm-hSV" secondAttribute="bottom" constant="2" id="iUI-Gp-iTE"/>
+                                                <constraint firstItem="2Il-lm-hSV" firstAttribute="leading" secondItem="YzW-xh-yEX" secondAttribute="trailing" constant="8" id="lcy-9K-Wnl"/>
                                                 <constraint firstAttribute="trailing" secondItem="4j5-Nj-ufd" secondAttribute="trailing" id="vlU-Xj-N5Y"/>
                                                 <constraint firstItem="4j5-Nj-ufd" firstAttribute="top" secondItem="e2e-gh-nwq" secondAttribute="top" id="x76-cQ-z0J"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="graffeineView" destination="x9g-Rm-Cjh" id="4vr-N6-ss2"/>
+                                            <outlet property="infoLabel" destination="2Il-lm-hSV" id="Ipz-XA-MGh"/>
                                             <outlet property="leftGutterView" destination="YzW-xh-yEX" id="3uw-fG-Mtf"/>
                                             <outlet property="scrollView" destination="4j5-Nj-ufd" id="9Xl-sh-Npd"/>
                                             <outlet property="widthConstraint" destination="8tb-pa-lCD" id="dLg-aF-ecc"/>

@@ -10,7 +10,7 @@ class ProgressIndicatorsCell: UITableViewCell, DataAppliable {
     @IBOutlet weak var progRad: GraffeineView!
 
     @IBAction func wait1(_ sender: AnyObject?) {
-        progRad.layer(id: RadID.progress)!.setData(GraffeineData(valueMax: 100, values: [10]),
+        progRad.layer(id: RadID.progress)!.setData(GraffeineData(valueMax: 100, values: [0]),
                                                    animator: radAnimator(0.22))
         delay(0.5, self.updateProgRad(100))
     }
@@ -33,8 +33,8 @@ class ProgressIndicatorsCell: UITableViewCell, DataAppliable {
         return GraffeineAnimation.Data.Bar.Grow(duration: duration, timing: .linear)
     }
 
-    func radAnimator(_ duration: TimeInterval) -> GraffeinePieDataAnimating? {
-        return GraffeineAnimation.Data.Pie.Automatic(duration: duration, timing: .linear)
+    func radAnimator(_ duration: TimeInterval) -> GraffeineRadialSegmentDataAnimating? {
+        return GraffeineAnimation.Data.RadialSegment.Automatic(duration: duration, timing: .linear)
     }
 
     func applyData() {

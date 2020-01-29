@@ -62,10 +62,8 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.insets = candleInsets
                     $0.unitText.colors = [.clear]
                     $0.unitText.fontSize = 12.0
-                    $0.labelAlignment.horizontal = .left
-                    $0.labelAlignment.vertical = .top
-                    $0.labelPadding.vertical = -16
-                    $0.labelPadding.horizontal = -32
+                    $0.labelAlignment.horizontal = .center
+                    $0.labelAlignment.vertical = .center
                     $0.selection.text.color = .white
                     $0.selection.fill.color = UIColor(white: 0.06, alpha: 0.72)
                 })

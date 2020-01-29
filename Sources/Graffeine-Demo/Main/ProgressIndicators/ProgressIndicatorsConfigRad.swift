@@ -15,22 +15,22 @@ class ProgressIndicatorsConfigRad: GraffeineViewConfig {
 
         graffeineView.layers = [
 
-            GraffeinePieLayer(id: ID.track)
+            GraffeineRadialSegmentLayer(id: ID.track)
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 270
-                    $0.diameter = .explicit(outerDiameter)
-                    $0.holeDiameter = .explicit(innerDiameter)
+                    $0.outerDiameter = .explicit(outerDiameter)
+                    $0.innerDiameter = .explicit(innerDiameter)
                     $0.unitFill.colors = [UIColor(white: 0.88, alpha: 0.88)]
                     $0.data = GraffeineData.init(valueMax: 100, values: [100])
                 }),
 
-            GraffeinePieLayer(id: ID.progress)
+            GraffeineRadialSegmentLayer(id: ID.progress)
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 270
-                    $0.diameter = .explicit(outerDiameter)
-                    $0.holeDiameter = .explicit(innerDiameter)
+                    $0.outerDiameter = .explicit(outerDiameter)
+                    $0.innerDiameter = .explicit(innerDiameter)
                     $0.unitFill.colors = [.systemBlue]
                     $0.data = GraffeineData.init(valueMax: 100, values: [0])
                 })

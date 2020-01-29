@@ -10,6 +10,7 @@ class CandlestickCell: UITableViewCell, DataAppliable {
     @IBOutlet weak var graffeineView: GraffeineView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var infoLabel: UILabel!
 
     var minZoomWidth: CGFloat { return (self.bounds.size.width - 64) }
     var maxZoomWidth: CGFloat { return (self.bounds.size.width - 64) * 5 }
@@ -19,6 +20,7 @@ class CandlestickCell: UITableViewCell, DataAppliable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        infoLabel.text = ""
         setupScrollZoom()
         graffeineView.onSelect = { selection in
             self.selectedIndex = selection?.data.selectedIndex
@@ -81,6 +83,17 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         let nf = NumberFormatter()
         nf.numberStyle = .currency
 
+        let cal = Calendar.init(identifier: .gregorian)
+        let df = DateFormatter()
+        df.dateFormat = "MM/dd/yyyy"
+
+        let today = Date()
+        let candleLabels: [String?] = lanes.hi
+            .enumerated()
+            .map({ let d = cal.date(byAdding: .day, value: 0 - $0.offset, to: today)
+                return df.string(from: d!) })
+            .reversed()
+
         let maxVal = ceil(lanes.peakHi.max()!)
         let lowestVal = floor(lanes.peakLo.min()!)
         let range = maxVal - lowestVal
@@ -102,7 +115,7 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         let candleData = GraffeineData(valueMax: maxVal - lowestVal,
                                        valuesHi: lanes.hi.map { $0 - lowestVal },
                                        valuesLo: lanes.lo.map { $0 - lowestVal },
-                                       labels: lanes.labels,
+                                       labels: candleLabels,
                                        selectedIndex: selectedIndex)
 
 
@@ -124,5 +137,11 @@ class CandlestickCell: UITableViewCell, DataAppliable {
 
         graffeineView.layer(id: LayerID.candleLabel)?
             .setData( candleData, animator: labelAnimator(animated) )
+
+        if let selectedIndex = self.selectedIndex {
+            infoLabel.text = lanes.labels[selectedIndex]
+        } else {
+            infoLabel.text = ""
+        }
     }
 }
