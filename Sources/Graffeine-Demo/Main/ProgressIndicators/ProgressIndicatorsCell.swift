@@ -16,7 +16,7 @@ class ProgressIndicatorsCell: UITableViewCell, DataAppliable {
     }
 
     @IBAction func wait2(_ sender: AnyObject?) {
-        progBar.layer(id: BarID.progress)!.setData(GraffeineData(valueMax: 100, values: [10]),
+        progBar.layer(id: BarID.progress)!.setData(GraffeineData(valueMax: 100, values: [0]),
                                                    animator: barAnimator(0.22))
         delay(0.5, self.updateProgBar(100))
     }
@@ -41,6 +41,7 @@ class ProgressIndicatorsCell: UITableViewCell, DataAppliable {
     }
 
     func updateProgBar(_ val: Double) {
+        progBar.layer(id: BarID.progress)!.mask?.bounds = progBar.layer(id: BarID.track)!.bounds
         let data = GraffeineData(valueMax: 100, values: [val])
         progBar.layer(id: BarID.progress)!.setData(data, animator: barAnimator(2.6))
     }
