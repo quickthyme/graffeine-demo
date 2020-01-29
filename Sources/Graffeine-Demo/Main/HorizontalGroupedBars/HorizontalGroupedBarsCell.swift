@@ -17,13 +17,13 @@ class HorizontalGroupedBarsCell: UITableViewCell, DataAppliable {
 
     func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
         return (animated)
-            ? GraffeineDataAnimators.Bar.Grow(duration: 0.8, timing: .easeOut)
+            ? GraffeineAnimation.Data.Bar.Grow(duration: 0.8, timing: .easeOut)
             : nil
     }
 
     func barLabelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
         return (animated)
-            ? GraffeineDataAnimators.Label.Slide(duration: 0.8, timing: .easeOut)
+            ? GraffeineAnimation.Data.Label.Slide(duration: 0.8, timing: .easeOut)
             : nil
     }
 

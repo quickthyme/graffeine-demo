@@ -44,19 +44,19 @@ class LinePointsCell: UITableViewCell, DataAppliable {
 
     func applyDataAnimated() {
         graffeineView.layer(id: LayerID.line)!.setData(lineAndPointData, animator:
-            GraffeineDataAnimators.Line.Morph(duration: 2.0,
-                                              timing: .easeInEaseOut))
+            GraffeineAnimation.Data.Line.Morph(duration: 2.0,
+                                               timing: .easeInEaseOut))
 
         let pointAnimator = (selectedIndex == nil)
-                ? GraffeineDataAnimators.Plot.FadeIn(duration: 2.0,
-                                                     timing: .easeInEaseOut,
-                                                     delayRatio: 0.99)
+                ? GraffeineAnimation.Data.Plot.FadeIn(duration: 2.0,
+                                                      timing: .easeInEaseOut,
+                                                      delayRatio: 0.99)
                 : nil
 
         let labelAnimator = (selectedIndex == nil)
-                ? GraffeineDataAnimators.PlotLabel.FadeIn(duration: 2.0,
-                                                          timing: .easeInEaseOut,
-                                                          delayRatio: 0.99)
+                ? GraffeineAnimation.Data.PlotLabel.FadeIn(duration: 2.0,
+                                                           timing: .easeInEaseOut,
+                                                           delayRatio: 0.99)
                 : nil
 
         graffeineView.layer(id: LayerID.point)!

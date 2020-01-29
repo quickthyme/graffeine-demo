@@ -17,7 +17,6 @@ class CandlestickCell: UITableViewCell, DataAppliable {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupScrollZoom()
-        self.widthConstraint.constant = self.bounds.size.width * 3
         graffeineView.onSelect = { selection in
             self.selectedIndex = selection?.data.selectedIndex
             self.lanes = (self.selectedIndex == nil) ? nil : self.lanes
@@ -42,20 +41,21 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         let recognizer = UIPinchGestureRecognizer(target: self, action: #selector(pinchHandler(_:)))
         for r in scrollView.gestureRecognizers ?? [] { if (r is UIPinchGestureRecognizer) { r.isEnabled = false } }
         scrollView.addGestureRecognizer(recognizer)
-        scrollView.minimumZoomScale = 6.0
+        scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 6.0
         scrollView.zoomScale = 1.0
+        self.widthConstraint.constant = (self.bounds.size.width - 64) * 2.5
     }
 
     func labelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
         return (animated)
-            ? GraffeineDataAnimators.Label.Slide(duration: 0.8, timing: .easeOut)
+            ? GraffeineAnimation.Data.Label.Slide(duration: 0.8, timing: .easeOut)
             : nil
     }
 
     func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
         return (animated)
-            ? GraffeineDataAnimators.Bar.Grow(duration: 0.8, timing: .easeOut)
+            ? GraffeineAnimation.Data.Bar.Grow(duration: 0.8, timing: .easeOut)
             : nil
     }
 

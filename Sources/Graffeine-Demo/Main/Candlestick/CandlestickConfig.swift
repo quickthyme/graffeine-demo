@@ -8,21 +8,12 @@ class CandlestickConfig: GraffeineViewConfig {
         case grid, candle, wick, candleLabel
     }
 
-    func marchingAntsAnimation(dashPhase: Int, clockwise: Bool) -> CAAnimation {
-        let toValue = (clockwise) ? 0 - dashPhase : dashPhase
-        let animation = CABasicAnimation(keyPath: "lineDashPhase")
-        animation.fromValue = NSNumber(value: 0)
-        animation.toValue = NSNumber(value: toValue)
-        animation.duration = 1
-        animation.repeatCount = .infinity
-        return animation
-    }
-
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
 
         let unitMargin: CGFloat = 6.0
         let candleInsets = UIEdgeInsets.init(top:  0, left: 16, bottom:  0, right: 16)
+        let diagonalLines = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
 
         graffeineView.layers = [
 
@@ -45,10 +36,10 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.insets = candleInsets
                     $0.unitFill.colors = [.clear]
                     $0.unitLine.colors = [.white]
-                    $0.unitLine.thickness = 0.25
+                    $0.unitLine.thickness = 0.5
                     $0.unitColumn.subdivision.offset = .percentage(0.49)
                     $0.unitColumn.subdivision.width = .explicit(0.5)
-                    $0.selection.line.color = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
+                    $0.selection.line.color = diagonalLines
                 }),
 
             GraffeineBarLayer(id: ID.candle)
@@ -57,11 +48,12 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.insets = candleInsets
                     $0.roundedEnds = .both(3)
                     $0.selection.isEnabled = true
-                    $0.selection.fill.color = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
-                    $0.selection.line.color = .white
-                    $0.selection.line.thickness = 2
-                    $0.selection.line.dashPattern = [2, 2]
-                    $0.selection.animation = marchingAntsAnimation(dashPhase: 4, clockwise: true)
+                    $0.selection.fill.color = diagonalLines
+                    $0.selection.line.color = UIColor(white: 0.88, alpha: 0.88)
+                    $0.selection.line.thickness = 3
+                    $0.selection.line.dashPattern = [3, 3]
+                    $0.selection.animation = GraffeineAnimation.Perpetual.MarchingAnts(dashPhase: 6,
+                                                                                       clockwise: true)
                 }),
 
             GraffeineBarLabelLayer(id: ID.candleLabel)

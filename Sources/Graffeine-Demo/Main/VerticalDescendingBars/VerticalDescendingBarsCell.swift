@@ -26,13 +26,13 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
 
     func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
         return (animated)
-            ? GraffeineDataAnimators.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
+            ? GraffeineAnimation.Data.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
             : nil
     }
 
     func barLabelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
         return (animated)
-            ? GraffeineDataAnimators.Label.Slide(duration: 0.88, timing: .easeInEaseOut)
+            ? GraffeineAnimation.Data.Label.Slide(duration: 0.88, timing: .easeInEaseOut)
             : nil
     }
 

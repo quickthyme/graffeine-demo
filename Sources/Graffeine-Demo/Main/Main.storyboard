@@ -192,7 +192,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="CandlestickGutterConfig"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-Nj-ufd">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4j5-Nj-ufd">
                                                     <rect key="frame" x="64" y="0.0" width="350" height="260"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9g-Rm-Cjh" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">

@@ -20,13 +20,13 @@ class RedGreenLinesCell: UITableViewCell, DataAppliable {
 
     func lineAnimator(_ animated: Bool) -> GraffeineLineDataAnimating? {
         return (animated)
-            ? GraffeineDataAnimators.Line.Trace(delay: 0, duration: 1.8, timing: .easeIn)
+            ? GraffeineAnimation.Data.Line.Trace(delay: 0, duration: 1.8, timing: .easeIn)
             : nil
     }
 
     func projectionLineAnimator(_ animated: Bool) -> GraffeineLineDataAnimating? {
         return (animated)
-            ? GraffeineDataAnimators.Line.Trace(delay: 1.8, duration: 0.2, timing: .linear)
+            ? GraffeineAnimation.Data.Line.Trace(delay: 1.8, duration: 0.2, timing: .linear)
             : nil
     }
 

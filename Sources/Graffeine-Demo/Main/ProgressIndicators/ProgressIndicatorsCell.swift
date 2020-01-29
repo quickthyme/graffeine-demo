@@ -30,11 +30,11 @@ class ProgressIndicatorsCell: UITableViewCell, DataAppliable {
     }
 
     func barAnimator(_ duration: TimeInterval) -> GraffeineBarDataAnimating? {
-        return GraffeineDataAnimators.Bar.Grow(duration: duration, timing: .linear)
+        return GraffeineAnimation.Data.Bar.Grow(duration: duration, timing: .linear)
     }
 
     func radAnimator(_ duration: TimeInterval) -> GraffeinePieDataAnimating? {
-        return GraffeineDataAnimators.Pie.Automatic(duration: duration, timing: .linear)
+        return GraffeineAnimation.Data.Pie.Automatic(duration: duration, timing: .linear)
     }
 
     func applyData() {

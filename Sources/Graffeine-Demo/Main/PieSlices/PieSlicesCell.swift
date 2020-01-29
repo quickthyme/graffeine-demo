@@ -45,15 +45,15 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     func getRandomPieAnimator() -> GraffeinePieDataAnimating {
         switch (Int.random(in: 0...3)) {
-        case 3:  return GraffeineDataAnimators.Pie.Spin(duration: 1.2, timing: .easeInEaseOut)
-        default: return GraffeineDataAnimators.Pie.Automatic(duration: 1.2, timing: .easeInEaseOut)
+        case 3:  return GraffeineAnimation.Data.Pie.Spin(duration: 1.2, timing: .easeInEaseOut)
+        default: return GraffeineAnimation.Data.Pie.Automatic(duration: 1.2, timing: .easeInEaseOut)
         }
     }
 
     func getLabelAnimator() -> GraffeinePieLabelDataAnimating {
-        return GraffeineDataAnimators.PieLabel.FadeIn(duration: 1.2,
-                                                      timing: .easeInEaseOut,
-                                                      delayRatio: 0.94)
+        return GraffeineAnimation.Data.PieLabel.FadeIn(duration: 1.2,
+                                                       timing: .easeInEaseOut,
+                                                       delayRatio: 0.94)
     }
 
     func applyData() {
@@ -75,12 +75,12 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
         let newData = getData()
         graffeineView.layer(id: LayerID.pie)?.setData(
             newData,
-            animator: GraffeineDataAnimators.Pie.Morph(duration: 0.22,
+            animator: GraffeineAnimation.Data.Pie.Morph(duration: 0.22,
                                                        timing: .linear))
 
         graffeineView.layer(id: LayerID.pieLabels)?.setData(
             newData,
-            animator: GraffeineDataAnimators.PieLabel.Move(duration: 0.22,
+            animator: GraffeineAnimation.Data.PieLabel.Move(duration: 0.22,
                                                            timing: .linear,
                                                            delayRatio: 0))
     }
