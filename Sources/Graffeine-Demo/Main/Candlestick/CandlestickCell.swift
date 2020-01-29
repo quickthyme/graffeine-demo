@@ -11,6 +11,9 @@ class CandlestickCell: UITableViewCell, DataAppliable {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
 
+    var minZoomWidth: CGFloat { return (self.bounds.size.width - 64) }
+    var maxZoomWidth: CGFloat { return (self.bounds.size.width - 64) * 5 }
+
     var selectedIndex: Int? = nil
     var lanes: TradingDayLanes?
 
@@ -29,7 +32,10 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         switch recognizer.state{
         case .began, .changed:
             if let content = recognizerView.subviews.first as? GraffeineView {
-                widthConstraint.constant *= recognizer.scale
+                let scale = (recognizer.scale <= 4) ? recognizer.scale : 4.0
+                let suggestedWidth = widthConstraint.constant * scale
+                let newWidth = min(maxZoomWidth, max(minZoomWidth, suggestedWidth))
+                widthConstraint.constant = newWidth
                 content.layoutSublayers(of: content.layer)
             }
         default: break
@@ -42,9 +48,9 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         for r in scrollView.gestureRecognizers ?? [] { if (r is UIPinchGestureRecognizer) { r.isEnabled = false } }
         scrollView.addGestureRecognizer(recognizer)
         scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 6.0
+        scrollView.maximumZoomScale = 1.0
         scrollView.zoomScale = 1.0
-        self.widthConstraint.constant = (self.bounds.size.width - 64) * 2.5
+        self.widthConstraint.constant = maxZoomWidth / 2
     }
 
     func labelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
