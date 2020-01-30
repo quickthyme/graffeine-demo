@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VerticalDescendingBarsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VerticalDescendingBarsCell" id="Re4-za-AHl" userLabel="VerticalDescendingBarsCell" customClass="VerticalDescendingBarsCell" customModule="Graffeine_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Re4-za-AHl" id="ZHv-3L-X3Z">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCb-s1-f2F" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="VerticalDescendingBarsConfig"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oCb-s1-f2F" secondAttribute="bottom" id="W5s-LZ-iiC"/>
+                    <constraint firstItem="oCb-s1-f2F" firstAttribute="leading" secondItem="ZHv-3L-X3Z" secondAttribute="leading" id="XOW-Cs-8Ki"/>
+                    <constraint firstItem="oCb-s1-f2F" firstAttribute="top" secondItem="ZHv-3L-X3Z" secondAttribute="top" id="aQW-Fs-Nyu"/>
+                    <constraint firstAttribute="trailing" secondItem="oCb-s1-f2F" secondAttribute="trailing" id="eYQ-sd-uGi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="graffeineView" destination="oCb-s1-f2F" id="PDk-FC-r1V"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="145"/>
+        </tableViewCell>
+    </objects>
+</document>

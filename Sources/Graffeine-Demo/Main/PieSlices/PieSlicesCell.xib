@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="PieSlicesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PieSlicesCell" id="C55-r3-gB5" userLabel="PieSlicesCell" customClass="PieSlicesCell" customModule="Graffeine_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C55-r3-gB5" id="FcH-gc-8gz">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.33000000000000002" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-PP-U4f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpw-ps-P5l" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="PieSlicesConfig"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="leading" secondItem="3DA-PP-U4f" secondAttribute="leading" id="6mY-wI-QG2"/>
+                            <constraint firstAttribute="trailing" secondItem="vpw-ps-P5l" secondAttribute="trailing" id="CQA-Gn-8Xd"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="height" secondItem="3DA-PP-U4f" secondAttribute="height" id="K9K-p9-IQj"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="top" secondItem="3DA-PP-U4f" secondAttribute="top" id="Lzg-Gk-VeA"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="width" secondItem="3DA-PP-U4f" secondAttribute="width" id="dEX-WZ-aFd"/>
+                            <constraint firstAttribute="bottom" secondItem="vpw-ps-P5l" secondAttribute="bottom" id="jpf-mF-eAx"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="centerX" secondItem="3DA-PP-U4f" secondAttribute="centerX" id="n5f-CX-Cbk"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="centerY" secondItem="3DA-PP-U4f" secondAttribute="centerY" id="xBR-ro-KeT"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="C55-r3-gB5" id="jJQ-fV-eHe"/>
+                        </connections>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3DA-PP-U4f" firstAttribute="top" secondItem="FcH-gc-8gz" secondAttribute="top" id="6in-yk-mZc"/>
+                    <constraint firstItem="3DA-PP-U4f" firstAttribute="leading" secondItem="FcH-gc-8gz" secondAttribute="leading" id="Jdt-jN-c5O"/>
+                    <constraint firstAttribute="trailing" secondItem="3DA-PP-U4f" secondAttribute="trailing" id="SAR-be-xMY"/>
+                    <constraint firstAttribute="bottom" secondItem="3DA-PP-U4f" secondAttribute="bottom" id="SYh-bz-8Vx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="graffeineView" destination="vpw-ps-P5l" id="xd4-ua-alX"/>
+            </connections>
+            <point key="canvasLocation" x="136" y="158"/>
+        </tableViewCell>
+    </objects>
+</document>

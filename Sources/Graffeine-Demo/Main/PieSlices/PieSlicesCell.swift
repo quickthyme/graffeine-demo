@@ -7,68 +7,29 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
+    var data = PieSlicesData()
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.backgroundColor = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
+        self.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
         setupSelection()
     }
 
     func setupSelection() {
         graffeineView.onSelect = { selection in
-            self.selectedIndex = selection?.data.selectedIndex
-            if self.selectedIndex != nil {
+            self.data.selectedIndex = selection?.data.selectedIndex
+            if self.data.selectedIndex != nil {
                 self.applySelectionAnimated()
             } else {
-                self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+                self.data.incrementDataSetIndex()
                 self.applyDataAnimated()
             }
         }
     }
 
-    let dataSets: [[Double]] = [
-        [10, 8, 4, 22, 16, 14],
-        [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
-        [1, 1, 2, 3, 5, 8, 13, 21]
-    ]
-
-    var dataSetIndex: Int = 0
-
-    var selectedIndex: Int? = nil
-
-    func alphabetLetter(for intVal: Int) -> Character {
-        let A = Int(("A" as UnicodeScalar).value) // 65
-        return Character(UnicodeScalar(intVal + A)!)
-    }
-
-    func getData() -> GraffeineData {
-        let dataSet = dataSets[dataSetIndex]
-        let maxVal: Double = (dataSetIndex < 2)
-            ? dataSet.reduce(0, +)
-            : 89
-
-        let labels: [String?] = dataSet.enumerated().map {
-            return (dataSetIndex < 2)
-                ? "\(self.alphabetLetter(for: $0.offset))"
-                : "\(Int($0.element))"
-        }
-
-        let selectedLabels: [String?] = dataSet.enumerated().map {
-            return ((dataSetIndex < 2)
-                ? "Slice \(self.alphabetLetter(for: $0.offset))\n"
-                : "Fibonacci \($0.offset + 1)\n")
-                + "\(Int($0.element)) out of \(Int(maxVal))\n"
-        }
-
-        return GraffeineData(valueMax: maxVal,
-                             values: dataSets[dataSetIndex],
-                             labels: labels,
-                             selectedLabels: selectedLabels,
-                             selectedIndex: selectedIndex)
-    }
-
     func getRandomPieAnimator() -> GraffeineRadialSegmentDataAnimating {
-        switch (Int.random(in: 0...3)) {
-        case 3:  return GraffeineAnimation.Data.RadialSegment.Spin(duration: 1.2, timing: .easeInEaseOut)
+        switch (Int.random(in: 0...2)) {
+        case 2:  return GraffeineAnimation.Data.RadialSegment.Spin(duration: 1.2, timing: .easeInEaseOut)
         default: return GraffeineAnimation.Data.RadialSegment.Automatic(duration: 1.2, timing: .easeInEaseOut)
         }
     }
@@ -86,13 +47,13 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
     }
 
     func applyData() {
-        let newData = getData()
+        let newData = data.get()
         graffeineView.layer(id: LayerID.pie)?.data = newData
         graffeineView.layer(id: LayerID.pieLabels)?.data = newData
     }
 
     func applyDataAnimated() {
-        let newData = getData()
+        let newData = data.get()
         graffeineView.layer(id: LayerID.pie)?
             .setData(newData, animator: getRandomPieAnimator())
 
@@ -104,7 +65,7 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
     }
 
     func applySelectionAnimated() {
-        let newData = getData()
+        let newData = data.get()
         graffeineView.layer(id: LayerID.pie)?.setData(
             newData,
             animator: GraffeineAnimation.Data.RadialSegment.Morph(duration: 0.22,
@@ -121,5 +82,18 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
             animator: GraffeineAnimation.Data.RadialLine.FadeIn(duration: 0.33,
                                                                 timing: .linear,
                                                                 delayRatio: 0))
+    }
+}
+
+extension PieSlicesCell: UIScrollViewDelegate {
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return scrollView.subviews.first
+    }
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+        scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
     }
 }

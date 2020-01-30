@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CandlestickCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CandlestickCell" id="Gcp-Y9-ezG" userLabel="CandlestickCell" customClass="CandlestickCell" customModule="Graffeine_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gcp-Y9-ezG" id="0Xl-aR-XEl">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gl-VE-PtP" userLabel="LeftGutterGraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                        <rect key="frame" x="0.0" y="0.0" width="64" height="260"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="fwi-ZY-DXL"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="CandlestickGutterConfig"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clC-1u-n7k">
+                        <rect key="frame" x="64" y="0.0" width="350" height="260"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyh-7h-lV9" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="260"/>
+                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="950" constant="350" id="EBL-Cl-hcv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="CandlestickConfig"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gyh-7h-lV9" firstAttribute="top" secondItem="clC-1u-n7k" secondAttribute="top" id="Dje-n9-zrg"/>
+                            <constraint firstItem="gyh-7h-lV9" firstAttribute="leading" secondItem="clC-1u-n7k" secondAttribute="leading" id="Exm-wm-QcC"/>
+                            <constraint firstAttribute="trailing" secondItem="gyh-7h-lV9" secondAttribute="trailing" id="QBh-ja-LQo"/>
+                            <constraint firstAttribute="bottom" secondItem="gyh-7h-lV9" secondAttribute="bottom" id="ZeJ-NV-zf6"/>
+                            <constraint firstItem="gyh-7h-lV9" firstAttribute="height" secondItem="clC-1u-n7k" secondAttribute="height" id="wS3-w9-giY"/>
+                        </constraints>
+                        <viewLayoutGuide key="contentLayoutGuide" id="y96-QM-Pop"/>
+                        <viewLayoutGuide key="frameLayoutGuide" id="wXF-Co-iWq"/>
+                    </scrollView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="YCl-vx-RgM">
+                        <rect key="frame" x="72" y="236" width="326" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="q4O-3X-xCS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.68947080159999996" green="0.45075354410000001" blue="0.16295275319999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="3Gl-VE-PtP" secondAttribute="bottom" id="7Ho-K1-qJm"/>
+                    <constraint firstItem="YCl-vx-RgM" firstAttribute="leading" secondItem="3Gl-VE-PtP" secondAttribute="trailing" constant="8" id="Age-As-ai8"/>
+                    <constraint firstItem="3Gl-VE-PtP" firstAttribute="top" secondItem="0Xl-aR-XEl" secondAttribute="top" id="B4Q-yo-OOV"/>
+                    <constraint firstAttribute="trailing" secondItem="YCl-vx-RgM" secondAttribute="trailing" constant="16" id="bK4-QA-VXY"/>
+                    <constraint firstAttribute="bottom" secondItem="clC-1u-n7k" secondAttribute="bottom" id="giQ-gw-8oy"/>
+                    <constraint firstItem="clC-1u-n7k" firstAttribute="top" secondItem="0Xl-aR-XEl" secondAttribute="top" id="ngN-R2-em6"/>
+                    <constraint firstItem="gyh-7h-lV9" firstAttribute="width" relation="greaterThanOrEqual" secondItem="0Xl-aR-XEl" secondAttribute="width" constant="-64" id="qOW-HS-z8d"/>
+                    <constraint firstAttribute="bottom" secondItem="YCl-vx-RgM" secondAttribute="bottom" constant="2" id="v1H-gU-0C5"/>
+                    <constraint firstItem="3Gl-VE-PtP" firstAttribute="leading" secondItem="0Xl-aR-XEl" secondAttribute="leading" id="v1Z-cX-jwB"/>
+                    <constraint firstAttribute="trailing" secondItem="clC-1u-n7k" secondAttribute="trailing" id="y7q-qJ-27s"/>
+                    <constraint firstItem="clC-1u-n7k" firstAttribute="leading" secondItem="3Gl-VE-PtP" secondAttribute="trailing" id="yq3-1L-Y4D"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="graffeineView" destination="gyh-7h-lV9" id="4jG-u8-A2A"/>
+                <outlet property="infoLabel" destination="YCl-vx-RgM" id="6NM-2y-23s"/>
+                <outlet property="leftGutterView" destination="3Gl-VE-PtP" id="my9-hg-fG7"/>
+                <outlet property="scrollView" destination="clC-1u-n7k" id="UGI-Tb-rBq"/>
+                <outlet property="widthConstraint" destination="EBL-Cl-hcv" id="w38-bD-RRK"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="145"/>
+        </tableViewCell>
+    </objects>
+</document>

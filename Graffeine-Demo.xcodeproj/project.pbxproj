@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC10F2C723E2A740001769B2 /* MainViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC10F2C623E2A73F001769B2 /* MainViewController+TableView.swift */; };
+		DC10F2C923E2A791001769B2 /* MainViewController+CellID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC10F2C823E2A791001769B2 /* MainViewController+CellID.swift */; };
+		DC10F2D923E2AF11001769B2 /* CandlestickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D423E2AD5D001769B2 /* CandlestickCell.xib */; };
+		DC10F2DA23E2AF17001769B2 /* HorizontalGroupedBarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D323E2AA42001769B2 /* HorizontalGroupedBarsCell.xib */; };
+		DC10F2DB23E2AF20001769B2 /* LinePointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D223E2A9F2001769B2 /* LinePointsCell.xib */; };
+		DC10F2DC23E2AF25001769B2 /* PieSlicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */; };
+		DC10F2DD23E2AF25001769B2 /* PieSlicesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2C323E2A236001769B2 /* PieSlicesCell.xib */; };
+		DC10F2DE23E2AF25001769B2 /* PieSlicesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */; };
+		DC10F2DF23E2AF2B001769B2 /* ProgressIndicatorsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D523E2ADB2001769B2 /* ProgressIndicatorsCell.xib */; };
+		DC10F2E023E2AF30001769B2 /* RedGreenLinesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D623E2ADD8001769B2 /* RedGreenLinesCell.xib */; };
+		DC10F2E123E2AF35001769B2 /* ScatterplotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D723E2ADFC001769B2 /* ScatterplotCell.xib */; };
+		DC10F2E223E2AF3A001769B2 /* VerticalDescendingBarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D823E2AE25001769B2 /* VerticalDescendingBarsCell.xib */; };
+		DC10F2E423E2B1E2001769B2 /* PieSlicesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC10F2E323E2B1E2001769B2 /* PieSlicesData.swift */; };
 		DC1B828123DFABED005E379E /* ProgressIndicatorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */; };
 		DC1B828223DFABF1005E379E /* ProgressIndicatorsConfigBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */; };
 		DC1B828323DFABF1005E379E /* ProgressIndicatorsConfigRad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */; };
@@ -35,8 +48,6 @@
 		DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773EF23DBD624005246BA /* CandlestickCell.swift */; };
 		DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773F023DBD624005246BA /* CandlestickConfig.swift */; };
 		DC8773F823DC24AD005246BA /* CandlestickCell+TradingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */; };
-		DCE4C9DF23D037AE00C47EFD /* PieSlicesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */; };
-		DCE4C9E023D037B200C47EFD /* PieSlicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +82,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC10F2C323E2A236001769B2 /* PieSlicesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PieSlicesCell.xib; sourceTree = "<group>"; };
+		DC10F2C623E2A73F001769B2 /* MainViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableView.swift"; sourceTree = "<group>"; };
+		DC10F2C823E2A791001769B2 /* MainViewController+CellID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CellID.swift"; sourceTree = "<group>"; };
+		DC10F2D223E2A9F2001769B2 /* LinePointsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinePointsCell.xib; sourceTree = "<group>"; };
+		DC10F2D323E2AA42001769B2 /* HorizontalGroupedBarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalGroupedBarsCell.xib; sourceTree = "<group>"; };
+		DC10F2D423E2AD5D001769B2 /* CandlestickCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandlestickCell.xib; sourceTree = "<group>"; };
+		DC10F2D523E2ADB2001769B2 /* ProgressIndicatorsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressIndicatorsCell.xib; sourceTree = "<group>"; };
+		DC10F2D623E2ADD8001769B2 /* RedGreenLinesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedGreenLinesCell.xib; sourceTree = "<group>"; };
+		DC10F2D723E2ADFC001769B2 /* ScatterplotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScatterplotCell.xib; sourceTree = "<group>"; };
+		DC10F2D823E2AE25001769B2 /* VerticalDescendingBarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalDescendingBarsCell.xib; sourceTree = "<group>"; };
+		DC10F2E323E2B1E2001769B2 /* PieSlicesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesData.swift; sourceTree = "<group>"; };
 		DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsCell.swift; sourceTree = "<group>"; };
 		DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsConfigBar.swift; sourceTree = "<group>"; };
 		DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsConfigRad.swift; sourceTree = "<group>"; };
@@ -130,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */,
+				DC10F2D523E2ADB2001769B2 /* ProgressIndicatorsCell.xib */,
 				DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */,
 				DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */,
 			);
@@ -140,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */,
+				DC10F2D723E2ADFC001769B2 /* ScatterplotCell.xib */,
 				DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */,
 			);
 			path = Scatterplot;
@@ -149,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2FA27B23CEB55200E88807 /* LinePointsCell.swift */,
+				DC10F2D223E2A9F2001769B2 /* LinePointsCell.xib */,
 				DC2FA27C23CEB55200E88807 /* LinePointsConfig.swift */,
 			);
 			path = LinePoints;
@@ -202,6 +227,8 @@
 				DC7F21D923C6DE86009629DD /* Main.storyboard */,
 				DC7F21ED23C6E6EB009629DD /* DataAppliable.swift */,
 				DC7F21C923C6DD46009629DD /* MainViewController.swift */,
+				DC10F2C823E2A791001769B2 /* MainViewController+CellID.swift */,
+				DC10F2C623E2A73F001769B2 /* MainViewController+TableView.swift */,
 				DC8773ED23DBD609005246BA /* Candlestick */,
 				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
 				DC2FA27923CEB53600E88807 /* LinePoints */,
@@ -227,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				DC7F21DB23C6E014009629DD /* VerticalDescendingBarsCell.swift */,
+				DC10F2D823E2AE25001769B2 /* VerticalDescendingBarsCell.xib */,
 				DC7F21DD23C6E06C009629DD /* VerticalDescendingBarsConfig.swift */,
 			);
 			path = VerticalDescendingBars;
@@ -253,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				DC7F220F23C7BF8B009629DD /* RedGreenLinesCell.swift */,
+				DC10F2D623E2ADD8001769B2 /* RedGreenLinesCell.xib */,
 				DC7F221023C7BF8B009629DD /* RedGreenLinesConfig.swift */,
 			);
 			path = RedGreenLines;
@@ -262,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				DC7F221723C7E639009629DD /* HorizontalGroupedBarsCell.swift */,
+				DC10F2D323E2AA42001769B2 /* HorizontalGroupedBarsCell.xib */,
 				DC7F221823C7E639009629DD /* HorizontalGroupedBarsConfig.swift */,
 			);
 			path = HorizontalGroupedBars;
@@ -271,9 +301,10 @@
 			isa = PBXGroup;
 			children = (
 				DC8773EF23DBD624005246BA /* CandlestickCell.swift */,
+				DC10F2D423E2AD5D001769B2 /* CandlestickCell.xib */,
 				DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */,
-				DC1B828823E01AD9005E379E /* CandlestickGutterConfig.swift */,
 				DC8773F023DBD624005246BA /* CandlestickConfig.swift */,
+				DC1B828823E01AD9005E379E /* CandlestickGutterConfig.swift */,
 			);
 			path = Candlestick;
 			sourceTree = "<group>";
@@ -282,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */,
+				DC10F2E323E2B1E2001769B2 /* PieSlicesData.swift */,
+				DC10F2C323E2A236001769B2 /* PieSlicesCell.xib */,
 				DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */,
 			);
 			path = PieSlices;
@@ -400,10 +433,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC10F2E023E2AF30001769B2 /* RedGreenLinesCell.xib in Resources */,
 				DC7F21DA23C6DE86009629DD /* Main.storyboard in Resources */,
 				DC7F21D223C6DD49009629DD /* LaunchScreen.storyboard in Resources */,
+				DC10F2DF23E2AF2B001769B2 /* ProgressIndicatorsCell.xib in Resources */,
+				DC10F2DB23E2AF20001769B2 /* LinePointsCell.xib in Resources */,
+				DC10F2E123E2AF35001769B2 /* ScatterplotCell.xib in Resources */,
 				DC7F222823C860C4009629DD /* README.md in Resources */,
+				DC10F2DD23E2AF25001769B2 /* PieSlicesCell.xib in Resources */,
+				DC10F2D923E2AF11001769B2 /* CandlestickCell.xib in Resources */,
 				DC7F21CF23C6DD49009629DD /* Assets.xcassets in Resources */,
+				DC10F2DA23E2AF17001769B2 /* HorizontalGroupedBarsCell.xib in Resources */,
+				DC10F2E223E2AF3A001769B2 /* VerticalDescendingBarsCell.xib in Resources */,
 				DC7F222923C860C4009629DD /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,12 +464,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7F21CA23C6DD46009629DD /* MainViewController.swift in Sources */,
+				DC10F2C923E2A791001769B2 /* MainViewController+CellID.swift in Sources */,
 				DC1B828323DFABF1005E379E /* ProgressIndicatorsConfigRad.swift in Sources */,
 				DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */,
 				DC2FA27E23CEB5A700E88807 /* LinePointsCell.swift in Sources */,
 				DC7F221223C7C126009629DD /* RedGreenLinesConfig.swift in Sources */,
 				DC1B828223DFABF1005E379E /* ProgressIndicatorsConfigBar.swift in Sources */,
-				DCE4C9DF23D037AE00C47EFD /* PieSlicesConfig.swift in Sources */,
+				DC10F2C723E2A740001769B2 /* MainViewController+TableView.swift in Sources */,
 				DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */,
 				DC8773F823DC24AD005246BA /* CandlestickCell+TradingDay.swift in Sources */,
 				DC7F221923C7E891009629DD /* HorizontalGroupedBarsConfig.swift in Sources */,
@@ -436,15 +478,17 @@
 				DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */,
 				DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */,
 				DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */,
+				DC10F2DC23E2AF25001769B2 /* PieSlicesCell.swift in Sources */,
 				DC1B828123DFABED005E379E /* ProgressIndicatorsCell.swift in Sources */,
+				DC10F2E423E2B1E2001769B2 /* PieSlicesData.swift in Sources */,
 				DC7F221123C7BFA4009629DD /* RedGreenLinesCell.swift in Sources */,
 				DC2FA27D23CEB5A200E88807 /* LinePointsConfig.swift in Sources */,
+				DC10F2DE23E2AF25001769B2 /* PieSlicesConfig.swift in Sources */,
 				DC7F21D723C6DD8C009629DD /* GraffeineLibrarySymbolProtection.swift in Sources */,
 				DC7F21EF23C6EBCE009629DD /* VerticalDescendingBarsConfig.swift in Sources */,
 				DC7F21DC23C6E014009629DD /* VerticalDescendingBarsCell.swift in Sources */,
 				DC7F21EE23C6E6EB009629DD /* DataAppliable.swift in Sources */,
 				DC1B828A23E01AD9005E379E /* CandlestickGutterConfig.swift in Sources */,
-				DCE4C9E023D037B200C47EFD /* PieSlicesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProgressIndicatorsCell" id="6Pv-ib-Of1" customClass="ProgressIndicatorsCell" customModule="Graffeine_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Pv-ib-Of1" id="3KB-x0-HlD">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzj-KZ-hjL">
+                        <rect key="frame" x="16" y="107" width="118" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="QhI-HT-UWl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="Arbitrary load...">
+                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="wait1:" destination="6Pv-ib-Of1" eventType="touchUpInside" id="XgF-oY-1DD"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iRV-GO-4a9">
+                        <rect key="frame" x="16" y="163" width="146" height="33"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="Wait for progress...">
+                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="wait2:" destination="6Pv-ib-Of1" eventType="touchUpInside" id="Dqf-xN-wer"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-wD-twY" userLabel="Progress Rad" customClass="GraffeineView" customModule="Graffeine">
+                        <rect key="frame" x="166" y="107" width="32" height="32"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="F2b-Nb-Uvw"/>
+                            <constraint firstAttribute="height" constant="32" id="Ovw-5K-NIp"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ProgressIndicatorsConfigRad"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcI-Rg-ufZ">
+                        <rect key="frame" x="16" y="24" width="382" height="61"/>
+                        <string key="text">Please select from one of the waiting options below. Your time is valuable, and a service representative will be with you shortly.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dds-kN-LBL" userLabel="Progress Rad" customClass="GraffeineView" customModule="Graffeine">
+                        <rect key="frame" x="16" y="212" width="382" height="24"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="7df-Kx-Z5l"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ProgressIndicatorsConfigBar"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="dds-kN-LBL" secondAttribute="trailing" constant="16" id="4uS-g2-HWz"/>
+                    <constraint firstAttribute="bottom" secondItem="dds-kN-LBL" secondAttribute="bottom" constant="24" id="6cY-AO-gy4"/>
+                    <constraint firstItem="iRV-GO-4a9" firstAttribute="top" secondItem="Yzj-KZ-hjL" secondAttribute="bottom" constant="24" id="AmT-MO-4xG"/>
+                    <constraint firstAttribute="trailing" secondItem="dds-kN-LBL" secondAttribute="trailing" constant="16" id="ChE-uf-rZ3"/>
+                    <constraint firstItem="Yzj-KZ-hjL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HcI-Rg-ufZ" secondAttribute="bottom" constant="16" id="FFC-bz-Uec"/>
+                    <constraint firstItem="Yzj-KZ-hjL" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="IJp-j3-pNi"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Toe-wD-twY" secondAttribute="trailing" constant="16" id="LkW-DY-n0K"/>
+                    <constraint firstAttribute="trailing" secondItem="HcI-Rg-ufZ" secondAttribute="trailing" constant="16" id="Nu7-hc-OzI"/>
+                    <constraint firstItem="HcI-Rg-ufZ" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="PKW-sT-ntQ"/>
+                    <constraint firstItem="Toe-wD-twY" firstAttribute="leading" secondItem="Yzj-KZ-hjL" secondAttribute="trailing" constant="32" id="QR5-Nu-nUT"/>
+                    <constraint firstItem="dds-kN-LBL" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="Sq2-6R-gXg"/>
+                    <constraint firstItem="dds-kN-LBL" firstAttribute="top" secondItem="iRV-GO-4a9" secondAttribute="bottom" constant="16" id="TYA-sf-HWF"/>
+                    <constraint firstItem="dds-kN-LBL" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="W6D-Tl-rCZ"/>
+                    <constraint firstItem="Toe-wD-twY" firstAttribute="centerY" secondItem="Yzj-KZ-hjL" secondAttribute="centerY" id="aTn-b2-bdd"/>
+                    <constraint firstItem="iRV-GO-4a9" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="fBH-TN-PZz"/>
+                    <constraint firstItem="HcI-Rg-ufZ" firstAttribute="top" secondItem="3KB-x0-HlD" secondAttribute="top" constant="24" id="o70-Iu-NnD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="progBar" destination="dds-kN-LBL" id="4G1-Jk-g02"/>
+                <outlet property="progRad" destination="Toe-wD-twY" id="Fmf-SQ-qRt"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="145"/>
+        </tableViewCell>
+    </objects>
+</document>
