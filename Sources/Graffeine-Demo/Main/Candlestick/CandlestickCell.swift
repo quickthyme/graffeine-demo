@@ -12,6 +12,13 @@ class CandlestickCell: UITableViewCell, DataAppliable {
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var infoLabel: UILabel!
 
+    @IBOutlet weak var reloadButton: UIButton!
+
+    @IBAction func reload(_ sender: UIButton?) {
+        self.lanes = nil
+        self.applyData(animated: true)
+    }
+
     var minZoomWidth: CGFloat { return (self.bounds.size.width - 64) }
     var maxZoomWidth: CGFloat { return (self.bounds.size.width - 64) * 5 }
 
@@ -24,7 +31,6 @@ class CandlestickCell: UITableViewCell, DataAppliable {
         setupScrollZoom()
         graffeineView.onSelect = { selection in
             self.selectedIndex = selection?.data.selectedIndex
-            self.lanes = (self.selectedIndex == nil) ? nil : self.lanes
             self.applyData(animated: true)
         }
     }

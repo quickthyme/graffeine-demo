@@ -5,9 +5,16 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     typealias LayerID = PieSlicesConfig.ID
 
+    var data = PieSlicesData()
+
     @IBOutlet weak var graffeineView: GraffeineView!
 
-    var data = PieSlicesData()
+    @IBOutlet weak var reloadButton: UIButton!
+
+    @IBAction func reload(_ sender: UIButton?) {
+        self.data.incrementDataSetIndex()
+        self.applyDataAnimated()
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,12 +25,7 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
     func setupSelection() {
         graffeineView.onSelect = { selection in
             self.data.selectedIndex = selection?.data.selectedIndex
-            if self.data.selectedIndex != nil {
-                self.applySelectionAnimated()
-            } else {
-                self.data.incrementDataSetIndex()
-                self.applyDataAnimated()
-            }
+            self.applySelectionAnimated()
         }
     }
 

@@ -7,6 +7,13 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
+    @IBOutlet weak var reloadButton: UIButton!
+
+    @IBAction func reload(_ sender: UIButton?) {
+        self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+        self.applyData(animated: true)
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupSelection()
@@ -15,12 +22,7 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
     func setupSelection() {
         graffeineView.onSelect = { selection in
             self.selectedIndex = selection?.data.selectedIndex
-            if self.selectedIndex != nil {
-                self.applyData(animated: true)
-            } else {
-                self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
-                self.applyData(animated: true)
-            }
+            self.applyData(animated: true)
         }
     }
 

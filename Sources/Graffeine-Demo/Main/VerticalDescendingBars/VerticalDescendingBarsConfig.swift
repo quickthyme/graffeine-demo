@@ -76,12 +76,12 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                 .apply ({
                     $0.insets = barLayerInsets
                     $0.unitColumn.margin = unitMargin
-                    $0.unitText.colors = [.white]
+                    $0.unitText.colors = [UIColor(white: 0.9215, alpha: 1.0)]
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .top
                     $0.labelPadding.vertical = 4
                     $0.masksToBounds = true
-                    $0.selection.text.color = .systemOrange
+                    $0.selection.text.color = .white
                 })
         ]
     }
