@@ -60,7 +60,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zl4-FQ-p9I">
-                        <rect key="frame" x="374" y="4" width="36" height="36"/>
+                        <rect key="frame" x="378" y="0.0" width="36" height="36"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="9hP-p0-tgt"/>
                             <constraint firstAttribute="height" constant="36" id="M1s-g6-QK4"/>
@@ -74,12 +74,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="3Gl-VE-PtP" secondAttribute="bottom" id="7Ho-K1-qJm"/>
-                    <constraint firstItem="Zl4-FQ-p9I" firstAttribute="top" secondItem="0Xl-aR-XEl" secondAttribute="top" constant="4" id="A7L-vx-3Rx"/>
+                    <constraint firstItem="Zl4-FQ-p9I" firstAttribute="top" secondItem="0Xl-aR-XEl" secondAttribute="top" id="A7L-vx-3Rx"/>
                     <constraint firstItem="YCl-vx-RgM" firstAttribute="leading" secondItem="3Gl-VE-PtP" secondAttribute="trailing" constant="8" id="Age-As-ai8"/>
                     <constraint firstItem="3Gl-VE-PtP" firstAttribute="top" secondItem="0Xl-aR-XEl" secondAttribute="top" id="B4Q-yo-OOV"/>
                     <constraint firstAttribute="trailing" secondItem="YCl-vx-RgM" secondAttribute="trailing" constant="16" id="bK4-QA-VXY"/>
                     <constraint firstAttribute="bottom" secondItem="clC-1u-n7k" secondAttribute="bottom" id="giQ-gw-8oy"/>
-                    <constraint firstAttribute="trailing" secondItem="Zl4-FQ-p9I" secondAttribute="trailing" constant="4" id="gij-va-rKF"/>
+                    <constraint firstAttribute="trailing" secondItem="Zl4-FQ-p9I" secondAttribute="trailing" id="gij-va-rKF"/>
                     <constraint firstItem="clC-1u-n7k" firstAttribute="top" secondItem="0Xl-aR-XEl" secondAttribute="top" id="ngN-R2-em6"/>
                     <constraint firstItem="gyh-7h-lV9" firstAttribute="width" relation="greaterThanOrEqual" secondItem="0Xl-aR-XEl" secondAttribute="width" constant="-64" id="qOW-HS-z8d"/>
                     <constraint firstAttribute="bottom" secondItem="YCl-vx-RgM" secondAttribute="bottom" constant="2" id="v1H-gU-0C5"/>

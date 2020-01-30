@@ -23,7 +23,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrW-ar-QCg">
-                        <rect key="frame" x="374" y="4" width="36" height="36"/>
+                        <rect key="frame" x="378" y="0.0" width="36" height="36"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="Io6-Zt-UQk"/>
                             <constraint firstAttribute="width" constant="36" id="OfV-3P-yVw"/>
@@ -40,8 +40,8 @@
                     <constraint firstItem="oCb-s1-f2F" firstAttribute="leading" secondItem="ZHv-3L-X3Z" secondAttribute="leading" id="XOW-Cs-8Ki"/>
                     <constraint firstItem="oCb-s1-f2F" firstAttribute="top" secondItem="ZHv-3L-X3Z" secondAttribute="top" id="aQW-Fs-Nyu"/>
                     <constraint firstAttribute="trailing" secondItem="oCb-s1-f2F" secondAttribute="trailing" id="eYQ-sd-uGi"/>
-                    <constraint firstItem="GrW-ar-QCg" firstAttribute="top" secondItem="ZHv-3L-X3Z" secondAttribute="top" constant="4" id="rhx-2P-alv"/>
-                    <constraint firstAttribute="trailing" secondItem="GrW-ar-QCg" secondAttribute="trailing" constant="4" id="sOU-50-j60"/>
+                    <constraint firstItem="GrW-ar-QCg" firstAttribute="top" secondItem="ZHv-3L-X3Z" secondAttribute="top" id="rhx-2P-alv"/>
+                    <constraint firstAttribute="trailing" secondItem="GrW-ar-QCg" secondAttribute="trailing" id="sOU-50-j60"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

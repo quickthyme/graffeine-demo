@@ -15,9 +15,9 @@ class LinePointsConfig: GraffeineViewConfig {
 
         graffeineView.layers = [
 
-            GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 16, region: .topGutter),
+            GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 24, region: .topGutter),
 
-            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter),
+            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 24, region: .bottomGutter),
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 28, region: .leftGutter),
 

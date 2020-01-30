@@ -7,12 +7,15 @@ class HorizontalGroupedBarsCell: UITableViewCell, DataAppliable {
     
     @IBOutlet weak var graffeineView: GraffeineView!
 
+    @IBOutlet weak var reloadButton: UIButton!
+
+    @IBAction func reload(_ sender: UIButton?) {
+        self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+        self.applyData(animated: true)
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.onSelect = { _ in
-            self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
-            self.applyData(animated: true)
-        }
     }
 
     func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {

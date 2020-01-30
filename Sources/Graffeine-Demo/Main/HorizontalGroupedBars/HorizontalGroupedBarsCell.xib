@@ -22,18 +22,36 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="HorizontalGroupedBarsConfig"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWo-rZ-p0t">
+                        <rect key="frame" x="378" y="0.0" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="CYr-h5-SR4"/>
+                            <constraint firstAttribute="height" constant="36" id="IPX-ZF-chG"/>
+                        </constraints>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <state key="normal" image="ic_reset"/>
+                        <connections>
+                            <action selector="reload:" destination="Dgr-vX-bvH" eventType="touchUpInside" id="7tb-17-VKP"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="G5M-la-W6Q" secondAttribute="trailing" id="ESg-zF-eDi"/>
+                    <constraint firstAttribute="trailing" secondItem="ZWo-rZ-p0t" secondAttribute="trailing" id="FdG-bb-TVN"/>
                     <constraint firstItem="G5M-la-W6Q" firstAttribute="leading" secondItem="q2p-RQ-xSp" secondAttribute="leading" id="GCM-FI-Wm2"/>
+                    <constraint firstItem="ZWo-rZ-p0t" firstAttribute="top" secondItem="q2p-RQ-xSp" secondAttribute="top" id="Nu4-NU-aPa"/>
                     <constraint firstItem="G5M-la-W6Q" firstAttribute="top" secondItem="q2p-RQ-xSp" secondAttribute="top" id="YTU-xE-m6n"/>
                     <constraint firstAttribute="bottom" secondItem="G5M-la-W6Q" secondAttribute="bottom" id="hn0-xe-oi3"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="graffeineView" destination="G5M-la-W6Q" id="dxD-A9-HOt"/>
+                <outlet property="reloadButton" destination="ZWo-rZ-p0t" id="N2m-Fu-504"/>
             </connections>
             <point key="canvasLocation" x="139" y="145"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_reset" width="18" height="18"/>
+    </resources>
 </document>
