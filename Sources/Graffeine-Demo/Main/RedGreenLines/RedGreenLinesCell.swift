@@ -9,9 +9,23 @@ class RedGreenLinesCell: UITableViewCell, DataAppliable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.regenerateData()
         graffeineView.onSelect = { _ in
+            self.regenerateData()
             self.applyData(animated: true)
         }
+    }
+
+    var greenHistorical: [Double?] = []
+    var greenProjected: [Double?] = []
+    var redHistorical: [Double?] = []
+    var redProjected: [Double?] = []
+
+    func regenerateData() {
+        self.greenHistorical = generateRandomValues(6, min: 14, max: 50)
+        self.greenProjected = generateNilDoubles(5) + generateProjection(greenHistorical)
+        self.redHistorical = generateRandomValues(6, min: 4, max: 40)
+        self.redProjected = generateNilDoubles(5) + generateProjection(redHistorical)
     }
 
     func applyData() {
@@ -54,10 +68,6 @@ class RedGreenLinesCell: UITableViewCell, DataAppliable {
     }
 
     func applyData(animated: Bool) {
-        let greenHistorical: [Double?] = generateRandomValues(6, min: 14, max: 50)
-        let greenProjected: [Double?] = generateNilDoubles(5) + generateProjection(greenHistorical)
-        let redHistorical: [Double?] = generateRandomValues(6, min: 4, max: 40)
-        let redProjected: [Double?] = generateNilDoubles(5) + generateProjection(redHistorical)
 
         graffeineView.layer(id: LayerID.redLineProj)?
             .setData(GraffeineData(valueMax: 50, values: redProjected),
