@@ -9,6 +9,7 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        graffeineView.backgroundColor = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
         setupSelection()
     }
 

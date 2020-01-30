@@ -15,11 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="2048"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="260" estimatedRowHeight="260" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TxQ-C5-Auw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="260" estimatedRowHeight="260" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TxQ-C5-Auw">
                                 <rect key="frame" x="0.0" y="44" width="414" height="1970"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VerticalDescendingBarsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerticalDescendingBarsCell" id="fwf-I0-ubm" userLabel="VerticalDescendingBarsCell" customClass="VerticalDescendingBarsCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VerticalDescendingBarsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="VerticalDescendingBarsCell" id="fwf-I0-ubm" userLabel="VerticalDescendingBarsCell" customClass="VerticalDescendingBarsCell" customModule="Graffeine_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fwf-I0-ubm" id="EQl-g9-hyh">
@@ -45,7 +45,7 @@
                                             <outlet property="graffeineView" destination="U0I-tl-j8V" id="nof-cg-H0j"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RedGreenLinesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RedGreenLinesCell" id="TPb-MT-D03" userLabel="RedGreenLinesCell" customClass="RedGreenLinesCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RedGreenLinesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RedGreenLinesCell" id="TPb-MT-D03" userLabel="RedGreenLinesCell" customClass="RedGreenLinesCell" customModule="Graffeine_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="315.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TPb-MT-D03" id="5YH-14-Q9c">
@@ -71,7 +71,7 @@
                                             <outlet property="graffeineView" destination="3IK-E1-eFs" id="ahA-4i-9MG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HorizontalGroupedBarsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HorizontalGroupedBarsCell" id="o6X-o7-YRm" userLabel="HorizontalGroupedBarsCell" customClass="HorizontalGroupedBarsCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HorizontalGroupedBarsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HorizontalGroupedBarsCell" id="o6X-o7-YRm" userLabel="HorizontalGroupedBarsCell" customClass="HorizontalGroupedBarsCell" customModule="Graffeine_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="575.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o6X-o7-YRm" id="qdd-jS-peV">
@@ -97,7 +97,7 @@
                                             <outlet property="graffeineView" destination="SES-6Z-bnE" id="CP5-E3-4zP"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LinePointsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LinePointsCell" id="pRy-97-Yul" userLabel="LinePointsCell" customClass="LinePointsCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LinePointsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LinePointsCell" id="pRy-97-Yul" userLabel="LinePointsCell" customClass="LinePointsCell" customModule="Graffeine_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="835.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pRy-97-Yul" id="7SP-kx-fja">
@@ -123,7 +123,7 @@
                                             <outlet property="graffeineView" destination="3G2-FV-NgS" id="QP8-4B-C9k"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ScatterplotCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScatterplotCell" id="e79-Ek-4uP" userLabel="ScatterplotCell" customClass="ScatterplotCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ScatterplotCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ScatterplotCell" id="e79-Ek-4uP" userLabel="ScatterplotCell" customClass="ScatterplotCell" customModule="Graffeine_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1095.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e79-Ek-4uP" id="v8N-MQ-eiX">
@@ -149,7 +149,7 @@
                                             <outlet property="graffeineView" destination="mnG-GK-gF6" id="icF-GJ-UXa"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="PieSlicesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PieSlicesCell" id="0f9-1c-bN9" userLabel="PieSlicesCell" customClass="PieSlicesCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="PieSlicesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PieSlicesCell" id="0f9-1c-bN9" userLabel="PieSlicesCell" customClass="PieSlicesCell" customModule="Graffeine_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1355.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0f9-1c-bN9" id="BJl-3o-dOY">
@@ -175,7 +175,7 @@
                                             <outlet property="graffeineView" destination="pLz-UT-5yS" id="1fd-pc-QUl"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CandlestickCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CandlestickCell" id="GwJ-3A-HeG" userLabel="CandlestickCell" customClass="CandlestickCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CandlestickCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CandlestickCell" id="GwJ-3A-HeG" userLabel="CandlestickCell" customClass="CandlestickCell" customModule="Graffeine_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1615.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GwJ-3A-HeG" id="e2e-gh-nwq">

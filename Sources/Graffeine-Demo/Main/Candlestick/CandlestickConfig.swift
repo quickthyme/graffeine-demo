@@ -48,7 +48,7 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.insets = candleInsets
                     $0.roundedEnds = .both(3)
                     $0.selection.isEnabled = true
-                    $0.selection.fill.color = diagonalLines
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.5) }
                     $0.selection.line.color = UIColor(white: 0.88, alpha: 0.88)
                     $0.selection.line.thickness = 3
                     $0.selection.line.dashPattern = [3, 3]
