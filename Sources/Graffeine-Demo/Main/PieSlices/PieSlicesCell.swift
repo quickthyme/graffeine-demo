@@ -27,22 +27,38 @@ class PieSlicesCell: UITableViewCell, DataAppliable {
     let dataSets: [[Double]] = [
         [10, 8, 4, 22, 16, 14],
         [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
-        [1, 1, 2, 3, 5, 8, 13, 21, 34]
+        [1, 1, 2, 3, 5, 8, 13, 21]
     ]
 
     var dataSetIndex: Int = 0
 
     var selectedIndex: Int? = nil
 
+    func alphabetLetter(for intVal: Int) -> Character {
+        let A = Int(("A" as UnicodeScalar).value) // 65
+        return Character(UnicodeScalar(intVal + A)!)
+    }
+
     func getData() -> GraffeineData {
         let dataSet = dataSets[dataSetIndex]
-        let labels: [String?] = dataSet.map { String(Int($0)) }
+        let maxVal: Double = (dataSetIndex < 2)
+            ? dataSet.reduce(0, +)
+            : 89
 
-        let A = Int(("A" as UnicodeScalar).value) // 65
-        let selectedLabels: [String?] = dataSet.enumerated().map {
-            "\(Character(UnicodeScalar($0.offset + A)!)):\(Int($0.element))"
+        let labels: [String?] = dataSet.enumerated().map {
+            return (dataSetIndex < 2)
+                ? "\(self.alphabetLetter(for: $0.offset))"
+                : "\(Int($0.element))"
         }
-        return GraffeineData(valueMax: 100,
+
+        let selectedLabels: [String?] = dataSet.enumerated().map {
+            return ((dataSetIndex < 2)
+                ? "Slice \(self.alphabetLetter(for: $0.offset))\n"
+                : "Fibonacci \($0.offset + 1)\n")
+                + "\(Int($0.element)) out of \(Int(maxVal))\n"
+        }
+
+        return GraffeineData(valueMax: maxVal,
                              values: dataSets[dataSetIndex],
                              labels: labels,
                              selectedLabels: selectedLabels,

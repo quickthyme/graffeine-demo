@@ -24,8 +24,8 @@ class PieSlicesConfig: GraffeineViewConfig {
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 270
-                    $0.outerDiameter = .percentage(0.63)
-                    $0.innerDiameter = .percentage(0.23)
+                    $0.outerDiameter = .percentage(0.65)
+                    $0.innerDiameter = .percentage(0.25)
                     $0.unitFill.colors = colors
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 2
@@ -34,9 +34,9 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.shadowRadius = 4.0
                     $0.shadowOffset = CGSize(width: 0, height: 1.5)
 
-                    $0.selection.radial.outerDiameter = .percentage(0.78)
-                    $0.selection.radial.innerDiameter = .percentage(0.38)
-                    $0.selection.radial.centerOffsetDiameter = .percentage(0.13)
+                    $0.selection.radial.outerDiameter = .percentage(0.80)
+                    $0.selection.radial.innerDiameter = .percentage(0.40)
+                    $0.selection.radial.centerOffsetDiameter = .percentage(0.15)
                     $0.selection.isEnabled = true
                 }),
 
@@ -47,16 +47,20 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.diameter = .percentage(0.43)
                     $0.unitText.colors = [.white]
                     $0.unitText.fontSize = 13
-                    $0.selection.radial.outerDiameter = .percentage(1.25)
+                    $0.labelAlignment.horizontal = .center
+                    $0.labelAlignment.vertical = .center
+                    $0.selection.radial.outerDiameter = .percentage(1.10)
                     $0.selection.text.color = .black
+                    $0.selection.text.alignment = .init(horizontal: .centerLeftRight,
+                                                        vertical: .centerTopBottom)
                 }),
 
             GraffeineRadialLineLayer(id: ID.pieLabelLines)
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 270
-                    $0.outerDiameter = .percentage(0.90)
-                    $0.innerDiameter = .percentage(0.80)
+                    $0.outerDiameter = .percentage(1.00)
+                    $0.innerDiameter = .percentage(0.84)
                     $0.unitLine.colors = [.clear]
                     $0.unitLine.thickness = 1.5
                     $0.unitLine.dashPattern = [1, 1]

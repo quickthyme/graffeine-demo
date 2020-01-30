@@ -149,10 +149,10 @@
                                             <outlet property="graffeineView" destination="mnG-GK-gF6" id="icF-GJ-UXa"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PieSlicesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PieSlicesCell" id="0f9-1c-bN9" userLabel="PieSlicesCell" customClass="PieSlicesCell" customModule="Graffeine_Demo" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="PieSlicesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PieSlicesCell" id="0f9-1c-bN9" userLabel="PieSlicesCell" customClass="PieSlicesCell" customModule="Graffeine_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1355.5" width="414" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0f9-1c-bN9" id="BJl-3o-dOY">
+                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0f9-1c-bN9" id="BJl-3o-dOY">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -223,7 +223,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="Q4X-ed-x8l"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.68947080155380713" green="0.4507535440930534" blue="0.16295275320171901" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.68947080155380713" green="0.4507535440930534" blue="0.16295275320171901" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
