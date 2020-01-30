@@ -91,6 +91,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.unitLine.dashPhase = 4
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
+                    $0.masksToBounds = true
                 }),
 
             GraffeineLineLayer(id: ID.greenLine)
@@ -109,6 +110,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.unitLine.dashPhase = 4
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
+                    $0.masksToBounds = true
                 })
         ]
     }

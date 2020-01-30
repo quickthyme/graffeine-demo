@@ -30,22 +30,49 @@ class RedGreenLinesCell: UITableViewCell, DataAppliable {
             : nil
     }
 
-    func applyData(animated: Bool) {
+    func generateNilDoubles(_ count: Int) -> [Double?] {
+        return (0..<count).map { _ in return nil }
+    }
 
-        graffeineView.layer(id: LayerID.redLine)?
-            .setData(GraffeineData(valueMax: 50, values: [4, 11, 28, 22, 29, 31, nil]),
-                 animator: lineAnimator(animated))
+    func generateRandomValues(_ count: Int, min: Double, max: Double) -> [Double] {
+        return (0..<count).map { _ in return normalized(Double.random(in: min...max)) }
+    }
+
+    func normalized(_ input: Double) -> Double {
+        return ceil(input * 100) / 100
+    }
+
+    func generateProjection(_ input: [Double?]) -> [Double?] {
+        let inputCount = input.count
+        guard
+            (inputCount > 1),
+            let last = input[inputCount - 1],
+            let before = input[inputCount - 2]
+            else { return [nil] }
+        let proj = last + (last - before)
+        return [last, proj]
+    }
+
+    func applyData(animated: Bool) {
+        let greenHistorical: [Double?] = generateRandomValues(6, min: 14, max: 50)
+        let greenProjected: [Double?] = generateNilDoubles(5) + generateProjection(greenHistorical)
+        let redHistorical: [Double?] = generateRandomValues(6, min: 4, max: 40)
+        let redProjected: [Double?] = generateNilDoubles(5) + generateProjection(redHistorical)
 
         graffeineView.layer(id: LayerID.redLineProj)?
-            .setData(GraffeineData(valueMax: 50, values: [nil, nil, nil, nil, nil, 31, 33]),
+            .setData(GraffeineData(valueMax: 50, values: redProjected),
                      animator: projectionLineAnimator(animated))
 
-        graffeineView.layer(id: LayerID.greenLine)?
-            .setData(GraffeineData(valueMax: 50, values: [13, 28, 33, 44, 8, 16, nil]),
+        graffeineView.layer(id: LayerID.redLine)?
+            .setData(GraffeineData(valueMax: 50, values: redHistorical + [nil]),
                  animator: lineAnimator(animated))
 
         graffeineView.layer(id: LayerID.greenLineProj)?
-            .setData(GraffeineData(valueMax: 50, values: [nil, nil, nil, nil, nil, 16, 24]),
+            .setData(GraffeineData(valueMax: 50, values: greenProjected),
                      animator: projectionLineAnimator(animated))
+
+        graffeineView.layer(id: LayerID.greenLine)?
+            .setData(GraffeineData(valueMax: 50, values: greenHistorical + [nil]),
+                 animator: lineAnimator(animated))
     }
 }
