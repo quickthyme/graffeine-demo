@@ -15,11 +15,13 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
     @IBAction func reload(_ sender: UIButton?) {
         self.currentDataSet = nil
         self.currentColors = nil
+        self.currentLabels = nil
         self.applyData(animated: true)
     }
 
     var currentDataSet: DataSet? = nil
     var currentColors: [[UIColor]]? = nil
+    var currentLabels: [[String]]? = nil
 
     var selectedLayer: LayerID? = nil
     var selectedIndex: Int? = nil
@@ -41,9 +43,9 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
     }
 
     private let pallette: [UIColor] = [
-        UIColor.systemRed.modifiedByAdding(alpha: -0.5),
-        UIColor.systemGreen.modifiedByAdding(alpha: -0.5),
-        UIColor.systemIndigo.modifiedByAdding(alpha: -0.5)
+        UIColor.red.modifiedByAdding(alpha: -0.5),
+        UIColor.green.modifiedByAdding(alpha: -0.5),
+        UIColor.blue.modifiedByAdding(alpha: -0.5)
     ]
 
     func generateColors(count: Int) -> [UIColor] {
@@ -51,6 +53,17 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
             let index = Int.random(in: 0..<pallette.count)
             return pallette[index]
         }
+    }
+
+    func generateLabels(count: Int, start: Int) -> [String] {
+        return (0..<count).enumerated().map {
+            return String( self.alphabetLetter(for: $0.offset + start) )
+        }
+    }
+
+    func alphabetLetter(for intVal: Int) -> Character {
+        let A = Int(("A" as UnicodeScalar).value)
+        return Character(UnicodeScalar(intVal + A)!)
     }
 
     func normalized(_ val: Double) -> Double {
@@ -74,6 +87,12 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
                 generateColors(count: dataSet.m.count),
                 generateColors(count: dataSet.l.count)]
         self.currentColors = colors
+
+        let labels: [[String]] = currentLabels
+            ?? [generateLabels(count: dataSet.s.count, start: 0),
+                generateLabels(count: dataSet.m.count, start: dataSet.s.count),
+                generateLabels(count: dataSet.l.count, start: dataSet.s.count + dataSet.m.count)]
+        self.currentLabels = labels
 
         graffeineView.layer(id: LayerID.vectorPlots1)?.apply({
             $0.unitFill.colors = colors[0]
@@ -102,6 +121,27 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
                 labels: [],
                 selectedLabels: [],
                 selectedIndex: (selectedLayer == .vectorPlots3) ? selectedIndex : nil
+            )
+        })
+
+        graffeineView.layer(id: LayerID.labels1)?.apply({
+            $0.data = GraffeineData(coordinates: dataSet.s,
+                                    labels: labels[0],
+                                    selectedIndex: (selectedLayer == .vectorPlots1) ? selectedIndex : nil
+            )
+        })
+
+        graffeineView.layer(id: LayerID.labels2)?.apply({
+            $0.data = GraffeineData(coordinates: dataSet.m,
+                                    labels: labels[1],
+                                    selectedIndex: (selectedLayer == .vectorPlots2) ? selectedIndex : nil
+            )
+        })
+
+        graffeineView.layer(id: LayerID.labels3)?.apply({
+            $0.data = GraffeineData(coordinates: dataSet.l,
+                                    labels: labels[2],
+                                    selectedIndex: (selectedLayer == .vectorPlots3) ? selectedIndex : nil
             )
         })
     }

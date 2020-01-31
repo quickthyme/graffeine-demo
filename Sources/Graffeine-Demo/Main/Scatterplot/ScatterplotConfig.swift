@@ -6,14 +6,12 @@ class ScatterplotConfig: GraffeineViewConfig {
     enum ID: Hashable {
         case topGutter, rightGutter, bottomGutter, leftGutter
         case hGrid, vGrid, vectorPlots1, vectorPlots2, vectorPlots3
+        case labels1, labels2, labels3
     }
 
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
         let insets = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
-        let selectionDashPattern: [NSNumber] = [2, 6]
-        let selectionAnimation = GraffeineAnimation.Perpetual
-            .MarchingAnts(dashPhase: 8, clockwise: false, duration: 2.4)
 
         graffeineView.layers = [
 
@@ -45,13 +43,12 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.insets = insets
                     $0.diameter = .explicit(24.0)
                     $0.positioner = .xy
-                    $0.unitLine.dashPattern = selectionDashPattern
 
                     $0.selection.isEnabled = true
-                    $0.selection.line.color = UIColor(white: 0.5, alpha: 0.5)
-                    $0.selection.line.thickness = 12.0
-                    $0.selection.line.dashPattern = selectionDashPattern
-                    $0.selection.animation = selectionAnimation
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(alpha: -0.3) }
+                    $0.selection.line.color = .black
+                    $0.selection.line.thickness = 1
+                    $0.selection.line.dashPattern = [6, 6]
                 }),
 
             GraffeinePlotLayer(id: ID.vectorPlots2)
@@ -59,13 +56,12 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.insets = insets
                     $0.diameter = .explicit(32.0)
                     $0.positioner = .xy
-                    $0.unitLine.dashPattern = selectionDashPattern
 
                     $0.selection.isEnabled = true
-                    $0.selection.line.color = UIColor(white: 0.5, alpha: 0.5)
-                    $0.selection.line.thickness = 12.0
-                    $0.selection.line.dashPattern = selectionDashPattern
-                    $0.selection.animation = selectionAnimation
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(alpha: -0.3) }
+                    $0.selection.line.color = .black
+                    $0.selection.line.thickness = 1
+                    $0.selection.line.dashPattern = [6, 6]
                 }),
 
             GraffeinePlotLayer(id: ID.vectorPlots3)
@@ -73,13 +69,33 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.insets = insets
                     $0.diameter = .explicit(48.0)
                     $0.positioner = .xy
-                    $0.unitLine.dashPattern = selectionDashPattern
 
                     $0.selection.isEnabled = true
-                    $0.selection.line.color = UIColor(white: 0.5, alpha: 0.5)
-                    $0.selection.line.thickness = 12.0
-                    $0.selection.line.dashPattern = selectionDashPattern
-                    $0.selection.animation = selectionAnimation
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(alpha: -0.3) }
+                    $0.selection.line.color = .black
+                    $0.selection.line.thickness = 1
+                    $0.selection.line.dashPattern = [8, 8]
+                }),
+
+            GraffeinePlotLabelLayer(id: ID.labels1)
+                .apply ({
+                    $0.insets = insets
+                    $0.positioner = .xy
+                    $0.unitText.colors = [.black]
+                }),
+
+            GraffeinePlotLabelLayer(id: ID.labels2)
+                .apply ({
+                    $0.insets = insets
+                    $0.positioner = .xy
+                    $0.unitText.colors = [.black]
+                }),
+
+            GraffeinePlotLabelLayer(id: ID.labels3)
+                .apply ({
+                    $0.insets = insets
+                    $0.positioner = .xy
+                    $0.unitText.colors = [.black]
                 })
         ]
     }
