@@ -17,14 +17,28 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYV-bP-kfI" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ScatterplotConfig"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-Vh-4fJ">
+                        <rect key="frame" x="378" y="0.0" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="5NB-Hu-rV8"/>
+                            <constraint firstAttribute="height" constant="36" id="vnp-Hm-tl9"/>
+                        </constraints>
+                        <color key="tintColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="ic_reset"/>
+                        <connections>
+                            <action selector="reload:" destination="S7Z-ii-P81" eventType="touchUpInside" id="TCQ-N3-bbu"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wVF-Vh-4fJ" secondAttribute="trailing" id="24S-rO-SK9"/>
                     <constraint firstAttribute="bottom" secondItem="YYV-bP-kfI" secondAttribute="bottom" id="7PL-Kv-ITZ"/>
+                    <constraint firstItem="wVF-Vh-4fJ" firstAttribute="top" secondItem="6jr-Pw-ScO" secondAttribute="top" id="Hpq-36-Eyj"/>
                     <constraint firstItem="YYV-bP-kfI" firstAttribute="leading" secondItem="6jr-Pw-ScO" secondAttribute="leading" id="ZXT-DK-u6c"/>
                     <constraint firstItem="YYV-bP-kfI" firstAttribute="top" secondItem="6jr-Pw-ScO" secondAttribute="top" id="fr0-Ws-S3H"/>
                     <constraint firstAttribute="trailing" secondItem="YYV-bP-kfI" secondAttribute="trailing" id="hs3-bC-rJH"/>
@@ -32,8 +46,12 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="graffeineView" destination="YYV-bP-kfI" id="b7o-e1-Qta"/>
+                <outlet property="reloadButton" destination="wVF-Vh-4fJ" id="OLa-Av-a0w"/>
             </connections>
             <point key="canvasLocation" x="139" y="145"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_reset" width="18" height="18"/>
+    </resources>
 </document>

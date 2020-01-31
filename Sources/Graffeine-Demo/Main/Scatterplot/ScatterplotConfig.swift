@@ -10,72 +10,76 @@ class ScatterplotConfig: GraffeineViewConfig {
 
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
-
-        let unitMargin: CGFloat = 0.0
+        let insets = UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+        let selectionDashPattern: [NSNumber] = [2, 6]
+        let selectionAnimation = GraffeineAnimation.Perpetual
+            .MarchingAnts(dashPhase: 8, clockwise: false, duration: 2.4)
 
         graffeineView.layers = [
 
-            GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 28, region: .topGutter),
+            GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 24, region: .topGutter),
 
-            GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 64, region: .rightGutter),
+            GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 72, region: .rightGutter),
 
-            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 26, region: .bottomGutter),
+            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 24, region: .bottomGutter),
 
-            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 64, region: .leftGutter),
+            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 72, region: .leftGutter),
 
             GraffeineGridLineLayer(id: ID.hGrid)
                 .apply ({
                     $0.flipXY = true
-                    $0.unitLine.colors = [UIColor(white: 0.98, alpha: 0.8)]
-                    $0.unitLine.thickness = 2.0
+                    $0.unitLine.colors = [UIColor(white: 0.5, alpha: 1.0)]
+                    $0.unitLine.thickness = 1.5
                     $0.data = GraffeineData(valueMax: Double(2), values: [0, 1, 2])
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
                 .apply ({
-                    $0.unitLine.colors = [.white]
-                    $0.unitLine.colors = [UIColor(white: 0.98, alpha: 0.8)]
-                    $0.unitLine.thickness = 2.0
+                    $0.unitLine.colors = [UIColor(white: 0.5, alpha: 1.0)]
+                    $0.unitLine.thickness = 1.5
                     $0.data = GraffeineData(valueMax: Double(2), values: [0, 1, 2])
                 }),
 
             GraffeinePlotLayer(id: ID.vectorPlots1)
                 .apply ({
-                    $0.diameter = .explicit(32.0)
-                    $0.unitFill.colors = [UIColor.init(red: 0.33, green: 0.08, blue: 0.12, alpha: 0.5)]
-                    $0.unitLine.colors = [.white]
-                    $0.unitLine.thickness = 2.0
-                    $0.unitColumn.margin = unitMargin
+                    $0.insets = insets
+                    $0.diameter = .explicit(24.0)
+                    $0.positioner = .xy
+                    $0.unitLine.dashPattern = selectionDashPattern
 
                     $0.selection.isEnabled = true
-                    $0.selection.radial.outerDiameter = .explicit(48.0)
-                    $0.selection.line.thickness = 3
+                    $0.selection.line.color = UIColor(white: 0.5, alpha: 0.5)
+                    $0.selection.line.thickness = 12.0
+                    $0.selection.line.dashPattern = selectionDashPattern
+                    $0.selection.animation = selectionAnimation
                 }),
 
             GraffeinePlotLayer(id: ID.vectorPlots2)
                 .apply ({
-                    $0.diameter = .explicit(24.0)
-                    $0.unitFill.colors = [UIColor(red: 0.16, green: 0.19, blue: 0.55, alpha: 0.5)]
-                    $0.unitLine.colors = [.white]
-                    $0.unitLine.thickness = 2.0
-                    $0.unitColumn.margin = unitMargin
+                    $0.insets = insets
+                    $0.diameter = .explicit(32.0)
+                    $0.positioner = .xy
+                    $0.unitLine.dashPattern = selectionDashPattern
 
                     $0.selection.isEnabled = true
-                    $0.selection.radial.outerDiameter = .explicit(32.0)
-                    $0.selection.line.thickness = 3
+                    $0.selection.line.color = UIColor(white: 0.5, alpha: 0.5)
+                    $0.selection.line.thickness = 12.0
+                    $0.selection.line.dashPattern = selectionDashPattern
+                    $0.selection.animation = selectionAnimation
                 }),
 
             GraffeinePlotLayer(id: ID.vectorPlots3)
                 .apply ({
-                    $0.diameter = .explicit(16.0)
-                    $0.unitFill.colors = [UIColor(red: 0.04, green: 0.44, blue: 0.26, alpha: 0.5)]
-                    $0.unitLine.colors = [.white]
-                    $0.unitLine.thickness = 2.0
-                    $0.unitColumn.margin = unitMargin
+                    $0.insets = insets
+                    $0.diameter = .explicit(48.0)
+                    $0.positioner = .xy
+                    $0.unitLine.dashPattern = selectionDashPattern
 
                     $0.selection.isEnabled = true
-                    $0.selection.radial.outerDiameter = .explicit(24.0)
-                    $0.selection.line.thickness = 3
+                    $0.selection.line.color = UIColor(white: 0.5, alpha: 0.5)
+                    $0.selection.line.thickness = 12.0
+                    $0.selection.line.dashPattern = selectionDashPattern
+                    $0.selection.animation = selectionAnimation
                 })
         ]
     }
