@@ -48,6 +48,9 @@
 		DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773EF23DBD624005246BA /* CandlestickCell.swift */; };
 		DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773F023DBD624005246BA /* CandlestickConfig.swift */; };
 		DC8773F823DC24AD005246BA /* CandlestickCell+TradingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */; };
+		DCC1126E23E6155500E0C1B8 /* AreaLinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1126B23E6151900E0C1B8 /* AreaLinesCell.swift */; };
+		DCC1126F23E6155900E0C1B8 /* AreaLinesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1126D23E6151900E0C1B8 /* AreaLinesConfig.swift */; };
+		DCC1127023E6156000E0C1B8 /* AreaLinesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC1126C23E6151900E0C1B8 /* AreaLinesCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,9 @@
 		DC8773EF23DBD624005246BA /* CandlestickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickCell.swift; sourceTree = "<group>"; };
 		DC8773F023DBD624005246BA /* CandlestickConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickConfig.swift; sourceTree = "<group>"; };
 		DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CandlestickCell+TradingDay.swift"; sourceTree = "<group>"; };
+		DCC1126B23E6151900E0C1B8 /* AreaLinesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaLinesCell.swift; sourceTree = "<group>"; };
+		DCC1126C23E6151900E0C1B8 /* AreaLinesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaLinesCell.xib; sourceTree = "<group>"; };
+		DCC1126D23E6151900E0C1B8 /* AreaLinesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaLinesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +235,7 @@
 				DC7F21C923C6DD46009629DD /* MainViewController.swift */,
 				DC10F2C823E2A791001769B2 /* MainViewController+CellID.swift */,
 				DC10F2C623E2A73F001769B2 /* MainViewController+TableView.swift */,
+				DCC1126923E6150000E0C1B8 /* AreaLines */,
 				DC8773ED23DBD609005246BA /* Candlestick */,
 				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
 				DC2FA27923CEB53600E88807 /* LinePoints */,
@@ -307,6 +314,16 @@
 				DC1B828823E01AD9005E379E /* CandlestickGutterConfig.swift */,
 			);
 			path = Candlestick;
+			sourceTree = "<group>";
+		};
+		DCC1126923E6150000E0C1B8 /* AreaLines */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1126B23E6151900E0C1B8 /* AreaLinesCell.swift */,
+				DCC1126C23E6151900E0C1B8 /* AreaLinesCell.xib */,
+				DCC1126D23E6151900E0C1B8 /* AreaLinesConfig.swift */,
+			);
+			path = AreaLines;
 			sourceTree = "<group>";
 		};
 		DCE4C9DB23D0371E00C47EFD /* PieSlices */ = {
@@ -435,6 +452,7 @@
 			files = (
 				DC10F2E023E2AF30001769B2 /* RedGreenLinesCell.xib in Resources */,
 				DC7F21DA23C6DE86009629DD /* Main.storyboard in Resources */,
+				DCC1127023E6156000E0C1B8 /* AreaLinesCell.xib in Resources */,
 				DC7F21D223C6DD49009629DD /* LaunchScreen.storyboard in Resources */,
 				DC10F2DF23E2AF2B001769B2 /* ProgressIndicatorsCell.xib in Resources */,
 				DC10F2DB23E2AF20001769B2 /* LinePointsCell.xib in Resources */,
@@ -482,8 +500,10 @@
 				DC1B828123DFABED005E379E /* ProgressIndicatorsCell.swift in Sources */,
 				DC10F2E423E2B1E2001769B2 /* PieSlicesData.swift in Sources */,
 				DC7F221123C7BFA4009629DD /* RedGreenLinesCell.swift in Sources */,
+				DCC1126E23E6155500E0C1B8 /* AreaLinesCell.swift in Sources */,
 				DC2FA27D23CEB5A200E88807 /* LinePointsConfig.swift in Sources */,
 				DC10F2DE23E2AF25001769B2 /* PieSlicesConfig.swift in Sources */,
+				DCC1126F23E6155900E0C1B8 /* AreaLinesConfig.swift in Sources */,
 				DC7F21D723C6DD8C009629DD /* GraffeineLibrarySymbolProtection.swift in Sources */,
 				DC7F21EF23C6EBCE009629DD /* VerticalDescendingBarsConfig.swift in Sources */,
 				DC7F21DC23C6E014009629DD /* VerticalDescendingBarsCell.swift in Sources */,

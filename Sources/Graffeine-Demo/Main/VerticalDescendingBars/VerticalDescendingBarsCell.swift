@@ -21,7 +21,7 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
 
     func setupSelection() {
         graffeineView.onSelect = { selection in
-            self.selectedIndex = selection?.data.selectedIndex
+            self.selectedIndex = selection?.data.selected.index
             self.applyData(animated: true)
         }
     }
@@ -52,10 +52,10 @@ class VerticalDescendingBarsCell: UITableViewCell, DataAppliable {
     }
 
     func applyData(animated: Bool) {
-        let values: [Double?] = dataSets[dataSetIndex]
+        let valuesHi: [Double?] = dataSets[dataSetIndex]
         let data = GraffeineData(valueMax: 10,
-                                 values: values,
-                                 labels: values.map { ($0 == nil) ? "?" : "\(Int($0!))" },
+                                 valuesHi: valuesHi,
+                                 labels: valuesHi.map { ($0 == nil) ? "?" : "\(Int($0!))" },
                                  selectedIndex: selectedIndex)
 
         graffeineView.layer(id: LayerID.bottomGutter)?

@@ -28,14 +28,14 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.flipXY = true
                     $0.unitLine.colors = [UIColor(white: 0.5, alpha: 1.0)]
                     $0.unitLine.thickness = 1.5
-                    $0.data = GraffeineData(valueMax: Double(2), values: [0, 1, 2])
+                    $0.data = GraffeineData(valueMax: Double(2), valuesHi: [0, 1, 2])
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
                 .apply ({
                     $0.unitLine.colors = [UIColor(white: 0.5, alpha: 1.0)]
                     $0.unitLine.thickness = 1.5
-                    $0.data = GraffeineData(valueMax: Double(2), values: [0, 1, 2])
+                    $0.data = GraffeineData(valueMax: Double(2), valuesHi: [0, 1, 2])
                 }),
 
             GraffeinePlotLayer(id: ID.vectorPlots1)

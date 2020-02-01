@@ -10,7 +10,7 @@ class LinePointsCell: UITableViewCell, DataAppliable {
     override func awakeFromNib() {
         super.awakeFromNib()
         graffeineView.onSelect = { selection in
-            self.selectedIndex = selection?.data.selectedIndex
+            self.selectedIndex = selection?.data.selected.index
             if self.selectedIndex == nil {
                 self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
             }
@@ -20,8 +20,9 @@ class LinePointsCell: UITableViewCell, DataAppliable {
 
     let dataSets: [[Double]] = [
         [1, 1, 2, 3, 5, 8, 13, 21, 34],
-        [2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10],
-        [5, 3, 4, 2, 1, 2, 6]
+        [5, 3, 4, 2, 1, 2, 6],
+        [2, 2, 3, 4.5, 4, 4.5, 3, 2, 2],
+        [2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10]
     ]
 
     var dataSetIndex: Int = 0
@@ -30,8 +31,8 @@ class LinePointsCell: UITableViewCell, DataAppliable {
 
     var lineAndPointData: GraffeineData {
         let values = dataSets[dataSetIndex]
-        return GraffeineData(valueMax: values.max()!,
-                             values: values + [nil],
+        return GraffeineData(valueMax: max(values.max()!, 8),
+                             valuesHi: values,
                              labels: values.map { String(Int($0)) },
                              selectedIndex: selectedIndex)
     }
@@ -43,7 +44,7 @@ class LinePointsCell: UITableViewCell, DataAppliable {
     }
 
     func applyDataAnimated() {
-        graffeineView.layer(id: LayerID.line)!.setData(lineAndPointData, animator:
+        graffeineView.layer(id: LayerID.line)?.setData(lineAndPointData, animator:
             GraffeineAnimation.Data.Line.Morph(duration: 2.0,
                                                timing: .easeInEaseOut))
 
@@ -59,10 +60,13 @@ class LinePointsCell: UITableViewCell, DataAppliable {
                                                            delayRatio: 0.99)
                 : nil
 
-        graffeineView.layer(id: LayerID.point)!
+        graffeineView.layer(id: LayerID.point)?
             .setData(lineAndPointData, animator: pointAnimator)
 
-        graffeineView.layer(id: LayerID.pointLabel)!
+        graffeineView.layer(id: LayerID.pointLabel)?
             .setData(lineAndPointData, animator: labelAnimator)
+
+//        graffeineView.layer(id: LayerID.bottomGutter)?
+//            .setData(lineAndPointData, animator: nil)
     }
 }

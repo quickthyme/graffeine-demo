@@ -15,7 +15,7 @@ class ProgressIndicatorsConfigBar: GraffeineViewConfig {
                 $0.flipXY = true
                 $0.unitFill.colors = [UIColor(white: 0.88, alpha: 0.88)]
                 $0.roundedEnds = .both(6)
-                $0.data = GraffeineData.init(valueMax: 100, values: [100])
+                $0.data = GraffeineData.init(valueMax: 100, valuesHi: [100])
             })
 
         let maskLayer = GraffeineBarLayer(layer: trackLayer)
@@ -26,7 +26,7 @@ class ProgressIndicatorsConfigBar: GraffeineViewConfig {
             .apply ({
                 $0.flipXY = true
                 $0.unitFill.colors = [.systemBlue]
-                $0.data = GraffeineData.init(valueMax: 100, values: [0])
+                $0.data = GraffeineData.init(valueMax: 100, valuesHi: [0])
                 $0.mask = maskLayer
             })
 

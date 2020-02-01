@@ -29,7 +29,7 @@ class ScatterplotCell: UITableViewCell, DataAppliable {
     override func awakeFromNib() {
         super.awakeFromNib()
         graffeineView.onSelect = { selection in
-            self.selectedIndex = selection?.data.selectedIndex
+            self.selectedIndex = selection?.data.selected.index
             self.selectedLayer = selection?.layer.id as? LayerID
             self.applyData(animated: true)
         }

@@ -43,7 +43,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.flipXY = true
                     $0.unitLine.colors = [UIColor(white: 1.0, alpha: 0.5)]
                     $0.unitLine.thickness = 0.5
-                    $0.data = GraffeineData(valueMax: 20, values: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20])
+                    $0.data = GraffeineData(valueMax: 20, valuesHi: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20])
                 }),
 
             GraffeineBarLayer(id: ID.bars1)

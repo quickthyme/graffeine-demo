@@ -42,7 +42,7 @@ class PieSlicesData {
         }
 
         return GraffeineData(valueMax: maxVal,
-                             values: dataSets[dataSetIndex],
+                             valuesHi: dataSets[dataSetIndex],
                              labels: labels,
                              selectedLabels: selectedLabels,
                              selectedIndex: selectedIndex)

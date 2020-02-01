@@ -70,19 +70,19 @@ class RedGreenLinesCell: UITableViewCell, DataAppliable {
     func applyData(animated: Bool) {
 
         graffeineView.layer(id: LayerID.redLineProj)?
-            .setData(GraffeineData(valueMax: 50, values: redProjected),
+            .setData(GraffeineData(valueMax: 50, valuesHi: redProjected),
                      animator: projectionLineAnimator(animated))
 
         graffeineView.layer(id: LayerID.redLine)?
-            .setData(GraffeineData(valueMax: 50, values: redHistorical + [nil]),
+            .setData(GraffeineData(valueMax: 50, valuesHi: redHistorical + [nil]),
                  animator: lineAnimator(animated))
 
         graffeineView.layer(id: LayerID.greenLineProj)?
-            .setData(GraffeineData(valueMax: 50, values: greenProjected),
+            .setData(GraffeineData(valueMax: 50, valuesHi: greenProjected),
                      animator: projectionLineAnimator(animated))
 
         graffeineView.layer(id: LayerID.greenLine)?
-            .setData(GraffeineData(valueMax: 50, values: greenHistorical + [nil]),
+            .setData(GraffeineData(valueMax: 50, valuesHi: greenHistorical + [nil]),
                  animator: lineAnimator(animated))
     }
 }

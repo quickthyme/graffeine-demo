@@ -54,7 +54,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.darkGray]
                     $0.unitLine.dashPattern = [1, 4]
                     $0.unitLine.thickness = 0.5
-                    $0.data = GraffeineData(valueMax: 10, values: [0, 2.5, 5, 7.5, 10])
+                    $0.data = GraffeineData(valueMax: 10, valuesHi: [0, 2.5, 5, 7.5, 10])
                 }),
 
             GraffeineBarLayer(id: ID.bar)

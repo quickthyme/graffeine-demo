@@ -64,7 +64,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [UIColor(white: 1.0, alpha: 0.5)]
                     $0.unitLine.dashPattern = [1, 3]
                     $0.unitLine.thickness = 0.5
-                    $0.data = GraffeineData(valueMax: 6, values: [0, 1, 2, 3, 4, 5, 6])
+                    $0.data = GraffeineData(valueMax: 6, valuesHi: [0, 1, 2, 3, 4, 5, 6])
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
@@ -72,7 +72,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [UIColor(white: 1.0, alpha: 0.5)]
                     $0.unitLine.dashPattern = [1, 3]
                     $0.unitLine.thickness = 0.5
-                    $0.data = GraffeineData(valueMax: 50, values: [0, 12.5, 25.0, 37.5, 50.0])
+                    $0.data = GraffeineData(valueMax: 50, valuesHi: [0, 12.5, 25.0, 37.5, 50.0])
                 }),
 
             GraffeineLineLayer(id: ID.redLine)

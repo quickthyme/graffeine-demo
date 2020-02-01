@@ -49,11 +49,11 @@ class HorizontalGroupedBarsCell: UITableViewCell, DataAppliable {
         let hLabels: [String]   = ["2", "4", "6", "8", "10", "12", "14", "16", "18", "20"]
 
         let data1 = GraffeineData(valueMax: 20,
-                                  values: dataSets[dataSetIndex].0,
+                                  valuesHi: dataSets[dataSetIndex].0,
                                   labels: dataSets[dataSetIndex].0.map {"\(Int($0 ?? 0))"})
 
         let data2 = GraffeineData(valueMax: 20,
-                                  values: dataSets[dataSetIndex].1,
+                                  valuesHi: dataSets[dataSetIndex].1,
                                   labels: dataSets[dataSetIndex].1.map {"\(Int($0 ?? 0))"})
 
         graffeineView.layer(id: LayerID.leftGutter)?

@@ -22,7 +22,7 @@ class ProgressIndicatorsConfigRad: GraffeineViewConfig {
                     $0.outerDiameter = .explicit(outerDiameter)
                     $0.innerDiameter = .explicit(innerDiameter)
                     $0.unitFill.colors = [UIColor(white: 0.88, alpha: 0.88)]
-                    $0.data = GraffeineData.init(valueMax: 100, values: [100])
+                    $0.data = GraffeineData.init(valueMax: 100, valuesHi: [100])
                 }),
 
             GraffeineRadialSegmentLayer(id: ID.progress)
@@ -32,7 +32,7 @@ class ProgressIndicatorsConfigRad: GraffeineViewConfig {
                     $0.outerDiameter = .explicit(outerDiameter)
                     $0.innerDiameter = .explicit(innerDiameter)
                     $0.unitFill.colors = [.systemBlue]
-                    $0.data = GraffeineData.init(valueMax: 100, values: [0])
+                    $0.data = GraffeineData.init(valueMax: 100, valuesHi: [0])
                 })
         ]
     }

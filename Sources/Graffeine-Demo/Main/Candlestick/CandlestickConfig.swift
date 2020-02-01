@@ -27,7 +27,7 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [UIColor(white: 1.0, alpha: 0.5)]
                     $0.unitLine.thickness = 0.5
                     $0.unitLine.dashPattern = [3, 3]
-                    $0.data = GraffeineData(valueMax: 10, values: Array<Int>(0...10).map {Double($0)})
+                    $0.data = GraffeineData(valueMax: 10, valuesHi: Array<Int>(0...10).map {Double($0)})
                 }),
 
             GraffeineBarLayer(id: ID.wick)
