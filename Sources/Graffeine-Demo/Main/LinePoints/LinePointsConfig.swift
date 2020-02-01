@@ -33,6 +33,7 @@ class LinePointsConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
+                    $0.unitLine.cap  = .round
                     $0.smoothing = .catmullRom(12)
                 }),
 

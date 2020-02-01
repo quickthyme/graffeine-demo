@@ -28,14 +28,14 @@ class AreaLinesCell: UITableViewCell, DataAppliable {
     func generateNewDataSet() {
         currentDataSet = (
             generateRandomSeries(150,  85, 100),
-            generateRandomSeries( 75,  45,  75),
+            generateRandomSeries( 75,  50,  75),
             generateRandomSeries( 25,  20,  35)
         )
     }
 
     var lineData: (GraffeineData, GraffeineData, GraffeineData) {
         let dataSet = currentDataSet
-        let maxValue = Double(150)
+        let maxValue = Double(130)
         return (
             GraffeineData(valueMax: maxValue,
                           valuesHi: dataSet.0,

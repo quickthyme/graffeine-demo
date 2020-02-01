@@ -42,7 +42,7 @@ to a line graph.
 
 ![sample_5](docs/sample_5.png)
 
-**Scatter Plot** is demonstrating some circles.
+**Scatter Plot** demonstrates rendering a bubble chart.
 
 <br />
 
@@ -64,5 +64,12 @@ to a line graph.
 ![sample_8](docs/sample_8.png)
 
 **Progress Indicators** demonstrates simple custom progress indicators.
+ 
+ <br />
+
+
+![sample_9](docs/sample_9.png)
+
+**Area Fill** demonstrates a multi-line graph that includes area fill.
  
  <br />
