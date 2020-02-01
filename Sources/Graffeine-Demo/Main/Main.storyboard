@@ -1,45 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E9D-Hu-7He">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainViewController-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Bars-->
+        <scene sceneID="Xtl-iE-fHs">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="MainViewController" customClass="MainViewController" customModule="Graffeine_Demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="260" estimatedRowHeight="260" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TxQ-C5-Auw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="OqM-cJ-NB1"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Q0M-HT-fYN"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="TxQ-C5-Auw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8DA-bh-S3w"/>
-                            <constraint firstItem="TxQ-C5-Auw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Qad-Cu-ZAX"/>
-                            <constraint firstAttribute="bottom" secondItem="TxQ-C5-Auw" secondAttribute="bottom" id="Y20-DN-Ed6"/>
-                            <constraint firstAttribute="trailing" secondItem="TxQ-C5-Auw" secondAttribute="trailing" id="kfz-AO-blM"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <outlet property="table" destination="TxQ-C5-Auw" id="nPA-gD-Dte"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Bars" id="Bzv-bP-36U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bars" image="tb_bars" id="JUM-FU-HOS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ad-BS-8JD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+            <point key="canvasLocation" x="-629" y="511"/>
+        </scene>
+        <!--Lines-->
+        <scene sceneID="c1v-SS-ttK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Lines" id="T3k-re-39F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lines" image="tb_lines" id="x8u-ve-0zf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAJ-8d-f2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-244" y="511"/>
+        </scene>
+        <!--Circles-->
+        <scene sceneID="zmU-7C-q52">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Circles" id="igG-tR-euW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Circles" image="tb_circles" id="Mfc-gq-5AB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWh-iZ-Ug9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128" y="511"/>
+        </scene>
+        <!--MainViewController-->
+        <scene sceneID="6DH-af-6nc">
+            <objects>
+                <tabBarController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E9D-Hu-7He" userLabel="MainViewController" customClass="MainViewController" customModule="Graffeine_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="azN-Db-Wn6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Bzv-bP-36U" kind="relationship" relationship="viewControllers" id="3eD-1P-1z8"/>
+                        <segue destination="T3k-re-39F" kind="relationship" relationship="viewControllers" id="4Q7-bM-olS"/>
+                        <segue destination="igG-tR-euW" kind="relationship" relationship="viewControllers" id="ogi-XP-S4G"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNe-iq-foX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-244" y="78"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tb_bars" width="25" height="25"/>
+        <image name="tb_circles" width="25" height="25"/>
+        <image name="tb_lines" width="25" height="25"/>
+    </resources>
 </document>

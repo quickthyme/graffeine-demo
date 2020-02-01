@@ -1,0 +1,3 @@
+protocol DemoCell {
+    func applyData()
+}

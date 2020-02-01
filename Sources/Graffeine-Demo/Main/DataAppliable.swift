@@ -1,3 +1,0 @@
-protocol DataAppliable {
-    func applyData()
-}

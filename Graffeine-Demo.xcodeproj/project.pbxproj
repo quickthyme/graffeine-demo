@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC10F2C723E2A740001769B2 /* MainViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC10F2C623E2A73F001769B2 /* MainViewController+TableView.swift */; };
-		DC10F2C923E2A791001769B2 /* MainViewController+CellID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC10F2C823E2A791001769B2 /* MainViewController+CellID.swift */; };
 		DC10F2D923E2AF11001769B2 /* CandlestickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D423E2AD5D001769B2 /* CandlestickCell.xib */; };
 		DC10F2DA23E2AF17001769B2 /* HorizontalGroupedBarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D323E2AA42001769B2 /* HorizontalGroupedBarsCell.xib */; };
 		DC10F2DB23E2AF20001769B2 /* LinePointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D223E2A9F2001769B2 /* LinePointsCell.xib */; };
@@ -36,7 +34,7 @@
 		DC7F21DA23C6DE86009629DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC7F21D923C6DE86009629DD /* Main.storyboard */; };
 		DC7F21DC23C6E014009629DD /* VerticalDescendingBarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F21DB23C6E014009629DD /* VerticalDescendingBarsCell.swift */; };
 		DC7F21EB23C6E530009629DD /* libGraffeine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7F21E623C6E50C009629DD /* libGraffeine.a */; };
-		DC7F21EE23C6E6EB009629DD /* DataAppliable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F21ED23C6E6EB009629DD /* DataAppliable.swift */; };
+		DC7F21EE23C6E6EB009629DD /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F21ED23C6E6EB009629DD /* DemoCell.swift */; };
 		DC7F21EF23C6EBCE009629DD /* VerticalDescendingBarsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F21DD23C6E06C009629DD /* VerticalDescendingBarsConfig.swift */; };
 		DC7F21F823C6FBF2009629DD /* Graffeine_Demo_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F21F723C6FBF2009629DD /* Graffeine_Demo_Tests.swift */; };
 		DC7F221123C7BFA4009629DD /* RedGreenLinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F220F23C7BF8B009629DD /* RedGreenLinesCell.swift */; };
@@ -51,6 +49,18 @@
 		DCC1126E23E6155500E0C1B8 /* AreaLinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1126B23E6151900E0C1B8 /* AreaLinesCell.swift */; };
 		DCC1126F23E6155900E0C1B8 /* AreaLinesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1126D23E6151900E0C1B8 /* AreaLinesConfig.swift */; };
 		DCC1127023E6156000E0C1B8 /* AreaLinesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC1126C23E6151900E0C1B8 /* AreaLinesCell.xib */; };
+		DCC1127B23E6328600E0C1B8 /* BarsViewController+CellID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1127A23E6323F00E0C1B8 /* BarsViewController+CellID.swift */; };
+		DCC1127C23E6328C00E0C1B8 /* BarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1127523E62FDC00E0C1B8 /* BarsViewController.swift */; };
+		DCC1127D23E6328C00E0C1B8 /* BarsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1127923E6321800E0C1B8 /* BarsViewController+TableView.swift */; };
+		DCC1128623E634BF00E0C1B8 /* Circles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC1127F23E633AD00E0C1B8 /* Circles.storyboard */; };
+		DCC1128723E634BF00E0C1B8 /* CirclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1128123E633AD00E0C1B8 /* CirclesViewController.swift */; };
+		DCC1128823E634BF00E0C1B8 /* CirclesViewController+CellID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1128023E633AD00E0C1B8 /* CirclesViewController+CellID.swift */; };
+		DCC1128923E634BF00E0C1B8 /* CirclesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1127E23E633AD00E0C1B8 /* CirclesViewController+TableView.swift */; };
+		DCC1128A23E634C300E0C1B8 /* Bars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC1127423E62FD700E0C1B8 /* Bars.storyboard */; };
+		DCC1128B23E634C800E0C1B8 /* Lines.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC1128323E6349F00E0C1B8 /* Lines.storyboard */; };
+		DCC1128C23E634C800E0C1B8 /* LinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1128523E6349F00E0C1B8 /* LinesViewController.swift */; };
+		DCC1128D23E634C800E0C1B8 /* LinesViewController+CellID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1128223E6349F00E0C1B8 /* LinesViewController+CellID.swift */; };
+		DCC1128E23E634C800E0C1B8 /* LinesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1128423E6349F00E0C1B8 /* LinesViewController+TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +96,6 @@
 
 /* Begin PBXFileReference section */
 		DC10F2C323E2A236001769B2 /* PieSlicesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PieSlicesCell.xib; sourceTree = "<group>"; };
-		DC10F2C623E2A73F001769B2 /* MainViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableView.swift"; sourceTree = "<group>"; };
-		DC10F2C823E2A791001769B2 /* MainViewController+CellID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CellID.swift"; sourceTree = "<group>"; };
 		DC10F2D223E2A9F2001769B2 /* LinePointsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinePointsCell.xib; sourceTree = "<group>"; };
 		DC10F2D323E2AA42001769B2 /* HorizontalGroupedBarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalGroupedBarsCell.xib; sourceTree = "<group>"; };
 		DC10F2D423E2AD5D001769B2 /* CandlestickCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandlestickCell.xib; sourceTree = "<group>"; };
@@ -115,7 +123,7 @@
 		DC7F21DB23C6E014009629DD /* VerticalDescendingBarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalDescendingBarsCell.swift; sourceTree = "<group>"; };
 		DC7F21DD23C6E06C009629DD /* VerticalDescendingBarsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalDescendingBarsConfig.swift; sourceTree = "<group>"; };
 		DC7F21E023C6E50C009629DD /* Graffeine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Graffeine.xcodeproj; path = submodule/graffeine/Graffeine.xcodeproj; sourceTree = "<group>"; };
-		DC7F21ED23C6E6EB009629DD /* DataAppliable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAppliable.swift; sourceTree = "<group>"; };
+		DC7F21ED23C6E6EB009629DD /* DemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
 		DC7F21F523C6FBF2009629DD /* Graffeine-Demo-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Graffeine-Demo-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7F21F723C6FBF2009629DD /* Graffeine_Demo_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graffeine_Demo_Tests.swift; sourceTree = "<group>"; };
 		DC7F21F923C6FBF2009629DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +139,18 @@
 		DCC1126B23E6151900E0C1B8 /* AreaLinesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaLinesCell.swift; sourceTree = "<group>"; };
 		DCC1126C23E6151900E0C1B8 /* AreaLinesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaLinesCell.xib; sourceTree = "<group>"; };
 		DCC1126D23E6151900E0C1B8 /* AreaLinesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaLinesConfig.swift; sourceTree = "<group>"; };
+		DCC1127423E62FD700E0C1B8 /* Bars.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bars.storyboard; sourceTree = "<group>"; };
+		DCC1127523E62FDC00E0C1B8 /* BarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarsViewController.swift; sourceTree = "<group>"; };
+		DCC1127923E6321800E0C1B8 /* BarsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarsViewController+TableView.swift"; sourceTree = "<group>"; };
+		DCC1127A23E6323F00E0C1B8 /* BarsViewController+CellID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarsViewController+CellID.swift"; sourceTree = "<group>"; };
+		DCC1127E23E633AD00E0C1B8 /* CirclesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CirclesViewController+TableView.swift"; sourceTree = "<group>"; };
+		DCC1127F23E633AD00E0C1B8 /* Circles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Circles.storyboard; sourceTree = "<group>"; };
+		DCC1128023E633AD00E0C1B8 /* CirclesViewController+CellID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CirclesViewController+CellID.swift"; sourceTree = "<group>"; };
+		DCC1128123E633AD00E0C1B8 /* CirclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesViewController.swift; sourceTree = "<group>"; };
+		DCC1128223E6349F00E0C1B8 /* LinesViewController+CellID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinesViewController+CellID.swift"; sourceTree = "<group>"; };
+		DCC1128323E6349F00E0C1B8 /* Lines.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lines.storyboard; sourceTree = "<group>"; };
+		DCC1128423E6349F00E0C1B8 /* LinesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinesViewController+TableView.swift"; sourceTree = "<group>"; };
+		DCC1128523E6349F00E0C1B8 /* LinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesViewController.swift; sourceTree = "<group>"; };
 		DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,11 +237,15 @@
 		DC7F21C423C6DD46009629DD /* Graffeine-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				DCC1128F23E6355400E0C1B8 /* DemoCells */,
 				DC7F21D323C6DD49009629DD /* Info.plist */,
 				DC7F21C523C6DD46009629DD /* AppDelegate.swift */,
 				DC7F21AE23C6AF59009629DD /* GraffeineLibrarySymbolProtection.swift */,
 				DC7F21CE23C6DD49009629DD /* Assets.xcassets */,
+				DCC1127123E62F7200E0C1B8 /* Bars */,
+				DCC1127323E62F8100E0C1B8 /* Circles */,
 				DC7F21D023C6DD49009629DD /* LaunchScreen.storyboard */,
+				DCC1127223E62F7C00E0C1B8 /* Lines */,
 				DC7F21D823C6DE51009629DD /* Main */,
 			);
 			path = "Graffeine-Demo";
@@ -231,19 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				DC7F21D923C6DE86009629DD /* Main.storyboard */,
-				DC7F21ED23C6E6EB009629DD /* DataAppliable.swift */,
 				DC7F21C923C6DD46009629DD /* MainViewController.swift */,
-				DC10F2C823E2A791001769B2 /* MainViewController+CellID.swift */,
-				DC10F2C623E2A73F001769B2 /* MainViewController+TableView.swift */,
-				DCC1126923E6150000E0C1B8 /* AreaLines */,
-				DC8773ED23DBD609005246BA /* Candlestick */,
-				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
-				DC2FA27923CEB53600E88807 /* LinePoints */,
-				DCE4C9DB23D0371E00C47EFD /* PieSlices */,
-				DC1B827C23DFAA52005E379E /* ProgressIndicators */,
-				DC7F220D23C7BF70009629DD /* RedGreenLines */,
-				DC2FA26723CE8F9F00E88807 /* Scatterplot */,
-				DC7F21EC23C6E56A009629DD /* VerticalDescendingBars */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -324,6 +336,56 @@
 				DCC1126D23E6151900E0C1B8 /* AreaLinesConfig.swift */,
 			);
 			path = AreaLines;
+			sourceTree = "<group>";
+		};
+		DCC1127123E62F7200E0C1B8 /* Bars */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1127423E62FD700E0C1B8 /* Bars.storyboard */,
+				DCC1127523E62FDC00E0C1B8 /* BarsViewController.swift */,
+				DCC1127A23E6323F00E0C1B8 /* BarsViewController+CellID.swift */,
+				DCC1127923E6321800E0C1B8 /* BarsViewController+TableView.swift */,
+			);
+			path = Bars;
+			sourceTree = "<group>";
+		};
+		DCC1127223E62F7C00E0C1B8 /* Lines */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1128323E6349F00E0C1B8 /* Lines.storyboard */,
+				DCC1128523E6349F00E0C1B8 /* LinesViewController.swift */,
+				DCC1128223E6349F00E0C1B8 /* LinesViewController+CellID.swift */,
+				DCC1128423E6349F00E0C1B8 /* LinesViewController+TableView.swift */,
+			);
+			path = Lines;
+			sourceTree = "<group>";
+		};
+		DCC1127323E62F8100E0C1B8 /* Circles */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1127F23E633AD00E0C1B8 /* Circles.storyboard */,
+				DCC1128123E633AD00E0C1B8 /* CirclesViewController.swift */,
+				DCC1128023E633AD00E0C1B8 /* CirclesViewController+CellID.swift */,
+				DCC1127E23E633AD00E0C1B8 /* CirclesViewController+TableView.swift */,
+			);
+			path = Circles;
+			sourceTree = "<group>";
+		};
+		DCC1128F23E6355400E0C1B8 /* DemoCells */ = {
+			isa = PBXGroup;
+			children = (
+				DC7F21ED23C6E6EB009629DD /* DemoCell.swift */,
+				DCC1126923E6150000E0C1B8 /* AreaLines */,
+				DC8773ED23DBD609005246BA /* Candlestick */,
+				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
+				DC2FA27923CEB53600E88807 /* LinePoints */,
+				DCE4C9DB23D0371E00C47EFD /* PieSlices */,
+				DC1B827C23DFAA52005E379E /* ProgressIndicators */,
+				DC7F220D23C7BF70009629DD /* RedGreenLines */,
+				DC2FA26723CE8F9F00E88807 /* Scatterplot */,
+				DC7F21EC23C6E56A009629DD /* VerticalDescendingBars */,
+			);
+			path = DemoCells;
 			sourceTree = "<group>";
 		};
 		DCE4C9DB23D0371E00C47EFD /* PieSlices */ = {
@@ -461,8 +523,11 @@
 				DC10F2DD23E2AF25001769B2 /* PieSlicesCell.xib in Resources */,
 				DC10F2D923E2AF11001769B2 /* CandlestickCell.xib in Resources */,
 				DC7F21CF23C6DD49009629DD /* Assets.xcassets in Resources */,
+				DCC1128623E634BF00E0C1B8 /* Circles.storyboard in Resources */,
 				DC10F2DA23E2AF17001769B2 /* HorizontalGroupedBarsCell.xib in Resources */,
 				DC10F2E223E2AF3A001769B2 /* VerticalDescendingBarsCell.xib in Resources */,
+				DCC1128A23E634C300E0C1B8 /* Bars.storyboard in Resources */,
+				DCC1128B23E634C800E0C1B8 /* Lines.storyboard in Resources */,
 				DC7F222923C860C4009629DD /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,15 +547,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7F21CA23C6DD46009629DD /* MainViewController.swift in Sources */,
-				DC10F2C923E2A791001769B2 /* MainViewController+CellID.swift in Sources */,
 				DC1B828323DFABF1005E379E /* ProgressIndicatorsConfigRad.swift in Sources */,
 				DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */,
 				DC2FA27E23CEB5A700E88807 /* LinePointsCell.swift in Sources */,
 				DC7F221223C7C126009629DD /* RedGreenLinesConfig.swift in Sources */,
+				DCC1127B23E6328600E0C1B8 /* BarsViewController+CellID.swift in Sources */,
 				DC1B828223DFABF1005E379E /* ProgressIndicatorsConfigBar.swift in Sources */,
-				DC10F2C723E2A740001769B2 /* MainViewController+TableView.swift in Sources */,
+				DCC1127C23E6328C00E0C1B8 /* BarsViewController.swift in Sources */,
+				DCC1128C23E634C800E0C1B8 /* LinesViewController.swift in Sources */,
 				DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */,
 				DC8773F823DC24AD005246BA /* CandlestickCell+TradingDay.swift in Sources */,
+				DCC1128E23E634C800E0C1B8 /* LinesViewController+TableView.swift in Sources */,
+				DCC1128923E634BF00E0C1B8 /* CirclesViewController+TableView.swift in Sources */,
 				DC7F221923C7E891009629DD /* HorizontalGroupedBarsConfig.swift in Sources */,
 				DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */,
 				DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */,
@@ -505,9 +573,13 @@
 				DC10F2DE23E2AF25001769B2 /* PieSlicesConfig.swift in Sources */,
 				DCC1126F23E6155900E0C1B8 /* AreaLinesConfig.swift in Sources */,
 				DC7F21D723C6DD8C009629DD /* GraffeineLibrarySymbolProtection.swift in Sources */,
+				DCC1128723E634BF00E0C1B8 /* CirclesViewController.swift in Sources */,
+				DCC1128823E634BF00E0C1B8 /* CirclesViewController+CellID.swift in Sources */,
 				DC7F21EF23C6EBCE009629DD /* VerticalDescendingBarsConfig.swift in Sources */,
+				DCC1127D23E6328C00E0C1B8 /* BarsViewController+TableView.swift in Sources */,
 				DC7F21DC23C6E014009629DD /* VerticalDescendingBarsCell.swift in Sources */,
-				DC7F21EE23C6E6EB009629DD /* DataAppliable.swift in Sources */,
+				DC7F21EE23C6E6EB009629DD /* DemoCell.swift in Sources */,
+				DCC1128D23E634C800E0C1B8 /* LinesViewController+CellID.swift in Sources */,
 				DC1B828A23E01AD9005E379E /* CandlestickGutterConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
