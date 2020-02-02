@@ -50,36 +50,36 @@ class DonutWedgesCell: UITableViewCell, DemoCell {
 
     func applyData() {
         let newData = data.get()
-        graffeineView.layer(id: LayerID.pie)?.data = newData
-        graffeineView.layer(id: LayerID.pieLabels)?.data = newData
+        graffeineView.layer(id: LayerID.donut)?.data = newData
+        graffeineView.layer(id: LayerID.labels)?.data = newData
     }
 
     func applyDataAnimated() {
         let newData = data.get()
-        graffeineView.layer(id: LayerID.pie)?
+        graffeineView.layer(id: LayerID.donut)?
             .setData(newData, animator: getRandomPieAnimator())
 
-        graffeineView.layer(id: LayerID.pieLabels)?
+        graffeineView.layer(id: LayerID.labels)?
             .setData(newData, animator: getLabelAnimator())
 
-        graffeineView.layer(id: LayerID.pieLabelLines)?
+        graffeineView.layer(id: LayerID.labelLines)?
             .setData(newData, animator: getLineAnimator())
     }
 
     func applySelectionAnimated() {
         let newData = data.get()
-        graffeineView.layer(id: LayerID.pie)?.setData(
+        graffeineView.layer(id: LayerID.donut)?.setData(
             newData,
             animator: GraffeineAnimation.Data.RadialSegment.Morph(duration: 0.22,
                                                                   timing: .linear))
 
-        graffeineView.layer(id: LayerID.pieLabels)?.setData(
+        graffeineView.layer(id: LayerID.labels)?.setData(
             newData,
             animator: GraffeineAnimation.Data.RadialLabel.Move(duration: 0.22,
                                                                timing: .linear,
                                                                delayRatio: 0))
 
-        graffeineView.layer(id: LayerID.pieLabelLines)?.setData(
+        graffeineView.layer(id: LayerID.labelLines)?.setData(
             newData,
             animator: GraffeineAnimation.Data.RadialLine.FadeIn(duration: 0.33,
                                                                 timing: .linear,

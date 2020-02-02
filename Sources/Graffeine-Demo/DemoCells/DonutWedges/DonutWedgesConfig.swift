@@ -4,17 +4,15 @@ import Graffeine
 class DonutWedgesConfig: GraffeineViewConfig {
 
     enum ID: Hashable {
-        case topGutter, rightGutter, bottomGutter, leftGutter
-        case pie, pieLabels, pieLabelLines
+        case donut, labels, labelLines
     }
 
     let colors: [UIColor] = [
-        UIColor.red.modifiedByAdding(alpha: -0.44, brightness: 0.1),
-        UIColor.purple.modifiedByAdding(alpha: -0.44, brightness: 0.1),
-        UIColor.blue.modifiedByAdding(alpha: -0.44, brightness: 0.1),
-        UIColor.orange.modifiedByAdding(alpha: -0.44, brightness: 0.1),
-        UIColor.systemPink.modifiedByAdding(alpha: -0.44, brightness: 0.1),
-        UIColor.systemIndigo.modifiedByAdding(alpha: -0.44, brightness: 0.1)
+        UIColor.green.modifiedByAdding(alpha: -0.2, brightness: -0.3),
+        UIColor.brown.modifiedByAdding(alpha: -0.2, brightness: -0.2),
+        UIColor.lightGray.modifiedByAdding(alpha: -0.2, brightness: 0.0),
+        UIColor.darkGray.modifiedByAdding(alpha: -0.2, brightness: 0.0),
+        UIColor.black.modifiedByAdding(alpha: -0.2, brightness: -0.0)
     ]
 
     required init(_ graffeineView: GraffeineView) {
@@ -22,7 +20,7 @@ class DonutWedgesConfig: GraffeineViewConfig {
 
         graffeineView.layers = [
 
-            GraffeineRadialSegmentLayer(id: ID.pie)
+            GraffeineRadialSegmentLayer(id: ID.donut)
                 .apply ({
                     $0.clockwise = false
                     $0.rotation = 90
@@ -41,7 +39,7 @@ class DonutWedgesConfig: GraffeineViewConfig {
                     $0.selection.isEnabled = true
                 }),
 
-            GraffeineRadialLabelLayer(id: ID.pieLabels)
+            GraffeineRadialLabelLayer(id: ID.labels)
                 .apply ({
                     $0.clockwise = false
                     $0.rotation = 90
@@ -56,7 +54,7 @@ class DonutWedgesConfig: GraffeineViewConfig {
                                                         vertical: .centerTopBottom)
                 }),
 
-            GraffeineRadialLineLayer(id: ID.pieLabelLines)
+            GraffeineRadialLineLayer(id: ID.labelLines)
                 .apply ({
                     $0.clockwise = false
                     $0.rotation = 90

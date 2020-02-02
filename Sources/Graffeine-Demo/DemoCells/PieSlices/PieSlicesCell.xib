@@ -47,7 +47,7 @@
                             <constraint firstAttribute="height" constant="36" id="DjQ-V7-WpR"/>
                             <constraint firstAttribute="width" constant="36" id="asI-8H-6ca"/>
                         </constraints>
-                        <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" image="ic_reset"/>
                         <connections>
                             <action selector="reload:" destination="C55-r3-gB5" eventType="touchUpInside" id="6J2-IT-yHY"/>

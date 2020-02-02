@@ -22,6 +22,10 @@
 		DC1B828223DFABF1005E379E /* ProgressIndicatorsConfigBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */; };
 		DC1B828323DFABF1005E379E /* ProgressIndicatorsConfigRad.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */; };
 		DC1B828A23E01AD9005E379E /* CandlestickGutterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1B828823E01AD9005E379E /* CandlestickGutterConfig.swift */; };
+		DC1BE58423E74E8A00B5C2BF /* DetailRingsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE58323E74E5800B5C2BF /* DetailRingsConfig.swift */; };
+		DC1BE58523E74EAA00B5C2BF /* DetailRingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE58023E74E5800B5C2BF /* DetailRingsCell.swift */; };
+		DC1BE58623E74EAE00B5C2BF /* DetailRingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE58123E74E5800B5C2BF /* DetailRingsData.swift */; };
+		DC1BE58723E74EB300B5C2BF /* DetailRingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE58223E74E5800B5C2BF /* DetailRingsCell.xib */; };
 		DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */; };
 		DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */; };
 		DC2FA27D23CEB5A200E88807 /* LinePointsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA27C23CEB55200E88807 /* LinePointsConfig.swift */; };
@@ -112,6 +116,10 @@
 		DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsConfigBar.swift; sourceTree = "<group>"; };
 		DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsConfigRad.swift; sourceTree = "<group>"; };
 		DC1B828823E01AD9005E379E /* CandlestickGutterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickGutterConfig.swift; sourceTree = "<group>"; };
+		DC1BE58023E74E5800B5C2BF /* DetailRingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRingsCell.swift; sourceTree = "<group>"; };
+		DC1BE58123E74E5800B5C2BF /* DetailRingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRingsData.swift; sourceTree = "<group>"; };
+		DC1BE58223E74E5800B5C2BF /* DetailRingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailRingsCell.xib; sourceTree = "<group>"; };
+		DC1BE58323E74E5800B5C2BF /* DetailRingsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRingsConfig.swift; sourceTree = "<group>"; };
 		DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotConfig.swift; sourceTree = "<group>"; };
 		DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotCell.swift; sourceTree = "<group>"; };
 		DC2FA27B23CEB55200E88807 /* LinePointsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePointsCell.swift; sourceTree = "<group>"; };
@@ -191,6 +199,17 @@
 				DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */,
 			);
 			path = ProgressIndicators;
+			sourceTree = "<group>";
+		};
+		DC1BE57E23E74E0400B5C2BF /* DetailRings */ = {
+			isa = PBXGroup;
+			children = (
+				DC1BE58023E74E5800B5C2BF /* DetailRingsCell.swift */,
+				DC1BE58123E74E5800B5C2BF /* DetailRingsData.swift */,
+				DC1BE58223E74E5800B5C2BF /* DetailRingsCell.xib */,
+				DC1BE58323E74E5800B5C2BF /* DetailRingsConfig.swift */,
+			);
+			path = DetailRings;
 			sourceTree = "<group>";
 		};
 		DC2FA26723CE8F9F00E88807 /* Scatterplot */ = {
@@ -379,6 +398,7 @@
 		DCC1128F23E6355400E0C1B8 /* DemoCells */ = {
 			isa = PBXGroup;
 			children = (
+				DC1BE57E23E74E0400B5C2BF /* DetailRings */,
 				DC7F21ED23C6E6EB009629DD /* DemoCell.swift */,
 				DCC1126923E6150000E0C1B8 /* AreaLines */,
 				DC8773ED23DBD609005246BA /* Candlestick */,
@@ -545,6 +565,7 @@
 				DC7F21DA23C6DE86009629DD /* Main.storyboard in Resources */,
 				DCC1127023E6156000E0C1B8 /* AreaLinesCell.xib in Resources */,
 				DC7F21D223C6DD49009629DD /* LaunchScreen.storyboard in Resources */,
+				DC1BE58723E74EB300B5C2BF /* DetailRingsCell.xib in Resources */,
 				DC10F2DF23E2AF2B001769B2 /* ProgressIndicatorsCell.xib in Resources */,
 				DC10F2DB23E2AF20001769B2 /* LinePointsCell.xib in Resources */,
 				DC10F2E123E2AF35001769B2 /* ScatterplotCell.xib in Resources */,
@@ -591,12 +612,14 @@
 				DC7F221923C7E891009629DD /* HorizontalGroupedBarsConfig.swift in Sources */,
 				DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */,
 				DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */,
+				DC1BE58623E74EAE00B5C2BF /* DetailRingsData.swift in Sources */,
 				DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */,
 				DCC1129823E64C0600E0C1B8 /* DonutWedgesCell.swift in Sources */,
 				DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */,
 				DCC1129B23E64C0600E0C1B8 /* DonutWedgesConfig.swift in Sources */,
 				DC10F2DC23E2AF25001769B2 /* PieSlicesCell.swift in Sources */,
 				DC1B828123DFABED005E379E /* ProgressIndicatorsCell.swift in Sources */,
+				DC1BE58523E74EAA00B5C2BF /* DetailRingsCell.swift in Sources */,
 				DC10F2E423E2B1E2001769B2 /* PieSlicesData.swift in Sources */,
 				DC7F221123C7BFA4009629DD /* RedGreenLinesCell.swift in Sources */,
 				DCC1126E23E6155500E0C1B8 /* AreaLinesCell.swift in Sources */,
@@ -607,6 +630,7 @@
 				DCC1128723E634BF00E0C1B8 /* CirclesViewController.swift in Sources */,
 				DCC1128823E634BF00E0C1B8 /* CirclesViewController+CellID.swift in Sources */,
 				DC7F21EF23C6EBCE009629DD /* VerticalDescendingBarsConfig.swift in Sources */,
+				DC1BE58423E74E8A00B5C2BF /* DetailRingsConfig.swift in Sources */,
 				DCC1127D23E6328C00E0C1B8 /* BarsViewController+TableView.swift in Sources */,
 				DC7F21DC23C6E014009629DD /* VerticalDescendingBarsCell.swift in Sources */,
 				DCC1129923E64C0600E0C1B8 /* DonutWedgesData.swift in Sources */,
