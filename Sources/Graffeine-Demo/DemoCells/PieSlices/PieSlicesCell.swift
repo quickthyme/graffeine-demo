@@ -31,7 +31,7 @@ class PieSlicesCell: UITableViewCell, DemoCell {
 
     func getRandomPieAnimator() -> GraffeineRadialSegmentDataAnimating {
         switch (Int.random(in: 0...2)) {
-        case 2:  return GraffeineAnimation.Data.RadialSegment.Spin(duration: 1.2, timing: .easeInEaseOut, clockwise: true)
+        case 2:  return GraffeineAnimation.Data.RadialSegment.Spin(duration: 1.2, timing: .easeInEaseOut)
         default: return GraffeineAnimation.Data.RadialSegment.Automatic(duration: 1.2, timing: .easeInEaseOut)
         }
     }
