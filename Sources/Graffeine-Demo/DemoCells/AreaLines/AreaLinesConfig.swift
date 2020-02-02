@@ -12,6 +12,9 @@ class AreaLinesConfig: GraffeineViewConfig {
         super.init(graffeineView)
 
         let unitMargin: CGFloat = 0.0
+        let selectionShadowRadius: CGFloat = 2.0
+        let selectionShadowOpacity: CGFloat = 0.3
+        let selectionShadowOffset = CGSize(width: 0, height: 1)
 
         graffeineView.layers = [
 
@@ -24,6 +27,13 @@ class AreaLinesConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 1.0
                     $0.unitLine.join = .bevel
+                    $0.selection.line.thickness = 2.0
+                    $0.selection.fill.color = UIColor.systemBlue.modifiedByAdding(alpha: -0.35)
+                    $0.selection.shadow.color = UIColor.blue.modifiedByAdding(brightness: -0.5)
+                    $0.selection.shadow.opacity = selectionShadowOpacity
+                    $0.selection.shadow.offset = selectionShadowOffset
+                    $0.selection.shadow.radius = selectionShadowRadius
+                    $0.selection.isEnabled = true
                 }),
 
             GraffeineLineLayer(id: ID.line2)
@@ -33,6 +43,13 @@ class AreaLinesConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 1.0
                     $0.unitLine.join = .bevel
+                    $0.selection.line.thickness = 2.0
+                    $0.selection.fill.color = UIColor.systemGreen.modifiedByAdding(alpha: -0.35)
+                    $0.selection.shadow.color = UIColor.systemGreen.modifiedByAdding(brightness: -0.5)
+                    $0.selection.shadow.opacity = selectionShadowOpacity
+                    $0.selection.shadow.offset = selectionShadowOffset
+                    $0.selection.shadow.radius = selectionShadowRadius
+                    $0.selection.isEnabled = true
                 }),
 
             GraffeineLineLayer(id: ID.line3)
@@ -42,6 +59,13 @@ class AreaLinesConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 1.0
                     $0.unitLine.join = .bevel
+                    $0.selection.line.thickness = 2.0
+                    $0.selection.fill.color = UIColor.systemYellow.modifiedByAdding(alpha: -0.35)
+                    $0.selection.shadow.color = UIColor.systemOrange.modifiedByAdding(brightness: -0.5)
+                    $0.selection.shadow.opacity = selectionShadowOpacity
+                    $0.selection.shadow.offset = selectionShadowOffset
+                    $0.selection.shadow.radius = selectionShadowRadius
+                    $0.selection.isEnabled = true
                 })
         ]
     }

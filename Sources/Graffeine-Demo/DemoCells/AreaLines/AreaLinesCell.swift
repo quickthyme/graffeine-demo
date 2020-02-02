@@ -17,6 +17,10 @@ class AreaLinesCell: UITableViewCell, DemoCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         graffeineView.backgroundColor = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
+        graffeineView.onSelect = { selection in
+            self.selectedLayerID = selection?.layer.id as? LayerID
+            self.applyDataAnimated()
+        }
     }
 
     func generateRandomSeries(_ count: Int, _ lo: Double, _ hi: Double) -> [Double] {
@@ -24,6 +28,8 @@ class AreaLinesCell: UITableViewCell, DemoCell {
     }
 
     var currentDataSet: ([Double], [Double], [Double]) = ([], [], [])
+
+    var selectedLayerID: LayerID?
 
     func generateNewDataSet() {
         currentDataSet = (
@@ -39,13 +45,23 @@ class AreaLinesCell: UITableViewCell, DemoCell {
         return (
             GraffeineData(valueMax: maxValue,
                           valuesHi: dataSet.0,
-                          valuesLo: dataSet.1),
+                          valuesLo: dataSet.1,
+                          selectedIndex: getSelectedIndex(LayerID.line1)),
             GraffeineData(valueMax: maxValue,
                           valuesHi: dataSet.1,
-                          valuesLo: dataSet.2),
+                          valuesLo: dataSet.2,
+                          selectedIndex: getSelectedIndex(LayerID.line2)),
             GraffeineData(valueMax: maxValue,
-                          valuesHi: dataSet.2)
+                          valuesHi: dataSet.2,
+                          selectedIndex: getSelectedIndex(LayerID.line3))
         )
+    }
+
+    func getSelectedIndex(_ forLayerID: LayerID?) -> Int? {
+        guard let forLayerID = forLayerID,
+            (forLayerID == self.selectedLayerID)
+            else { return nil }
+        return 0
     }
 
     func applyData() {
