@@ -1,11 +1,11 @@
 import UIKit
 import Graffeine
 
-class PieSlicesCell: UITableViewCell, DemoCell {
+class DonutWedgesCell: UITableViewCell, DemoCell {
 
-    typealias LayerID = PieSlicesConfig.ID
+    typealias LayerID = DonutWedgesConfig.ID
 
-    var data = PieSlicesData()
+    var data = DonutWedgesData()
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
@@ -52,7 +52,6 @@ class PieSlicesCell: UITableViewCell, DemoCell {
         let newData = data.get()
         graffeineView.layer(id: LayerID.pie)?.data = newData
         graffeineView.layer(id: LayerID.pieLabels)?.data = newData
-        graffeineView.layer(id: LayerID.pieLabelLines)?.data = newData
     }
 
     func applyDataAnimated() {
@@ -82,12 +81,13 @@ class PieSlicesCell: UITableViewCell, DemoCell {
 
         graffeineView.layer(id: LayerID.pieLabelLines)?.setData(
             newData,
-            animator: GraffeineAnimation.Data.RadialLine.Move(duration: 0.22,
-                                                              timing: .linear))
+            animator: GraffeineAnimation.Data.RadialLine.FadeIn(duration: 0.33,
+                                                                timing: .linear,
+                                                                delayRatio: 0))
     }
 }
 
-extension PieSlicesCell: UIScrollViewDelegate {
+extension DonutWedgesCell: UIScrollViewDelegate {
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return scrollView.subviews.first

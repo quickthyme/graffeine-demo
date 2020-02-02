@@ -1,7 +1,7 @@
 import UIKit
 import Graffeine
 
-class PieSlicesData {
+class DonutWedgesData {
 
     let dataSets: [[Double]] = [
         [9, 8, 7, 6, 5, 4, 3, 2, 1],
@@ -39,9 +39,17 @@ class PieSlicesData {
                 : "\(self.alphabetLetter(for: $0.offset))"
         }
 
+        let selectedLabels: [String?] = dataSet.enumerated().map {
+            return (dataSetIsFibonacci(dataSetIndex))
+                ? "Fibonacci \($0.offset + 1)\n"
+                : "Slice \(self.alphabetLetter(for: $0.offset))\n"
+            + "\(Int($0.element)) out of \(Int(maxVal))\n"
+        }
+
         return GraffeineData(valueMax: maxVal,
                              valuesHi: dataSets[dataSetIndex],
                              labels: labels,
+                             selectedLabels: selectedLabels,
                              selectedIndex: selectedIndex)
     }
 }

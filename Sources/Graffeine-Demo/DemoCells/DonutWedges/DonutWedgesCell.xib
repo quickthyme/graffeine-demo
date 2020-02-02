@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="DonutWedgesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DonutWedgesCell" id="C55-r3-gB5" userLabel="DonutWedgesCell" customClass="DonutWedgesCell" customModule="Graffeine_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C55-r3-gB5" id="FcH-gc-8gz">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-PP-U4f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpw-ps-P5l" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="DonutWedgesConfig"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="leading" secondItem="3DA-PP-U4f" secondAttribute="leading" id="6mY-wI-QG2"/>
+                            <constraint firstAttribute="trailing" secondItem="vpw-ps-P5l" secondAttribute="trailing" id="CQA-Gn-8Xd"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="height" secondItem="3DA-PP-U4f" secondAttribute="height" id="K9K-p9-IQj"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="top" secondItem="3DA-PP-U4f" secondAttribute="top" id="Lzg-Gk-VeA"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="width" secondItem="3DA-PP-U4f" secondAttribute="width" id="dEX-WZ-aFd"/>
+                            <constraint firstAttribute="bottom" secondItem="vpw-ps-P5l" secondAttribute="bottom" id="jpf-mF-eAx"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="centerX" secondItem="3DA-PP-U4f" secondAttribute="centerX" id="n5f-CX-Cbk"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="centerY" secondItem="3DA-PP-U4f" secondAttribute="centerY" id="xBR-ro-KeT"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="C55-r3-gB5" id="jJQ-fV-eHe"/>
+                        </connections>
+                    </scrollView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZb-jk-BXl">
+                        <rect key="frame" x="378" y="0.0" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="DjQ-V7-WpR"/>
+                            <constraint firstAttribute="width" constant="36" id="asI-8H-6ca"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="ic_reset"/>
+                        <connections>
+                            <action selector="reload:" destination="C55-r3-gB5" eventType="touchUpInside" id="6J2-IT-yHY"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cZb-jk-BXl" secondAttribute="trailing" id="2bp-f5-eTQ"/>
+                    <constraint firstItem="3DA-PP-U4f" firstAttribute="top" secondItem="FcH-gc-8gz" secondAttribute="top" id="6in-yk-mZc"/>
+                    <constraint firstItem="3DA-PP-U4f" firstAttribute="leading" secondItem="FcH-gc-8gz" secondAttribute="leading" id="Jdt-jN-c5O"/>
+                    <constraint firstAttribute="trailing" secondItem="3DA-PP-U4f" secondAttribute="trailing" id="SAR-be-xMY"/>
+                    <constraint firstAttribute="bottom" secondItem="3DA-PP-U4f" secondAttribute="bottom" id="SYh-bz-8Vx"/>
+                    <constraint firstItem="cZb-jk-BXl" firstAttribute="top" secondItem="FcH-gc-8gz" secondAttribute="top" id="aJ8-4u-DxA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="graffeineView" destination="vpw-ps-P5l" id="xd4-ua-alX"/>
+                <outlet property="reloadButton" destination="cZb-jk-BXl" id="WBs-nx-GUI"/>
+            </connections>
+            <point key="canvasLocation" x="136" y="158"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_reset" width="18" height="18"/>
+    </resources>
+</document>

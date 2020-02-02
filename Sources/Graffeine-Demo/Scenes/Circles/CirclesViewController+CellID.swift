@@ -4,17 +4,20 @@ extension CirclesViewController {
 
     enum CellID: String, CaseIterable {
         case PieSlices = "PieSlicesCell"
+        case DonutWedges = "DonutWedgesCell"
         case Scatterplot = "ScatterplotCell"
 
         static let SectionTitle: [Self: String] = [
             .PieSlices: "Pie Slices",
+            .DonutWedges: "Donut Wedges",
             .Scatterplot: "Scatter Plot",
         ]
 
         static func get(for indexPath: IndexPath) -> Self {
             switch (indexPath.section, indexPath.row) {
             case (0, 0): return .PieSlices
-            case (1, 0): return .Scatterplot
+            case (1, 0): return .DonutWedges
+            case (2, 0): return .Scatterplot
             default: return .Scatterplot
             }
         }

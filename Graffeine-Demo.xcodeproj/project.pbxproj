@@ -61,6 +61,10 @@
 		DCC1128C23E634C800E0C1B8 /* LinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1128523E6349F00E0C1B8 /* LinesViewController.swift */; };
 		DCC1128D23E634C800E0C1B8 /* LinesViewController+CellID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1128223E6349F00E0C1B8 /* LinesViewController+CellID.swift */; };
 		DCC1128E23E634C800E0C1B8 /* LinesViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1128423E6349F00E0C1B8 /* LinesViewController+TableView.swift */; };
+		DCC1129823E64C0600E0C1B8 /* DonutWedgesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1129423E64BCB00E0C1B8 /* DonutWedgesCell.swift */; };
+		DCC1129923E64C0600E0C1B8 /* DonutWedgesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1129523E64BCB00E0C1B8 /* DonutWedgesData.swift */; };
+		DCC1129A23E64C0600E0C1B8 /* DonutWedgesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC1129623E64BCB00E0C1B8 /* DonutWedgesCell.xib */; };
+		DCC1129B23E64C0600E0C1B8 /* DonutWedgesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1129723E64BCC00E0C1B8 /* DonutWedgesConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +155,10 @@
 		DCC1128323E6349F00E0C1B8 /* Lines.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lines.storyboard; sourceTree = "<group>"; };
 		DCC1128423E6349F00E0C1B8 /* LinesViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinesViewController+TableView.swift"; sourceTree = "<group>"; };
 		DCC1128523E6349F00E0C1B8 /* LinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesViewController.swift; sourceTree = "<group>"; };
+		DCC1129423E64BCB00E0C1B8 /* DonutWedgesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutWedgesCell.swift; sourceTree = "<group>"; };
+		DCC1129523E64BCB00E0C1B8 /* DonutWedgesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutWedgesData.swift; sourceTree = "<group>"; };
+		DCC1129623E64BCB00E0C1B8 /* DonutWedgesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DonutWedgesCell.xib; sourceTree = "<group>"; };
+		DCC1129723E64BCC00E0C1B8 /* DonutWedgesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutWedgesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,16 +245,13 @@
 		DC7F21C423C6DD46009629DD /* Graffeine-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				DCC1128F23E6355400E0C1B8 /* DemoCells */,
 				DC7F21D323C6DD49009629DD /* Info.plist */,
 				DC7F21C523C6DD46009629DD /* AppDelegate.swift */,
 				DC7F21AE23C6AF59009629DD /* GraffeineLibrarySymbolProtection.swift */,
 				DC7F21CE23C6DD49009629DD /* Assets.xcassets */,
-				DCC1127123E62F7200E0C1B8 /* Bars */,
-				DCC1127323E62F8100E0C1B8 /* Circles */,
 				DC7F21D023C6DD49009629DD /* LaunchScreen.storyboard */,
-				DCC1127223E62F7C00E0C1B8 /* Lines */,
-				DC7F21D823C6DE51009629DD /* Main */,
+				DCC1128F23E6355400E0C1B8 /* DemoCells */,
+				DCC1129223E64A4300E0C1B8 /* Scenes */,
 			);
 			path = "Graffeine-Demo";
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				DC7F21ED23C6E6EB009629DD /* DemoCell.swift */,
 				DCC1126923E6150000E0C1B8 /* AreaLines */,
 				DC8773ED23DBD609005246BA /* Candlestick */,
+				DCC1129323E64BB600E0C1B8 /* DonutWedges */,
 				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
 				DC2FA27923CEB53600E88807 /* LinePoints */,
 				DCE4C9DB23D0371E00C47EFD /* PieSlices */,
@@ -386,6 +392,28 @@
 				DC7F21EC23C6E56A009629DD /* VerticalDescendingBars */,
 			);
 			path = DemoCells;
+			sourceTree = "<group>";
+		};
+		DCC1129223E64A4300E0C1B8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1127123E62F7200E0C1B8 /* Bars */,
+				DCC1127323E62F8100E0C1B8 /* Circles */,
+				DCC1127223E62F7C00E0C1B8 /* Lines */,
+				DC7F21D823C6DE51009629DD /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DCC1129323E64BB600E0C1B8 /* DonutWedges */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1129423E64BCB00E0C1B8 /* DonutWedgesCell.swift */,
+				DCC1129523E64BCB00E0C1B8 /* DonutWedgesData.swift */,
+				DCC1129623E64BCB00E0C1B8 /* DonutWedgesCell.xib */,
+				DCC1129723E64BCC00E0C1B8 /* DonutWedgesConfig.swift */,
+			);
+			path = DonutWedges;
 			sourceTree = "<group>";
 		};
 		DCE4C9DB23D0371E00C47EFD /* PieSlices */ = {
@@ -513,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC10F2E023E2AF30001769B2 /* RedGreenLinesCell.xib in Resources */,
+				DCC1129A23E64C0600E0C1B8 /* DonutWedgesCell.xib in Resources */,
 				DC7F21DA23C6DE86009629DD /* Main.storyboard in Resources */,
 				DCC1127023E6156000E0C1B8 /* AreaLinesCell.xib in Resources */,
 				DC7F21D223C6DD49009629DD /* LaunchScreen.storyboard in Resources */,
@@ -563,7 +592,9 @@
 				DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */,
 				DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */,
 				DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */,
+				DCC1129823E64C0600E0C1B8 /* DonutWedgesCell.swift in Sources */,
 				DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */,
+				DCC1129B23E64C0600E0C1B8 /* DonutWedgesConfig.swift in Sources */,
 				DC10F2DC23E2AF25001769B2 /* PieSlicesCell.swift in Sources */,
 				DC1B828123DFABED005E379E /* ProgressIndicatorsCell.swift in Sources */,
 				DC10F2E423E2B1E2001769B2 /* PieSlicesData.swift in Sources */,
@@ -578,6 +609,7 @@
 				DC7F21EF23C6EBCE009629DD /* VerticalDescendingBarsConfig.swift in Sources */,
 				DCC1127D23E6328C00E0C1B8 /* BarsViewController+TableView.swift in Sources */,
 				DC7F21DC23C6E014009629DD /* VerticalDescendingBarsCell.swift in Sources */,
+				DCC1129923E64C0600E0C1B8 /* DonutWedgesData.swift in Sources */,
 				DC7F21EE23C6E6EB009629DD /* DemoCell.swift in Sources */,
 				DCC1128D23E634C800E0C1B8 /* LinesViewController+CellID.swift in Sources */,
 				DC1B828A23E01AD9005E379E /* CandlestickGutterConfig.swift in Sources */,
