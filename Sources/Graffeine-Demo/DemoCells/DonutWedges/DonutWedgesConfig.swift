@@ -24,13 +24,13 @@ class DonutWedgesConfig: GraffeineViewConfig {
 
             GraffeineRadialSegmentLayer(id: ID.pie)
                 .apply ({
-                    $0.clockwise = true
-                    $0.rotation = 270
+                    $0.clockwise = false
+                    $0.rotation = 90
                     $0.outerDiameter = .percentage(0.55)
                     $0.innerDiameter = .percentage(0.20)
                     $0.unitFill.colors = colors
-                    $0.unitLine.colors = [UIColor(white: 0.08, alpha: 0.08)]
-                    $0.unitLine.thickness = 2
+                    $0.unitLine.colors = [.black]
+                    $0.unitLine.thickness = 0.5
                     $0.shadowColor = UIColor.black.cgColor
                     $0.shadowOpacity = 0.6
                     $0.shadowRadius = 3.0
@@ -43,8 +43,8 @@ class DonutWedgesConfig: GraffeineViewConfig {
 
             GraffeineRadialLabelLayer(id: ID.pieLabels)
                 .apply ({
-                    $0.clockwise = true
-                    $0.rotation = 270
+                    $0.clockwise = false
+                    $0.rotation = 90
                     $0.diameter = .percentage(0.375)
                     $0.unitText.colors = [.white]
                     $0.unitText.fontSize = 13
@@ -58,8 +58,8 @@ class DonutWedgesConfig: GraffeineViewConfig {
 
             GraffeineRadialLineLayer(id: ID.pieLabelLines)
                 .apply ({
-                    $0.clockwise = true
-                    $0.rotation = 270
+                    $0.clockwise = false
+                    $0.rotation = 90
                     $0.outerDiameter = .percentage(0.78)
                     $0.innerDiameter = .percentage(0.68)
                     $0.unitLine.colors = [.clear]

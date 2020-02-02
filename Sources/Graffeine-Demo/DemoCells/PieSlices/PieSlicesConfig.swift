@@ -28,6 +28,8 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.rotation = 270
                     $0.outerDiameter = .percentage(0.55)
                     $0.unitFill.colors = colors
+                    $0.unitLine.colors = [.black]
+                    $0.unitLine.thickness = 0.5
                     $0.shadowColor = UIColor.black.cgColor
                     $0.shadowOpacity = 0.6
                     $0.shadowRadius = 3.0
