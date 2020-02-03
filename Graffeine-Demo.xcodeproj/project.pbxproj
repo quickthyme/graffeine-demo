@@ -26,6 +26,7 @@
 		DC1BE58523E74EAA00B5C2BF /* DetailRingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE58023E74E5800B5C2BF /* DetailRingsCell.swift */; };
 		DC1BE58623E74EAE00B5C2BF /* DetailRingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE58123E74E5800B5C2BF /* DetailRingsData.swift */; };
 		DC1BE58723E74EB300B5C2BF /* DetailRingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE58223E74E5800B5C2BF /* DetailRingsCell.xib */; };
+		DC1BE59623E7EE3300B5C2BF /* DetailRingsCell+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1BE59423E7EE3300B5C2BF /* DetailRingsCell+UIScrollViewDelegate.swift */; };
 		DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */; };
 		DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */; };
 		DC2FA27D23CEB5A200E88807 /* LinePointsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA27C23CEB55200E88807 /* LinePointsConfig.swift */; };
@@ -120,6 +121,7 @@
 		DC1BE58123E74E5800B5C2BF /* DetailRingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRingsData.swift; sourceTree = "<group>"; };
 		DC1BE58223E74E5800B5C2BF /* DetailRingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailRingsCell.xib; sourceTree = "<group>"; };
 		DC1BE58323E74E5800B5C2BF /* DetailRingsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRingsConfig.swift; sourceTree = "<group>"; };
+		DC1BE59423E7EE3300B5C2BF /* DetailRingsCell+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailRingsCell+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		DC2FA26923CE8FB200E88807 /* ScatterplotConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotConfig.swift; sourceTree = "<group>"; };
 		DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotCell.swift; sourceTree = "<group>"; };
 		DC2FA27B23CEB55200E88807 /* LinePointsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePointsCell.swift; sourceTree = "<group>"; };
@@ -204,10 +206,11 @@
 		DC1BE57E23E74E0400B5C2BF /* DetailRings */ = {
 			isa = PBXGroup;
 			children = (
-				DC1BE58023E74E5800B5C2BF /* DetailRingsCell.swift */,
-				DC1BE58123E74E5800B5C2BF /* DetailRingsData.swift */,
 				DC1BE58223E74E5800B5C2BF /* DetailRingsCell.xib */,
+				DC1BE58023E74E5800B5C2BF /* DetailRingsCell.swift */,
+				DC1BE59423E7EE3300B5C2BF /* DetailRingsCell+UIScrollViewDelegate.swift */,
 				DC1BE58323E74E5800B5C2BF /* DetailRingsConfig.swift */,
+				DC1BE58123E74E5800B5C2BF /* DetailRingsData.swift */,
 			);
 			path = DetailRings;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				DC2FA27E23CEB5A700E88807 /* LinePointsCell.swift in Sources */,
 				DC7F221223C7C126009629DD /* RedGreenLinesConfig.swift in Sources */,
 				DCC1127B23E6328600E0C1B8 /* BarsViewController+CellID.swift in Sources */,
+				DC1BE59623E7EE3300B5C2BF /* DetailRingsCell+UIScrollViewDelegate.swift in Sources */,
 				DC1B828223DFABF1005E379E /* ProgressIndicatorsConfigBar.swift in Sources */,
 				DCC1127C23E6328C00E0C1B8 /* BarsViewController.swift in Sources */,
 				DCC1128C23E634C800E0C1B8 /* LinesViewController.swift in Sources */,

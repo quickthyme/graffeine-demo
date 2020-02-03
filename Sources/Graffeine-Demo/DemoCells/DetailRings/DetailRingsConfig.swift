@@ -26,8 +26,8 @@ class DetailRingsConfig: GraffeineViewConfig {
     ]
 
     let colors2: [UIColor] = [
-        UIColor(white: 0.9, alpha: 0.5),
-        UIColor(white: 0.3, alpha: 0.5)
+        UIColor(white: 0.91, alpha: 0.44),
+        UIColor(white: 0.44, alpha: 0.44)
     ]
 
     required init(_ graffeineView: GraffeineView) {
@@ -40,6 +40,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.clockwise = true
                     $0.rotation = 180
                     $0.outerDiameter = .percentage(0.65)
+                    $0.innerDiameter = .percentage(0.15)
                     $0.unitFill.colors = colors0
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
@@ -55,9 +56,9 @@ class DetailRingsConfig: GraffeineViewConfig {
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 180
-                    $0.diameter = .percentage(0.18)
-                    $0.unitText.colors = [.darkGray]
-                    $0.unitText.fontSize = 24
+                    $0.diameter = .percentage(0.40)
+                    $0.unitText.colors = [.black]
+                    $0.unitText.fontSize = 30
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
                     $0.selection.text.color = .white
@@ -68,7 +69,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.clockwise = true
                     $0.rotation = 180
                     $0.outerDiameter = .percentage(0.65)
-                    $0.innerDiameter = .percentage(0.35)
+                    $0.innerDiameter = .percentage(0.15)
                     $0.unitFill.colors = colors1
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
@@ -77,25 +78,12 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.opacity = 0.0
                 }),
 
-            GraffeineRadialLabelLayer(id: ID.ring1Labels)
-                .apply ({
-                    $0.clockwise = true
-                    $0.rotation = 180
-                    $0.diameter = .percentage(0.50)
-                    $0.unitText.colors = [.darkGray]
-                    $0.unitText.fontSize = 24
-                    $0.labelAlignment.horizontal = .center
-                    $0.labelAlignment.vertical = .center
-                    $0.selection.text.color = .white
-                    $0.opacity = 0.0
-                }),
-
             GraffeineRadialSegmentLayer(id: ID.ring2)
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 180
                     $0.outerDiameter = .percentage(0.65)
-                    $0.innerDiameter = .percentage(0.35)
+                    $0.innerDiameter = .percentage(0.15)
                     $0.unitFill.colors = colors2
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.10
@@ -104,12 +92,25 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.opacity = 0.0
                 }),
 
+            GraffeineRadialLabelLayer(id: ID.ring1Labels)
+                .apply ({
+                    $0.clockwise = true
+                    $0.rotation = 180
+                    $0.diameter = .percentage(0.50)
+                    $0.unitText.colors = [.black]
+                    $0.unitText.fontSize = 20
+                    $0.labelAlignment.horizontal = .center
+                    $0.labelAlignment.vertical = .center
+                    $0.selection.text.color = .white
+                    $0.opacity = 0.0
+                }),
+
             GraffeineRadialLabelLayer(id: ID.ring2Labels)
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 180
                     $0.diameter = .percentage(0.68)
-                    $0.unitText.colors = [.darkGray]
+                    $0.unitText.colors = [.systemGray]
                     $0.unitText.fontSize = 9
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center

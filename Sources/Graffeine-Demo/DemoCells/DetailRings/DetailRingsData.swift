@@ -10,15 +10,15 @@ class DetailRingsData {
     ]
 
     let centerLabelSets: [[String]] = [
-        ["A", "B", "C", "D", "E"],
+        ["A", "B", "C", "D", "E"]
     ]
 
     let ring1DataSets: [[Double]] = [
-        [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+        [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
     ]
 
     let ring1LabelSets: [[String]] = [
-        ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2", "E1", "E2"],
+        ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2", "E1", "E2"]
     ]
 
     let ring2DataSets: [[Double]] = [
