@@ -11,31 +11,29 @@
         <tableViewCell contentMode="scaleToFill" restorationIdentifier="DetailRingsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailRingsCell" id="C55-r3-gB5" userLabel="DetailRingsCell" customClass="DetailRingsCell" customModule="Graffeine_Demo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C55-r3-gB5" id="FcH-gc-8gz">
+            <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C55-r3-gB5" id="FcH-gc-8gz">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-PP-U4f">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.5" maximumZoomScale="2.5" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-PP-U4f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpw-ps-P5l" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpw-ps-P5l" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
+                                <rect key="frame" x="0.0" y="0.0" width="828" height="520"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="DetailRingsConfig"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="height" secondItem="3DA-PP-U4f" secondAttribute="height" multiplier="2" id="1Kz-3p-phn"/>
                             <constraint firstItem="vpw-ps-P5l" firstAttribute="leading" secondItem="3DA-PP-U4f" secondAttribute="leading" id="6mY-wI-QG2"/>
                             <constraint firstAttribute="trailing" secondItem="vpw-ps-P5l" secondAttribute="trailing" id="CQA-Gn-8Xd"/>
-                            <constraint firstItem="vpw-ps-P5l" firstAttribute="height" secondItem="3DA-PP-U4f" secondAttribute="height" id="K9K-p9-IQj"/>
                             <constraint firstItem="vpw-ps-P5l" firstAttribute="top" secondItem="3DA-PP-U4f" secondAttribute="top" id="Lzg-Gk-VeA"/>
-                            <constraint firstItem="vpw-ps-P5l" firstAttribute="width" secondItem="3DA-PP-U4f" secondAttribute="width" id="dEX-WZ-aFd"/>
+                            <constraint firstItem="vpw-ps-P5l" firstAttribute="width" secondItem="3DA-PP-U4f" secondAttribute="width" multiplier="2" id="R7a-de-JJE"/>
                             <constraint firstAttribute="bottom" secondItem="vpw-ps-P5l" secondAttribute="bottom" id="jpf-mF-eAx"/>
-                            <constraint firstItem="vpw-ps-P5l" firstAttribute="centerX" secondItem="3DA-PP-U4f" secondAttribute="centerX" id="n5f-CX-Cbk"/>
-                            <constraint firstItem="vpw-ps-P5l" firstAttribute="centerY" secondItem="3DA-PP-U4f" secondAttribute="centerY" id="xBR-ro-KeT"/>
                         </constraints>
                         <connections>
                             <outlet property="delegate" destination="C55-r3-gB5" id="jJQ-fV-eHe"/>
@@ -52,6 +50,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="graffeineView" destination="vpw-ps-P5l" id="xd4-ua-alX"/>
+                <outlet property="scrollView" destination="3DA-PP-U4f" id="yMD-zz-RfR"/>
             </connections>
             <point key="canvasLocation" x="136" y="158"/>
         </tableViewCell>

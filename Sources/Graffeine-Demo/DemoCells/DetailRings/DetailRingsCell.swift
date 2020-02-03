@@ -8,9 +8,16 @@ class DetailRingsCell: UITableViewCell, DemoCell {
     var data = DetailRingsData()
 
     @IBOutlet weak var graffeineView: GraffeineView!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        scrollView.zoomScale = scrollView.minimumZoomScale
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        graffeineView.bounds.size = CGSize(width: 600, height: 600)
     }
 
     func applyData() {
@@ -29,13 +36,15 @@ extension DetailRingsCell: UIScrollViewDelegate {
     }
 
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
-        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
-        scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
+        let pctZoomed: CGFloat = (scrollView.zoomScale / scrollView.maximumZoomScale)
+        let opacityMarginStart: CGFloat = 0.20
+        let opacityMarginStop: CGFloat = 0.50
 
-        let pctZoomed = Float((scrollView.zoomScale - 1.5) / scrollView.maximumZoomScale)
-        let pctReveal = max(min(pctZoomed, 1.0), 0.0)
-        graffeineView.layer(id: LayerID.ring2)?.opacity = pctReveal
-        graffeineView.layer(id: LayerID.labels2)?.opacity = pctReveal
+        let opacity = (pctZoomed > opacityMarginStart)
+            ? max(((pctZoomed - opacityMarginStart) / (1.0 - opacityMarginStop - opacityMarginStart)), 0)
+            : 0.0
+
+        graffeineView.layer(id: LayerID.ring2)?.opacity = Float(opacity)
+        graffeineView.layer(id: LayerID.labels2)?.opacity = Float(opacity)
     }
 }
