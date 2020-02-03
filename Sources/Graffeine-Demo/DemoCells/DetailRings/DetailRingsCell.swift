@@ -73,7 +73,9 @@ extension DetailRingsCell: UIScrollViewDelegate {
             ? max(((pctZoomed - opacityMarginStart) / (1.0 - opacityMarginStop - opacityMarginStart)), 0)
             : 0.0
 
+        graffeineView.layer(id: LayerID.center)?.selection.isEnabled = (opacity < 0.8)
         graffeineView.layer(id: LayerID.ring1)?.selection.isEnabled = (opacity < 0.8)
+
         graffeineView.layer(id: LayerID.ring2)?.opacity = Float(opacity)
         graffeineView.layer(id: LayerID.ring2Labels)?.opacity = Float(opacity)
     }

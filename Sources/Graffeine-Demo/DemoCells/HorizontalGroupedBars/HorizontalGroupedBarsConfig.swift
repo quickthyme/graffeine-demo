@@ -52,7 +52,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitColumn.subdivision.offset = .percentage(0.0)
                     $0.unitColumn.subdivision.width = .percentage(0.5)
-                    $0.unitFill.colors = [UIColor(white: 1.0, alpha: 0.7)]
+                    $0.unitFill.colors = [UIColor(white: 1.0, alpha: 0.4)]
                 }),
 
             GraffeineBarLayer(id: ID.bars2)
@@ -61,7 +61,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitColumn.subdivision.offset = .percentage(0.5)
                     $0.unitColumn.subdivision.width = .percentage(0.5)
-                    $0.unitFill.colors = [UIColor(white: 0.7, alpha: 0.7)]
+                    $0.unitFill.colors = [UIColor(white: 0.0, alpha: 0.3)]
                 }),
 
             GraffeineBarLabelLayer(id: ID.barLabel1)
@@ -70,11 +70,11 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitColumn.subdivision.offset = .percentage(0.0)
                     $0.unitColumn.subdivision.width = .percentage(0.5)
-                    $0.labelPadding.horizontal = -16
+                    $0.labelPadding.horizontal = 3
                     $0.labelAlignment.horizontal = .right
                     $0.labelAlignment.vertical = .center
-                    $0.unitText.colors = [UIColor(white: 1.0, alpha: 0.7)]
-                    $0.unitText.fontSize = 9
+                    $0.unitText.colors = [.black]
+                    $0.unitText.fontSize = 8
                 }),
 
             GraffeineBarLabelLayer(id: ID.barLabel2)
@@ -83,11 +83,11 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitColumn.subdivision.offset = .percentage(0.5)
                     $0.unitColumn.subdivision.width = .percentage(0.5)
-                    $0.labelPadding.horizontal = -16
+                    $0.labelPadding.horizontal = 3
                     $0.labelAlignment.horizontal = .right
                     $0.labelAlignment.vertical = .center
-                    $0.unitText.colors = [UIColor(white: 0.7, alpha: 0.7)]
-                    $0.unitText.fontSize = 9
+                    $0.unitText.colors = [.white]
+                    $0.unitText.fontSize = 8
                 })
         ]
     }

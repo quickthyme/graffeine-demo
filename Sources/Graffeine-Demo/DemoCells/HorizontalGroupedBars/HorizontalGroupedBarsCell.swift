@@ -16,6 +16,7 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "paper")!)
     }
 
     func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
@@ -31,11 +32,11 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
     }
 
     let dataSets: [([Double?], [Double?])] = [
-        ([2, 4, 6, 8, 10, 12, 14, 16],
-         [7, 3, 5, 5, 11, 13, 14, 10]),
+        ([2, 4, 6, 8, 10, 12, 14],
+         [7, 3, 5, 5, 11, 13, 14]),
 
-        ([ 8, 1, 16, 15, 13, 13,  9, 10],
-         [14, 2, 10,  6, 19,  7, 13,  9])
+        ([ 8, 14, 16,  9, 16, 13, 6],
+         [11, 11, 13, 10, 19, 10, 7])
     ]
 
     var dataSetIndex: Int = 0
@@ -45,7 +46,7 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
     }
 
     func applyData(animated: Bool) {
-        let vLabels: [String]   = ["A", "B", "C", "D", "E", "F", "G", "H"]
+        let vLabels: [String]   = ["A", "B", "C", "D", "E", "F", "G"]
         let hLabels: [String]   = ["2", "4", "6", "8", "10", "12", "14", "16", "18", "20"]
 
         let data1 = GraffeineData(valueMax: 20,

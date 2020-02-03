@@ -71,7 +71,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.shadowColor = UIColor.black.cgColor
                     $0.shadowOpacity = 0.5
                     $0.shadowRadius = 2.0
-                    $0.shadowOffset = CGSize(width: 0, height: -1.5)
+                    $0.shadowOffset = CGSize(width: 0, height: 1.0)
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.8) }
                 }),
