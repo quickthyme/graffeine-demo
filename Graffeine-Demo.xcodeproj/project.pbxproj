@@ -401,10 +401,10 @@
 		DCC1128F23E6355400E0C1B8 /* DemoCells */ = {
 			isa = PBXGroup;
 			children = (
-				DC1BE57E23E74E0400B5C2BF /* DetailRings */,
 				DC7F21ED23C6E6EB009629DD /* DemoCell.swift */,
 				DCC1126923E6150000E0C1B8 /* AreaLines */,
 				DC8773ED23DBD609005246BA /* Candlestick */,
+				DC1BE57E23E74E0400B5C2BF /* DetailRings */,
 				DCC1129323E64BB600E0C1B8 /* DonutWedges */,
 				DC7F221523C7E62B009629DD /* HorizontalGroupedBars */,
 				DC2FA27923CEB53600E88807 /* LinePoints */,
