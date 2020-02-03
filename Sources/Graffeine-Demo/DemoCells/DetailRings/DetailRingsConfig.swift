@@ -41,6 +41,8 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.rotation = 180
                     $0.outerDiameter = .percentage(0.35)
                     $0.unitFill.colors = colors0
+                    $0.unitLine.colors = [.black]
+                    $0.unitLine.thickness = 0.5
                     $0.data = GraffeineData(valuesHi: [1, 1, 1, 1, 1])
                 }),
 
@@ -54,6 +56,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
                     $0.selection.isEnabled = true
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.4) }
                 }),
 
             GraffeineRadialLabelLayer(id: ID.labels1)
@@ -78,6 +81,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.10
                     $0.selection.isEnabled = true
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.4) }
                     $0.opacity = 0.0
                 }),
 
@@ -92,8 +96,6 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.labelAlignment.vertical = .center
                     $0.selection.text.color = .black
                     $0.opacity = 0.0
-                    $0.shouldRasterize = true
-                    $0.rasterizationScale = UIScreen.main.scale * 8
                 })
         ]
     }

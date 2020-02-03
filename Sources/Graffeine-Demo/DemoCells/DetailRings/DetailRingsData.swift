@@ -3,6 +3,8 @@ import Graffeine
 
 class DetailRingsData {
 
+    typealias LayerID = DetailRingsConfig.ID
+
     let dataSets: [[Double]] = [
         [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
     ]
@@ -32,7 +34,7 @@ class DetailRingsData {
         return Character(UnicodeScalar(intVal + A)!)
     }
 
-    func get() -> (GraffeineData, GraffeineData) {
+    func get(selectedIndex: Int?, selectedLayerIndex: Int?) -> (GraffeineData, GraffeineData) {
         let dataSet = dataSets[dataSetIndex]
         let augDataSet = augmentedDataSets[dataSetIndex]
         let maxVal: Double = 100
@@ -46,13 +48,18 @@ class DetailRingsData {
             return "\($0.offset)"
         }
 
+        let selectedIndex0 = (selectedLayerIndex == 0) ? selectedIndex : nil
+        let selectedIndex1 = (selectedLayerIndex == 1) ? selectedIndex : nil
+
         return (
             GraffeineData(valueMax: maxVal,
                           valuesHi: dataSet,
-                          labels: labels),
+                          labels: labels,
+                          selectedIndex: selectedIndex0),
             GraffeineData(valueMax: augMaxVal,
                           valuesHi: augDataSet,
-                          labels: augLabels)
+                          labels: augLabels,
+                          selectedIndex: selectedIndex1)
         )
     }
 }
