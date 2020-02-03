@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.5" maximumZoomScale="2.5" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-PP-U4f">
+                    <scrollView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.5" maximumZoomScale="2.5" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-PP-U4f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpw-ps-P5l" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
@@ -26,7 +26,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vpw-ps-P5l" firstAttribute="height" secondItem="3DA-PP-U4f" secondAttribute="height" multiplier="2" id="1Kz-3p-phn"/>
                             <constraint firstItem="vpw-ps-P5l" firstAttribute="leading" secondItem="3DA-PP-U4f" secondAttribute="leading" id="6mY-wI-QG2"/>

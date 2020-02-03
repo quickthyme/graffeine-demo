@@ -4,9 +4,9 @@ import Graffeine
 class DetailRingsConfig: GraffeineViewConfig {
 
     enum ID: Hashable {
-        case center
-        case ring1, labels1
-        case ring2, labels2
+        case center, centerLabels
+        case ring1, ring1Labels
+        case ring2, ring2Labels
     }
 
     let colors0: [UIColor] = [
@@ -47,6 +47,18 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.8) }
                 }),
 
+            GraffeineRadialLabelLayer(id: ID.centerLabels)
+                .apply ({
+                    $0.clockwise = true
+                    $0.rotation = 180
+                    $0.diameter = .percentage(0.18)
+                    $0.unitText.colors = [.darkGray]
+                    $0.unitText.fontSize = 24
+                    $0.labelAlignment.horizontal = .center
+                    $0.labelAlignment.vertical = .center
+                    $0.selection.text.color = .white
+                }),
+
             GraffeineRadialSegmentLayer(id: ID.ring1)
                 .apply ({
                     $0.clockwise = true
@@ -56,20 +68,24 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitFill.colors = colors1
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
+                    $0.shadowColor = UIColor.black.cgColor
+                    $0.shadowOpacity = 0.5
+                    $0.shadowRadius = 2.0
+                    $0.shadowOffset = CGSize(width: 0, height: -1.5)
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.8) }
                 }),
 
-            GraffeineRadialLabelLayer(id: ID.labels1)
+            GraffeineRadialLabelLayer(id: ID.ring1Labels)
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 180
-                    $0.diameter = .percentage(0.77)
+                    $0.diameter = .percentage(0.50)
                     $0.unitText.colors = [.darkGray]
                     $0.unitText.fontSize = 24
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
-                    $0.selection.text.color = .black
+                    $0.selection.text.color = .white
                 }),
 
             GraffeineRadialSegmentLayer(id: ID.ring2)
@@ -86,7 +102,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.opacity = 0.0
                 }),
 
-            GraffeineRadialLabelLayer(id: ID.labels2)
+            GraffeineRadialLabelLayer(id: ID.ring2Labels)
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 180

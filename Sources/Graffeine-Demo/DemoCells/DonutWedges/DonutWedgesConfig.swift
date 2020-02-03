@@ -30,9 +30,9 @@ class DonutWedgesConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
                     $0.shadowColor = UIColor.black.cgColor
-                    $0.shadowOpacity = 0.6
-                    $0.shadowRadius = 3.0
-                    $0.shadowOffset = CGSize(width: 0, height: 1.5)
+                    $0.shadowOpacity = 0.5
+                    $0.shadowRadius = 2.0
+                    $0.shadowOffset = CGSize(width: 0, height: 1.0)
                     $0.selection.radial.outerDiameter = .percentage(0.65)
                     $0.selection.radial.innerDiameter = .percentage(0.30)
                     $0.selection.radial.centerOffsetDiameter = .percentage(0.10)

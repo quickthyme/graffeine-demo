@@ -15,6 +15,7 @@ class DetailRingsCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "paper")!)
         scrollView.zoomScale = scrollView.minimumZoomScale
         graffeineView.onSelect = { selection in
             self.selectedIndex = selection?.data.selected.index
@@ -45,10 +46,11 @@ class DetailRingsCell: UITableViewCell, DemoCell {
                                selectedLayerIndex: layerIndex)
 
         graffeineView.layer(id: LayerID.center)?.data = newData.0
+        graffeineView.layer(id: LayerID.centerLabels)?.data = newData.0
         graffeineView.layer(id: LayerID.ring1)?.data = newData.1
-        graffeineView.layer(id: LayerID.labels1)?.data = newData.1
+        graffeineView.layer(id: LayerID.ring1Labels)?.data = newData.1
         graffeineView.layer(id: LayerID.ring2)?.data = newData.2
-        graffeineView.layer(id: LayerID.labels2)?.data = newData.2
+        graffeineView.layer(id: LayerID.ring2Labels)?.data = newData.2
     }
 }
 
@@ -71,9 +73,8 @@ extension DetailRingsCell: UIScrollViewDelegate {
             ? max(((pctZoomed - opacityMarginStart) / (1.0 - opacityMarginStop - opacityMarginStart)), 0)
             : 0.0
 
-        graffeineView.layer(id: LayerID.center)?.selection.isEnabled = (opacity < 0.8)
         graffeineView.layer(id: LayerID.ring1)?.selection.isEnabled = (opacity < 0.8)
         graffeineView.layer(id: LayerID.ring2)?.opacity = Float(opacity)
-        graffeineView.layer(id: LayerID.labels2)?.opacity = Float(opacity)
+        graffeineView.layer(id: LayerID.ring2Labels)?.opacity = Float(opacity)
     }
 }

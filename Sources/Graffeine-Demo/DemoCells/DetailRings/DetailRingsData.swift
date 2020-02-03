@@ -5,15 +5,23 @@ class DetailRingsData {
 
     typealias LayerID = DetailRingsConfig.ID
 
-    let innerDataSets: [[Double]] = [
+    let centerDataSets: [[Double]] = [
         [10, 10, 10, 10, 10]
     ]
 
-    let dataSets: [[Double]] = [
+    let centerLabelSets: [[String]] = [
+        ["A", "B", "C", "D", "E"],
+    ]
+
+    let ring1DataSets: [[Double]] = [
         [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
     ]
 
-    let augmentedDataSets: [[Double]] = [
+    let ring1LabelSets: [[String]] = [
+        ["A1", "A2", "B1", "B2", "C1", "C2", "D1", "D2", "E1", "E2"],
+    ]
+
+    let ring2DataSets: [[Double]] = [
         [10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
          10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
          10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
@@ -30,25 +38,19 @@ class DetailRingsData {
     var selectedIndex: Int? = nil
 
     func incrementDataSetIndex() {
-        self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
-    }
-
-    func alphabetLetter(for intVal: Int) -> Character {
-        let A = Int(("A" as UnicodeScalar).value) // 65
-        return Character(UnicodeScalar(intVal + A)!)
+        self.dataSetIndex = (self.dataSetIndex + 1) % self.centerDataSets.count
     }
 
     func get(selectedIndex: Int?, selectedLayerIndex: Int?) -> (GraffeineData, GraffeineData, GraffeineData) {
-        let innerDataSet = innerDataSets[dataSetIndex]
-        let dataSet = dataSets[dataSetIndex]
-        let augDataSet = augmentedDataSets[dataSetIndex]
+        let centerData = centerDataSets[dataSetIndex]
+        let ring1Data = ring1DataSets[dataSetIndex]
+        let ring2Data = ring2DataSets[dataSetIndex]
 
-        let labels: [String?] = dataSet.enumerated().map {
-            return "\(self.alphabetLetter(for: $0.offset))"
-        }
+        let centerLabels = centerLabelSets[dataSetIndex]
+        let ring1Labels  = ring1LabelSets[dataSetIndex]
 
-        let augLabels: [String?] = augDataSet.enumerated().map {
-            return "\($0.offset)"
+        let ring2Labels: [String?] = ring2Data.enumerated().map {
+            return "\($0.offset + 1)"
         }
 
         let selectedIndex0 = (selectedLayerIndex == 0) ? selectedIndex : nil
@@ -56,13 +58,14 @@ class DetailRingsData {
         let selectedIndex2 = (selectedLayerIndex == 2) ? selectedIndex : nil
 
         return (
-            GraffeineData(valuesHi: innerDataSet,
+            GraffeineData(valuesHi: centerData,
+                          labels: centerLabels,
                           selectedIndex: selectedIndex0),
-            GraffeineData(valuesHi: dataSet,
-                          labels: labels,
+            GraffeineData(valuesHi: ring1Data,
+                          labels: ring1Labels,
                           selectedIndex: selectedIndex1),
-            GraffeineData(valuesHi: augDataSet,
-                          labels: augLabels,
+            GraffeineData(valuesHi: ring2Data,
+                          labels: ring2Labels,
                           selectedIndex: selectedIndex2)
         )
     }
