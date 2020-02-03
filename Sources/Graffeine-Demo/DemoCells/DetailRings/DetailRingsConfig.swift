@@ -4,7 +4,7 @@ import Graffeine
 class DetailRingsConfig: GraffeineViewConfig {
 
     enum ID: Hashable {
-        case centerPie
+        case center
         case ring1, labels1
         case ring2, labels2
     }
@@ -35,7 +35,7 @@ class DetailRingsConfig: GraffeineViewConfig {
 
         graffeineView.layers = [
 
-            GraffeineRadialSegmentLayer(id: ID.centerPie)
+            GraffeineRadialSegmentLayer(id: ID.center)
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 180
@@ -43,7 +43,8 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitFill.colors = colors0
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
-                    $0.data = GraffeineData(valuesHi: [1, 1, 1, 1, 1])
+                    $0.selection.isEnabled = true
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.8) }
                 }),
 
             GraffeineRadialSegmentLayer(id: ID.ring1)
@@ -56,7 +57,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
                     $0.selection.isEnabled = true
-                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.4) }
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.8) }
                 }),
 
             GraffeineRadialLabelLayer(id: ID.labels1)
@@ -81,7 +82,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.10
                     $0.selection.isEnabled = true
-                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.4) }
+                    $0.selection.fill.color = UIColor(white: 0, alpha: 0.7)
                     $0.opacity = 0.0
                 }),
 

@@ -5,6 +5,10 @@ class DetailRingsData {
 
     typealias LayerID = DetailRingsConfig.ID
 
+    let innerDataSets: [[Double]] = [
+        [10, 10, 10, 10, 10]
+    ]
+
     let dataSets: [[Double]] = [
         [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
     ]
@@ -34,11 +38,10 @@ class DetailRingsData {
         return Character(UnicodeScalar(intVal + A)!)
     }
 
-    func get(selectedIndex: Int?, selectedLayerIndex: Int?) -> (GraffeineData, GraffeineData) {
+    func get(selectedIndex: Int?, selectedLayerIndex: Int?) -> (GraffeineData, GraffeineData, GraffeineData) {
+        let innerDataSet = innerDataSets[dataSetIndex]
         let dataSet = dataSets[dataSetIndex]
         let augDataSet = augmentedDataSets[dataSetIndex]
-        let maxVal: Double = 100
-        let augMaxVal: Double = 1000
 
         let labels: [String?] = dataSet.enumerated().map {
             return "\(self.alphabetLetter(for: $0.offset))"
@@ -50,16 +53,17 @@ class DetailRingsData {
 
         let selectedIndex0 = (selectedLayerIndex == 0) ? selectedIndex : nil
         let selectedIndex1 = (selectedLayerIndex == 1) ? selectedIndex : nil
+        let selectedIndex2 = (selectedLayerIndex == 2) ? selectedIndex : nil
 
         return (
-            GraffeineData(valueMax: maxVal,
-                          valuesHi: dataSet,
-                          labels: labels,
+            GraffeineData(valuesHi: innerDataSet,
                           selectedIndex: selectedIndex0),
-            GraffeineData(valueMax: augMaxVal,
-                          valuesHi: augDataSet,
+            GraffeineData(valuesHi: dataSet,
+                          labels: labels,
+                          selectedIndex: selectedIndex1),
+            GraffeineData(valuesHi: augDataSet,
                           labels: augLabels,
-                          selectedIndex: selectedIndex1)
+                          selectedIndex: selectedIndex2)
         )
     }
 }

@@ -29,8 +29,9 @@ class DetailRingsCell: UITableViewCell, DemoCell {
     }
 
     let layerIndexMap: [LayerID: Int] = [
-        LayerID.ring1: 0,
-        LayerID.ring2: 1
+        LayerID.center: 0,
+        LayerID.ring1:  1,
+        LayerID.ring2:  2
     ]
 
     func getLayerIndex(_ layerID: LayerID?) -> Int? {
@@ -42,10 +43,12 @@ class DetailRingsCell: UITableViewCell, DemoCell {
         let layerIndex = getLayerIndex(selectedLayerID)
         let newData = data.get(selectedIndex: selectedIndex,
                                selectedLayerIndex: layerIndex)
-        graffeineView.layer(id: LayerID.ring1)?.data = newData.0
-        graffeineView.layer(id: LayerID.labels1)?.data = newData.0
-        graffeineView.layer(id: LayerID.ring2)?.data = newData.1
-        graffeineView.layer(id: LayerID.labels2)?.data = newData.1
+
+        graffeineView.layer(id: LayerID.center)?.data = newData.0
+        graffeineView.layer(id: LayerID.ring1)?.data = newData.1
+        graffeineView.layer(id: LayerID.labels1)?.data = newData.1
+        graffeineView.layer(id: LayerID.ring2)?.data = newData.2
+        graffeineView.layer(id: LayerID.labels2)?.data = newData.2
     }
 }
 
@@ -56,6 +59,10 @@ extension DetailRingsCell: UIScrollViewDelegate {
     }
 
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+        scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
+
         let pctZoomed: CGFloat = (scrollView.zoomScale / scrollView.maximumZoomScale)
         let opacityMarginStart: CGFloat = 0.30
         let opacityMarginStop: CGFloat = 0.50
@@ -64,6 +71,7 @@ extension DetailRingsCell: UIScrollViewDelegate {
             ? max(((pctZoomed - opacityMarginStart) / (1.0 - opacityMarginStop - opacityMarginStart)), 0)
             : 0.0
 
+        graffeineView.layer(id: LayerID.center)?.selection.isEnabled = (opacity < 0.8)
         graffeineView.layer(id: LayerID.ring1)?.selection.isEnabled = (opacity < 0.8)
         graffeineView.layer(id: LayerID.ring2)?.opacity = Float(opacity)
         graffeineView.layer(id: LayerID.labels2)?.opacity = Float(opacity)
