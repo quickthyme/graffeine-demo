@@ -15,7 +15,7 @@ class DetailRingsCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "paper")!)
+        self.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
         scrollView.zoomScale = scrollView.minimumZoomScale
         graffeineView.onSelect = { selection in
             self.selectedIndex = selection?.data.selected.index
@@ -66,17 +66,26 @@ extension DetailRingsCell: UIScrollViewDelegate {
         scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
 
         let pctZoomed: CGFloat = (scrollView.zoomScale / scrollView.maximumZoomScale)
-        let opacityMarginStart: CGFloat = 0.30
-        let opacityMarginStop: CGFloat = 0.50
+        let opacity1MarginStart: CGFloat = 0.20
+        let opacity1MarginStop: CGFloat = 0.70
+        let opacity2MarginStart: CGFloat = 0.40
+        let opacity2MarginStop: CGFloat = 0.40
 
-        let opacity = (pctZoomed > opacityMarginStart)
-            ? max(((pctZoomed - opacityMarginStart) / (1.0 - opacityMarginStop - opacityMarginStart)), 0)
+        let opacity1 = (pctZoomed > opacity1MarginStart)
+            ? max(((pctZoomed - opacity1MarginStart) / (1.0 - opacity1MarginStop - opacity1MarginStart)), 0)
             : 0.0
 
-        graffeineView.layer(id: LayerID.center)?.selection.isEnabled = (opacity < 0.8)
-        graffeineView.layer(id: LayerID.ring1)?.selection.isEnabled = (opacity < 0.8)
+        let opacity2 = (pctZoomed > opacity2MarginStart)
+            ? max(((pctZoomed - opacity2MarginStart) / (1.0 - opacity2MarginStop - opacity2MarginStart)), 0)
+            : 0.0
 
-        graffeineView.layer(id: LayerID.ring2)?.opacity = Float(opacity)
-        graffeineView.layer(id: LayerID.ring2Labels)?.opacity = Float(opacity)
+        graffeineView.layer(id: LayerID.center)?.selection.isEnabled = (opacity1 < 0.70)
+        graffeineView.layer(id: LayerID.ring1)?.selection.isEnabled = (opacity2 < 0.75)
+
+        graffeineView.layer(id: LayerID.ring1)?.opacity = Float(opacity1)
+        graffeineView.layer(id: LayerID.ring1Labels)?.opacity = Float(opacity1)
+
+        graffeineView.layer(id: LayerID.ring2)?.opacity = Float(opacity2)
+        graffeineView.layer(id: LayerID.ring2Labels)?.opacity = Float(opacity2)
     }
 }

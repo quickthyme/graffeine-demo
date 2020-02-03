@@ -39,10 +39,14 @@ class DetailRingsConfig: GraffeineViewConfig {
                 .apply ({
                     $0.clockwise = true
                     $0.rotation = 180
-                    $0.outerDiameter = .percentage(0.35)
+                    $0.outerDiameter = .percentage(0.65)
                     $0.unitFill.colors = colors0
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
+                    $0.shadowColor = UIColor.black.cgColor
+                    $0.shadowOpacity = 0.5
+                    $0.shadowRadius = 2.0
+                    $0.shadowOffset = CGSize(width: 0, height: 1.0)
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.8) }
                 }),
@@ -68,12 +72,9 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitFill.colors = colors1
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
-                    $0.shadowColor = UIColor.black.cgColor
-                    $0.shadowOpacity = 0.5
-                    $0.shadowRadius = 2.0
-                    $0.shadowOffset = CGSize(width: 0, height: 1.0)
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.8) }
+                    $0.opacity = 0.0
                 }),
 
             GraffeineRadialLabelLayer(id: ID.ring1Labels)
@@ -86,6 +87,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
                     $0.selection.text.color = .white
+                    $0.opacity = 0.0
                 }),
 
             GraffeineRadialSegmentLayer(id: ID.ring2)
