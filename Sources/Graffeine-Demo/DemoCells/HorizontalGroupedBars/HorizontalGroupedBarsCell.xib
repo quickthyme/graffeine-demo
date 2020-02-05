@@ -17,7 +17,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5M-la-W6Q" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
-                        <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.53234057741116758" blue="0.37035321624993772" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="HorizontalGroupedBarsConfig"/>
                         </userDefinedRuntimeAttributes>

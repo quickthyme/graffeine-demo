@@ -39,8 +39,8 @@ class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
     }
 
     let dataSets: [[Double?]] = [
-        [10, 9, 8, nil, 6, 5, 4, 3, 2,  1],
-        [ 1, 2, 3,   4, 5, 6, 7, 8, 9, 10]
+        [8, 7, 6, 5, 4, 3, 2,  1],
+        [ 1, 2, 3, 4, 5, 6, 7, 8]
     ]
 
     var dataSetIndex: Int = 0
@@ -53,8 +53,7 @@ class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
 
     func applyData(animated: Bool) {
         let valuesHi: [Double?] = dataSets[dataSetIndex]
-        let data = GraffeineData(valueMax: 10,
-                                 valuesHi: valuesHi,
+        let data = GraffeineData(valuesHi: valuesHi,
                                  labels: valuesHi.map { ($0 == nil) ? "?" : "\(Int($0!))" },
                                  selectedIndex: selectedIndex)
 
