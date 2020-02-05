@@ -51,8 +51,10 @@ class ScatterplotCell: UITableViewCell, DemoCell {
 
     func generateColors(count: Int) -> [UIColor] {
         return (0..<count).map { _ in
-            let index = Int.random(in: 0..<pallette.count)
-            return pallette[index]
+            return UIColor(red:   CGFloat.random(in: 0.1...0.9),
+                           green: CGFloat.random(in: 0.1...0.9),
+                           blue:  CGFloat.random(in: 0.1...0.9),
+                           alpha: 0.5)
         }
     }
 
@@ -78,9 +80,9 @@ class ScatterplotCell: UITableViewCell, DemoCell {
     func applyData(animated: Bool) {
         let dataSet = self.currentDataSet
             ?? DataSet(
-                s: generateData(count: Int.random(in: 1...7)),
-                m: generateData(count: Int.random(in: 1...6)),
-                l: generateData(count: Int.random(in: 0...5)))
+                s: generateData(count: Int.random(in: 1...6)),
+                m: generateData(count: Int.random(in: 0...5)),
+                l: generateData(count: Int.random(in: 0...4)))
         self.currentDataSet = dataSet
 
         let colors: [[UIColor]] = currentColors

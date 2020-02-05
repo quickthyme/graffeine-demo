@@ -4,6 +4,7 @@ import Graffeine
 class ScatterplotConfig: GraffeineViewConfig {
 
     enum ID: Hashable {
+        case bottomGutter, leftGutter
         case hGrid, vGrid, hMarks, vMarks
         case vectorPlots1, vectorPlots2, vectorPlots3
         case labels1, labels2, labels3
@@ -11,28 +12,50 @@ class ScatterplotConfig: GraffeineViewConfig {
 
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
-        let insets = UIEdgeInsets(top: 18, left: 18, bottom: 18, right: 18)
+        let insets = UIEdgeInsets(top: 28, left: 28, bottom: 28, right: 28)
 
         graffeineView.layers = [
+
+            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 20, region: .bottomGutter)
+                .apply ({
+                    $0.labelAlignment.horizontal = .left
+                    $0.labelAlignment.vertical = .center
+                    $0.labelPadding.horizontal = 8.0
+                    $0.unitText.colors = [.black]
+                    $0.unitText.fontSize = 12
+                    $0.data = GraffeineData(labels: ["Prefer Pie Charts  →"])
+                }),
+
+            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 20, region: .leftGutter)
+                .apply ({
+                    $0.labelAlignment.horizontal = .left
+                    $0.labelAlignment.vertical = .center
+                    $0.labelPadding.horizontal = 8.0
+                    $0.unitText.colors = [.black]
+                    $0.unitText.fontSize = 12
+                    $0.labelRotation = 270
+                    $0.data = GraffeineData(labels: ["Prefer Bar Charts  →"])
+                }),
 
             GraffeineGridLineLayer(id: ID.hGrid)
                 .apply ({
                     $0.flipXY = true
                     $0.unitLine.colors = [UIColor(white: 0.2, alpha: 1.0)]
                     $0.unitLine.thickness = 1.0
-                    $0.data = GraffeineData(valueMax: Double(2), valuesHi: [0, 1, 2])
+                    $0.data = GraffeineData(valueMax: 2.0, valuesHi: [0, 2])
+                    $0.backgroundColor = UIColor(white: 0.88, alpha: 0.55).cgColor
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
                 .apply ({
                     $0.unitLine.colors = [UIColor(white: 0.2, alpha: 1.0)]
                     $0.unitLine.thickness = 1.0
-                    $0.data = GraffeineData(valueMax: Double(2), valuesHi: [0, 1, 2])
+                    $0.data = GraffeineData(valueMax: Double(2), valuesHi: [0, 2])
                 }),
 
             GraffeineGridLineLayer(id: ID.hMarks)
                 .apply ({
-                    $0.alignment = .center
+                    $0.alignment = .right
                     $0.length = .explicit(8)
                     $0.flipXY = true
                     $0.unitLine.colors = [UIColor(white: 0.2, alpha: 1.0)]
@@ -42,7 +65,7 @@ class ScatterplotConfig: GraffeineViewConfig {
 
             GraffeineGridLineLayer(id: ID.vMarks)
                 .apply ({
-                    $0.alignment = .center
+                    $0.alignment = .left
                     $0.length = .explicit(8)
                     $0.unitLine.colors = [UIColor(white: 0.2, alpha: 1.0)]
                     $0.unitLine.thickness = 1.0

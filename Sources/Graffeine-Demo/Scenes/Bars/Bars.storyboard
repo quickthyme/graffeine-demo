@@ -26,10 +26,10 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TxQ-C5-Auw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8DA-bh-S3w"/>
+                            <constraint firstItem="TxQ-C5-Auw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8DA-bh-S3w"/>
                             <constraint firstItem="TxQ-C5-Auw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Qad-Cu-ZAX"/>
                             <constraint firstAttribute="bottom" secondItem="TxQ-C5-Auw" secondAttribute="bottom" id="Y20-DN-Ed6"/>
-                            <constraint firstAttribute="trailing" secondItem="TxQ-C5-Auw" secondAttribute="trailing" id="kfz-AO-blM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TxQ-C5-Auw" secondAttribute="trailing" id="kfz-AO-blM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
