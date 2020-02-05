@@ -49,9 +49,8 @@ class DetailRingsData {
         let centerLabels = centerLabelSets[dataSetIndex]
         let ring1Labels  = ring1LabelSets[dataSetIndex]
 
-        let ring2Labels: [String?] = ring2Data.enumerated().map {
-            return "\($0.offset + 1)"
-        }
+        let ring2Labels: [String?] = ring2Data.enumerated()
+            .map { "\($0.offset + 1)" }
 
         let selectedIndex0 = (selectedLayerIndex == 0) ? selectedIndex : nil
         let selectedIndex1 = (selectedLayerIndex == 1) ? selectedIndex : nil

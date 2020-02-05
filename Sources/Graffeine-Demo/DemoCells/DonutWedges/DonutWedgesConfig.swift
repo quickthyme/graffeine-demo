@@ -42,7 +42,7 @@ class DonutWedgesConfig: GraffeineViewConfig {
             GraffeineRadialLabelLayer(id: ID.labels)
                 .apply ({
                     $0.clockwise = false
-                    $0.rotation = 90
+                    $0.centerRotation = 90
                     $0.diameter = .percentage(0.375)
                     $0.unitText.colors = [.white]
                     $0.unitText.fontSize = 13

@@ -55,7 +55,7 @@ class DetailRingsConfig: GraffeineViewConfig {
             GraffeineRadialLabelLayer(id: ID.centerLabels)
                 .apply ({
                     $0.clockwise = true
-                    $0.rotation = 180
+                    $0.centerRotation = 180
                     $0.diameter = .percentage(0.40)
                     $0.unitText.colors = [.black]
                     $0.unitText.fontSize = 30
@@ -95,7 +95,7 @@ class DetailRingsConfig: GraffeineViewConfig {
             GraffeineRadialLabelLayer(id: ID.ring1Labels)
                 .apply ({
                     $0.clockwise = true
-                    $0.rotation = 180
+                    $0.centerRotation = 180
                     $0.diameter = .percentage(0.50)
                     $0.unitText.colors = [.black]
                     $0.unitText.fontSize = 20
@@ -108,10 +108,12 @@ class DetailRingsConfig: GraffeineViewConfig {
             GraffeineRadialLabelLayer(id: ID.ring2Labels)
                 .apply ({
                     $0.clockwise = true
-                    $0.rotation = 180
+                    $0.centerRotation = 180
+                    $0.labelRotation = -90
+                    $0.labelRotationInheritFromCenter = true
                     $0.diameter = .percentage(0.68)
                     $0.unitText.colors = [.systemGray]
-                    $0.unitText.fontSize = 9
+                    $0.unitText.fontSize = 8
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
                     $0.selection.text.color = .black

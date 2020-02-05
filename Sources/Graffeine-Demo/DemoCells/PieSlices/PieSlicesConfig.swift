@@ -46,7 +46,7 @@ class PieSlicesConfig: GraffeineViewConfig {
             GraffeineRadialLabelLayer(id: ID.labels)
                 .apply ({
                     $0.clockwise = true
-                    $0.rotation = 270
+                    $0.centerRotation = 270
                     $0.diameter = .percentage(0.68)
                     $0.unitText.colors = [.black]
                     $0.unitText.fontSize = 13
