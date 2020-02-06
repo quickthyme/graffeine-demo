@@ -16,25 +16,23 @@ class ScatterplotConfig: GraffeineViewConfig {
 
         graffeineView.layers = [
 
-            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 20, region: .bottomGutter)
+            GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 32, region: .bottomGutter)
                 .apply ({
                     $0.labelAlignment.horizontal = .left
                     $0.labelAlignment.vertical = .center
-                    $0.labelPadding.horizontal = 8.0
                     $0.unitText.colors = [.black]
-                    $0.unitText.fontSize = 12
-                    $0.data = GraffeineData(labels: ["Prefer Pie Charts  →"])
+                    $0.unitText.fontSize = 13
+                    $0.data = GraffeineData(labels: ["Prefers Pie Charts (%) →"])
                 }),
 
-            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 20, region: .leftGutter)
+            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 32, region: .leftGutter)
                 .apply ({
                     $0.labelAlignment.horizontal = .left
                     $0.labelAlignment.vertical = .center
-                    $0.labelPadding.horizontal = 8.0
                     $0.unitText.colors = [.black]
-                    $0.unitText.fontSize = 12
+                    $0.unitText.fontSize = 13
                     $0.labelRotation = 270
-                    $0.data = GraffeineData(labels: ["Prefer Bar Charts  →"])
+                    $0.data = GraffeineData(labels: ["Prefers Bar Charts (%) →"])
                 }),
 
             GraffeineGridLineLayer(id: ID.hGrid)
@@ -43,7 +41,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [UIColor(white: 0.2, alpha: 1.0)]
                     $0.unitLine.thickness = 1.0
                     $0.data = GraffeineData(valueMax: 2.0, valuesHi: [0, 2])
-                    $0.backgroundColor = UIColor(white: 0.88, alpha: 0.55).cgColor
+                    $0.backgroundColor = UIColor(white: 0.96, alpha: 0.53).cgColor
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
@@ -116,6 +114,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.insets = insets
                     $0.positioner = .xy
                     $0.unitText.colors = [.black]
+                    $0.unitText.fontSize = 12
                 }),
 
             GraffeinePlotLabelLayer(id: ID.labels2)
@@ -123,6 +122,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.insets = insets
                     $0.positioner = .xy
                     $0.unitText.colors = [.black]
+                    $0.unitText.fontSize = 16
                 }),
 
             GraffeinePlotLabelLayer(id: ID.labels3)
@@ -130,6 +130,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.insets = insets
                     $0.positioner = .xy
                     $0.unitText.colors = [.black]
+                    $0.unitText.fontSize = 22
                 })
         ]
     }

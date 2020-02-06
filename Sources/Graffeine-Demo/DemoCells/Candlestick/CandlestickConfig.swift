@@ -39,7 +39,10 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitLine.thickness = 0.5
                     $0.unitColumn.subdivision.offset = .percentage(0.49)
                     $0.unitColumn.subdivision.width = .explicit(0.5)
-                    $0.selection.line.color = diagonalLines
+                    $0.selection.line.dashPattern = [1, 1]
+                    $0.selection.animation = GraffeineAnimation.Perpetual.MarchingAnts(dashPhase: 2,
+                                                                                       clockwise: true,
+                                                                                       duration: 0.66)
                 }),
 
             GraffeineBarLayer(id: ID.candle)
@@ -49,12 +52,12 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.roundedEnds = .both(3)
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.5) }
-                    $0.selection.line.color = UIColor(white: 0.77, alpha: 0.77)
-                    $0.selection.line.thickness = 2
-                    $0.selection.line.dashPattern = [3, 3]
-                    $0.selection.animation = GraffeineAnimation.Perpetual.MarchingAnts(dashPhase: 6,
+                    $0.selection.line.color = .white
+                    $0.selection.line.thickness = 1.0
+                    $0.selection.line.dashPattern = [1, 1]
+                    $0.selection.animation = GraffeineAnimation.Perpetual.MarchingAnts(dashPhase: 2,
                                                                                        clockwise: true,
-                                                                                       duration: 0.6)
+                                                                                       duration: 1.0)
                 }),
 
             GraffeineBarLabelLayer(id: ID.candleLabel)

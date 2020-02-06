@@ -35,9 +35,6 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.labelAlignment.vertical = .top
                     $0.labelPadding.vertical = 3.0
                     $0.selection.text.color = .black
-                    $0.selection.shadow.color = .black
-                    $0.selection.shadow.radius = 0.33
-                    $0.selection.shadow.opacity = 1.0
                 }),
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 50, region: .leftGutter)
@@ -68,14 +65,8 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitFill.colors = barColors
                     $0.roundedEnds = .hi(6)
-                    $0.unitShadow.color = .black
-                    $0.unitShadow.opacity = 0.6
-                    $0.unitShadow.radius = 2.6
-                    $0.unitShadow.offset = CGSize(width: -1.4, height: 6)
-
                     $0.selection.isEnabled = true
                     $0.selection.fill.color = UIColor(white: 0.08, alpha: 0.8)
-                    $0.maskInsets = UIEdgeInsets(top: -20, left: -20, bottom: 0, right: -20)
                 }),
 
             GraffeineBarLabelLayer(id: ID.barLabel)

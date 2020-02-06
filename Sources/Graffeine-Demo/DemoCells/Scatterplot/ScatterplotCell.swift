@@ -80,9 +80,9 @@ class ScatterplotCell: UITableViewCell, DemoCell {
     func applyData(animated: Bool) {
         let dataSet = self.currentDataSet
             ?? DataSet(
-                s: generateData(count: Int.random(in: 1...6)),
+                s: generateData(count: Int.random(in: 1...5)),
                 m: generateData(count: Int.random(in: 0...5)),
-                l: generateData(count: Int.random(in: 0...4)))
+                l: generateData(count: Int.random(in: 0...5)))
         self.currentDataSet = dataSet
 
         let colors: [[UIColor]] = currentColors

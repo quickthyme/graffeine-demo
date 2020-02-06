@@ -32,11 +32,11 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
     }
 
     let dataSets: [([Double?], [Double?])] = [
-        ([2, 4, 6, 8, 10, 12, 14],
-         [7, 3, 5, 5, 11, 13, 14]),
+        ([2, 4, 6, 8, 10, 12],
+         [7, 3, 5, 5, 11, 13]),
 
-        ([ 8, 14, 16,  9, 16, 13, 6],
-         [11, 11, 13, 10, 19, 10, 7])
+        ([ 8, 14, 16,  9, 16, 13],
+         [11, 11, 13, 10, 19, 10])
     ]
 
     var dataSetIndex: Int = 0
@@ -46,7 +46,7 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
     }
 
     func applyData(animated: Bool) {
-        let vLabels: [String]   = ["A", "B", "C", "D", "E", "F", "G"]
+        let vLabels: [String]   = ["A", "B", "C", "D", "E", "F"]
         let hLabels: [String]   = ["2", "4", "6", "8", "10", "12", "14", "16", "18", "20"]
 
         let data1 = GraffeineData(valueMax: 20,
