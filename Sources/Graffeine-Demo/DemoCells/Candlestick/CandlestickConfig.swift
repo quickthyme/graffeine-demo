@@ -13,7 +13,6 @@ class CandlestickConfig: GraffeineViewConfig {
 
         let unitMargin: CGFloat = 6.0
         let candleInsets = UIEdgeInsets.init(top:  0, left: 16, bottom:  0, right: 16)
-        let diagonalLines = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
 
         graffeineView.layers = [
 
