@@ -43,7 +43,7 @@ class DonutWedgesConfig: GraffeineViewConfig {
                     $0.clockwise = false
                     $0.centerRotation = 90
                     $0.diameter = .percentage(0.375)
-                    $0.unitText.colors = [.inverseLabel]
+                    $0.unitText.colors = [.label]
                     $0.unitText.fontSize = 13
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center

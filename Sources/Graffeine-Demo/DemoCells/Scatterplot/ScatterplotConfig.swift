@@ -42,7 +42,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 1.0
                     $0.data = GraffeineData(valueMax: 2.0, valuesHi: [0, 2])
-                    $0.backgroundColor = UIColor.inverseLabel.cgColor
+                    $0.backgroundColor = UIColor(white: 1.0, alpha: 0.2).cgColor
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
