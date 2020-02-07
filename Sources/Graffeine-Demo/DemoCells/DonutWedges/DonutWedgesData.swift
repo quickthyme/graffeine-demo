@@ -40,10 +40,10 @@ class DonutWedgesData {
         }
 
         let selectedLabels: [String?] = dataSet.enumerated().map {
-            return (dataSetIsFibonacci(dataSetIndex))
+            return ((dataSetIsFibonacci(dataSetIndex))
                 ? "Fibonacci \($0.offset + 1)\n"
-                : "Slice \(self.alphabetLetter(for: $0.offset))\n"
-            + "\(Int($0.element)) out of \(Int(maxVal))\n"
+                : "Slice \(self.alphabetLetter(for: $0.offset))\n")
+                + "\(Int($0.element)) out of \(Int(maxVal))\n"
         }
 
         return GraffeineData(valueMax: maxVal,

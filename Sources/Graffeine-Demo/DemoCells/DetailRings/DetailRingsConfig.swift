@@ -49,7 +49,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.shadowRadius = 2.0
                     $0.shadowOffset = CGSize(width: 0, height: 1.0)
                     $0.selection.isEnabled = true
-                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.8) }
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.5) }
                 }),
 
             GraffeineRadialLabelLayer(id: ID.centerLabels)
@@ -57,7 +57,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.clockwise = true
                     $0.centerRotation = 180
                     $0.diameter = .percentage(0.40)
-                    $0.unitText.colors = [.black]
+                    $0.unitText.colors = [.label]
                     $0.unitText.fontSize = 30
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
@@ -74,7 +74,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.5
                     $0.selection.isEnabled = true
-                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.8) }
+                    $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.5) }
                     $0.opacity = 0.0
                 }),
 
@@ -88,7 +88,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.black]
                     $0.unitLine.thickness = 0.10
                     $0.selection.isEnabled = true
-                    $0.selection.fill.color = UIColor(white: 0, alpha: 0.7)
+                    $0.selection.fill.color = .blackAlpha
                     $0.opacity = 0.0
                 }),
 
@@ -97,11 +97,11 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.clockwise = true
                     $0.centerRotation = 180
                     $0.diameter = .percentage(0.50)
-                    $0.unitText.colors = [.black]
+                    $0.unitText.colors = [.label]
                     $0.unitText.fontSize = 20
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
-                    $0.selection.text.color = .white
+                    $0.selection.text.color = .inverseLabel
                     $0.opacity = 0.0
                 }),
 
@@ -116,7 +116,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.unitText.fontSize = 8
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
-                    $0.selection.text.color = .black
+                    $0.selection.text.color = .label
                     $0.opacity = 0.0
                 })
         ]

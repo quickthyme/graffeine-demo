@@ -22,12 +22,12 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 34, region: .bottomGutter)
                 .apply ({
                     $0.unitText.fontSize = 12
-                    $0.unitText.colors = [UIColor(white: 0.1, alpha: 0.6)]
+                    $0.unitText.colors = [.white]
                     $0.labelAlignment.horizontal = .right
                     $0.labelAlignment.vertical = .top
-                    $0.labelPadding.horizontal = 16.0
-                    $0.labelPadding.vertical = -12.0
-                    $0.labelRotation = 90
+                    $0.labelPadding.horizontal = 10.0
+                    $0.labelPadding.vertical = -28.0
+                    $0.labelRotation = 45
                 }),
 
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 32, region: .leftGutter)
@@ -37,13 +37,13 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.labelAlignment.horizontal = .right
                     $0.labelPadding.horizontal = 8.0
                     $0.unitText.fontSize = 13
-                    $0.unitText.colors = [UIColor(white: 0.0, alpha: 0.6)]
+                    $0.unitText.colors = [.white]
                 }),
 
             GraffeineGridLineLayer(id: ID.grid)
                 .apply ({
                     $0.flipXY = true
-                    $0.unitLine.colors = [UIColor(white: 0.1, alpha: 0.5)]
+                    $0.unitLine.colors = [.white]
                     $0.unitLine.thickness = 0.5
                     $0.unitLine.dashPattern = [2, 6]
                     $0.data = GraffeineData(valueMax: 20, valuesHi: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20])

@@ -20,7 +20,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.labelAlignment.horizontal = .left
                     $0.labelAlignment.vertical = .center
-                    $0.unitText.colors = [.black]
+                    $0.unitText.colors = [.label]
                     $0.unitText.fontSize = 13
                     $0.data = GraffeineData(labels: ["Prefers Pie Charts (%) →"])
                 }),
@@ -28,8 +28,9 @@ class ScatterplotConfig: GraffeineViewConfig {
             GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 32, region: .leftGutter)
                 .apply ({
                     $0.labelAlignment.horizontal = .left
-                    $0.labelAlignment.vertical = .center
-                    $0.unitText.colors = [.black]
+                    $0.labelAlignment.vertical = .bottom
+                    $0.labelPadding.vertical = 5
+                    $0.unitText.colors = [.label]
                     $0.unitText.fontSize = 13
                     $0.labelRotation = 270
                     $0.data = GraffeineData(labels: ["Prefers Bar Charts (%) →"])
@@ -38,15 +39,15 @@ class ScatterplotConfig: GraffeineViewConfig {
             GraffeineGridLineLayer(id: ID.hGrid)
                 .apply ({
                     $0.flipXY = true
-                    $0.unitLine.colors = [UIColor(white: 0.2, alpha: 1.0)]
+                    $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 1.0
                     $0.data = GraffeineData(valueMax: 2.0, valuesHi: [0, 2])
-                    $0.backgroundColor = UIColor(white: 0.96, alpha: 0.53).cgColor
+                    $0.backgroundColor = UIColor.inverseLabel.cgColor
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
                 .apply ({
-                    $0.unitLine.colors = [UIColor(white: 0.2, alpha: 1.0)]
+                    $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 1.0
                     $0.data = GraffeineData(valueMax: Double(2), valuesHi: [0, 2])
                 }),
@@ -56,7 +57,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                     $0.alignment = .right
                     $0.length = .explicit(8)
                     $0.flipXY = true
-                    $0.unitLine.colors = [UIColor(white: 0.2, alpha: 1.0)]
+                    $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 1.0
                     $0.data = GraffeineData(valueMax: Double(10), valuesHi: Array<Int>(1...9).map { Double($0) })
                 }),
@@ -65,7 +66,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.alignment = .left
                     $0.length = .explicit(8)
-                    $0.unitLine.colors = [UIColor(white: 0.2, alpha: 1.0)]
+                    $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 1.0
                     $0.data = GraffeineData(valueMax: Double(10), valuesHi: Array<Int>(1...9).map { Double($0) })
                 }),
@@ -78,7 +79,7 @@ class ScatterplotConfig: GraffeineViewConfig {
 
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(alpha: -0.3) }
-                    $0.selection.line.color = .black
+                    $0.selection.line.color = .label
                     $0.selection.line.thickness = 1
                     $0.selection.line.dashPattern = [6, 6]
                 }),
@@ -91,7 +92,7 @@ class ScatterplotConfig: GraffeineViewConfig {
 
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(alpha: -0.3) }
-                    $0.selection.line.color = .black
+                    $0.selection.line.color = .label
                     $0.selection.line.thickness = 1
                     $0.selection.line.dashPattern = [6, 6]
                 }),
@@ -104,7 +105,7 @@ class ScatterplotConfig: GraffeineViewConfig {
 
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(alpha: -0.3) }
-                    $0.selection.line.color = .black
+                    $0.selection.line.color = .label
                     $0.selection.line.thickness = 1
                     $0.selection.line.dashPattern = [8, 8]
                 }),
@@ -113,7 +114,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.insets = insets
                     $0.positioner = .xy
-                    $0.unitText.colors = [.black]
+                    $0.unitText.colors = [.label]
                     $0.unitText.fontSize = 12
                 }),
 
@@ -121,7 +122,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.insets = insets
                     $0.positioner = .xy
-                    $0.unitText.colors = [.black]
+                    $0.unitText.colors = [.label]
                     $0.unitText.fontSize = 16
                 }),
 
@@ -129,7 +130,7 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.insets = insets
                     $0.positioner = .xy
-                    $0.unitText.colors = [.black]
+                    $0.unitText.colors = [.label]
                     $0.unitText.fontSize = 22
                 })
         ]

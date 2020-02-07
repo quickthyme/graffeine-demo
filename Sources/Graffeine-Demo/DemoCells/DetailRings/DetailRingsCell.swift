@@ -19,8 +19,7 @@ class DetailRingsCell: UITableViewCell, DemoCell {
     }
 
     func setupContainers() {
-        let pattern = UIImage(named: "diagonal_lines")!
-        self.contentView.backgroundColor = UIColor(patternImage: pattern)
+        self.contentView.backgroundColor = .diagonalLines
         scrollView.zoomScale = scrollView.minimumZoomScale
     }
 

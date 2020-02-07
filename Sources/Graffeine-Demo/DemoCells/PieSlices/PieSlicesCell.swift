@@ -18,7 +18,7 @@ class PieSlicesCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
+        self.contentView.backgroundColor = .diagonalLines
         setupSelection()
     }
 

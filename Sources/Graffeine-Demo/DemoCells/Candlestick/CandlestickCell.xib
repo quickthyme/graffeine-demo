@@ -56,7 +56,7 @@
                             <constraint firstAttribute="height" constant="22" id="q4O-3X-xCS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" red="0.68947080159999996" green="0.45075354410000001" blue="0.16295275319999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" red="0.79757676606700501" green="0.52394332662295429" blue="0.19244565850605544" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zl4-FQ-p9I">
@@ -65,7 +65,7 @@
                             <constraint firstAttribute="width" constant="36" id="9hP-p0-tgt"/>
                             <constraint firstAttribute="height" constant="36" id="M1s-g6-QK4"/>
                         </constraints>
-                        <color key="tintColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" image="ic_reset"/>
                         <connections>
                             <action selector="reload:" destination="Gcp-Y9-ezG" eventType="touchUpInside" id="yKL-ei-IwL"/>

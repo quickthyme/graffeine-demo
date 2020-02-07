@@ -70,6 +70,7 @@
 		DCC1129923E64C0600E0C1B8 /* DonutWedgesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1129523E64BCB00E0C1B8 /* DonutWedgesData.swift */; };
 		DCC1129A23E64C0600E0C1B8 /* DonutWedgesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC1129623E64BCB00E0C1B8 /* DonutWedgesCell.xib */; };
 		DCC1129B23E64C0600E0C1B8 /* DonutWedgesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1129723E64BCC00E0C1B8 /* DonutWedgesConfig.swift */; };
+		DCFEF68A23ED1525004BB48A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFEF68823ED1524004BB48A /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		DCC1129723E64BCC00E0C1B8 /* DonutWedgesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutWedgesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesCell.swift; sourceTree = "<group>"; };
+		DCFEF68823ED1524004BB48A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 				DC7F21D323C6DD49009629DD /* Info.plist */,
 				DC7F21C523C6DD46009629DD /* AppDelegate.swift */,
 				DC7F21AE23C6AF59009629DD /* GraffeineLibrarySymbolProtection.swift */,
+				DCFEF68823ED1524004BB48A /* Color.swift */,
 				DC7F21CE23C6DD49009629DD /* Assets.xcassets */,
 				DC7F21D023C6DD49009629DD /* LaunchScreen.storyboard */,
 				DCC1128F23E6355400E0C1B8 /* DemoCells */,
@@ -602,6 +605,7 @@
 				DC7F21CA23C6DD46009629DD /* MainViewController.swift in Sources */,
 				DC1B828323DFABF1005E379E /* ProgressIndicatorsConfigRad.swift in Sources */,
 				DC2FA26F23CE9B3800E88807 /* ScatterplotConfig.swift in Sources */,
+				DCFEF68A23ED1525004BB48A /* Color.swift in Sources */,
 				DC2FA27E23CEB5A700E88807 /* LinePointsCell.swift in Sources */,
 				DC7F221223C7C126009629DD /* RedGreenLinesConfig.swift in Sources */,
 				DCC1127B23E6328600E0C1B8 /* BarsViewController+CellID.swift in Sources */,

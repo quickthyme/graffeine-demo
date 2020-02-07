@@ -16,7 +16,7 @@ class AreaLinesCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.backgroundColor = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
+        graffeineView.backgroundColor = .diagonalLines
         graffeineView.onSelect = { selection in
             self.selectedLayerID = selection?.layer.id as? LayerID
             self.applyDataAnimated()

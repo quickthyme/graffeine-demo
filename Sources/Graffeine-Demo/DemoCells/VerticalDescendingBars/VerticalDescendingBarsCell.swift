@@ -16,6 +16,7 @@ class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        graffeineView.backgroundColor = .systemGray6
         setupSelection()
     }
 

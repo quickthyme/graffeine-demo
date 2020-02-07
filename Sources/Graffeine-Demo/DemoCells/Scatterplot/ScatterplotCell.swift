@@ -28,7 +28,7 @@ class ScatterplotCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "diagonal_lines")!)
+        self.contentView.backgroundColor = .diagonalLines
         graffeineView.onSelect = { selection in
             self.selectedIndex = selection?.data.selected.index
             self.selectedLayer = selection?.layer.id as? LayerID

@@ -49,9 +49,8 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ProgressIndicatorsConfigRad"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcI-Rg-ufZ">
-                        <rect key="frame" x="16" y="24" width="382" height="61"/>
-                        <string key="text">Please select from one of the waiting options below. Your time is valuable, and a service representative will be with you shortly.</string>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select from the waiting options below. Your time is valuable, and so are progress bars..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcI-Rg-ufZ">
+                        <rect key="frame" x="16" y="24" width="382" height="41"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

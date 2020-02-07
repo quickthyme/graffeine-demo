@@ -16,7 +16,7 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "paper")!)
+//        self.contentView.backgroundColor = UIColor(patternImage: UIImage(named: "paper")!)
     }
 
     func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {

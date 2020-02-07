@@ -30,7 +30,7 @@ class LinePointsConfig: GraffeineViewConfig {
 
             GraffeineLineLayer(id: ID.line)
                 .apply({
-                    $0.unitLine.colors = [.black]
+                    $0.unitLine.colors = [.label]
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
@@ -42,13 +42,13 @@ class LinePointsConfig: GraffeineViewConfig {
                 .apply({
                     $0.unitColumn.margin = unitMargin
                     $0.unitColumn.reducedByOne = true
-                    $0.unitFill.colors = [.white]
-                    $0.unitLine.colors = [.black]
+                    $0.unitFill.colors = [.inverseLabel]
+                    $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 4.0
                     $0.diameter = .explicit(22.0)
                     $0.selection.isEnabled = true
                     $0.selection.radial.outerDiameter = .explicit(24.0)
-                    $0.selection.fill.color = .black
+                    $0.selection.fill.color = .label
                     $0.selection.line.thickness = 6.0
                 }),
 
@@ -56,9 +56,9 @@ class LinePointsConfig: GraffeineViewConfig {
                 .apply({
                     $0.unitColumn.margin = unitMargin
                     $0.unitColumn.reducedByOne = true
-                    $0.unitText.colors = [.systemRed, .blue, .purple]
+                    $0.unitText.colors = [.systemRed, .systemBlue, .systemPurple]
                     $0.unitText.fontSize = 11
-                    $0.selection.text.color = .white
+                    $0.selection.text.color = .inverseLabel
                 })
         ]
     }
