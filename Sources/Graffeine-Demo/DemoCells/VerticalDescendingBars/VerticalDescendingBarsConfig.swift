@@ -64,6 +64,8 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.insets = barLayerInsets
                     $0.unitColumn.margin = unitMargin
                     $0.unitFill.colors = barColors
+                    $0.unitLine.colors = [.unleaded]
+                    $0.unitLine.thickness = 0.1
                     $0.roundedEnds = .hi(6)
                     $0.selection.isEnabled = true
                     $0.selection.fill.color = .unleaded
@@ -73,12 +75,10 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                 .apply ({
                     $0.insets = barLayerInsets
                     $0.unitColumn.margin = unitMargin
-                    $0.unitText.colors = [.label]
+                    $0.unitText.colors = [.inverseLabel]
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .top
                     $0.labelPadding.vertical = 4
-                    $0.masksToBounds = true
-                    $0.selection.text.color = .inverseLabel
                 })
         ]
     }

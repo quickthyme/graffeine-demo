@@ -11,8 +11,9 @@ class DonutWedgesConfig: GraffeineViewConfig {
         UIColor.systemTeal.modifiedByAdding(alpha: -0.44),
         UIColor.systemIndigo.modifiedByAdding(alpha: -0.44),
         UIColor.systemGreen.modifiedByAdding(alpha: -0.44),
+        UIColor.systemYellow.modifiedByAdding(alpha: -0.44),
         UIColor.systemPurple.modifiedByAdding(alpha: -0.44),
-        UIColor.systemOrange.modifiedByAdding(alpha: -0.44),
+        UIColor.systemOrange.modifiedByAdding(alpha: -0.44)
     ]
 
     required init(_ graffeineView: GraffeineView) {
@@ -28,8 +29,8 @@ class DonutWedgesConfig: GraffeineViewConfig {
                     $0.innerDiameter = .percentage(0.20)
                     $0.unitFill.colors = colors
                     $0.unitLine.colors = [.label]
-                    $0.unitLine.thickness = 0.5
-                    $0.shadowOpacity = 0.5
+                    $0.unitLine.thickness = 0.05
+                    $0.shadowOpacity = 0.4
                     $0.shadowRadius = 2.0
                     $0.shadowOffset = CGSize(width: 0, height: 1.0)
                     $0.selection.radial.outerDiameter = .percentage(0.65)

@@ -22,7 +22,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 34, region: .bottomGutter)
                 .apply ({
                     $0.unitText.fontSize = 12
-                    $0.unitText.colors = [.white]
+                    $0.unitText.colors = [.label]
                     $0.labelAlignment.horizontal = .left
                     $0.labelAlignment.vertical = .top
                     $0.labelPadding.horizontal = 28.0
@@ -37,13 +37,13 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.labelAlignment.horizontal = .right
                     $0.labelPadding.horizontal = 8.0
                     $0.unitText.fontSize = 13
-                    $0.unitText.colors = [.white]
+                    $0.unitText.colors = [.label]
                 }),
 
             GraffeineGridLineLayer(id: ID.grid)
                 .apply ({
                     $0.flipXY = true
-                    $0.unitLine.colors = [.white]
+                    $0.unitLine.colors = [.systemGray4]
                     $0.unitLine.thickness = 0.5
                     $0.unitLine.dashPattern = [2, 4]
                     $0.data = GraffeineData(valueMax: 20, valuesHi: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20])
@@ -55,7 +55,9 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitColumn.subdivision.offset = .percentage(0.0)
                     $0.unitColumn.subdivision.width = .percentage(0.5)
-                    $0.unitFill.colors = [UIColor(white: 1.0, alpha: 0.4)]
+                    $0.unitFill.colors = [.systemOrange]
+                    $0.unitLine.colors = [.label]
+                    $0.unitLine.thickness = 0.1
                 }),
 
             GraffeineBarLayer(id: ID.bars2)
@@ -64,7 +66,9 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitColumn.subdivision.offset = .percentage(0.5)
                     $0.unitColumn.subdivision.width = .percentage(0.5)
-                    $0.unitFill.colors = [UIColor(white: 0.0, alpha: 0.3)]
+                    $0.unitFill.colors = [.systemTeal]
+                    $0.unitLine.colors = [.label]
+                    $0.unitLine.thickness = 0.1
                 }),
 
             GraffeineBarLabelLayer(id: ID.barLabel1)
@@ -76,7 +80,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.labelPadding.horizontal = 3
                     $0.labelAlignment.horizontal = .right
                     $0.labelAlignment.vertical = .center
-                    $0.unitText.colors = [.black]
+                    $0.unitText.colors = [.inverseLabel]
                     $0.unitText.fontSize = 8
                 }),
 
@@ -89,7 +93,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.labelPadding.horizontal = 3
                     $0.labelAlignment.horizontal = .right
                     $0.labelAlignment.vertical = .center
-                    $0.unitText.colors = [.white]
+                    $0.unitText.colors = [.inverseLabel]
                     $0.unitText.fontSize = 8
                 })
         ]

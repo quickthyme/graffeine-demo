@@ -42,7 +42,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.outerDiameter = .percentage(0.65)
                     $0.innerDiameter = .percentage(0.15)
                     $0.unitFill.colors = colors0
-                    $0.unitLine.colors = [.black]
+                    $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 0.5
                     $0.shadowColor = UIColor.black.cgColor
                     $0.shadowOpacity = 0.5
@@ -71,7 +71,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.outerDiameter = .percentage(0.65)
                     $0.innerDiameter = .percentage(0.15)
                     $0.unitFill.colors = colors1
-                    $0.unitLine.colors = [.black]
+                    $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 0.5
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.5) }
@@ -85,7 +85,7 @@ class DetailRingsConfig: GraffeineViewConfig {
                     $0.outerDiameter = .percentage(0.65)
                     $0.innerDiameter = .percentage(0.15)
                     $0.unitFill.colors = colors2
-                    $0.unitLine.colors = [.black]
+                    $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 0.10
                     $0.selection.isEnabled = true
                     $0.selection.fill.color = .blackAlpha

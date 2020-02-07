@@ -19,9 +19,10 @@ class ScatterplotConfig: GraffeineViewConfig {
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 32, region: .bottomGutter)
                 .apply ({
                     $0.labelAlignment.horizontal = .left
-                    $0.labelAlignment.vertical = .center
+                    $0.labelAlignment.vertical = .top
+                    $0.labelPadding.vertical = 6
                     $0.unitText.colors = [.label]
-                    $0.unitText.fontSize = 13
+                    $0.unitText.fontSize = 12
                     $0.data = GraffeineData(labels: ["Prefers Pie Charts (%) →"])
                 }),
 
@@ -29,9 +30,9 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.labelAlignment.horizontal = .left
                     $0.labelAlignment.vertical = .bottom
-                    $0.labelPadding.vertical = 5
+                    $0.labelPadding.vertical = 1
                     $0.unitText.colors = [.label]
-                    $0.unitText.fontSize = 13
+                    $0.unitText.fontSize = 12
                     $0.labelRotation = 270
                     $0.data = GraffeineData(labels: ["Prefers Bar Charts (%) →"])
                 }),
@@ -40,15 +41,15 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.flipXY = true
                     $0.unitLine.colors = [.label]
-                    $0.unitLine.thickness = 1.0
+                    $0.unitLine.thickness = 0.25
                     $0.data = GraffeineData(valueMax: 2.0, valuesHi: [0, 2])
-                    $0.backgroundColor = UIColor(white: 1.0, alpha: 0.2).cgColor
+                    $0.fill.color = .inverseLabel
                 }),
 
             GraffeineGridLineLayer(id: ID.vGrid)
                 .apply ({
                     $0.unitLine.colors = [.label]
-                    $0.unitLine.thickness = 1.0
+                    $0.unitLine.thickness = 0.25
                     $0.data = GraffeineData(valueMax: Double(2), valuesHi: [0, 2])
                 }),
 
@@ -75,6 +76,8 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.insets = insets
                     $0.diameter = .explicit(24.0)
+                    $0.unitLine.colors = [.label]
+                    $0.unitLine.thickness = 0.25
                     $0.positioner = .xy
 
                     $0.selection.isEnabled = true
@@ -88,6 +91,8 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.insets = insets
                     $0.diameter = .explicit(32.0)
+                    $0.unitLine.colors = [.label]
+                    $0.unitLine.thickness = 0.25
                     $0.positioner = .xy
 
                     $0.selection.isEnabled = true
@@ -101,6 +106,8 @@ class ScatterplotConfig: GraffeineViewConfig {
                 .apply ({
                     $0.insets = insets
                     $0.diameter = .explicit(48.0)
+                    $0.unitLine.colors = [.label]
+                    $0.unitLine.thickness = 0.25
                     $0.positioner = .xy
 
                     $0.selection.isEnabled = true

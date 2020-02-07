@@ -11,7 +11,7 @@ class CandlestickConfig: GraffeineViewConfig {
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
 
-        let unitMargin: CGFloat = 6.0
+        let unitMargin: CGFloat = 4.0
         let candleInsets = UIEdgeInsets.init(top:  0, left: 16, bottom:  0, right: 16)
 
         graffeineView.layers = [
@@ -35,9 +35,9 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.insets = candleInsets
                     $0.unitFill.colors = [.clear]
                     $0.unitLine.colors = [.white]
-                    $0.unitLine.thickness = 0.5
+                    $0.unitLine.thickness = 0.4
                     $0.unitColumn.subdivision.offset = .percentage(0.49)
-                    $0.unitColumn.subdivision.width = .explicit(0.5)
+                    $0.unitColumn.subdivision.width = .explicit(0.48)
                     $0.selection.line.dashPattern = [1, 1]
                     $0.selection.animation = GraffeineAnimation.Perpetual.MarchingAnts(dashPhase: 2,
                                                                                        clockwise: true,
@@ -48,11 +48,13 @@ class CandlestickConfig: GraffeineViewConfig {
                 .apply ({
                     $0.unitColumn.margin = unitMargin
                     $0.insets = candleInsets
-                    $0.roundedEnds = .both(3)
+                    $0.unitLine.colors = [.black]
+                    $0.unitLine.thickness = 0.25
+                    $0.roundedEnds = .both(2)
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.5) }
                     $0.selection.line.color = .white
-                    $0.selection.line.thickness = 1.0
+                    $0.selection.line.thickness = 0.5
                     $0.selection.line.dashPattern = [1, 1]
                     $0.selection.animation = GraffeineAnimation.Perpetual.MarchingAnts(dashPhase: 2,
                                                                                        clockwise: true,

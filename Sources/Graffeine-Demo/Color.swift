@@ -18,10 +18,6 @@ extension UIColor {
         return UIColor(named: "Lavender")!
     }
 
-    static var ocean: UIColor {
-        return UIColor(named: "Ocean")!
-    }
-
     static var unleaded: UIColor {
         return UIColor(named: "Unleaded")!
     }
