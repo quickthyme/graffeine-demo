@@ -17,7 +17,6 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gl-VE-PtP" userLabel="LeftGutterGraffeineView" customClass="GraffeineView" customModule="Graffeine">
                         <rect key="frame" x="0.0" y="0.0" width="64" height="260"/>
-                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="64" id="fwi-ZY-DXL"/>
                         </constraints>
@@ -30,7 +29,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyh-7h-lV9" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
                                 <rect key="frame" x="0.0" y="0.0" width="350" height="260"/>
-                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="950" constant="350" id="EBL-Cl-hcv"/>
                                 </constraints>
@@ -39,7 +37,6 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gyh-7h-lV9" firstAttribute="top" secondItem="clC-1u-n7k" secondAttribute="top" id="Dje-n9-zrg"/>
                             <constraint firstItem="gyh-7h-lV9" firstAttribute="leading" secondItem="clC-1u-n7k" secondAttribute="leading" id="Exm-wm-QcC"/>

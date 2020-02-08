@@ -23,11 +23,21 @@ class TooLowForZeroConfig: GraffeineViewConfig {
 
             GraffeineHorizontalLabelLayer(id: ID.topGutter, height: 16, region: .topGutter),
 
-            GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 16, region: .rightGutter),
+            GraffeineVerticalLabelLayer(id: ID.rightGutter, width: 32, region: .rightGutter)
+                .apply ({
+                    $0.insets = UIEdgeInsets(top: -6, left: 0, bottom: -5, right: 0)
+                    $0.rowMargin = unitMargin
+                    $0.unitText.colors = [.label]
+                    $0.unitText.fontSize = 11
+                    $0.labelAlignment.horizontal = .left
+                    $0.labelAlignment.vertical = .centerTopBottom
+                    $0.labelPadding.horizontal = 6.0
+                    $0.data = GraffeineData(labels: [" ", "0", "-10"])
+                }),
 
             GraffeineHorizontalLabelLayer(id: ID.bottomGutter, height: 16, region: .bottomGutter),
 
-            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 50, region: .leftGutter)
+            GraffeineVerticalLabelLayer(id: ID.leftGutter, width: 32, region: .leftGutter)
                 .apply ({
                     $0.insets = UIEdgeInsets(top: -6, left: 0, bottom: -5, right: 0)
                     $0.rowMargin = unitMargin
