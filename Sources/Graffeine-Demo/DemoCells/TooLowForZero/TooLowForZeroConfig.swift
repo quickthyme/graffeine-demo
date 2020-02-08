@@ -54,19 +54,21 @@ class TooLowForZeroConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.unleaded]
                     $0.unitLine.thickness = 0.1
                     $0.selection.isEnabled = true
-                    $0.selection.fill.color = .unleaded
+                    $0.selection.fill.color = .systemGray5
+                    $0.selection.line.color = .label
+                    $0.selection.line.thickness = 0.2
                 }),
 
             GraffeineHorizontalLabelLayer(id: ID.barLabel, height: 26, region: .main)
                 .apply ({
                     $0.insets = barLayerInsets
                     $0.unitColumn.margin = unitMargin
-                    $0.unitText.colors = [.label]
+                    $0.unitText.colors = [.inverseLabel]
                     $0.unitText.fontSize = 9
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
+                    $0.insets = UIEdgeInsets(top: 0, left: 16, bottom: 12, right: 16)
                     $0.selection.text.color = .label
-                    $0.insets = UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
                 }),
 
             GraffeineGridLineLayer(id: ID.fgGrid)

@@ -49,14 +49,16 @@ to a line graph.
 
 ![sample_6](docs/sample_6.png)
 
-**Pie Slices** demonstrates an interactive pie chart.
+**Pie Slices** demonstrates an interactive pie chart. (Also included are
+demonstrations for donuts and techniques for zooming.
 
 <br />
 
 
 ![sample_7](docs/sample_7.png)
 
-**Candlestick** features a candlestick graph with randomly-generated data.
+**Candlestick** features a randomly-generated, interactive candlestick chart.
+Single-axis scrolling and resizing.
  
  <br />
 
@@ -71,5 +73,12 @@ to a line graph.
 ![sample_9](docs/sample_9.png)
 
 **Area Fill** demonstrates a multi-line graph that includes area fill.
+ 
+ <br />
+
+
+![sample_10](docs/sample_10.png)
+
+**Too Low For Zero** demonstrates using a bar graph with negative values.
  
  <br />

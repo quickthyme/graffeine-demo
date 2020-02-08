@@ -32,12 +32,6 @@ class TooLowForZeroCell: UITableViewCell, DemoCell {
             : nil
     }
 
-    func barLabelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
-        return (animated)
-            ? GraffeineAnimation.Data.Label.Slide(duration: 0.88, timing: .easeInEaseOut)
-            : nil
-    }
-
     var currentValues: [Double?] = []
 
     func generateNewValues(_ count: Int) -> [Double?] {
@@ -51,22 +45,40 @@ class TooLowForZeroCell: UITableViewCell, DemoCell {
     }
 
     func applyData(animated: Bool) {
-        if currentValues.isEmpty { currentValues = generateNewValues(20) }
+        if currentValues.isEmpty { currentValues = generateNewValues(24) }
+
         let labels: [String] = currentValues.map { ($0 == nil) ? "" : "\(Int($0!))" }
-        let colors: [UIColor] = currentValues.map { ($0 ?? 0 < 0) ? .systemRed : .systemBlue }
+
+        let colors: [UIColor] = currentValues.map { ($0 ?? 0 < 0)
+            ? .systemRed
+            : .systemBlue
+        }
+
+        let labelColors: [UIColor] = currentValues.map {
+            let val = $0 ?? 0
+            switch true {
+            case (val < 0): return .systemRed
+            case (val > 0): return .inverseLabel
+            default:    return .label
+            }
+        }
+
         let data = GraffeineData(valueMax: 10,
                                  valueMin: -10,
                                  valuesHi: currentValues,
                                  labels: labels,
                                  selectedIndex: selectedIndex)
 
-        graffeineView.layer(id: LayerID.bar)!
+        (graffeineView.layer(id: LayerID.bar) as? GraffeineBarLayer)?
             .apply({
                 $0.unitFill.colors = colors
                 $0.setData(data, animator: barAnimator(animated))
             })
 
-        graffeineView.layer(id: LayerID.barLabel)!
-            .setData(data, animator: barLabelAnimator(animated))
+        (graffeineView.layer(id: LayerID.barLabel) as? GraffeineHorizontalLabelLayer)?
+            .apply({
+                $0.unitText.colors = labelColors
+                $0.data = data
+            })
     }
 }
