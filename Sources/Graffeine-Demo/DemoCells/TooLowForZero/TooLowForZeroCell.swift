@@ -1,16 +1,16 @@
 import UIKit
 import Graffeine
 
-class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
+class TooLowForZeroCell: UITableViewCell, DemoCell {
 
-    typealias LayerID = VerticalDescendingBarsConfig.ID
+    typealias LayerID = TooLowForZeroConfig.ID
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
     @IBOutlet weak var reloadButton: UIButton!
 
     @IBAction func reload(_ sender: UIButton?) {
-        self.dataSetIndex = (self.dataSetIndex + 1) % self.dataSets.count
+        self.currentValues = []
         self.applyData(animated: true)
     }
 
@@ -38,12 +38,11 @@ class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
             : nil
     }
 
-    let dataSets: [[Double?]] = [
-        [8, 7, 6, 5, 4, 3, 2,  1],
-        [ 1, 2, 3, 4, 5, 6, 7, 8]
-    ]
+    var currentValues: [Double?] = []
 
-    var dataSetIndex: Int = 0
+    func generateNewValues(_ count: Int) -> [Double?] {
+        return (0..<count).map { _ in return Double(Int.random(in: -10...10)) }
+    }
 
     var selectedIndex: Int? = nil
 
@@ -52,16 +51,20 @@ class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
     }
 
     func applyData(animated: Bool) {
-        let valuesHi: [Double?] = dataSets[dataSetIndex]
-        let data = GraffeineData(valuesHi: valuesHi,
-                                 labels: valuesHi.map { ($0 == nil) ? "?" : "\(Int($0!))" },
+        if currentValues.isEmpty { currentValues = generateNewValues(20) }
+        let labels: [String] = currentValues.map { ($0 == nil) ? "" : "\(Int($0!))" }
+        let colors: [UIColor] = currentValues.map { ($0 ?? 0 < 0) ? .systemRed : .systemBlue }
+        let data = GraffeineData(valueMax: 10,
+                                 valueMin: -10,
+                                 valuesHi: currentValues,
+                                 labels: labels,
                                  selectedIndex: selectedIndex)
 
-        graffeineView.layer(id: LayerID.bottomGutter)?
-            .setData(data, animator: nil)
-
         graffeineView.layer(id: LayerID.bar)!
-            .setData(data, animator: barAnimator(animated))
+            .apply({
+                $0.unitFill.colors = colors
+                $0.setData(data, animator: barAnimator(animated))
+            })
 
         graffeineView.layer(id: LayerID.barLabel)!
             .setData(data, animator: barLabelAnimator(animated))

@@ -14,10 +14,6 @@ extension UIColor {
         return UIColor(named: "InverseLabel")!
     }
 
-    static var lavender: UIColor {
-        return UIColor(named: "Lavender")!
-    }
-
     static var unleaded: UIColor {
         return UIColor(named: "Unleaded")!
     }

@@ -70,6 +70,9 @@
 		DCC1129923E64C0600E0C1B8 /* DonutWedgesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1129523E64BCB00E0C1B8 /* DonutWedgesData.swift */; };
 		DCC1129A23E64C0600E0C1B8 /* DonutWedgesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC1129623E64BCB00E0C1B8 /* DonutWedgesCell.xib */; };
 		DCC1129B23E64C0600E0C1B8 /* DonutWedgesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1129723E64BCC00E0C1B8 /* DonutWedgesConfig.swift */; };
+		DCEFD74D23EE1CDA003EE53A /* TooLowForZeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEFD74B23EE1C85003EE53A /* TooLowForZeroCell.swift */; };
+		DCEFD74E23EE1CDA003EE53A /* TooLowForZeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCEFD74A23EE1C85003EE53A /* TooLowForZeroCell.xib */; };
+		DCEFD74F23EE1CDA003EE53A /* TooLowForZeroConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEFD74C23EE1C85003EE53A /* TooLowForZeroConfig.swift */; };
 		DCFEF68A23ED1525004BB48A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFEF68823ED1524004BB48A /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +175,9 @@
 		DCC1129723E64BCC00E0C1B8 /* DonutWedgesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutWedgesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesCell.swift; sourceTree = "<group>"; };
+		DCEFD74A23EE1C85003EE53A /* TooLowForZeroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TooLowForZeroCell.xib; sourceTree = "<group>"; };
+		DCEFD74B23EE1C85003EE53A /* TooLowForZeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooLowForZeroCell.swift; sourceTree = "<group>"; };
+		DCEFD74C23EE1C85003EE53A /* TooLowForZeroConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooLowForZeroConfig.swift; sourceTree = "<group>"; };
 		DCFEF68823ED1524004BB48A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -415,6 +421,7 @@
 				DC1B827C23DFAA52005E379E /* ProgressIndicators */,
 				DC7F220D23C7BF70009629DD /* RedGreenLines */,
 				DC2FA26723CE8F9F00E88807 /* Scatterplot */,
+				DCEFD74723EE1C46003EE53A /* TooLowForZero */,
 				DC7F21EC23C6E56A009629DD /* VerticalDescendingBars */,
 			);
 			path = DemoCells;
@@ -451,6 +458,16 @@
 				DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */,
 			);
 			path = PieSlices;
+			sourceTree = "<group>";
+		};
+		DCEFD74723EE1C46003EE53A /* TooLowForZero */ = {
+			isa = PBXGroup;
+			children = (
+				DCEFD74B23EE1C85003EE53A /* TooLowForZeroCell.swift */,
+				DCEFD74A23EE1C85003EE53A /* TooLowForZeroCell.xib */,
+				DCEFD74C23EE1C85003EE53A /* TooLowForZeroConfig.swift */,
+			);
+			path = TooLowForZero;
 			sourceTree = "<group>";
 		};
 		DCF3C78223C699B900F5F92F /* Frameworks */ = {
@@ -583,6 +600,7 @@
 				DC10F2DA23E2AF17001769B2 /* HorizontalGroupedBarsCell.xib in Resources */,
 				DC10F2E223E2AF3A001769B2 /* VerticalDescendingBarsCell.xib in Resources */,
 				DCC1128A23E634C300E0C1B8 /* Bars.storyboard in Resources */,
+				DCEFD74E23EE1CDA003EE53A /* TooLowForZeroCell.xib in Resources */,
 				DCC1128B23E634C800E0C1B8 /* Lines.storyboard in Resources */,
 				DC7F222923C860C4009629DD /* LICENSE in Resources */,
 			);
@@ -643,6 +661,8 @@
 				DC7F21DC23C6E014009629DD /* VerticalDescendingBarsCell.swift in Sources */,
 				DCC1129923E64C0600E0C1B8 /* DonutWedgesData.swift in Sources */,
 				DC7F21EE23C6E6EB009629DD /* DemoCell.swift in Sources */,
+				DCEFD74F23EE1CDA003EE53A /* TooLowForZeroConfig.swift in Sources */,
+				DCEFD74D23EE1CDA003EE53A /* TooLowForZeroCell.swift in Sources */,
 				DCC1128D23E634C800E0C1B8 /* LinesViewController+CellID.swift in Sources */,
 				DC1B828A23E01AD9005E379E /* CandlestickGutterConfig.swift in Sources */,
 			);

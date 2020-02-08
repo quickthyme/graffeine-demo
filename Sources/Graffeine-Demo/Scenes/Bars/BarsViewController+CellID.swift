@@ -6,12 +6,14 @@ extension BarsViewController {
         case Candlestick = "CandlestickCell"
         case HorizontalGroupedBars = "HorizontalGroupedBarsCell"
         case ProgressIndicators = "ProgressIndicatorsCell"
+        case TooLowForZero = "TooLowForZeroCell"
         case VerticalDescendingBars = "VerticalDescendingBarsCell"
 
         static let SectionTitle: [Self: String] = [
             .Candlestick: "Candlestick",
             .HorizontalGroupedBars: "Horizontal Grouped Bars",
             .ProgressIndicators: "Progress Indicators",
+            .TooLowForZero: "Too Low For Zero",
             .VerticalDescendingBars: "Vertical Descending Bars"
         ]
 
@@ -19,8 +21,9 @@ extension BarsViewController {
             switch (indexPath.section, indexPath.row) {
             case (0, 0): return .VerticalDescendingBars
             case (1, 0): return .HorizontalGroupedBars
-            case (2, 0): return .Candlestick
-            case (3, 0): return .ProgressIndicators
+            case (2, 0): return .TooLowForZero
+            case (3, 0): return .Candlestick
+            case (4, 0): return .ProgressIndicators
             default: return .ProgressIndicators
             }
         }
