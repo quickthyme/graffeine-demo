@@ -51,7 +51,7 @@ extension CandlestickCell {
                 let didCloseHi = ($1.close > $1.open)
                 let hi = (didCloseHi) ? $1.close : $1.open
                 let lo = (didCloseHi) ? $1.open : $1.close
-                let color: UIColor = (didCloseHi) ? .green : .red
+                let color: UIColor = (didCloseHi) ? .systemGreen : .systemRed
                 let label = "OPEN: \(formatted($1.open))"
                     + "   CLOSE: \(formatted($1.close))"
                     + "   HI: \(formatted($1.peakHi))"
