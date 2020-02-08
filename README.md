@@ -7,78 +7,122 @@
 
 iOS app demonstrating how to quickly put together charts and graphs using *[graffeine](https://github.com/quickthyme/graffeine)*.
 
-Here are a few lo-res examples:
 
+## Getting Started
+
+This application has a dependency on [graffeine](https://github.com/quickthyme/graffeine), which has been imported as a **git submodule**.
+Whenever you clone or update from the source repository, don't forget to also update the submodule using:
+
+```
+git submodule update --init
+```
+
+
+## Demo
+
+The demos are divided up into three sections, bars, lines, and circles.
+
+
+
+### Bars
+
+
+#### Descending Vertical Bars
 
 ![sample_1](docs/sample_1.png)
 
-**Descending Vertical Bars** demonstrates a simple, interactive bar graph.
+Interactive vertical bar graph.
  
 <br />
 
 
-![sample_2](docs/sample_2.png)
-
-**Red Green Lines** demonstrates a basic double line graph.
-
-<br />
-
+#### Horizontal Grouped Bars
 
 ![sample_3](docs/sample_3.png)
 
-**Horizontal Grouped Bars** demonstrates a horizontal bar graph with
-grouping.
+Horizontally displayed bar graph with grouping.
 
 <br />
 
 
-![sample_4](docs/sample_4.png)
-
-**Line Points and Smoothing** demonstrates adding line smoothing and data points
-to a line graph.
-
-<br />
-
-
-![sample_5](docs/sample_5.png)
-
-**Scatter Plot** demonstrates rendering a bubble chart.
-
-<br />
-
-
-![sample_6](docs/sample_6.png)
-
-**Pie Slices** demonstrates an interactive pie chart. (Also included are
-demonstrations for donuts and techniques for zooming.
-
-<br />
-
-
-![sample_7](docs/sample_7.png)
-
-**Candlestick** features a randomly-generated, interactive candlestick chart.
-Single-axis scrolling and resizing.
- 
- <br />
-
-
-![sample_8](docs/sample_8.png)
-
-**Progress Indicators** demonstrates simple custom progress indicators.
- 
- <br />
-
-
-![sample_9](docs/sample_9.png)
-
-**Area Fill** demonstrates a multi-line graph that includes area fill.
- 
- <br />
-
+#### Too Low For Zero
 
 ![sample_10](docs/sample_10.png)
 
-**Too Low For Zero** demonstrates using a bar graph with negative values.
+Bar graph displaying negative values.
  
- <br />
+<br />
+
+
+#### Candlestick
+
+![sample_7](docs/sample_7.png)
+
+Randomly-generated, interactive candlestick chart.
+Single-axis scrolling and resizing.
+ 
+<br />
+
+
+#### Progress Indicators
+
+![sample_8](docs/sample_8.png)
+
+How to make quick and easy custom progress indicators.
+ 
+<br />
+
+
+
+### Lines
+
+
+#### Line Points and Smoothing
+
+![sample_4](docs/sample_4.png)
+
+Demonstrates how to add smoothing (curvature) and data points to a line graph.
+
+<br />
+
+
+#### Area Fill
+
+![sample_9](docs/sample_9.png)
+
+Multi-line graph with area fill.
+ 
+<br />
+
+
+#### Red Green Lines
+
+![sample_2](docs/sample_2.png)
+
+Basic double line graph.
+
+<br />
+
+
+
+### Circles
+
+
+#### Pie Slices
+
+![sample_6](docs/sample_6.png)
+
+Interactive pie and donut charts.
+Includes examples for adding animation and zooming effects.
+
+<br />
+
+
+#### Scatter Plot
+
+![sample_5](docs/sample_5.png)
+
+Bubble chart example.
+
+<br />
+
