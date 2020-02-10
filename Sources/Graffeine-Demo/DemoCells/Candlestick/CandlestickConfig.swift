@@ -72,8 +72,8 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitAnimation.data.add(AnimationKey.barMove, barMoveAnimator)
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.5) }
-                    $0.selection.line.color = .inverseLabel
-                    $0.selection.line.thickness = 0.5
+                    $0.selection.line.color = .label
+                    $0.selection.line.thickness = 1.0
                     $0.selection.line.dashPattern = [1, 1]
                     $0.selection.animation = selectedAnimation
                 }),
