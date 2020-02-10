@@ -10,7 +10,6 @@ class TooLowForZeroConfig: GraffeineViewConfig {
 
     struct AnimationKey {
         static let bar = "bar"
-        static let barLabel = "barLabel"
     }
 
     let barColors: [UIColor] = [
@@ -20,10 +19,6 @@ class TooLowForZeroConfig: GraffeineViewConfig {
 
     var barAnimator: GraffeineBarDataAnimating {
         return GraffeineAnimation.Data.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
-    }
-
-    var barLabelAnimator: GraffeineLabelDataAnimating {
-        return GraffeineAnimation.Data.Label.Slide(duration: 0.88, timing: .easeInEaseOut)
     }
 
     required init(_ graffeineView: GraffeineView) {
@@ -91,7 +86,6 @@ class TooLowForZeroConfig: GraffeineViewConfig {
                     $0.unitText.fontSize = 9
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
-                    $0.unitAnimation.data.add(AnimationKey.bar, barAnimator)
                     $0.selection.text.color = .label
                 }),
 
