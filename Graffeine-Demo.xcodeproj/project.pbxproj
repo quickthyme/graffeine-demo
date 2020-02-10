@@ -51,6 +51,7 @@
 		DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773EF23DBD624005246BA /* CandlestickCell.swift */; };
 		DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773F023DBD624005246BA /* CandlestickConfig.swift */; };
 		DC8773F823DC24AD005246BA /* CandlestickCell+TradingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */; };
+		DCA8A04B23F0C0D0009B8831 /* RedGreenLinesCell+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8A04923F0C0D0009B8831 /* RedGreenLinesCell+Data.swift */; };
 		DCC1126E23E6155500E0C1B8 /* AreaLinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1126B23E6151900E0C1B8 /* AreaLinesCell.swift */; };
 		DCC1126F23E6155900E0C1B8 /* AreaLinesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1126D23E6151900E0C1B8 /* AreaLinesConfig.swift */; };
 		DCC1127023E6156000E0C1B8 /* AreaLinesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC1126C23E6151900E0C1B8 /* AreaLinesCell.xib */; };
@@ -154,6 +155,7 @@
 		DC8773EF23DBD624005246BA /* CandlestickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickCell.swift; sourceTree = "<group>"; };
 		DC8773F023DBD624005246BA /* CandlestickConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandlestickConfig.swift; sourceTree = "<group>"; };
 		DC8773F723DC24AD005246BA /* CandlestickCell+TradingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CandlestickCell+TradingDay.swift"; sourceTree = "<group>"; };
+		DCA8A04923F0C0D0009B8831 /* RedGreenLinesCell+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RedGreenLinesCell+Data.swift"; sourceTree = "<group>"; };
 		DCC1126B23E6151900E0C1B8 /* AreaLinesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaLinesCell.swift; sourceTree = "<group>"; };
 		DCC1126C23E6151900E0C1B8 /* AreaLinesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaLinesCell.xib; sourceTree = "<group>"; };
 		DCC1126D23E6151900E0C1B8 /* AreaLinesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaLinesConfig.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				DC7F220F23C7BF8B009629DD /* RedGreenLinesCell.swift */,
+				DCA8A04923F0C0D0009B8831 /* RedGreenLinesCell+Data.swift */,
 				DC10F2D623E2ADD8001769B2 /* RedGreenLinesCell.xib */,
 				DC7F221023C7BF8B009629DD /* RedGreenLinesConfig.swift */,
 			);
@@ -639,6 +642,7 @@
 				DC8773F223DBD8B4005246BA /* CandlestickConfig.swift in Sources */,
 				DC8773F123DBD8AA005246BA /* CandlestickCell.swift in Sources */,
 				DC1BE58623E74EAE00B5C2BF /* DetailRingsData.swift in Sources */,
+				DCA8A04B23F0C0D0009B8831 /* RedGreenLinesCell+Data.swift in Sources */,
 				DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */,
 				DCC1129823E64C0600E0C1B8 /* DonutWedgesCell.swift in Sources */,
 				DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */,

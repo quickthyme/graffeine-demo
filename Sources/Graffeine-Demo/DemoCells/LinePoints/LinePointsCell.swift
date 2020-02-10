@@ -4,7 +4,8 @@ import Graffeine
 class LinePointsCell: UITableViewCell, DemoCell {
 
     typealias LayerID = LinePointsConfig.ID
-    
+    typealias AnimationKey = LinePointsConfig.AnimationKey
+
     @IBOutlet weak var graffeineView: GraffeineView!
 
     @IBOutlet weak var reloadButton: UIButton!
@@ -26,7 +27,7 @@ class LinePointsCell: UITableViewCell, DemoCell {
     let dataSets: [[Double]] = [
         [5, 3, 4, 2, 1, 2, 6],
         [34, 21, 13, 8, 5, 3, 2, 1, 1],
-        [2, 2, 3, 4.5, 4, 4.5, 3, 2, 2],
+        [2, 4, 3, 5, 4, 5, 3, 4, 2],
         [3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6]
     ]
 
@@ -49,34 +50,21 @@ class LinePointsCell: UITableViewCell, DemoCell {
     }
 
     func applyDataAnimated() {
-        graffeineView.layer(id: LayerID.line)?.setData(lineAndPointData, animator:
-            GraffeineAnimation.Data.Line.Morph(duration: 2.0,
-                                               timing: .easeInEaseOut))
-
-        let pointAnimator = (selectedIndex == nil)
-                ? GraffeineAnimation.Data.Plot.FadeIn(duration: 2.0,
-                                                      timing: .easeInEaseOut,
-                                                      delayRatio: 0.99)
-                : nil
-
-        let labelAnimator = (selectedIndex == nil)
-                ? GraffeineAnimation.Data.PlotLabel.FadeIn(duration: 2.0,
-                                                           timing: .easeInEaseOut,
-                                                           delayRatio: 0.99)
-                : nil
+        graffeineView.layer(id: LayerID.line)?
+            .setData(lineAndPointData, animationKey: AnimationKey.line)
 
         graffeineView.layer(id: LayerID.point)?
-            .setData(lineAndPointData, animator: pointAnimator)
+            .setData(lineAndPointData, animationKey: AnimationKey.point)
 
         graffeineView.layer(id: LayerID.pointLabel)?
-            .setData(lineAndPointData, animator: labelAnimator)
+            .setData(lineAndPointData, animationKey: AnimationKey.pointLabel)
     }
 
     func applySelection() {
         graffeineView.layer(id: LayerID.point)?
-            .setData(lineAndPointData, animator: nil)
+            .setData(lineAndPointData, animationKey: nil)
 
         graffeineView.layer(id: LayerID.pointLabel)?
-            .setData(lineAndPointData, animator: nil)
+            .setData(lineAndPointData, animationKey: nil)
     }
 }

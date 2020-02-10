@@ -8,10 +8,23 @@ class TooLowForZeroConfig: GraffeineViewConfig {
         case bgGrid, fgGrid, bar, barLabel
     }
 
+    struct AnimationKey {
+        static let bar = "bar"
+        static let barLabel = "barLabel"
+    }
+
     let barColors: [UIColor] = [
         .systemRed, .systemOrange, .systemYellow, .systemGreen,
         .systemTeal, .systemBlue, .systemIndigo, .systemPurple
     ]
+
+    var barAnimator: GraffeineBarDataAnimating {
+        return GraffeineAnimation.Data.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
+    }
+
+    var barLabelAnimator: GraffeineLabelDataAnimating {
+        return GraffeineAnimation.Data.Label.Slide(duration: 0.88, timing: .easeInEaseOut)
+    }
 
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
@@ -63,6 +76,7 @@ class TooLowForZeroConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.colors = [.unleaded]
                     $0.unitLine.thickness = 0.1
+                    $0.unitAnimation.data.add(AnimationKey.bar, barAnimator)
                     $0.selection.isEnabled = true
                     $0.selection.fill.color = .systemGray5
                     $0.selection.line.color = .label
@@ -71,13 +85,13 @@ class TooLowForZeroConfig: GraffeineViewConfig {
 
             GraffeineHorizontalLabelLayer(id: ID.barLabel, height: 26, region: .main)
                 .apply ({
-                    $0.insets = barLayerInsets
+                    $0.insets = UIEdgeInsets(top: 0, left: 16, bottom: 12, right: 16)
                     $0.unitColumn.margin = unitMargin
                     $0.unitText.colors = [.inverseLabel]
                     $0.unitText.fontSize = 9
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
-                    $0.insets = UIEdgeInsets(top: 0, left: 16, bottom: 12, right: 16)
+                    $0.unitAnimation.data.add(AnimationKey.bar, barAnimator)
                     $0.selection.text.color = .label
                 }),
 

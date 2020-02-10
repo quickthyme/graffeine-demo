@@ -8,6 +8,14 @@ class AreaLinesConfig: GraffeineViewConfig {
         case line1, line2, line3
     }
 
+    struct AnimationKey {
+        static let lineMorph = "lineMorph"
+    }
+
+    var lineMorphAnimator: GraffeineLineDataAnimating {
+        return GraffeineAnimation.Data.Line.Morph(duration: 1.0, timing: .easeInEaseOut)
+    }
+
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
 
@@ -27,6 +35,7 @@ class AreaLinesConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 1.0
                     $0.unitLine.join = .bevel
+                    $0.unitAnimation.data.add(AnimationKey.lineMorph, lineMorphAnimator)
                     $0.selection.line.thickness = 2.0
                     $0.selection.fill.color = UIColor.systemBlue.modifiedByAdding(alpha: -0.35)
                     $0.selection.shadow.opacity = selectionShadowOpacity
@@ -42,6 +51,7 @@ class AreaLinesConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 1.0
                     $0.unitLine.join = .bevel
+                    $0.unitAnimation.data.add(AnimationKey.lineMorph, lineMorphAnimator)
                     $0.selection.line.thickness = 2.0
                     $0.selection.fill.color = UIColor.systemGreen.modifiedByAdding(alpha: -0.35)
                     $0.selection.shadow.opacity = selectionShadowOpacity
@@ -57,6 +67,7 @@ class AreaLinesConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 1.0
                     $0.unitLine.join = .bevel
+                    $0.unitAnimation.data.add(AnimationKey.lineMorph, lineMorphAnimator)
                     $0.selection.line.thickness = 2.0
                     $0.selection.fill.color = UIColor.systemYellow.modifiedByAdding(alpha: -0.35)
                     $0.selection.shadow.opacity = selectionShadowOpacity

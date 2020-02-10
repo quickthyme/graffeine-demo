@@ -5,6 +5,7 @@ class CandlestickCell: UITableViewCell, DemoCell {
 
     typealias LayerID = CandlestickConfig.ID
     typealias GutterLayerID = CandlestickGutterConfig.ID
+    typealias AnimationKey = CandlestickConfig.AnimationKey
 
     @IBOutlet weak var leftGutterView: GraffeineView!
     @IBOutlet weak var graffeineView: GraffeineView!
@@ -59,18 +60,6 @@ class CandlestickCell: UITableViewCell, DemoCell {
         scrollView.maximumZoomScale = 1.0
         scrollView.zoomScale = 1.0
         self.widthConstraint.constant = maxZoomWidth / 2
-    }
-
-    func labelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
-        return (animated)
-            ? GraffeineAnimation.Data.Label.Slide(duration: 0.8, timing: .easeOut)
-            : nil
-    }
-
-    func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
-        return (animated)
-            ? GraffeineAnimation.Data.Bar.Grow(duration: 0.8, timing: .easeOut)
-            : nil
     }
 
     var dataSet: [TradingDay] {
@@ -130,19 +119,23 @@ class CandlestickCell: UITableViewCell, DemoCell {
                                      valuesLo: lanes.peakLo.map { $0 - lowestVal },
                                      selectedIndex: selectedIndex)
 
+        let animationKeys = (animated)
+            ? (bar: AnimationKey.barMove, label: AnimationKey.labelMove)
+            : nil
+
         leftGutterView.layer(id: GutterLayerID.mainGutter)?.data = gutterLabelData
 
         graffeineView.layer(id: LayerID.wick)?
-            .setData( wickData, animator: barAnimator(animated) )
+            .setData( wickData, animationKey: animationKeys?.bar )
 
         graffeineView.layer(id: LayerID.candle)?
             .unitFill.colors = lanes.colors
 
         graffeineView.layer(id: LayerID.candle)?
-            .setData( candleData, animator: barAnimator(animated) )
+            .setData( candleData, animationKey: animationKeys?.bar )
 
         graffeineView.layer(id: LayerID.candleLabel)?
-            .setData( candleData, animator: labelAnimator(animated) )
+            .setData( candleData, animationKey: animationKeys?.label )
 
         if let selectedIndex = self.selectedIndex {
             infoLabel.text = lanes.labels[selectedIndex]

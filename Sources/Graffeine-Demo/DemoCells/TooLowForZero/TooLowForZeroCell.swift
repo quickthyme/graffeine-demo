@@ -4,6 +4,7 @@ import Graffeine
 class TooLowForZeroCell: UITableViewCell, DemoCell {
 
     typealias LayerID = TooLowForZeroConfig.ID
+    typealias AnimationKey = TooLowForZeroConfig.AnimationKey
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
@@ -69,10 +70,12 @@ class TooLowForZeroCell: UITableViewCell, DemoCell {
                                  labels: labels,
                                  selectedIndex: selectedIndex)
 
+        let animationKeyBar = (animated) ? AnimationKey.bar : nil
+
         (graffeineView.layer(id: LayerID.bar) as? GraffeineBarLayer)?
             .apply({
                 $0.unitFill.colors = colors
-                $0.setData(data, animator: barAnimator(animated))
+                $0.setData(data, animationKey: animationKeyBar)
             })
 
         (graffeineView.layer(id: LayerID.barLabel) as? GraffeineHorizontalLabelLayer)?

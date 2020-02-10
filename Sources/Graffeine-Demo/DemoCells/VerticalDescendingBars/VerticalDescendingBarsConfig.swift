@@ -8,6 +8,19 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
         case grid, bar, barLabel
     }
 
+    struct AnimationKey {
+        static let bar = "bar"
+        static let barLabel = "barLabel"
+    }
+
+    var barAnimator: GraffeineBarDataAnimating {
+        return GraffeineAnimation.Data.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
+    }
+
+    var barLabelAnimator: GraffeineLabelDataAnimating {
+        return GraffeineAnimation.Data.Label.Slide(duration: 0.88, timing: .easeInEaseOut)
+    }
+
     let barColors: [UIColor] = [
         .systemRed, .systemOrange, .systemYellow, .systemGreen,
         .systemTeal, .systemBlue, .systemIndigo, .systemPurple
@@ -61,12 +74,13 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
 
             GraffeineBarLayer(id: ID.bar)
                 .apply ({
+                    $0.roundedEnds = .hi(6)
                     $0.insets = barLayerInsets
                     $0.unitColumn.margin = unitMargin
                     $0.unitFill.colors = barColors
                     $0.unitLine.colors = [.unleaded]
                     $0.unitLine.thickness = 0.1
-                    $0.roundedEnds = .hi(6)
+                    $0.unitAnimation.data.add(AnimationKey.bar, barAnimator)
                     $0.selection.isEnabled = true
                     $0.selection.fill.color = .unleaded
                 }),
@@ -79,6 +93,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .top
                     $0.labelPadding.vertical = 4
+                    $0.unitAnimation.data.add(AnimationKey.barLabel, barLabelAnimator)
                 })
         ]
     }

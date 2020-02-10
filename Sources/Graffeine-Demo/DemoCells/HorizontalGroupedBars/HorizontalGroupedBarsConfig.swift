@@ -8,6 +8,19 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
         case grid, bars1, bars2, barLabel1, barLabel2
     }
 
+    struct AnimationKey {
+        static let bar = "bar"
+        static let label = "label"
+    }
+
+    var barAnimator: GraffeineBarDataAnimating {
+        GraffeineAnimation.Data.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
+    }
+
+    var barLabelAnimator: GraffeineLabelDataAnimating {
+        GraffeineAnimation.Data.Label.Slide(duration: 0.88, timing: .easeInEaseOut)
+    }
+
     required init(_ graffeineView: GraffeineView) {
         super.init(graffeineView)
 
@@ -58,6 +71,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.unitFill.colors = [.systemOrange]
                     $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 0.1
+                    $0.unitAnimation.data.add(AnimationKey.bar, barAnimator)
                 }),
 
             GraffeineBarLayer(id: ID.bars2)
@@ -69,6 +83,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.unitFill.colors = [.systemTeal]
                     $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 0.1
+                    $0.unitAnimation.data.add(AnimationKey.bar, barAnimator)
                 }),
 
             GraffeineBarLabelLayer(id: ID.barLabel1)
@@ -82,6 +97,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.labelAlignment.vertical = .center
                     $0.unitText.colors = [.inverseLabel]
                     $0.unitText.fontSize = 8
+                    $0.unitAnimation.data.add(AnimationKey.label, barLabelAnimator)
                 }),
 
             GraffeineBarLabelLayer(id: ID.barLabel2)
@@ -95,6 +111,7 @@ class HorizontalGroupedBarsConfig: GraffeineViewConfig {
                     $0.labelAlignment.vertical = .center
                     $0.unitText.colors = [.inverseLabel]
                     $0.unitText.fontSize = 8
+                    $0.unitAnimation.data.add(AnimationKey.label, barLabelAnimator)
                 })
         ]
     }

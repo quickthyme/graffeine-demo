@@ -4,20 +4,22 @@ import Graffeine
 class ProgressIndicatorsCell: UITableViewCell, DemoCell {
 
     typealias BarID = ProgressIndicatorsConfigBar.ID
+    typealias BarAnimation = ProgressIndicatorsConfigBar.AnimationKey
     typealias RadID = ProgressIndicatorsConfigRad.ID
+    typealias RadAnimation = ProgressIndicatorsConfigRad.AnimationKey
 
     @IBOutlet weak var progBar: GraffeineView!
     @IBOutlet weak var progRad: GraffeineView!
 
     @IBAction func wait1(_ sender: AnyObject?) {
         progRad.layer(id: RadID.progress)!.setData(GraffeineData(valueMax: 100, valuesHi: [0]),
-                                                   animator: radAnimator(0.22))
+                                                   animationKey: RadAnimation.fast)
         delay(0.5, self.updateProgRad(100))
     }
 
     @IBAction func wait2(_ sender: AnyObject?) {
         progBar.layer(id: BarID.progress)!.setData(GraffeineData(valueMax: 100, valuesHi: [0]),
-                                                   animator: barAnimator(0.22))
+                                                   animationKey: BarAnimation.fast)
         delay(0.5, self.updateProgBar(100))
     }
 
@@ -43,11 +45,11 @@ class ProgressIndicatorsCell: UITableViewCell, DemoCell {
     func updateProgBar(_ val: Double) {
         progBar.layer(id: BarID.progress)!.mask?.bounds = progBar.layer(id: BarID.track)!.bounds
         let data = GraffeineData(valueMax: 100, valuesHi: [val])
-        progBar.layer(id: BarID.progress)!.setData(data, animator: barAnimator(2.6))
+        progBar.layer(id: BarID.progress)!.setData(data, animationKey: BarAnimation.slow)
     }
 
     func updateProgRad(_ val: Double) {
         let data = GraffeineData(valueMax: 100, valuesHi: [val])
-        progRad.layer(id: RadID.progress)!.setData(data, animator: radAnimator(2.6))
+        progRad.layer(id: RadID.progress)!.setData(data, animationKey: RadAnimation.slow)
     }
 }

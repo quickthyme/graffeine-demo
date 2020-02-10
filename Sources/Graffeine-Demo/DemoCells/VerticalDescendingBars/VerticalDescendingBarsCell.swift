@@ -4,6 +4,7 @@ import Graffeine
 class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
 
     typealias LayerID = VerticalDescendingBarsConfig.ID
+    typealias AnimationKey = VerticalDescendingBarsConfig.AnimationKey
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
@@ -26,18 +27,6 @@ class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
         }
     }
 
-    func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
-        return (animated)
-            ? GraffeineAnimation.Data.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
-            : nil
-    }
-
-    func barLabelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
-        return (animated)
-            ? GraffeineAnimation.Data.Label.Slide(duration: 0.88, timing: .easeInEaseOut)
-            : nil
-    }
-
     let dataSets: [[Double?]] = [
         [8, 7, 6, 5, 4, 3, 2,  1],
         [ 1, 2, 3, 4, 5, 6, 7, 8]
@@ -57,13 +46,12 @@ class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
                                  labels: valuesHi.map { ($0 == nil) ? "?" : "\(Int($0!))" },
                                  selectedIndex: selectedIndex)
 
-        graffeineView.layer(id: LayerID.bottomGutter)?
-            .setData(data, animator: nil)
+        let animationKeys = (animated)
+            ? (bar: AnimationKey.bar, label: AnimationKey.barLabel)
+            : nil
 
-        graffeineView.layer(id: LayerID.bar)!
-            .setData(data, animator: barAnimator(animated))
-
-        graffeineView.layer(id: LayerID.barLabel)!
-            .setData(data, animator: barLabelAnimator(animated))
+        graffeineView.layer(id: LayerID.bottomGutter)?.setData(data, animationKey: nil)
+        graffeineView.layer(id: LayerID.bar)!.setData(data, animationKey: animationKeys?.bar)
+        graffeineView.layer(id: LayerID.barLabel)!.setData(data, animationKey: animationKeys?.label)
     }
 }

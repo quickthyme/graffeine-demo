@@ -7,6 +7,50 @@ class PieSlicesConfig: GraffeineViewConfig {
         case pie, labels, labelLines
     }
 
+    struct AnimationKey {
+        static let segmentAuto  = "segmentAuto"
+        static let segmentMorph = "segmentMorph"
+        static let segmentSpin  = "segmentSpin"
+        static let lineFadeIn   = "lineFadeIn"
+        static let lineMove     = "lineMove"
+        static let labelFadeIn  = "labelFadeIn"
+        static let labelMove    = "labelMove"
+    }
+
+    var animatorSegAuto: GraffeineRadialSegmentDataAnimating {
+        return GraffeineAnimation.Data.RadialSegment.Automatic(duration: 1.2, timing: .easeInEaseOut)
+    }
+
+    var animatorSegMorph: GraffeineRadialSegmentDataAnimating {
+        return GraffeineAnimation.Data.RadialSegment.Morph(duration: 0.22, timing: .linear)
+    }
+
+    var animatorSegSpin: GraffeineRadialSegmentDataAnimating {
+        return GraffeineAnimation.Data.RadialSegment.Spin(duration: 1.2, timing: .easeInEaseOut)
+    }
+
+    var animatorLineFadeIn: GraffeineRadialLineDataAnimating {
+        return GraffeineAnimation.Data.RadialLine.FadeIn(duration: 1.2,
+                                                         timing: .easeInEaseOut,
+                                                         delayRatio: 0.94)
+    }
+
+    var animatorLineMove: GraffeineRadialLineDataAnimating {
+        return GraffeineAnimation.Data.RadialLine.Move(duration: 0.22, timing: .linear)
+    }
+
+    var animatorLabelFadeIn: GraffeineRadialLabelDataAnimating {
+        return GraffeineAnimation.Data.RadialLabel.FadeIn(duration: 1.2,
+                                                          timing: .easeInEaseOut,
+                                                          delayRatio: 0.94)
+    }
+
+    var animatorLabelMove: GraffeineRadialLabelDataAnimating {
+        return GraffeineAnimation.Data.RadialLabel.Move(duration: 0.22,
+                                                        timing: .linear,
+                                                        delayRatio: 0)
+    }
+
     let colors: [UIColor] = [
         UIColor.white.modifiedByAdding(alpha: -0.44),
         UIColor.red.modifiedByAdding(alpha: -0.44),
@@ -34,6 +78,9 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.unitFill.colors = colors
                     $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 0.25
+                    $0.unitAnimation.data.add(AnimationKey.segmentAuto, animatorSegAuto)
+                    $0.unitAnimation.data.add(AnimationKey.segmentMorph, animatorSegMorph)
+                    $0.unitAnimation.data.add(AnimationKey.segmentSpin, animatorSegSpin)
                     $0.shadowColor = UIColor.black.cgColor
                     $0.shadowOpacity = 0.4
                     $0.shadowRadius = 2.0
@@ -52,6 +99,8 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.unitText.fontSize = 13
                     $0.labelAlignment.horizontal = .centerLeftRight
                     $0.labelAlignment.vertical = .centerTopBottom
+                    $0.unitAnimation.data.add(AnimationKey.labelFadeIn, animatorLabelFadeIn)
+                    $0.unitAnimation.data.add(AnimationKey.labelMove, animatorLabelMove)
                     $0.selection.radial.outerDiameter = .percentage(0.78)
                 }),
 
@@ -64,6 +113,8 @@ class PieSlicesConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.systemGray]
                     $0.unitLine.thickness = 1.5
                     $0.unitLine.dashPattern = [1, 1]
+                    $0.unitAnimation.data.add(AnimationKey.lineFadeIn, animatorLineFadeIn)
+                    $0.unitAnimation.data.add(AnimationKey.lineMove, animatorLineMove)
                     $0.selection.radial.outerDiameter = .percentage(0.76)
                     $0.selection.radial.innerDiameter = .percentage(0.66)
                 })

@@ -4,6 +4,7 @@ import Graffeine
 class PieSlicesCell: UITableViewCell, DemoCell {
 
     typealias LayerID = PieSlicesConfig.ID
+    typealias AnimationKey = PieSlicesConfig.AnimationKey
 
     var data = PieSlicesData()
 
@@ -29,23 +30,11 @@ class PieSlicesCell: UITableViewCell, DemoCell {
         }
     }
 
-    func getRandomPieAnimator() -> GraffeineRadialSegmentDataAnimating {
+    func getRandomPieAnimationKey() -> String {
         switch (Int.random(in: 0...2)) {
-        case 2:  return GraffeineAnimation.Data.RadialSegment.Spin(duration: 1.2, timing: .easeInEaseOut)
-        default: return GraffeineAnimation.Data.RadialSegment.Automatic(duration: 1.2, timing: .easeInEaseOut)
+        case 2:  return AnimationKey.segmentSpin
+        default: return AnimationKey.segmentAuto
         }
-    }
-
-    func getLabelAnimator() -> GraffeineRadialLabelDataAnimating {
-        return GraffeineAnimation.Data.RadialLabel.FadeIn(duration: 1.2,
-                                                          timing: .easeInEaseOut,
-                                                          delayRatio: 0.94)
-    }
-
-    func getLineAnimator() -> GraffeineRadialLineDataAnimating {
-        return GraffeineAnimation.Data.RadialLine.FadeIn(duration: 1.2,
-                                                         timing: .easeInEaseOut,
-                                                         delayRatio: 0.94)
     }
 
     func applyData() {
@@ -58,32 +47,25 @@ class PieSlicesCell: UITableViewCell, DemoCell {
     func applyDataAnimated() {
         let newData = data.get()
         graffeineView.layer(id: LayerID.pie)?
-            .setData(newData, animator: getRandomPieAnimator())
+            .setData(newData, animationKey: getRandomPieAnimationKey())
 
         graffeineView.layer(id: LayerID.labels)?
-            .setData(newData, animator: getLabelAnimator())
+            .setData(newData, animationKey: AnimationKey.labelFadeIn)
 
         graffeineView.layer(id: LayerID.labelLines)?
-            .setData(newData, animator: getLineAnimator())
+            .setData(newData, animationKey: AnimationKey.lineFadeIn)
     }
 
     func applySelectionAnimated() {
         let newData = data.get()
-        graffeineView.layer(id: LayerID.pie)?.setData(
-            newData,
-            animator: GraffeineAnimation.Data.RadialSegment.Morph(duration: 0.22,
-                                                                  timing: .linear))
+        graffeineView.layer(id: LayerID.pie)?
+            .setData(newData, animationKey: AnimationKey.segmentMorph)
 
-        graffeineView.layer(id: LayerID.labels)?.setData(
-            newData,
-            animator: GraffeineAnimation.Data.RadialLabel.Move(duration: 0.22,
-                                                               timing: .linear,
-                                                               delayRatio: 0))
+        graffeineView.layer(id: LayerID.labels)?
+            .setData(newData, animationKey: AnimationKey.labelMove)
 
-        graffeineView.layer(id: LayerID.labelLines)?.setData(
-            newData,
-            animator: GraffeineAnimation.Data.RadialLine.Move(duration: 0.22,
-                                                              timing: .linear))
+        graffeineView.layer(id: LayerID.labelLines)?
+            .setData(newData, animationKey: AnimationKey.lineMove)
     }
 }
 

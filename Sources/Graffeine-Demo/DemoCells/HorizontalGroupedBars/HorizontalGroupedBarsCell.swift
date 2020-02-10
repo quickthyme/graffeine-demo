@@ -4,7 +4,8 @@ import Graffeine
 class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
 
     typealias LayerID = HorizontalGroupedBarsConfig.ID
-    
+    typealias AnimationKey = HorizontalGroupedBarsConfig.AnimationKey
+
     @IBOutlet weak var graffeineView: GraffeineView!
 
     @IBOutlet weak var reloadButton: UIButton!
@@ -16,18 +17,6 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    func barAnimator(_ animated: Bool) -> GraffeineBarDataAnimating? {
-        return (animated)
-            ? GraffeineAnimation.Data.Bar.Grow(duration: 0.8, timing: .easeOut)
-            : nil
-    }
-
-    func barLabelAnimator(_ animated: Bool) -> GraffeineLabelDataAnimating? {
-        return (animated)
-            ? GraffeineAnimation.Data.Label.Slide(duration: 0.8, timing: .easeOut)
-            : nil
     }
 
     let dataSets: [([Double?], [Double?])] = [
@@ -56,6 +45,10 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
                                   valuesHi: dataSets[dataSetIndex].1,
                                   labels: dataSets[dataSetIndex].1.map {"\(Int($0 ?? 0))"})
 
+        let animationKeys = (animated)
+            ? (bar: AnimationKey.bar, label: AnimationKey.label)
+            : nil
+
         graffeineView.layer(id: LayerID.leftGutter)?
             .data = GraffeineData(labels: vLabels)
 
@@ -63,15 +56,15 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
             .data = GraffeineData(labels: hLabels)
 
         graffeineView.layer(id: LayerID.bars1)?
-            .setData( data1, animator: barAnimator(animated) )
+            .setData(data1, animationKey: animationKeys?.bar)
 
         graffeineView.layer(id: LayerID.bars2)?
-            .setData( data2, animator: barAnimator(animated) )
+            .setData(data2, animationKey: animationKeys?.bar)
 
         graffeineView.layer(id: LayerID.barLabel1)?
-            .setData( data1, animator: barLabelAnimator(animated) )
+            .setData(data1, animationKey: animationKeys?.label)
 
         graffeineView.layer(id: LayerID.barLabel2)?
-            .setData( data2, animator: barLabelAnimator(animated) )
+            .setData(data2, animationKey: animationKeys?.label)
     }
 }
