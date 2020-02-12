@@ -7,11 +7,6 @@ class ProgressIndicatorsConfigRad: GraffeineViewConfig {
         case track, progress
     }
 
-    struct AnimationKey {
-        static let fast = "fast"
-        static let slow = "slow"
-    }
-
     var animatorFast: GraffeineRadialSegmentDataAnimating {
         return GraffeineAnimation.Data.RadialSegment.Automatic(duration: 0.22, timing: .linear)
     }
@@ -46,8 +41,8 @@ class ProgressIndicatorsConfigRad: GraffeineViewConfig {
                     $0.innerDiameter = .explicit(innerDiameter)
                     $0.unitFill.colors = [.systemBlue]
                     $0.data = GraffeineData.init(valueMax: 100, valuesHi: [0])
-                    $0.unitAnimation.data.add(AnimationKey.fast, animatorFast)
-                    $0.unitAnimation.data.add(AnimationKey.slow, animatorSlow)
+                    $0.unitAnimation.data.add(animator: animatorFast, for: .reload)
+                    $0.unitAnimation.data.add(animator: animatorSlow, for: .next)
                 })
         ]
     }

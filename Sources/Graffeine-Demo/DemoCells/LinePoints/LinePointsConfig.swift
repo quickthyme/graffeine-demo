@@ -8,12 +8,6 @@ class LinePointsConfig: GraffeineViewConfig {
         case hGrid, vGrid, line, point, pointLabel
     }
 
-    struct AnimationKey {
-        static let line = "line"
-        static let point = "point"
-        static let pointLabel = "label"
-    }
-
     var lineAnimator: GraffeineLineDataAnimating {
         return GraffeineAnimation.Data.Line.Morph(duration: 2.0, timing: .easeInEaseOut)
     }
@@ -57,7 +51,7 @@ class LinePointsConfig: GraffeineViewConfig {
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
                     $0.unitLine.cap  = .round
-                    $0.unitAnimation.data.add(AnimationKey.line, lineAnimator)
+                    $0.unitAnimation.data.add(animator: lineAnimator, for: .reload)
                     $0.smoothing = .catmullRom(12)
                 }),
 
@@ -69,7 +63,7 @@ class LinePointsConfig: GraffeineViewConfig {
                     $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 4.0
                     $0.diameter = .explicit(22.0)
-                    $0.unitAnimation.data.add(AnimationKey.point, pointAnimator)
+                    $0.unitAnimation.data.add(animator: pointAnimator, for: .reload)
                     $0.selection.isEnabled = true
                     $0.selection.radial.outerDiameter = .explicit(24.0)
                     $0.selection.fill.color = .label
@@ -82,7 +76,7 @@ class LinePointsConfig: GraffeineViewConfig {
                     $0.unitColumn.reducedByOne = true
                     $0.unitText.colors = [.systemRed, .systemBlue, .systemPurple]
                     $0.unitText.fontSize = 11
-                    $0.unitAnimation.data.add(AnimationKey.pointLabel, pointLabelAnimator)
+                    $0.unitAnimation.data.add(animator: pointLabelAnimator, for: .reload)
                     $0.selection.text.color = .inverseLabel
                 })
         ]

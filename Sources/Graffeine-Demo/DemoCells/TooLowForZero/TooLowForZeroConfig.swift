@@ -8,14 +8,22 @@ class TooLowForZeroConfig: GraffeineViewConfig {
         case bgGrid, fgGrid, bar, barLabel
     }
 
-    struct AnimationKey {
-        static let bar = "bar"
+    static func barColors(values: [Double?]) -> [UIColor] {
+        return values.map {
+            ($0 ?? 0 < 0) ? .systemRed : .systemBlue
+        }
     }
 
-    let barColors: [UIColor] = [
-        .systemRed, .systemOrange, .systemYellow, .systemGreen,
-        .systemTeal, .systemBlue, .systemIndigo, .systemPurple
-    ]
+    static func labelColors(values: [Double?]) -> [UIColor] {
+        return values.map {
+            let val = $0 ?? 0
+            switch true {
+            case (val < 0): return .systemRed
+            case (val > 0): return .inverseLabel
+            default:    return .label
+            }
+        }
+    }
 
     var barAnimator: GraffeineBarDataAnimating {
         return GraffeineAnimation.Data.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
@@ -71,7 +79,7 @@ class TooLowForZeroConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.colors = [.unleaded]
                     $0.unitLine.thickness = 0.1
-                    $0.unitAnimation.data.add(AnimationKey.bar, barAnimator)
+                    $0.unitAnimation.data.add(animator: barAnimator, for: .reload)
                     $0.selection.isEnabled = true
                     $0.selection.fill.color = .systemGray5
                     $0.selection.line.color = .label
@@ -96,5 +104,18 @@ class TooLowForZeroConfig: GraffeineViewConfig {
                     $0.data = GraffeineData(valueMax: 10, valuesHi: [0, 5, 10])
                 })
         ]
+
+        graffeineView.onLayerDataInput = { layer, layerData in
+            switch (layer.id as! ID) {
+            case .bar:
+                (layer as? GraffeineBarLayer)?.unitFill.colors =
+                    Self.barColors(values: layerData.data.values.hi)
+            case .barLabel:
+                (layer as? GraffeineHorizontalLabelLayer)?.unitText.colors =
+                    Self.labelColors(values: layerData.data.values.hi)
+            default: break
+            }
+            return false
+        }
     }
 }

@@ -7,11 +7,6 @@ class ProgressIndicatorsConfigBar: GraffeineViewConfig {
         case track, progress
     }
 
-    struct AnimationKey {
-        static let fast = "fast"
-        static let slow = "slow"
-    }
-
     var animatorFast: GraffeineBarDataAnimating {
         return GraffeineAnimation.Data.Bar.Grow(duration: 0.22, timing: .linear)
     }
@@ -41,8 +36,8 @@ class ProgressIndicatorsConfigBar: GraffeineViewConfig {
                 $0.unitFill.colors = [.systemBlue]
                 $0.data = GraffeineData.init(valueMax: 100, valuesHi: [0])
                 $0.mask = maskLayer
-                $0.unitAnimation.data.add(AnimationKey.fast, animatorFast)
-                $0.unitAnimation.data.add(AnimationKey.slow, animatorSlow)
+                $0.unitAnimation.data.add(animator: animatorFast, for: .reload)
+                $0.unitAnimation.data.add(animator: animatorSlow, for: .next)
             })
 
         graffeineView.layers = [trackLayer, progressLayer]

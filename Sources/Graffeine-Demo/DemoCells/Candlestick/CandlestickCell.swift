@@ -5,7 +5,6 @@ class CandlestickCell: UITableViewCell, DemoCell {
 
     typealias LayerID = CandlestickConfig.ID
     typealias GutterLayerID = CandlestickGutterConfig.ID
-    typealias AnimationKey = CandlestickConfig.AnimationKey
 
     @IBOutlet weak var leftGutterView: GraffeineView!
     @IBOutlet weak var graffeineView: GraffeineView!
@@ -119,23 +118,21 @@ class CandlestickCell: UITableViewCell, DemoCell {
                                      valuesLo: lanes.peakLo.map { $0 - lowestVal },
                                      selectedIndex: selectedIndex)
 
-        let animationKeys = (animated)
-            ? (bar: AnimationKey.barMove, label: AnimationKey.labelMove)
-            : nil
+        let semantic: GraffeineData.AnimationSemantic = (animated) ? .reload : .notAnimated
 
         leftGutterView.layer(id: GutterLayerID.mainGutter)?.data = gutterLabelData
 
         graffeineView.layer(id: LayerID.wick)?
-            .setData( wickData, animationKey: animationKeys?.bar )
+            .setData( wickData, semantic: semantic )
 
         graffeineView.layer(id: LayerID.candle)?
             .unitFill.colors = lanes.colors
 
         graffeineView.layer(id: LayerID.candle)?
-            .setData( candleData, animationKey: animationKeys?.bar )
+            .setData( candleData, semantic: semantic )
 
         graffeineView.layer(id: LayerID.candleLabel)?
-            .setData( candleData, animationKey: animationKeys?.label )
+            .setData( candleData, semantic: semantic )
 
         if let selectedIndex = self.selectedIndex {
             infoLabel.text = lanes.labels[selectedIndex]

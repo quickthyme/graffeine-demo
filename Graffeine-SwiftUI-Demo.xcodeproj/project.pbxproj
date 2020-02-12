@@ -15,6 +15,7 @@
 		DC41B2F223F24BEF004E6F71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC41B2EB23F24BEF004E6F71 /* SceneDelegate.swift */; };
 		DC41B43423F24D99004E6F71 /* libGraffeine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC41B42F23F24D78004E6F71 /* libGraffeine.a */; };
 		DC41B43623F2542E004E6F71 /* VerticalDescendingBarsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC41B43523F2542E004E6F71 /* VerticalDescendingBarsConfig.swift */; };
+		DC7FF87D23F3BC700068AF51 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7FF87B23F3BC700068AF51 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		DC41B2EB23F24BEF004E6F71 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DC41B42923F24D78004E6F71 /* Graffeine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Graffeine.xcodeproj; path = submodule/graffeine/Graffeine.xcodeproj; sourceTree = "<group>"; };
 		DC41B43523F2542E004E6F71 /* VerticalDescendingBarsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalDescendingBarsConfig.swift; sourceTree = "<group>"; };
+		DC7FF87B23F3BC700068AF51 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				DC41B2E823F24BEF004E6F71 /* Info.plist */,
 				DC41B2E323F24BEF004E6F71 /* AppDelegate.swift */,
 				DC41B2E723F24BEF004E6F71 /* ContentView.swift */,
+				DC7FF87B23F3BC700068AF51 /* Color.swift */,
 				DC41B2EB23F24BEF004E6F71 /* SceneDelegate.swift */,
 				DC41B43523F2542E004E6F71 /* VerticalDescendingBarsConfig.swift */,
 				DC41B2E423F24BEF004E6F71 /* Assets.xcassets */,
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC41B2EF23F24BEF004E6F71 /* ContentView.swift in Sources */,
+				DC7FF87D23F3BC700068AF51 /* Color.swift in Sources */,
 				DC41B2EC23F24BEF004E6F71 /* AppDelegate.swift in Sources */,
 				DC41B43623F2542E004E6F71 /* VerticalDescendingBarsConfig.swift in Sources */,
 				DC41B2F223F24BEF004E6F71 /* SceneDelegate.swift in Sources */,
@@ -382,7 +386,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.quickthyme.graffeine-swiftui-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quickthyme.GraffeineSwiftUIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -402,7 +406,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.quickthyme.graffeine-swiftui-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quickthyme.GraffeineSwiftUIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

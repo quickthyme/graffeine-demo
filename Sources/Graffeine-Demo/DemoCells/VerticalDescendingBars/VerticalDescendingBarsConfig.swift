@@ -8,11 +8,6 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
         case grid, bar, barLabel
     }
 
-    struct AnimationKey {
-        static let bar = "bar"
-        static let barLabel = "barLabel"
-    }
-
     var barAnimator: GraffeineBarDataAnimating {
         return GraffeineAnimation.Data.Bar.Grow(duration: 0.88, timing: .easeInEaseOut)
     }
@@ -80,7 +75,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.unitFill.colors = barColors
                     $0.unitLine.colors = [.unleaded]
                     $0.unitLine.thickness = 0.1
-                    $0.unitAnimation.data.add(AnimationKey.bar, barAnimator)
+                    $0.unitAnimation.data.add(animator: barAnimator, for: .reload)
                     $0.selection.isEnabled = true
                     $0.selection.fill.color = .unleaded
                 }),
@@ -93,7 +88,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .top
                     $0.labelPadding.vertical = 4
-                    $0.unitAnimation.data.add(AnimationKey.barLabel, barLabelAnimator)
+                    $0.unitAnimation.data.add(animator: barLabelAnimator, for: .reload)
                 })
         ]
     }

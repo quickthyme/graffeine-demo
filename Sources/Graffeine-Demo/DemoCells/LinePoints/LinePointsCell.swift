@@ -4,7 +4,6 @@ import Graffeine
 class LinePointsCell: UITableViewCell, DemoCell {
 
     typealias LayerID = LinePointsConfig.ID
-    typealias AnimationKey = LinePointsConfig.AnimationKey
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
@@ -51,20 +50,20 @@ class LinePointsCell: UITableViewCell, DemoCell {
 
     func applyDataAnimated() {
         graffeineView.layer(id: LayerID.line)?
-            .setData(lineAndPointData, animationKey: AnimationKey.line)
+            .setData(lineAndPointData, semantic: .reload)
 
         graffeineView.layer(id: LayerID.point)?
-            .setData(lineAndPointData, animationKey: AnimationKey.point)
+            .setData(lineAndPointData, semantic: .reload)
 
         graffeineView.layer(id: LayerID.pointLabel)?
-            .setData(lineAndPointData, animationKey: AnimationKey.pointLabel)
+            .setData(lineAndPointData, semantic: .reload)
     }
 
     func applySelection() {
         graffeineView.layer(id: LayerID.point)?
-            .setData(lineAndPointData, animationKey: nil)
+            .setData(lineAndPointData, semantic: .select)
 
         graffeineView.layer(id: LayerID.pointLabel)?
-            .setData(lineAndPointData, animationKey: nil)
+            .setData(lineAndPointData, semantic: .select)
     }
 }

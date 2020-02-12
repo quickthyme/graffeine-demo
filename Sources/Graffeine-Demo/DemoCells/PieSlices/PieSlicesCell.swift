@@ -4,7 +4,6 @@ import Graffeine
 class PieSlicesCell: UITableViewCell, DemoCell {
 
     typealias LayerID = PieSlicesConfig.ID
-    typealias AnimationKey = PieSlicesConfig.AnimationKey
 
     var data = PieSlicesData()
 
@@ -30,10 +29,10 @@ class PieSlicesCell: UITableViewCell, DemoCell {
         }
     }
 
-    func getRandomPieAnimationKey() -> String {
+    func getRandomPieAnimationSemantic() -> GraffeineData.AnimationSemantic {
         switch (Int.random(in: 0...2)) {
-        case 2:  return AnimationKey.segmentSpin
-        default: return AnimationKey.segmentAuto
+        case 2:  return .next
+        default: return .reload
         }
     }
 
@@ -47,25 +46,25 @@ class PieSlicesCell: UITableViewCell, DemoCell {
     func applyDataAnimated() {
         let newData = data.get()
         graffeineView.layer(id: LayerID.pie)?
-            .setData(newData, animationKey: getRandomPieAnimationKey())
+            .setData(newData, semantic: getRandomPieAnimationSemantic())
 
         graffeineView.layer(id: LayerID.labels)?
-            .setData(newData, animationKey: AnimationKey.labelFadeIn)
+            .setData(newData, semantic: .reload)
 
         graffeineView.layer(id: LayerID.labelLines)?
-            .setData(newData, animationKey: AnimationKey.lineFadeIn)
+            .setData(newData, semantic: .reload)
     }
 
     func applySelectionAnimated() {
         let newData = data.get()
         graffeineView.layer(id: LayerID.pie)?
-            .setData(newData, animationKey: AnimationKey.segmentMorph)
+            .setData(newData, semantic: .select)
 
         graffeineView.layer(id: LayerID.labels)?
-            .setData(newData, animationKey: AnimationKey.labelMove)
+            .setData(newData, semantic: .select)
 
         graffeineView.layer(id: LayerID.labelLines)?
-            .setData(newData, animationKey: AnimationKey.lineMove)
+            .setData(newData, semantic: .select)
     }
 }
 

@@ -4,7 +4,6 @@ import Graffeine
 class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
 
     typealias LayerID = VerticalDescendingBarsConfig.ID
-    typealias AnimationKey = VerticalDescendingBarsConfig.AnimationKey
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
@@ -17,10 +16,6 @@ class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupSelection()
-    }
-
-    func setupSelection() {
         graffeineView.onSelect = { selection in
             self.selectedIndex = selection?.data.selected.index
             self.applyData(animated: true)
@@ -46,12 +41,12 @@ class VerticalDescendingBarsCell: UITableViewCell, DemoCell {
                                  labels: valuesHi.map { ($0 == nil) ? "?" : "\(Int($0!))" },
                                  selectedIndex: selectedIndex)
 
-        let animationKeys = (animated)
-            ? (bar: AnimationKey.bar, label: AnimationKey.barLabel)
-            : nil
+        let semantic: GraffeineData.AnimationSemantic = (animated) ? .reload : .notAnimated
 
-        graffeineView.layer(id: LayerID.bottomGutter)?.setData(data, animationKey: nil)
-        graffeineView.layer(id: LayerID.bar)!.setData(data, animationKey: animationKeys?.bar)
-        graffeineView.layer(id: LayerID.barLabel)!.setData(data, animationKey: animationKeys?.label)
+        graffeineView.layerDataInput = [
+            (layerId: LayerID.bottomGutter, data: data, semantic: semantic),
+            (layerId: LayerID.bar, data: data, semantic: semantic),
+            (layerId: LayerID.barLabel, data: data, semantic: semantic)
+        ]
     }
 }

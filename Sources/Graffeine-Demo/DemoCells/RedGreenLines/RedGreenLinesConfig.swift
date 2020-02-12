@@ -8,11 +8,6 @@ class RedGreenLinesConfig: GraffeineViewConfig {
         case hGrid, vGrid, redLine, redLineProj, greenLine, greenLineProj
     }
 
-    struct AnimationKey {
-        static let historicalLine = "historicalLine"
-        static let projectionLine = "projectionLine"
-    }
-
     var historicalLineAnimator: GraffeineLineDataAnimating {
         return GraffeineAnimation.Data.Line.Trace(delay: 0, duration: 1.3, timing: .easeIn)
     }
@@ -94,7 +89,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
-                    $0.unitAnimation.data.add(AnimationKey.historicalLine, historicalLineAnimator)
+                    $0.unitAnimation.data.add(animator: historicalLineAnimator, for: .reload)
                 }),
 
             GraffeineLineLayer(id: ID.redLineProj)
@@ -106,7 +101,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
                     $0.masksToBounds = true
-                    $0.unitAnimation.data.add(AnimationKey.projectionLine, projectionLineAnimator)
+                    $0.unitAnimation.data.add(animator: projectionLineAnimator, for: .reload)
                 }),
 
             GraffeineLineLayer(id: ID.greenLine)
@@ -115,7 +110,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.unitColumn.margin = unitMargin
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
-                    $0.unitAnimation.data.add(AnimationKey.historicalLine, historicalLineAnimator)
+                    $0.unitAnimation.data.add(animator: historicalLineAnimator, for: .reload)
                 }),
 
             GraffeineLineLayer(id: ID.greenLineProj)
@@ -127,7 +122,7 @@ class RedGreenLinesConfig: GraffeineViewConfig {
                     $0.unitLine.thickness = 8.0
                     $0.unitLine.join = .round
                     $0.masksToBounds = true
-                    $0.unitAnimation.data.add(AnimationKey.projectionLine, projectionLineAnimator)
+                    $0.unitAnimation.data.add(animator: projectionLineAnimator, for: .reload)
                 })
         ]
     }

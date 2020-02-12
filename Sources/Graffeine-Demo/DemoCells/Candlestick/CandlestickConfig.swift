@@ -8,11 +8,6 @@ class CandlestickConfig: GraffeineViewConfig {
         case grid, candle, wick, candleLabel
     }
 
-    struct AnimationKey {
-        static let barMove = "barMove"
-        static let labelMove = "labelMove"
-    }
-
     var barMoveAnimator: GraffeineBarDataAnimating {
         return GraffeineAnimation.Data.Bar.Grow(duration: 0.8, timing: .easeOut)
     }
@@ -57,7 +52,7 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitLine.thickness = 0.4
                     $0.unitColumn.subdivision.offset = .percentage(0.49)
                     $0.unitColumn.subdivision.width = .explicit(0.48)
-                    $0.unitAnimation.data.add(AnimationKey.barMove, barMoveAnimator)
+                    $0.unitAnimation.data.add(animator: barMoveAnimator, for: .reload)
                     $0.selection.line.dashPattern = [1, 1]
                     $0.selection.animation = selectedAnimation
                 }),
@@ -69,7 +64,7 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.roundedEnds = .both(2)
                     $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 0.25
-                    $0.unitAnimation.data.add(AnimationKey.barMove, barMoveAnimator)
+                    $0.unitAnimation.data.add(animator: barMoveAnimator, for: .reload)
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.5) }
                     $0.selection.line.color = .label
@@ -86,7 +81,7 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitText.fontSize = 12.0
                     $0.labelAlignment.horizontal = .center
                     $0.labelAlignment.vertical = .center
-                    $0.unitAnimation.data.add(AnimationKey.labelMove, labelMoveAnimator)
+                    $0.unitAnimation.data.add(animator: labelMoveAnimator, for: .reload)
                     $0.selection.text.color = .inverseLabel
                     $0.selection.fill.color = .label
                 })

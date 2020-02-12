@@ -4,7 +4,6 @@ import Graffeine
 class AreaLinesCell: UITableViewCell, DemoCell {
 
     typealias LayerID = AreaLinesConfig.ID
-    typealias AnimationKey = AreaLinesConfig.AnimationKey
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
@@ -77,12 +76,12 @@ class AreaLinesCell: UITableViewCell, DemoCell {
         let lineData = self.lineData
 
         graffeineView.layer(id: LayerID.line1)?
-            .setData(lineData.0, animationKey: AnimationKey.lineMorph)
+            .setData(lineData.0, semantic: .reload)
 
         graffeineView.layer(id: LayerID.line2)?
-            .setData(lineData.1, animationKey: AnimationKey.lineMorph)
+            .setData(lineData.1, semantic: .reload)
 
         graffeineView.layer(id: LayerID.line3)?
-            .setData(lineData.2, animationKey: AnimationKey.lineMorph)
+            .setData(lineData.2, semantic: .reload)
     }
 }

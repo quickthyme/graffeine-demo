@@ -4,7 +4,6 @@ import Graffeine
 class RedGreenLinesCell: UITableViewCell, DemoCell {
 
     typealias LayerID = RedGreenLinesConfig.ID
-    typealias AnimationKey = RedGreenLinesConfig.AnimationKey
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
@@ -30,25 +29,22 @@ class RedGreenLinesCell: UITableViewCell, DemoCell {
     func applyData(animated: Bool) {
         let data = self.data
 
-        let animationKeys = (animated)
-            ? (historicalLine: AnimationKey.historicalLine,
-               projectionLine: AnimationKey.projectionLine)
-            : nil
+        let semantic: GraffeineData.AnimationSemantic = (animated) ? .reload : .notAnimated
 
         graffeineView.layer(id: LayerID.redLineProj)?
             .setData(GraffeineData(valueMax: 50, valuesHi: data.redProjected),
-                     animationKey: animationKeys?.projectionLine)
+                     semantic: semantic)
 
         graffeineView.layer(id: LayerID.redLine)?
             .setData(GraffeineData(valueMax: 50, valuesHi: data.redHistorical + [nil]),
-                     animationKey: animationKeys?.historicalLine)
+                     semantic: semantic)
 
         graffeineView.layer(id: LayerID.greenLineProj)?
             .setData(GraffeineData(valueMax: 50, valuesHi: data.greenProjected),
-                     animationKey: animationKeys?.projectionLine)
+                     semantic: semantic)
 
         graffeineView.layer(id: LayerID.greenLine)?
             .setData(GraffeineData(valueMax: 50, valuesHi: data.greenHistorical + [nil]),
-                 animationKey: animationKeys?.historicalLine)
+                     semantic: semantic)
     }
 }

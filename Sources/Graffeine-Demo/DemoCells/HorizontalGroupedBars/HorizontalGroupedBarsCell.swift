@@ -4,7 +4,6 @@ import Graffeine
 class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
 
     typealias LayerID = HorizontalGroupedBarsConfig.ID
-    typealias AnimationKey = HorizontalGroupedBarsConfig.AnimationKey
 
     @IBOutlet weak var graffeineView: GraffeineView!
 
@@ -45,9 +44,7 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
                                   valuesHi: dataSets[dataSetIndex].1,
                                   labels: dataSets[dataSetIndex].1.map {"\(Int($0 ?? 0))"})
 
-        let animationKeys = (animated)
-            ? (bar: AnimationKey.bar, label: AnimationKey.label)
-            : nil
+        let semantic: GraffeineData.AnimationSemantic = (animated) ? .reload : .notAnimated
 
         graffeineView.layer(id: LayerID.leftGutter)?
             .data = GraffeineData(labels: vLabels)
@@ -56,15 +53,15 @@ class HorizontalGroupedBarsCell: UITableViewCell, DemoCell {
             .data = GraffeineData(labels: hLabels)
 
         graffeineView.layer(id: LayerID.bars1)?
-            .setData(data1, animationKey: animationKeys?.bar)
+            .setData(data1, semantic: semantic)
 
         graffeineView.layer(id: LayerID.bars2)?
-            .setData(data2, animationKey: animationKeys?.bar)
+            .setData(data2, semantic: semantic)
 
         graffeineView.layer(id: LayerID.barLabel1)?
-            .setData(data1, animationKey: animationKeys?.label)
+            .setData(data1, semantic: semantic)
 
         graffeineView.layer(id: LayerID.barLabel2)?
-            .setData(data2, animationKey: animationKeys?.label)
+            .setData(data2, semantic: semantic)
     }
 }
