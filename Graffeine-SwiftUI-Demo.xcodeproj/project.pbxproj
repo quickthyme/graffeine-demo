@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC04E81023F3E2EE00601E2C /* VerticalDescendingBarsDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04E80E23F3E2EE00601E2C /* VerticalDescendingBarsDataHelper.swift */; };
 		DC41B2EC23F24BEF004E6F71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC41B2E323F24BEF004E6F71 /* AppDelegate.swift */; };
 		DC41B2ED23F24BEF004E6F71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC41B2E423F24BEF004E6F71 /* Assets.xcassets */; };
 		DC41B2EE23F24BEF004E6F71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC41B2E523F24BEF004E6F71 /* LaunchScreen.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC04E80E23F3E2EE00601E2C /* VerticalDescendingBarsDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalDescendingBarsDataHelper.swift; sourceTree = "<group>"; };
 		DC41B2CA23F24B4B004E6F71 /* Graffeine-SwiftUI-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graffeine-SwiftUI-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC41B2E323F24BEF004E6F71 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC41B2E423F24BEF004E6F71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,10 +100,11 @@
 			children = (
 				DC41B2E823F24BEF004E6F71 /* Info.plist */,
 				DC41B2E323F24BEF004E6F71 /* AppDelegate.swift */,
-				DC41B2E723F24BEF004E6F71 /* ContentView.swift */,
 				DC7FF87B23F3BC700068AF51 /* Color.swift */,
+				DC41B2E723F24BEF004E6F71 /* ContentView.swift */,
 				DC41B2EB23F24BEF004E6F71 /* SceneDelegate.swift */,
 				DC41B43523F2542E004E6F71 /* VerticalDescendingBarsConfig.swift */,
+				DC04E80E23F3E2EE00601E2C /* VerticalDescendingBarsDataHelper.swift */,
 				DC41B2E423F24BEF004E6F71 /* Assets.xcassets */,
 				DC41B2E523F24BEF004E6F71 /* LaunchScreen.storyboard */,
 				DC41B2E923F24BEF004E6F71 /* Preview Content */,
@@ -233,6 +236,7 @@
 				DC7FF87D23F3BC700068AF51 /* Color.swift in Sources */,
 				DC41B2EC23F24BEF004E6F71 /* AppDelegate.swift in Sources */,
 				DC41B43623F2542E004E6F71 /* VerticalDescendingBarsConfig.swift in Sources */,
+				DC04E81023F3E2EE00601E2C /* VerticalDescendingBarsDataHelper.swift in Sources */,
 				DC41B2F223F24BEF004E6F71 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

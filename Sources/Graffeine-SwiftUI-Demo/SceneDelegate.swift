@@ -9,8 +9,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-        let dataInput = ContentViewGraffeineDataHelper.makeDataInput(
-            data: ContentViewGraffeineDataHelper.generateInitialData(),
+        let dataInput = VerticalDescendingBarsDataHelper.makeDataInput(
+            data: VerticalDescendingBarsDataHelper.generateInitialData(),
             semantic: .notAnimated
         )
         let contentView = ContentView(dataInput: dataInput)
