@@ -9,8 +9,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-        let dataInput = ContentViewGraffeineDataHelper.prepareForGraffeine(
-            ContentViewGraffeineDataHelper.generateInitialData())
+        let dataInput = ContentViewGraffeineDataHelper.makeDataInput(
+            data: ContentViewGraffeineDataHelper.generateInitialData(),
+            semantic: .notAnimated
+        )
         let contentView = ContentView(dataInput: dataInput)
 
         // Use a UIHostingController as window root view controller.

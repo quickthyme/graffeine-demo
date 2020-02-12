@@ -7,17 +7,30 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Spacer(minLength: 22)
+
             GraffeineViewRep(configClass: "VerticalDescendingBarsConfig",
-                             layerDataInput: $dataInput)
+                             layerDataInput: $dataInput,
+                             onSelect: onBarSelect)
+
             Button(
                 action: {
-                    self.dataInput = ContentViewGraffeineDataHelper.prepareForGraffeine(
-                        ContentViewGraffeineDataHelper.generateRandomData()
+                    self.dataInput = ContentViewGraffeineDataHelper.makeDataInput(
+                        data: ContentViewGraffeineDataHelper.generateRandomData(),
+                        semantic: .reload
                     )},
                 label: { Text("Reload") }
             )
+
+            Spacer(minLength: 22)
         }
-        .navigationBarTitle("Vertical Descending Bars")
+    }
+
+    func onBarSelect(_ result: GraffeineLayer.SelectionResult?) {
+        if let result = result {
+            self.dataInput = ContentViewGraffeineDataHelper.makeDataInput(data: result.data,
+                                                                          semantic: .select)
+        }
     }
 }
 
@@ -32,11 +45,11 @@ struct ContentView_Previews: PreviewProvider {
 struct ContentViewGraffeineDataHelper {
     typealias LayerID = VerticalDescendingBarsConfig.ID
 
-    static func prepareForGraffeine(_ data: GraffeineData) -> [GraffeineView.LayerData] {
+    static func makeDataInput(data: GraffeineData, semantic: GraffeineData.AnimationSemantic) -> [GraffeineView.LayerData] {
         return [
-            (layerId: LayerID.bottomGutter, data: data, semantic: .reload),
-            (layerId: LayerID.bar, data: data, semantic: .reload),
-            (layerId: LayerID.barLabel, data: data, semantic: .reload)
+            (layerId: LayerID.bottomGutter, data: data, semantic: semantic),
+            (layerId: LayerID.bar, data: data, semantic: semantic),
+            (layerId: LayerID.barLabel, data: data, semantic: semantic)
         ]
     }
 

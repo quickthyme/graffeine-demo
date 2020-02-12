@@ -83,6 +83,7 @@ class VerticalDescendingBarsConfig: GraffeineViewConfig {
             GraffeineBarLabelLayer(id: ID.barLabel)
                 .apply ({
                     $0.insets = barLayerInsets
+                    $0.maskInsets = barLayerInsets
                     $0.unitColumn.margin = unitMargin
                     $0.unitText.colors = [.inverseLabel]
                     $0.labelAlignment.horizontal = .center
