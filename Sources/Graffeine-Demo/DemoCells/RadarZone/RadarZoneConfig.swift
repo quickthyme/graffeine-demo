@@ -4,7 +4,6 @@ import Graffeine
 class RadarZoneConfig: GraffeineViewConfig {
 
     enum ID: Hashable {
-        case topGutter, rightGutter, bottomGutter, leftGutter
         case gridLat, gridLon, label, zone1, zone2
     }
 

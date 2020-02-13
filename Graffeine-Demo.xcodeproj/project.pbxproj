@@ -34,6 +34,9 @@
 		DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */; };
 		DC2FA27D23CEB5A200E88807 /* LinePointsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA27C23CEB55200E88807 /* LinePointsConfig.swift */; };
 		DC2FA27E23CEB5A700E88807 /* LinePointsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FA27B23CEB55200E88807 /* LinePointsCell.swift */; };
+		DC31057C23F5285C00CDC87B /* TriforceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC31057B23F5271B00CDC87B /* TriforceCell.swift */; };
+		DC31057D23F5285C00CDC87B /* TriforceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC31057923F5271B00CDC87B /* TriforceCell.xib */; };
+		DC31057E23F5285C00CDC87B /* TriforceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC31057A23F5271B00CDC87B /* TriforceConfig.swift */; };
 		DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F21C523C6DD46009629DD /* AppDelegate.swift */; };
 		DC7F21CA23C6DD46009629DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F21C923C6DD46009629DD /* MainViewController.swift */; };
 		DC7F21CF23C6DD49009629DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7F21CE23C6DD49009629DD /* Assets.xcassets */; };
@@ -137,6 +140,9 @@
 		DC2FA26A23CE8FB200E88807 /* ScatterplotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScatterplotCell.swift; sourceTree = "<group>"; };
 		DC2FA27B23CEB55200E88807 /* LinePointsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePointsCell.swift; sourceTree = "<group>"; };
 		DC2FA27C23CEB55200E88807 /* LinePointsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePointsConfig.swift; sourceTree = "<group>"; };
+		DC31057923F5271B00CDC87B /* TriforceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TriforceCell.xib; sourceTree = "<group>"; };
+		DC31057A23F5271B00CDC87B /* TriforceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriforceConfig.swift; sourceTree = "<group>"; };
+		DC31057B23F5271B00CDC87B /* TriforceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriforceCell.swift; sourceTree = "<group>"; };
 		DC7F21AE23C6AF59009629DD /* GraffeineLibrarySymbolProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraffeineLibrarySymbolProtection.swift; sourceTree = "<group>"; };
 		DC7F21C323C6DD46009629DD /* Graffeine-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graffeine-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7F21C523C6DD46009629DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +265,16 @@
 				DC2FA27C23CEB55200E88807 /* LinePointsConfig.swift */,
 			);
 			path = LinePoints;
+			sourceTree = "<group>";
+		};
+		DC31057723F5270900CDC87B /* Triforce */ = {
+			isa = PBXGroup;
+			children = (
+				DC31057B23F5271B00CDC87B /* TriforceCell.swift */,
+				DC31057923F5271B00CDC87B /* TriforceCell.xib */,
+				DC31057A23F5271B00CDC87B /* TriforceConfig.swift */,
+			);
+			path = Triforce;
 			sourceTree = "<group>";
 		};
 		DC612E1B23B43B8000C08AB5 = {
@@ -442,6 +458,7 @@
 				DC7F220D23C7BF70009629DD /* RedGreenLines */,
 				DC2FA26723CE8F9F00E88807 /* Scatterplot */,
 				DCEFD74723EE1C46003EE53A /* TooLowForZero */,
+				DC31057723F5270900CDC87B /* Triforce */,
 				DC7F21EC23C6E56A009629DD /* VerticalDescendingBars */,
 			);
 			path = DemoCells;
@@ -618,6 +635,7 @@
 				DC10F2D923E2AF11001769B2 /* CandlestickCell.xib in Resources */,
 				DC7F21CF23C6DD49009629DD /* Assets.xcassets in Resources */,
 				DCC1128623E634BF00E0C1B8 /* Circles.storyboard in Resources */,
+				DC31057D23F5285C00CDC87B /* TriforceCell.xib in Resources */,
 				DC10F2DA23E2AF17001769B2 /* HorizontalGroupedBarsCell.xib in Resources */,
 				DC10F2E223E2AF3A001769B2 /* VerticalDescendingBarsCell.xib in Resources */,
 				DCC1128A23E634C300E0C1B8 /* Bars.storyboard in Resources */,
@@ -654,6 +672,7 @@
 				DCC1127C23E6328C00E0C1B8 /* BarsViewController.swift in Sources */,
 				DCC1128C23E634C800E0C1B8 /* LinesViewController.swift in Sources */,
 				DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */,
+				DC31057C23F5285C00CDC87B /* TriforceCell.swift in Sources */,
 				DC8773F823DC24AD005246BA /* CandlestickCell+TradingDay.swift in Sources */,
 				DCC1128E23E634C800E0C1B8 /* LinesViewController+TableView.swift in Sources */,
 				DCC1128923E634BF00E0C1B8 /* CirclesViewController+TableView.swift in Sources */,
@@ -663,6 +682,7 @@
 				DC1BE58623E74EAE00B5C2BF /* DetailRingsData.swift in Sources */,
 				DCA8A04B23F0C0D0009B8831 /* RedGreenLinesCell+Data.swift in Sources */,
 				DC2FA27023CE9B3B00E88807 /* ScatterplotCell.swift in Sources */,
+				DC31057E23F5285C00CDC87B /* TriforceConfig.swift in Sources */,
 				DCC1129823E64C0600E0C1B8 /* DonutWedgesCell.swift in Sources */,
 				DC7F221A23C7E895009629DD /* HorizontalGroupedBarsCell.swift in Sources */,
 				DCC1129B23E64C0600E0C1B8 /* DonutWedgesConfig.swift in Sources */,

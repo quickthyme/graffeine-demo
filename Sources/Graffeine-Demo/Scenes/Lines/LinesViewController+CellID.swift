@@ -7,12 +7,14 @@ extension LinesViewController {
         case LinePoints = "LinePointsCell"
         case RadarZone = "RadarZoneCell"
         case RedGreenLines = "RedGreenLinesCell"
+        case Triforce = "TriforceCell"
 
         static let SectionTitle: [Self: String] = [
             .AreaLines: "Area Lines",
             .LinePoints: "Line Points and Smoothing",
             .RadarZone: "Radar Zone",
             .RedGreenLines: "Red Green Lines",
+            .Triforce: "Triforce"
         ]
 
         static func get(for indexPath: IndexPath) -> Self {
@@ -21,7 +23,8 @@ extension LinesViewController {
             case (1, 0): return .LinePoints
             case (2, 0): return .AreaLines
             case (3, 0): return .RadarZone
-            default: return .RadarZone
+            case (4, 0): return .Triforce
+            default: return .Triforce
             }
         }
 

@@ -10,6 +10,10 @@ extension UIColor {
         return UIColor(named: "BlackAlphaInverting")!
     }
 
+    static var darkClover: UIColor {
+        return UIColor(named: "DarkClover")!
+    }
+
     static var eggplantAlpha: UIColor {
         return UIColor(named: "EggplantAlpha")!
     }
