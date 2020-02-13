@@ -77,6 +77,15 @@ How to make quick and easy custom progress indicators.
 ### Lines
 
 
+#### Red Green Lines
+
+![sample_2](docs/sample_2.png)
+
+Basic double line graph.
+
+<br />
+
+
 #### Line Points and Smoothing
 
 ![sample_4](docs/sample_4.png)
@@ -95,14 +104,13 @@ Multi-line graph with area fill.
 <br />
 
 
-#### Red Green Lines
+#### Radar Zone
 
-![sample_2](docs/sample_2.png)
+![sample_11](docs/sample_11.png)
 
-Basic double line graph.
-
+Radar/spider chart; essentially a radial, area-fill line graph.
+ 
 <br />
-
 
 
 ### Circles
