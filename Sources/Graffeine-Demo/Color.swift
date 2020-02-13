@@ -10,8 +10,16 @@ extension UIColor {
         return UIColor(named: "BlackAlphaInverting")!
     }
 
+    static var eggplantAlpha: UIColor {
+        return UIColor(named: "EggplantAlpha")!
+    }
+
     static var inverseLabel: UIColor {
         return UIColor(named: "InverseLabel")!
+    }
+
+    static var salmonAlpha: UIColor {
+        return UIColor(named: "SalmonAlpha")!
     }
 
     static var unleaded: UIColor {

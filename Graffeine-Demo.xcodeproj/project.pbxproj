@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC08057723F4EF0A00A29637 /* RadarZoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC08057623F4EEE100A29637 /* RadarZoneCell.swift */; };
+		DC08057823F4EF0A00A29637 /* RadarZoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC08057523F4EEE100A29637 /* RadarZoneCell.xib */; };
+		DC08057923F4EF0A00A29637 /* RadarZoneConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC08057423F4EEE100A29637 /* RadarZoneConfig.swift */; };
 		DC10F2D923E2AF11001769B2 /* CandlestickCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D423E2AD5D001769B2 /* CandlestickCell.xib */; };
 		DC10F2DA23E2AF17001769B2 /* HorizontalGroupedBarsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D323E2AA42001769B2 /* HorizontalGroupedBarsCell.xib */; };
 		DC10F2DB23E2AF20001769B2 /* LinePointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC10F2D223E2A9F2001769B2 /* LinePointsCell.xib */; };
@@ -109,6 +112,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC08057423F4EEE100A29637 /* RadarZoneConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarZoneConfig.swift; sourceTree = "<group>"; };
+		DC08057523F4EEE100A29637 /* RadarZoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadarZoneCell.xib; sourceTree = "<group>"; };
+		DC08057623F4EEE100A29637 /* RadarZoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarZoneCell.swift; sourceTree = "<group>"; };
 		DC10F2C323E2A236001769B2 /* PieSlicesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PieSlicesCell.xib; sourceTree = "<group>"; };
 		DC10F2D223E2A9F2001769B2 /* LinePointsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinePointsCell.xib; sourceTree = "<group>"; };
 		DC10F2D323E2AA42001769B2 /* HorizontalGroupedBarsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalGroupedBarsCell.xib; sourceTree = "<group>"; };
@@ -202,6 +208,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC08057223F4EEB700A29637 /* RadarZone */ = {
+			isa = PBXGroup;
+			children = (
+				DC08057623F4EEE100A29637 /* RadarZoneCell.swift */,
+				DC08057523F4EEE100A29637 /* RadarZoneCell.xib */,
+				DC08057423F4EEE100A29637 /* RadarZoneConfig.swift */,
+			);
+			path = RadarZone;
+			sourceTree = "<group>";
+		};
 		DC1B827C23DFAA52005E379E /* ProgressIndicators */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +438,7 @@
 				DC2FA27923CEB53600E88807 /* LinePoints */,
 				DCE4C9DB23D0371E00C47EFD /* PieSlices */,
 				DC1B827C23DFAA52005E379E /* ProgressIndicators */,
+				DC08057223F4EEB700A29637 /* RadarZone */,
 				DC7F220D23C7BF70009629DD /* RedGreenLines */,
 				DC2FA26723CE8F9F00E88807 /* Scatterplot */,
 				DCEFD74723EE1C46003EE53A /* TooLowForZero */,
@@ -595,6 +612,7 @@
 				DC10F2DF23E2AF2B001769B2 /* ProgressIndicatorsCell.xib in Resources */,
 				DC10F2DB23E2AF20001769B2 /* LinePointsCell.xib in Resources */,
 				DC10F2E123E2AF35001769B2 /* ScatterplotCell.xib in Resources */,
+				DC08057823F4EF0A00A29637 /* RadarZoneCell.xib in Resources */,
 				DC7F222823C860C4009629DD /* README.md in Resources */,
 				DC10F2DD23E2AF25001769B2 /* PieSlicesCell.xib in Resources */,
 				DC10F2D923E2AF11001769B2 /* CandlestickCell.xib in Resources */,
@@ -632,6 +650,7 @@
 				DCC1127B23E6328600E0C1B8 /* BarsViewController+CellID.swift in Sources */,
 				DC1BE59623E7EE3300B5C2BF /* DetailRingsCell+UIScrollViewDelegate.swift in Sources */,
 				DC1B828223DFABF1005E379E /* ProgressIndicatorsConfigBar.swift in Sources */,
+				DC08057723F4EF0A00A29637 /* RadarZoneCell.swift in Sources */,
 				DCC1127C23E6328C00E0C1B8 /* BarsViewController.swift in Sources */,
 				DCC1128C23E634C800E0C1B8 /* LinesViewController.swift in Sources */,
 				DC7F21C623C6DD46009629DD /* AppDelegate.swift in Sources */,
@@ -650,6 +669,7 @@
 				DC10F2DC23E2AF25001769B2 /* PieSlicesCell.swift in Sources */,
 				DC1B828123DFABED005E379E /* ProgressIndicatorsCell.swift in Sources */,
 				DC1BE58523E74EAA00B5C2BF /* DetailRingsCell.swift in Sources */,
+				DC08057923F4EF0A00A29637 /* RadarZoneConfig.swift in Sources */,
 				DC10F2E423E2B1E2001769B2 /* PieSlicesData.swift in Sources */,
 				DC7F221123C7BFA4009629DD /* RedGreenLinesCell.swift in Sources */,
 				DCC1126E23E6155500E0C1B8 /* AreaLinesCell.swift in Sources */,

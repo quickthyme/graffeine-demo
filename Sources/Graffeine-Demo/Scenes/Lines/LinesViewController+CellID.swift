@@ -5,20 +5,23 @@ extension LinesViewController {
     enum CellID: String, CaseIterable {
         case AreaLines = "AreaLinesCell"
         case LinePoints = "LinePointsCell"
+        case RadarZone = "RadarZoneCell"
         case RedGreenLines = "RedGreenLinesCell"
 
         static let SectionTitle: [Self: String] = [
             .AreaLines: "Area Lines",
             .LinePoints: "Line Points and Smoothing",
+            .RadarZone: "Radar Zone",
             .RedGreenLines: "Red Green Lines",
         ]
 
         static func get(for indexPath: IndexPath) -> Self {
             switch (indexPath.section, indexPath.row) {
-            case (0, 0): return .LinePoints
-            case (1, 0): return .AreaLines
-            case (2, 0): return .RedGreenLines
-            default: return .AreaLines
+            case (0, 0): return .RedGreenLines
+            case (1, 0): return .LinePoints
+            case (2, 0): return .AreaLines
+            case (3, 0): return .RadarZone
+            default: return .RadarZone
             }
         }
 
