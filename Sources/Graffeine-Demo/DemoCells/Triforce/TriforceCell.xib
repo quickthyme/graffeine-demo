@@ -18,22 +18,11 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIO-DW-qR2" userLabel="GraffeineView" customClass="GraffeineView" customModule="Graffeine">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                        <color key="backgroundColor" name="DarkClover"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="TriforceConfig"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❤️❤️❤️" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUp-lF-FZf">
-                        <rect key="frame" x="8" y="230.5" width="72" height="21.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🗡🛡" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cb1-oA-hHx">
-                        <rect key="frame" x="358" y="230.5" width="48" height="21.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsu-0K-gFc">
                         <rect key="frame" x="378" y="0.0" width="36" height="36"/>
                         <constraints>
@@ -47,18 +36,13 @@
                         </connections>
                     </button>
                 </subviews>
-                <color key="backgroundColor" name="DarkClover"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="AIO-DW-qR2" secondAttribute="bottom" id="2vm-3x-rJv"/>
                     <constraint firstItem="AIO-DW-qR2" firstAttribute="leading" secondItem="9ky-J1-Jfw" secondAttribute="leading" id="7bF-Fa-LBX"/>
                     <constraint firstItem="AIO-DW-qR2" firstAttribute="top" secondItem="9ky-J1-Jfw" secondAttribute="top" id="BJG-my-Y42"/>
-                    <constraint firstAttribute="bottom" secondItem="aUp-lF-FZf" secondAttribute="bottom" constant="8" id="Gie-2c-FDp"/>
                     <constraint firstItem="zsu-0K-gFc" firstAttribute="top" secondItem="9ky-J1-Jfw" secondAttribute="top" id="IJl-Vb-DIP"/>
                     <constraint firstAttribute="trailing" secondItem="zsu-0K-gFc" secondAttribute="trailing" id="Obu-YZ-Lco"/>
-                    <constraint firstItem="aUp-lF-FZf" firstAttribute="leading" secondItem="9ky-J1-Jfw" secondAttribute="leading" constant="8" id="foI-r1-sQK"/>
-                    <constraint firstAttribute="bottom" secondItem="Cb1-oA-hHx" secondAttribute="bottom" constant="8" id="iNs-Pm-oIp"/>
                     <constraint firstAttribute="trailing" secondItem="AIO-DW-qR2" secondAttribute="trailing" id="mE3-BA-9RZ"/>
-                    <constraint firstAttribute="trailing" secondItem="Cb1-oA-hHx" secondAttribute="trailing" constant="8" id="xSy-8C-aCM"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -74,7 +58,7 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkClover">
-            <color red="0.0010000000474974513" green="0.3580000102519989" blue="0.0020000000949949026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0010000000474974513" green="0.26800000667572021" blue="0.0010000000474974513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

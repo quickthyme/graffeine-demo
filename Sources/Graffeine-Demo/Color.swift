@@ -33,4 +33,8 @@ extension UIColor {
     static var diagonalLines: UIColor {
         return UIColor(patternImage: UIImage(named: "diagonal_lines")!)
     }
+
+    static var paper: UIColor {
+        return UIColor(patternImage: UIImage(named: "paper")!)
+    }
 }

@@ -24,7 +24,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAJ-8d-f2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="511"/>
+            <point key="canvasLocation" x="-399" y="511"/>
+        </scene>
+        <!--Other-->
+        <scene sceneID="mpb-aB-JlE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Other" id="l2L-sz-b9q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Other" image="tb_radar" id="moz-Rf-bDH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBV-fd-yVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="511"/>
         </scene>
         <!--Circles-->
         <scene sceneID="zmU-7C-q52">
@@ -34,7 +44,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWh-iZ-Ug9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="128" y="511"/>
+            <point key="canvasLocation" x="-97" y="511"/>
         </scene>
         <!--MainViewController-->
         <scene sceneID="6DH-af-6nc">
@@ -49,6 +59,7 @@
                         <segue destination="Bzv-bP-36U" kind="relationship" relationship="viewControllers" id="3eD-1P-1z8"/>
                         <segue destination="T3k-re-39F" kind="relationship" relationship="viewControllers" id="4Q7-bM-olS"/>
                         <segue destination="igG-tR-euW" kind="relationship" relationship="viewControllers" id="ogi-XP-S4G"/>
+                        <segue destination="l2L-sz-b9q" kind="relationship" relationship="viewControllers" id="0uF-UV-7i4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNe-iq-foX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -60,5 +71,6 @@
         <image name="tb_bars" width="25" height="25"/>
         <image name="tb_circles" width="25" height="25"/>
         <image name="tb_lines" width="25" height="25"/>
+        <image name="tb_radar" width="25" height="25"/>
     </resources>
 </document>

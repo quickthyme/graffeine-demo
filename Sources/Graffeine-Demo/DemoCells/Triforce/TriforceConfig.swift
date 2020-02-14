@@ -29,7 +29,7 @@ class TriforceConfig: GraffeineViewConfig {
                     $0.insets = insets
                     $0.rotation = rotation
                     $0.maxDiameter = .percentage(diameterPct)
-                    $0.unitFill.colors = [UIColor(white: 0.0, alpha: 0.18)]
+                    $0.unitFill.colors = [UIColor(white: 0.0, alpha: 0.14)]
                     $0.unitLine.join = .bevel
                     $0.data = GraffeineData(valueMax: 9, valuesHi: [9, 9, 9])
                 }),
@@ -39,35 +39,11 @@ class TriforceConfig: GraffeineViewConfig {
                     $0.insets = insets
                     $0.rotation = rotation
                     $0.maxDiameter = .percentage(diameterPct)
-                    $0.unitFill.colors = [UIColor.systemYellow.modifiedByAdding(alpha: -0.44)]
+                    $0.unitFill.colors = [.systemYellow]
                     $0.unitLine.colors = [.label]
                     $0.unitLine.thickness = 0.20
                     $0.unitLine.join = .bevel
                     $0.unitAnimation.data.add(animator: polyMorphAnimator, for: .reload)
-                }),
-
-            GraffeineRadialPolyLayer(id: ID.gridMid)
-                .apply({
-                    $0.insets = insets
-                    $0.rotation = rotation
-                    $0.maxDiameter = .percentage(diameterPct)
-                    $0.unitLine.colors = [.brown]
-                    $0.unitLine.thickness = 0.5
-                    $0.unitLine.join = .bevel
-                    $0.unitLine.dashPattern = [2, 4]
-                    $0.data = GraffeineData(valueMax: 9, valuesHi: [6, 6, 6])
-                }),
-
-            GraffeineRadialPolyLayer(id: ID.gridLo)
-                .apply({
-                    $0.insets = insets
-                    $0.rotation = rotation
-                    $0.maxDiameter = .percentage(diameterPct)
-                    $0.unitLine.colors = [.brown]
-                    $0.unitLine.thickness = 0.5
-                    $0.unitLine.join = .bevel
-                    $0.unitLine.dashPattern = [2, 4]
-                    $0.data = GraffeineData(valueMax: 9, valuesHi: [3, 3, 3])
                 }),
 
             GraffeineRadialLabelLayer(id: ID.label)
@@ -76,12 +52,8 @@ class TriforceConfig: GraffeineViewConfig {
                     $0.clockwise = true
                     $0.centerRotation = rotation
                     $0.diameter = .percentage(diameterPct + 0.05)
-                    $0.unitText.colors = [UIColor.systemYellow.modifiedByAdding(alpha: -0.3)]
-                    $0.unitText.fontSize = 18
-                    $0.unitShadow.color = .brown
-                    $0.unitShadow.offset = CGSize(width: 0, height: -0.5)
-                    $0.unitShadow.opacity = 0.5
-                    $0.unitShadow.radius = 0.1
+                    $0.unitText.colors = [.systemYellow]
+                    $0.unitText.fontSize = 16
                     $0.labelAlignment.horizontal = .centerLeftRight
                     $0.labelAlignment.vertical = .centerTopBottom
                     $0.data = labelData

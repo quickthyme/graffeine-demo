@@ -6,13 +6,11 @@ extension CirclesViewController {
         case PieSlices = "PieSlicesCell"
         case DetailRings = "DetailRingsCell"
         case DonutWedges = "DonutWedgesCell"
-        case Scatterplot = "ScatterplotCell"
 
         static let SectionTitle: [Self: String] = [
             .PieSlices: "Pie Slices",
             .DetailRings: "Detail Rings",
-            .DonutWedges: "Donut Wedges",
-            .Scatterplot: "Scatter Plot",
+            .DonutWedges: "Donut Wedges"
         ]
 
         static func get(for indexPath: IndexPath) -> Self {
@@ -20,8 +18,7 @@ extension CirclesViewController {
             case (0, 0): return .PieSlices
             case (1, 0): return .DonutWedges
             case (2, 0): return .DetailRings
-            case (3, 0): return .Scatterplot
-            default: return .Scatterplot
+            default: return .DetailRings
             }
         }
 

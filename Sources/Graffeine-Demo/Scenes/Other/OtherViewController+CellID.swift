@@ -1,24 +1,27 @@
 import UIKit
 
-extension LinesViewController {
+extension OtherViewController {
 
     enum CellID: String, CaseIterable {
-        case AreaLines = "AreaLinesCell"
-        case LinePoints = "LinePointsCell"
-        case RedGreenLines = "RedGreenLinesCell"
+        case Progress = "ProgressIndicatorsCell"
+        case RadarZone = "RadarZoneCell"
+        case Scatterplot = "ScatterplotCell"
+        case Triforce = "TriforceCell"
 
         static let SectionTitle: [Self: String] = [
-            .AreaLines: "Area Lines",
-            .LinePoints: "Line Points and Smoothing",
-            .RedGreenLines: "Red Green Lines"
+            .Progress: "Progress",
+            .RadarZone: "Radar Zone",
+            .Scatterplot: "Scatter Plot",
+            .Triforce: "Triforce"
         ]
 
         static func get(for indexPath: IndexPath) -> Self {
             switch (indexPath.section, indexPath.row) {
-            case (0, 0): return .RedGreenLines
-            case (1, 0): return .LinePoints
-            case (2, 0): return .AreaLines
-            default: return .AreaLines
+            case (0, 0): return .RadarZone
+            case (1, 0): return .Scatterplot
+            case (2, 0): return .Triforce
+            case (3, 0): return .Progress
+            default: return .Progress
             }
         }
 
