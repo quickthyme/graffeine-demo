@@ -12,7 +12,7 @@ class RedGreenLinesCell: UITableViewCell, DemoCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.regenerateData()
-        graffeineView.onSelect = { _ in
+        graffeineView.onSelect = { _, _ in
             self.regenerateData()
             self.applyData(animated: true)
         }

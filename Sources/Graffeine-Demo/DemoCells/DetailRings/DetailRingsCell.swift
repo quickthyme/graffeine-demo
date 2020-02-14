@@ -24,7 +24,7 @@ class DetailRingsCell: UITableViewCell, DemoCell {
     }
 
     func setupSelection() {
-        graffeineView.onSelect = { selection in
+        graffeineView.onSelect = { _, selection in
             self.selectedIndex = selection?.data.selected.index
             self.selectedLayerID = selection?.layer.id as? LayerID
             self.applyData()

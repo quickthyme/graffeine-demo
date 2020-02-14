@@ -17,7 +17,7 @@ class LinePointsCell: UITableViewCell, DemoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        graffeineView.onSelect = { selection in
+        graffeineView.onSelect = { _, selection in
             self.selectedIndex = selection?.data.selected.index
             self.applySelection()
         }

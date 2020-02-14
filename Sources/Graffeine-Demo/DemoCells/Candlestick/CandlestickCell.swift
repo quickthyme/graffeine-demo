@@ -29,7 +29,7 @@ class CandlestickCell: UITableViewCell, DemoCell {
         super.awakeFromNib()
         infoLabel.text = ""
         setupScrollZoom()
-        graffeineView.onSelect = { selection in
+        graffeineView.onSelect = { _, selection in
             self.selectedIndex = selection?.data.selected.index
             self.applyData(animated: true)
         }

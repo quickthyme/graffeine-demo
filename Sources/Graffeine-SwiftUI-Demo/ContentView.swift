@@ -11,12 +11,10 @@ struct ContentView: View {
 
             GraffeineViewRep(configClass: "VerticalDescendingBarsConfig",
                              layerDataInput: $dataInput,
-                             onSelect:({
-                                guard let result = $0 else { return }
-                                self.dataInput = VerticalDescendingBarsDataHelper.makeDataInput(
-                                    data: result.data,
-                                    semantic: .select)
-                             }))
+                             onSelect:({ graffeineView, selectionResult in
+                                graffeineView.select(index: selectionResult?.data.selected.index,
+                                                     semantic: .select)
+                            }))
 
             Button(
                 action:({
