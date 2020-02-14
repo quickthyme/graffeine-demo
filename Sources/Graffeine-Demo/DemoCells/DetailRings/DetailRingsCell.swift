@@ -43,17 +43,21 @@ class DetailRingsCell: UITableViewCell, DemoCell {
     }
 
     func applyData() {
-        let layerIndex = getLayerIndex(selectedLayerID)
-        let newData = data.get(selectedIndex: selectedIndex,
-                               selectedLayerIndex: layerIndex)
+        DispatchQueue.global(qos: .background).async {
+            let layerIndex = self.getLayerIndex(self.selectedLayerID)
+            let newData = self.data.get(selectedIndex: self.selectedIndex,
+                                        selectedLayerIndex: layerIndex)
 
-        graffeineView.layer(id: LayerID.center)?.data = newData.0
-        graffeineView.layer(id: LayerID.centerLabels)?.data = newData.0
+            DispatchQueue.main.async {
+                self.graffeineView.layer(id: LayerID.center)?.data = newData.0
+                self.graffeineView.layer(id: LayerID.centerLabels)?.data = newData.0
 
-        graffeineView.layer(id: LayerID.ring1)?.data = newData.1
-        graffeineView.layer(id: LayerID.ring1Labels)?.data = newData.1
+                self.graffeineView.layer(id: LayerID.ring1)?.data = newData.1
+                self.graffeineView.layer(id: LayerID.ring1Labels)?.data = newData.1
 
-        graffeineView.layer(id: LayerID.ring2)?.data = newData.2
-        graffeineView.layer(id: LayerID.ring2Labels)?.data = newData.2
+                self.graffeineView.layer(id: LayerID.ring2)?.data = newData.2
+                self.graffeineView.layer(id: LayerID.ring2Labels)?.data = newData.2
+            }
+        }
     }
 }

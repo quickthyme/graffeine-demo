@@ -6,6 +6,20 @@ class CandlestickCell: UITableViewCell, DemoCell {
     typealias LayerID = CandlestickConfig.ID
     typealias GutterLayerID = CandlestickGutterConfig.ID
 
+    private lazy var numberFormatter: NumberFormatter = {
+        let nf = NumberFormatter()
+        nf.numberStyle = .currency
+        return nf
+    }()
+
+    private lazy var calendar: Calendar = Calendar(identifier: .gregorian)
+
+    private lazy var dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "MM/dd/yyyy"
+        return df
+    }()
+
     @IBOutlet weak var leftGutterView: GraffeineView!
     @IBOutlet weak var graffeineView: GraffeineView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -65,79 +79,82 @@ class CandlestickCell: UITableViewCell, DemoCell {
         return TradingDay.generateRandom(numberOfDays: 45, lowest: 10, highest: 90)
     }
 
+    func getDataLanes(completion: @escaping (TradingDayLanes) -> ()) {
+        DispatchQueue.global(qos: .background).async {
+            if self.lanes == nil {
+                self.lanes = TradingDayLanes.import(self.dataSet)
+            }
+            completion(self.lanes!)
+        }
+    }
+
     func applyData() {
         applyData(animated: false)
     }
 
     func applyData(animated: Bool) {
 
-        if self.lanes == nil { self.lanes = TradingDayLanes.import(dataSet) }
-        let lanes = self.lanes!
+        self.getDataLanes { lanes in
+            let nf = self.numberFormatter
+            let cal = self.calendar
+            let df = self.dateFormatter
+            let selectedIndex = self.selectedIndex
 
-        let nf = NumberFormatter()
-        nf.numberStyle = .currency
+            let today = cal.startOfDay(for: Date())
+            let candleLabels: [String?] = lanes.hi
+                .enumerated()
+                .map({ let d = cal.date(byAdding: .day, value: 0 - $0.offset, to: today)
+                    return df.string(from: d!) })
+                .reversed()
 
-        let cal = Calendar.init(identifier: .gregorian)
-        let df = DateFormatter()
-        df.dateFormat = "MM/dd/yyyy"
+            let maxVal = ceil(lanes.peakHi.max()!)
+            let lowestVal = floor(lanes.peakLo.min()!)
+            let range = maxVal - lowestVal
 
-        let today = Date()
-        let candleLabels: [String?] = lanes.hi
-            .enumerated()
-            .map({ let d = cal.date(byAdding: .day, value: 0 - $0.offset, to: today)
-                return df.string(from: d!) })
-            .reversed()
+            let gutterLabelData = GraffeineData(labels: [
+                "\(nf.string(from: NSNumber(value: maxVal))!)",
+                " ",
+                "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.8)))!)",
+                " ",
+                "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.6)))!)",
+                " ",
+                "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.4)))!)",
+                " ",
+                "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.2)))!)",
+                " ",
+                "\(nf.string(from: NSNumber(value: lowestVal))!)"
+            ])
 
-        let maxVal = ceil(lanes.peakHi.max()!)
-        let lowestVal = floor(lanes.peakLo.min()!)
-        let range = maxVal - lowestVal
-
-        let gutterLabelData = GraffeineData(labels: [
-            "\(nf.string(from: NSNumber(value: maxVal))!)",
-            " ",
-            "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.8)))!)",
-            " ",
-            "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.6)))!)",
-            " ",
-            "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.4)))!)",
-            " ",
-            "\(nf.string(from: NSNumber(value: lowestVal + (range * 0.2)))!)",
-            " ",
-            "\(nf.string(from: NSNumber(value: lowestVal))!)"
-        ])
-
-        let candleData = GraffeineData(valueMax: maxVal - lowestVal,
-                                       valuesHi: lanes.hi.map { $0 - lowestVal },
-                                       valuesLo: lanes.lo.map { $0 - lowestVal },
-                                       labels: candleLabels,
-                                       selectedIndex: selectedIndex)
+            let candleData = GraffeineData(valueMax: maxVal - lowestVal,
+                                           valuesHi: lanes.hi.map { $0 - lowestVal },
+                                           valuesLo: lanes.lo.map { $0 - lowestVal },
+                                           labels: candleLabels,
+                                           selectedIndex: selectedIndex)
 
 
-        let wickData = GraffeineData(valueMax: maxVal - lowestVal,
-                                     valuesHi: lanes.peakHi.map { $0 - lowestVal },
-                                     valuesLo: lanes.peakLo.map { $0 - lowestVal },
-                                     selectedIndex: selectedIndex)
+            let wickData = GraffeineData(valueMax: maxVal - lowestVal,
+                                         valuesHi: lanes.peakHi.map { $0 - lowestVal },
+                                         valuesLo: lanes.peakLo.map { $0 - lowestVal },
+                                         selectedIndex: selectedIndex)
 
-        let semantic: GraffeineData.AnimationSemantic = (animated) ? .reload : .notAnimated
+            let semantic: GraffeineData.AnimationSemantic = (animated) ? .reload : .notAnimated
 
-        leftGutterView.layer(id: GutterLayerID.mainGutter)?.data = gutterLabelData
+            DispatchQueue.main.async {
+                self.leftGutterView.layer(id: GutterLayerID.mainGutter)?.data = gutterLabelData
+                self.graffeineView.layer(id: LayerID.candle)?.unitFill.colors = lanes.colors
 
-        graffeineView.layer(id: LayerID.wick)?
-            .setData( wickData, semantic: semantic )
+                self.graffeineView.layerDataInput = [
+                    (layerId: LayerID.wick,        data: wickData,   semantic: semantic),
+                    (layerId: LayerID.candle,      data: candleData, semantic: semantic),
+                    (layerId: LayerID.candleLabel, data: candleData, semantic: semantic)
+                ]
 
-        graffeineView.layer(id: LayerID.candle)?
-            .unitFill.colors = lanes.colors
-
-        graffeineView.layer(id: LayerID.candle)?
-            .setData( candleData, semantic: semantic )
-
-        graffeineView.layer(id: LayerID.candleLabel)?
-            .setData( candleData, semantic: semantic )
-
-        if let selectedIndex = self.selectedIndex {
-            infoLabel.text = lanes.labels[selectedIndex]
-        } else {
-            infoLabel.text = ""
+                if let selectedIndex = self.selectedIndex {
+                    self.infoLabel.text = lanes.labels[selectedIndex]
+                } else {
+                    self.infoLabel.text = ""
+                }
+            }
         }
     }
 }
