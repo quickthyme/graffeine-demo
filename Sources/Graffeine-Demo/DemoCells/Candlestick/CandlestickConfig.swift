@@ -16,10 +16,10 @@ class CandlestickConfig: GraffeineViewConfig {
         return GraffeineAnimation.Data.Label.Slide(duration: 0.8, timing: .easeOut)
     }
 
-    var selectedAnimation: CAAnimation {
-        return GraffeineAnimation.Perpetual.MarchingAnts(dashPhase: 2,
+    var selectedAnimation: () -> CAAnimation {
+        return GraffeineAnimation.Perpetual.MarchingAnts(dashPhase: 4,
                                                          clockwise: true,
-                                                         duration: 1.0)
+                                                         duration: 0.8)
     }
 
     required init(_ graffeineView: GraffeineView) {
@@ -53,7 +53,8 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitColumn.subdivision.offset = .percentage(0.49)
                     $0.unitColumn.subdivision.width = .explicit(0.48)
                     $0.unitAnimation.data.add(animator: barMoveAnimator, for: .reload)
-                    $0.selection.line.dashPattern = [1, 1]
+                    $0.selection.line.thickness = 1.0
+                    $0.selection.line.dashPattern = [2, 2]
                     $0.selection.animation = selectedAnimation
                 }),
 
@@ -67,9 +68,8 @@ class CandlestickConfig: GraffeineViewConfig {
                     $0.unitAnimation.data.add(animator: barMoveAnimator, for: .reload)
                     $0.selection.isEnabled = true
                     $0.selection.fill.modifyColor = { $0?.modifiedByAdding(brightness: -0.5) }
-                    $0.selection.line.color = .label
                     $0.selection.line.thickness = 1.0
-                    $0.selection.line.dashPattern = [1, 1]
+                    $0.selection.line.dashPattern = [2, 2]
                     $0.selection.animation = selectedAnimation
                 }),
 

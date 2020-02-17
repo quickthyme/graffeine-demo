@@ -5,21 +5,31 @@ class ProgressIndicatorsCell: UITableViewCell, DemoCell {
 
     typealias BarID = ProgressIndicatorsConfigBar.ID
     typealias RadID = ProgressIndicatorsConfigRad.ID
+    typealias IndID = ProgressIndicatorsConfigInd.ID
 
     @IBOutlet weak var progBar: GraffeineView!
     @IBOutlet weak var progRad: GraffeineView!
+    @IBOutlet weak var progInd: GraffeineView!
 
-    @IBAction func wait1(_ sender: AnyObject?) {
+    @IBAction func waitBar(_ sender: AnyObject?) {
+        progBar.layer(id: BarID.progress)!.setData(GraffeineData(valueMax: 100, valuesHi: [0]),
+                                                   semantic: .reload)
+        delay(0.5, self.updateProgBar(100))
+    }
+
+    @IBAction func waitRad(_ sender: AnyObject?) {
         progRad.layer(id: RadID.progress)!.setData(GraffeineData(valueMax: 100, valuesHi: [0]),
                                                    semantic: .reload)
         delay(0.5, self.updateProgRad(100))
     }
 
-    @IBAction func wait2(_ sender: AnyObject?) {
-        progBar.layer(id: BarID.progress)!.setData(GraffeineData(valueMax: 100, valuesHi: [0]),
-                                                   semantic: .reload)
-        delay(0.5, self.updateProgBar(100))
+    @IBAction func waitInd(_ sender: AnyObject?) {
+        waitIndIsAnimating = !waitIndIsAnimating
+        let index = (waitIndIsAnimating) ? 0 : nil
+        progInd.select(index: index)
     }
+
+    var waitIndIsAnimating: Bool = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +44,10 @@ class ProgressIndicatorsCell: UITableViewCell, DemoCell {
     }
 
     func radAnimator(_ duration: TimeInterval) -> GraffeineRadialSegmentDataAnimating? {
+        return GraffeineAnimation.Data.RadialSegment.Automatic(duration: duration, timing: .linear)
+    }
+
+    func indAnimator(_ duration: TimeInterval) -> GraffeineRadialSegmentDataAnimating? {
         return GraffeineAnimation.Data.RadialSegment.Automatic(duration: duration, timing: .linear)
     }
 

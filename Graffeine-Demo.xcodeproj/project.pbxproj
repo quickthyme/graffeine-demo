@@ -77,6 +77,7 @@
 		DCC1129923E64C0600E0C1B8 /* DonutWedgesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1129523E64BCB00E0C1B8 /* DonutWedgesData.swift */; };
 		DCC1129A23E64C0600E0C1B8 /* DonutWedgesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC1129623E64BCB00E0C1B8 /* DonutWedgesCell.xib */; };
 		DCC1129B23E64C0600E0C1B8 /* DonutWedgesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1129723E64BCC00E0C1B8 /* DonutWedgesConfig.swift */; };
+		DCE74A3F23FB1422000712B4 /* ProgressIndicatorsConfigInd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE74A3D23FB1422000712B4 /* ProgressIndicatorsConfigInd.swift */; };
 		DCEFD74D23EE1CDA003EE53A /* TooLowForZeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEFD74B23EE1C85003EE53A /* TooLowForZeroCell.swift */; };
 		DCEFD74E23EE1CDA003EE53A /* TooLowForZeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCEFD74A23EE1C85003EE53A /* TooLowForZeroCell.xib */; };
 		DCEFD74F23EE1CDA003EE53A /* TooLowForZeroConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEFD74C23EE1C85003EE53A /* TooLowForZeroConfig.swift */; };
@@ -193,6 +194,7 @@
 		DCC1129723E64BCC00E0C1B8 /* DonutWedgesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutWedgesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DD23D0374200C47EFD /* PieSlicesConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesConfig.swift; sourceTree = "<group>"; };
 		DCE4C9DE23D0374200C47EFD /* PieSlicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSlicesCell.swift; sourceTree = "<group>"; };
+		DCE74A3D23FB1422000712B4 /* ProgressIndicatorsConfigInd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorsConfigInd.swift; sourceTree = "<group>"; };
 		DCEFD74A23EE1C85003EE53A /* TooLowForZeroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TooLowForZeroCell.xib; sourceTree = "<group>"; };
 		DCEFD74B23EE1C85003EE53A /* TooLowForZeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooLowForZeroCell.swift; sourceTree = "<group>"; };
 		DCEFD74C23EE1C85003EE53A /* TooLowForZeroConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooLowForZeroConfig.swift; sourceTree = "<group>"; };
@@ -235,9 +237,10 @@
 		DC1B827C23DFAA52005E379E /* ProgressIndicators */ = {
 			isa = PBXGroup;
 			children = (
-				DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */,
 				DC10F2D523E2ADB2001769B2 /* ProgressIndicatorsCell.xib */,
+				DC1B827E23DFAA6D005E379E /* ProgressIndicatorsCell.swift */,
 				DC1B827F23DFAA6D005E379E /* ProgressIndicatorsConfigBar.swift */,
+				DCE74A3D23FB1422000712B4 /* ProgressIndicatorsConfigInd.swift */,
 				DC1B828023DFAAFA005E379E /* ProgressIndicatorsConfigRad.swift */,
 			);
 			path = ProgressIndicators;
@@ -714,6 +717,7 @@
 				DC1BE58523E74EAA00B5C2BF /* DetailRingsCell.swift in Sources */,
 				DC08057923F4EF0A00A29637 /* RadarZoneConfig.swift in Sources */,
 				DCF30EB723F688C9006B9577 /* OtherViewController.swift in Sources */,
+				DCE74A3F23FB1422000712B4 /* ProgressIndicatorsConfigInd.swift in Sources */,
 				DC10F2E423E2B1E2001769B2 /* PieSlicesData.swift in Sources */,
 				DC7F221123C7BFA4009629DD /* RedGreenLinesCell.swift in Sources */,
 				DCC1126E23E6155500E0C1B8 /* AreaLinesCell.swift in Sources */,

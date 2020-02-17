@@ -25,7 +25,7 @@
                             <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
-                            <action selector="wait1:" destination="6Pv-ib-Of1" eventType="touchUpInside" id="XgF-oY-1DD"/>
+                            <action selector="waitRad:" destination="6Pv-ib-Of1" eventType="touchUpInside" id="vD1-rZ-sPF"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iRV-GO-4a9">
@@ -35,7 +35,7 @@
                             <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
-                            <action selector="wait2:" destination="6Pv-ib-Of1" eventType="touchUpInside" id="Dqf-xN-wer"/>
+                            <action selector="waitBar:" destination="6Pv-ib-Of1" eventType="touchUpInside" id="hKO-ab-xXl"/>
                         </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-wD-twY" userLabel="Progress Rad" customClass="GraffeineView" customModule="Graffeine">
@@ -65,28 +65,58 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ProgressIndicatorsConfigBar"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yr-ft-bA8" userLabel="Progress Ind" customClass="GraffeineView" customModule="Graffeine">
+                        <rect key="frame" x="366" y="107" width="32" height="32"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="Pi7-kn-CH8"/>
+                            <constraint firstAttribute="width" constant="32" id="VZS-ul-JWq"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="configClass" value="ProgressIndicatorsConfigInd"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbC-WH-GtN">
+                        <rect key="frame" x="244" y="107" width="106" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="oyi-y2-tO5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="Wait forever...">
+                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="waitInd:" destination="6Pv-ib-Of1" eventType="touchUpInside" id="JGZ-07-4iW"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="dds-kN-LBL" secondAttribute="trailing" constant="16" id="4uS-g2-HWz"/>
                     <constraint firstAttribute="bottom" secondItem="dds-kN-LBL" secondAttribute="bottom" constant="24" id="6cY-AO-gy4"/>
+                    <constraint firstItem="HbC-WH-GtN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Toe-wD-twY" secondAttribute="trailing" constant="16" id="9td-vF-a0y"/>
                     <constraint firstItem="iRV-GO-4a9" firstAttribute="top" secondItem="Yzj-KZ-hjL" secondAttribute="bottom" constant="24" id="AmT-MO-4xG"/>
                     <constraint firstAttribute="trailing" secondItem="dds-kN-LBL" secondAttribute="trailing" constant="16" id="ChE-uf-rZ3"/>
                     <constraint firstItem="Yzj-KZ-hjL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HcI-Rg-ufZ" secondAttribute="bottom" constant="16" id="FFC-bz-Uec"/>
                     <constraint firstItem="Yzj-KZ-hjL" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="IJp-j3-pNi"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Toe-wD-twY" secondAttribute="trailing" constant="16" id="LkW-DY-n0K"/>
                     <constraint firstAttribute="trailing" secondItem="HcI-Rg-ufZ" secondAttribute="trailing" constant="16" id="Nu7-hc-OzI"/>
+                    <constraint firstItem="HbC-WH-GtN" firstAttribute="centerY" secondItem="Yzj-KZ-hjL" secondAttribute="centerY" id="PC2-YE-4pi"/>
                     <constraint firstItem="HcI-Rg-ufZ" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="PKW-sT-ntQ"/>
                     <constraint firstItem="Toe-wD-twY" firstAttribute="leading" secondItem="Yzj-KZ-hjL" secondAttribute="trailing" constant="32" id="QR5-Nu-nUT"/>
                     <constraint firstItem="dds-kN-LBL" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="Sq2-6R-gXg"/>
                     <constraint firstItem="dds-kN-LBL" firstAttribute="top" secondItem="iRV-GO-4a9" secondAttribute="bottom" constant="16" id="TYA-sf-HWF"/>
+                    <constraint firstItem="1yr-ft-bA8" firstAttribute="centerY" secondItem="HbC-WH-GtN" secondAttribute="centerY" id="TjI-38-TD8"/>
                     <constraint firstItem="dds-kN-LBL" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="W6D-Tl-rCZ"/>
                     <constraint firstItem="Toe-wD-twY" firstAttribute="centerY" secondItem="Yzj-KZ-hjL" secondAttribute="centerY" id="aTn-b2-bdd"/>
+                    <constraint firstAttribute="trailing" secondItem="1yr-ft-bA8" secondAttribute="trailing" constant="16" id="eW8-88-xZm"/>
                     <constraint firstItem="iRV-GO-4a9" firstAttribute="leading" secondItem="3KB-x0-HlD" secondAttribute="leading" constant="16" id="fBH-TN-PZz"/>
                     <constraint firstItem="HcI-Rg-ufZ" firstAttribute="top" secondItem="3KB-x0-HlD" secondAttribute="top" constant="24" id="o70-Iu-NnD"/>
+                    <constraint firstItem="1yr-ft-bA8" firstAttribute="leading" secondItem="HbC-WH-GtN" secondAttribute="trailing" constant="16" id="oMm-yy-5uR"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="progBar" destination="dds-kN-LBL" id="4G1-Jk-g02"/>
+                <outlet property="progInd" destination="1yr-ft-bA8" id="zjR-VD-uds"/>
                 <outlet property="progRad" destination="Toe-wD-twY" id="Fmf-SQ-qRt"/>
             </connections>
             <point key="canvasLocation" x="139" y="145"/>
