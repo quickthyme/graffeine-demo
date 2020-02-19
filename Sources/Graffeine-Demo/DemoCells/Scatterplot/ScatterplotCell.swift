@@ -78,78 +78,74 @@ class ScatterplotCell: UITableViewCell, DemoCell {
     }
 
     func applyData(animated: Bool) {
-        DispatchQueue.global(qos: .background).async {
-            let dataSet = self.currentDataSet
-                ?? DataSet(
-                    s: self.generateData(count: Int.random(in: 1...5)),
-                    m: self.generateData(count: Int.random(in: 0...5)),
-                    l: self.generateData(count: Int.random(in: 0...5)))
-            self.currentDataSet = dataSet
+        let dataSet = self.currentDataSet
+            ?? DataSet(
+                s: self.generateData(count: Int.random(in: 1...5)),
+                m: self.generateData(count: Int.random(in: 0...5)),
+                l: self.generateData(count: Int.random(in: 0...5)))
+        self.currentDataSet = dataSet
 
-            let colors: [[UIColor]] = self.currentColors
-                ?? [self.generateColors(count: dataSet.s.count),
-                    self.generateColors(count: dataSet.m.count),
-                    self.generateColors(count: dataSet.l.count)]
-            self.currentColors = colors
+        let colors: [[UIColor]] = self.currentColors
+            ?? [self.generateColors(count: dataSet.s.count),
+                self.generateColors(count: dataSet.m.count),
+                self.generateColors(count: dataSet.l.count)]
+        self.currentColors = colors
 
-            let labels: [[String]] = self.currentLabels
-                ?? [self.generateLabels(count: dataSet.s.count, start: 0),
-                    self.generateLabels(count: dataSet.m.count, start: dataSet.s.count),
-                    self.generateLabels(count: dataSet.l.count, start: dataSet.s.count + dataSet.m.count)]
-            self.currentLabels = labels
+        let labels: [[String]] = self.currentLabels
+            ?? [self.generateLabels(count: dataSet.s.count, start: 0),
+                self.generateLabels(count: dataSet.m.count, start: dataSet.s.count),
+                self.generateLabels(count: dataSet.l.count, start: dataSet.s.count + dataSet.m.count)]
+        self.currentLabels = labels
 
-            DispatchQueue.main.async {
-                self.graffeineView.layer(id: LayerID.vectorPlots1)?.apply({
-                    $0.unitFill.colors = colors[0]
-                    $0.data = GraffeineData(
-                        coordinates: dataSet.s,
-                        labels: [],
-                        selectedLabels: [],
-                        selectedIndex: (self.selectedLayer == .vectorPlots1) ? self.selectedIndex : nil
-                    )
-                })
+        self.graffeineView.layer(id: LayerID.vectorPlots1)?.apply({
+            $0.unitFill.colors = colors[0]
+            $0.data = GraffeineData(
+                coordinates: dataSet.s,
+                labels: [],
+                selectedLabels: [],
+                selectedIndex: (self.selectedLayer == .vectorPlots1) ? self.selectedIndex : nil
+            )
+        })
 
-                self.graffeineView.layer(id: LayerID.vectorPlots2)?.apply({
-                    $0.unitFill.colors = colors[1]
-                    $0.data = GraffeineData(
-                        coordinates: dataSet.m,
-                        labels: [],
-                        selectedLabels: [],
-                        selectedIndex: (self.selectedLayer == .vectorPlots2) ? self.selectedIndex : nil
-                    )
-                })
+        self.graffeineView.layer(id: LayerID.vectorPlots2)?.apply({
+            $0.unitFill.colors = colors[1]
+            $0.data = GraffeineData(
+                coordinates: dataSet.m,
+                labels: [],
+                selectedLabels: [],
+                selectedIndex: (self.selectedLayer == .vectorPlots2) ? self.selectedIndex : nil
+            )
+        })
 
-                self.graffeineView.layer(id: LayerID.vectorPlots3)?.apply({
-                    $0.unitFill.colors = colors[2]
-                    $0.data = GraffeineData(
-                        coordinates: dataSet.l,
-                        labels: [],
-                        selectedLabels: [],
-                        selectedIndex: (self.selectedLayer == .vectorPlots3) ? self.selectedIndex : nil
-                    )
-                })
+        self.graffeineView.layer(id: LayerID.vectorPlots3)?.apply({
+            $0.unitFill.colors = colors[2]
+            $0.data = GraffeineData(
+                coordinates: dataSet.l,
+                labels: [],
+                selectedLabels: [],
+                selectedIndex: (self.selectedLayer == .vectorPlots3) ? self.selectedIndex : nil
+            )
+        })
 
-                self.graffeineView.layer(id: LayerID.labels1)?.apply({
-                    $0.data = GraffeineData(coordinates: dataSet.s,
-                                            labels: labels[0],
-                                            selectedIndex: (self.selectedLayer == .vectorPlots1) ? self.selectedIndex : nil
-                    )
-                })
+        self.graffeineView.layer(id: LayerID.labels1)?.apply({
+            $0.data = GraffeineData(coordinates: dataSet.s,
+                                    labels: labels[0],
+                                    selectedIndex: (self.selectedLayer == .vectorPlots1) ? self.selectedIndex : nil
+            )
+        })
 
-                self.graffeineView.layer(id: LayerID.labels2)?.apply({
-                    $0.data = GraffeineData(coordinates: dataSet.m,
-                                            labels: labels[1],
-                                            selectedIndex: (self.selectedLayer == .vectorPlots2) ? self.selectedIndex : nil
-                    )
-                })
+        self.graffeineView.layer(id: LayerID.labels2)?.apply({
+            $0.data = GraffeineData(coordinates: dataSet.m,
+                                    labels: labels[1],
+                                    selectedIndex: (self.selectedLayer == .vectorPlots2) ? self.selectedIndex : nil
+            )
+        })
 
-                self.graffeineView.layer(id: LayerID.labels3)?.apply({
-                    $0.data = GraffeineData(coordinates: dataSet.l,
-                                            labels: labels[2],
-                                            selectedIndex: (self.selectedLayer == .vectorPlots3) ? self.selectedIndex : nil
-                    )
-                })
-            }
-        }
+        self.graffeineView.layer(id: LayerID.labels3)?.apply({
+            $0.data = GraffeineData(coordinates: dataSet.l,
+                                    labels: labels[2],
+                                    selectedIndex: (self.selectedLayer == .vectorPlots3) ? self.selectedIndex : nil
+            )
+        })
     }
 }

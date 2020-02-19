@@ -80,12 +80,10 @@ class CandlestickCell: UITableViewCell, DemoCell {
     }
 
     func getDataLanes(completion: @escaping (TradingDayLanes) -> ()) {
-        DispatchQueue.global(qos: .background).async {
-            if self.lanes == nil {
-                self.lanes = TradingDayLanes.import(self.dataSet)
-            }
-            completion(self.lanes!)
+        if self.lanes == nil {
+            self.lanes = TradingDayLanes.import(self.dataSet)
         }
+        completion(self.lanes!)
     }
 
     func applyData() {
@@ -139,21 +137,19 @@ class CandlestickCell: UITableViewCell, DemoCell {
 
             let semantic: GraffeineData.AnimationSemantic = (animated) ? .reload : .notAnimated
 
-            DispatchQueue.main.async {
-                self.leftGutterView.layer(id: GutterLayerID.mainGutter)?.data = gutterLabelData
-                self.graffeineView.layer(id: LayerID.candle)?.unitFill.colors = lanes.colors
+            self.leftGutterView.layer(id: GutterLayerID.mainGutter)?.data = gutterLabelData
+            self.graffeineView.layer(id: LayerID.candle)?.unitFill.colors = lanes.colors
 
-                self.graffeineView.layerDataInput = [
-                    (layerId: LayerID.wick,        data: wickData,   semantic: semantic),
-                    (layerId: LayerID.candle,      data: candleData, semantic: semantic),
-                    (layerId: LayerID.candleLabel, data: candleData, semantic: semantic)
-                ]
+            self.graffeineView.layerDataInput = [
+                (layerId: LayerID.wick,        data: wickData,   semantic: semantic),
+                (layerId: LayerID.candle,      data: candleData, semantic: semantic),
+                (layerId: LayerID.candleLabel, data: candleData, semantic: semantic)
+            ]
 
-                if let selectedIndex = self.selectedIndex {
-                    self.infoLabel.text = lanes.labels[selectedIndex]
-                } else {
-                    self.infoLabel.text = ""
-                }
+            if let selectedIndex = self.selectedIndex {
+                self.infoLabel.text = lanes.labels[selectedIndex]
+            } else {
+                self.infoLabel.text = ""
             }
         }
     }
