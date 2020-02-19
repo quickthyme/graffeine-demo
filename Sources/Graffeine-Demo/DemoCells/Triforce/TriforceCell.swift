@@ -35,7 +35,7 @@ class TriforceCell: UITableViewCell, DemoCell {
     }
 
     func applyData() {
-        self.applyData(animated: true)
+        self.applyData(animated: false)
     }
 
     func applyData(animated: Bool) {
